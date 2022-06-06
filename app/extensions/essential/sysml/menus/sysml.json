@@ -3,10 +3,10 @@
     {
       "id": "model.add-diagram",
       "submenu": [
-        { "label": "Requirement Diagram", "id": "sysml.requirement-diagram", "command": "factory:create-diagram", "command-arg": {"id": "SysMLRequirementDiagram"} },
-        { "label": "Block Definition Diagram", "id": "sysml.block-definition-diagram", "command": "factory:create-diagram", "command-arg": {"id": "SysMLBlockDefinitionDiagram"} },
-        { "label": "Internal Block Diagram", "id": "sysml.internal-block-diagram", "command": "factory:create-diagram", "command-arg": {"id": "SysMLInternalBlockDiagram"} },
-        { "label": "Parametric Diagram", "id": "sysml.parametric-diagram", "command": "factory:create-diagram", "command-arg": {"id": "SysMLParametricDiagram"} }
+        { "label": "需求图", "id": "sysml.requirement-diagram", "command": "factory:create-diagram", "command-arg": {"id": "SysMLRequirementDiagram"} },
+        { "label": "模块定义图", "id": "sysml.block-definition-diagram", "command": "factory:create-diagram", "command-arg": {"id": "SysMLBlockDefinitionDiagram"} },
+        { "label": "内部块图", "id": "sysml.internal-block-diagram", "command": "factory:create-diagram", "command-arg": {"id": "SysMLInternalBlockDiagram"} },
+        { "label": "参数图", "id": "sysml.parametric-diagram", "command": "factory:create-diagram", "command-arg": {"id": "SysMLParametricDiagram"} }
       ]
     },
     {
@@ -66,10 +66,10 @@
       {
         "id": "model.add-diagram",
         "submenu": [
-          { "label": "Requirement Diagram", "id": "sysml.requirement-diagram", "command": "factory:create-diagram", "command-arg": {"id": "SysMLRequirementDiagram"} },
-          { "label": "Block Definition Diagram", "id": "sysml.block-definition-diagram", "command": "factory:create-diagram", "command-arg": {"id": "SysMLBlockDefinitionDiagram"} },
-          { "label": "Internal Block Diagram", "id": "sysml.internal-block-diagram", "command": "factory:create-diagram", "command-arg": {"id": "SysMLInternalBlockDiagram"} },
-          { "label": "Parametric Diagram", "id": "sysml.parametric-diagram", "command": "factory:create-diagram", "command-arg": {"id": "SysMLParametricDiagram"} }
+          { "label": "需求图", "id": "sysml.requirement-diagram", "command": "factory:create-diagram", "command-arg": {"id": "SysMLRequirementDiagram"} },
+          { "label": "模块定义图", "id": "sysml.block-definition-diagram", "command": "factory:create-diagram", "command-arg": {"id": "SysMLBlockDefinitionDiagram"} },
+          { "label": "内部块图", "id": "sysml.internal-block-diagram", "command": "factory:create-diagram", "command-arg": {"id": "SysMLInternalBlockDiagram"} },
+          { "label": "参数图", "id": "sysml.parametric-diagram", "command": "factory:create-diagram", "command-arg": {"id": "SysMLParametricDiagram"} }
         ]
       },  
       {
@@ -92,10 +92,10 @@
       {
         "id": "model.add-diagram",
         "submenu": [
-          { "label": "Requirement Diagram", "id": "sysml.requirement-diagram", "command": "factory:create-diagram", "command-arg": {"id": "SysMLRequirementDiagram"} },
-          { "label": "Block Definition Diagram", "id": "sysml.block-definition-diagram", "command": "factory:create-diagram", "command-arg": {"id": "SysMLBlockDefinitionDiagram"} },
-          { "label": "Internal Block Diagram", "id": "sysml.internal-block-diagram", "command": "factory:create-diagram", "command-arg": {"id": "SysMLInternalBlockDiagram"} },
-          { "label": "Parametric Diagram", "id": "sysml.parametric-diagram", "command": "factory:create-diagram", "command-arg": {"id": "SysMLParametricDiagram"} }  
+          { "label": "需求图", "id": "sysml.requirement-diagram", "command": "factory:create-diagram", "command-arg": {"id": "SysMLRequirementDiagram"} },
+          { "label": "模块定义图", "id": "sysml.block-definition-diagram", "command": "factory:create-diagram", "command-arg": {"id": "SysMLBlockDefinitionDiagram"} },
+          { "label": "内部块图", "id": "sysml.internal-block-diagram", "command": "factory:create-diagram", "command-arg": {"id": "SysMLInternalBlockDiagram"} },
+          { "label": "参数图", "id": "sysml.parametric-diagram", "command": "factory:create-diagram", "command-arg": {"id": "SysMLParametricDiagram"} }
         ]
       },
       {

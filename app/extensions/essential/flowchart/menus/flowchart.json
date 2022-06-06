@@ -3,7 +3,7 @@
     {
       "id": "model.add-diagram",
       "submenu": [
-        { "label": "Flowchart Diagram", "id": "flowchart.diagram", "command": "factory:create-diagram", "command-arg": { "id": "FCFlowchartDiagram" } }
+        { "label": "流程图", "id": "flowchart.diagram", "command": "factory:create-diagram", "command-arg": { "id": "FCFlowchartDiagram" } }
       ]
     }
   ],
@@ -12,7 +12,7 @@
       {
         "id": "model.add-diagram",
         "submenu": [
-          { "label": "Flowchart Diagram", "id": "flowchart.diagram", "command": "factory:create-diagram", "command-arg": { "id": "FCFlowchartDiagram" } }
+          { "label": "流程图", "id": "flowchart.diagram", "command": "factory:create-diagram", "command-arg": { "id": "FCFlowchartDiagram" } }
         ]
       }  
     ],
@@ -20,7 +20,7 @@
       {
         "id": "model.add-diagram",
         "submenu": [
-          { "label": "Flowchart Diagram", "id": "flowchart.diagram", "command": "factory:create-diagram", "command-arg": { "id": "FCFlowchartDiagram" } }
+          { "label": "流程图", "id": "flowchart.diagram", "command": "factory:create-diagram", "command-arg": { "id": "FCFlowchartDiagram" } }
         ]
       }
     ]

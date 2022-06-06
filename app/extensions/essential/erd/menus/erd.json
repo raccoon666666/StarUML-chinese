@@ -15,7 +15,7 @@
     {
       "id": "model.add-diagram",
       "submenu": [
-        { "label": "ER Diagram", "id": "erd.diagram", "command": "factory:create-diagram", "command-arg": {"id": "ERDDiagram"} }
+        { "label": "E-R图", "id": "erd.diagram", "command": "factory:create-diagram", "command-arg": {"id": "ERDDiagram"} }
       ]
     },
     {
@@ -40,7 +40,7 @@
       {
         "id": "model.add-diagram",
         "submenu": [
-          { "label": "ER Diagram", "id": "erd.diagram", "command": "factory:create-diagram", "command-arg": {"id": "ERDDiagram"} }
+          { "label": "E-R图", "id": "erd.diagram", "command": "factory:create-diagram", "command-arg": {"id": "ERDDiagram"} }
         ]
       },  
       {
@@ -54,7 +54,7 @@
       {
         "id": "model.add-diagram",
         "submenu": [
-          { "label": "ER Diagram", "id": "erd.diagram", "command": "factory:create-diagram", "command-arg": {"id": "ERDDiagram"} }
+          { "label": "E-R图", "id": "erd.diagram", "command": "factory:create-diagram", "command-arg": {"id": "ERDDiagram"} }
         ]
       },
       {

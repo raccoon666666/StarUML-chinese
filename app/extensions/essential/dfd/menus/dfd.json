@@ -3,7 +3,7 @@
     {
       "id": "model.add-diagram",
       "submenu": [
-        { "label": "Data Flow Diagram", "id": "dfd.diagram", "command": "factory:create-diagram", "command-arg": { "id": "DFDDiagram" } }
+        { "label": "数据流程图", "id": "dfd.diagram", "command": "factory:create-diagram", "command-arg": { "id": "DFDDiagram" } }
       ]
     },
     {
@@ -30,7 +30,7 @@
       {
         "id": "model.add-diagram",
         "submenu": [
-          { "label": "Data Flow Diagram", "id": "dfd.diagram", "command": "factory:create-diagram", "command-arg": { "id": "DFDDiagram" } }
+          { "label": "数据流程图", "id": "dfd.diagram", "command": "factory:create-diagram", "command-arg": { "id": "DFDDiagram" } }
         ]
       }  
     ],
@@ -38,7 +38,7 @@
       {
         "id": "model.add-diagram",
         "submenu": [
-          { "label": "Data Flow Diagram", "id": "dfd.diagram", "command": "factory:create-diagram", "command-arg": { "id": "DFDDiagram" } }
+          { "label": "数据流程图", "id": "dfd.diagram", "command": "factory:create-diagram", "command-arg": { "id": "DFDDiagram" } }
         ]
       },
       {

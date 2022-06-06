@@ -15,7 +15,7 @@
 
 <img src=".\README.assets\image-20220606171036252.png" alt="image-20220606171036252" style="zoom:80%;" />
 
-<img src=".\README.assets\image-20220606171107821.png" alt="image-20220606171107821" style="zoom:80%;" /><img src=".\README.assets\image-20220606171126125.png" alt="image-20220606171126125" style="zoom:80%;" /><img src=".\README.assets\image-20220606171156558.png" alt="image-20220606171156558" style="zoom:80%;" />
+<img src=".\README.assets\image-20220606171107821.png" alt="image-20220606171107821" style="zoom: 67%;" /><img src=".\README.assets\image-20220606171126125.png" alt="image-20220606171126125" style="zoom: 67%;" /><img src=".\README.assets\image-20220606171156558.png" alt="image-20220606171156558" style="zoom: 67%;" />
 
 #### 如何汉化
 

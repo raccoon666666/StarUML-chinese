@@ -1,0 +1,22 @@
+{
+  "menu": [
+    {
+      "id": "format",
+      "submenu": [
+        { "type": "separator" },
+        {
+          "label": "Layout",
+          "id": "format.layout",
+          "submenu": [
+            { "label": "Auto", "id": "format.layout.auto", "command": "diagram-layout:auto" },
+            { "type": "separator" },
+            { "label": "Top to Bottom", "id": "format.layout.top-bottom", "command": "diagram-layout:top-bottom" },
+            { "label": "Bottom to Top", "id": "format.layout.bottom-top", "command": "diagram-layout:bottom-top" },
+            { "label": "Left to Right", "id": "format.layout.left-right", "command": "diagram-layout:left-right" },
+            { "label": "Right to Left", "id": "format.layout.right-left", "command": "diagram-layout:right-left" }
+          ]
+        }
+      ]
+    }
+  ]
+}

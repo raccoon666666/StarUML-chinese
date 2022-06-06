@@ -1,0 +1,20 @@
+{
+  "name": "setapp-lib-nodejs",
+  "version": "0.3.0",
+  "description": "Setapp lib node.js wrapper",
+  "private": false,
+  "main": "./lib/setapp.js",
+  "dependencies": {
+    "lilconfig": "^2.0.2",
+    "nan": "^2.14.2"
+  },
+  "peerDependencies": {
+    "electron": ">= 3"
+  },
+  "engines": {
+    "node": ">= 10.2"
+  },
+  "os": [
+    "darwin"
+  ]
+}

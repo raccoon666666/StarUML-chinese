@@ -1,0 +1,28 @@
+{
+  "menu": [
+    {
+      "id": "model.add",
+      "submenu": [
+        { "label": "Tag", "id": "common.tag", "command": "common:tag" }
+      ]
+    }
+  ],
+  "context-menu": {
+    "diagram-canvas": [
+      {
+        "id": "model.add",
+        "submenu": [
+          { "label": "Tag", "id": "common.tag", "command": "common:tag" }
+        ]
+      }
+    ],
+    "model-explorer": [
+      {
+        "id": "model.add",
+        "submenu": [
+          { "label": "Tag", "id": "common.tag", "command": "common:tag" }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "menu": [
+    {
+      "id": "file.export",
+      "submenu": [
+        { "type": "separator" },
+        { "label": "HTML Docs...", "id": "file.export.html-export", "command": "html-export:export" }
+      ]
+    }
+  ]
+}

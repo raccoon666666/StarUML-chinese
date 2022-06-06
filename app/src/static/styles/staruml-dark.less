@@ -1,0 +1,110 @@
+/*
+ * Copyright (c) 2013-2014 Minkyu Lee. All rights reserved.
+ *
+ * NOTICE:  All information contained herein is, and remains the
+ * property of Minkyu Lee. The intellectual and technical concepts
+ * contained herein are proprietary to Minkyu Lee and may be covered
+ * by Republic of Korea and Foreign Patents, patents in process,
+ * and are protected by trade secret or copyright law.
+ * Dissemination of this information or reproduction of this material
+ * is strictly forbidden unless prior written permission is obtained
+ * from Minkyu Lee (niklaus.lee@gmail.com).
+ *
+ */
+
+// ----- Dark Theme ----------------------------------------------------------
+
+// Icons
+@ui-image-folder: "Black";
+
+// Layer0 (Behind main layer) -- Working Diagrams, Model Explroer
+@ui-layer0-background-color: #3a3f41; // #252525;
+@ui-layer0-selected-color: darken(@ui-layer0-background-color, 4%);
+@ui-layer0-border-top-color: lighten(@ui-layer0-background-color, 5%);
+@ui-layer0-border-bottom-color: darken(@ui-layer0-background-color, 7%);
+
+// Layer1 (Main layer) -- Toolbox, Property Editors, Windows, Dialogs */
+@ui-layer1-background-color: #4a4c4e; // #2F2F2F;
+@ui-layer1-selected-color: darken(@ui-layer1-background-color, 4%);
+@ui-layer1-hover-color: lighten(@ui-layer1-background-color, 5%);
+@ui-layer1-border-color: lighten(@ui-layer1-background-color, 5%); // darken(@ui-layer1-background-color, 6%);
+@ui-layer1-border-top-color: transparent; // lighten(@ui-layer1-background-color, 5%);
+@ui-layer1-border-bottom-color: lighten(@ui-layer1-background-color, 5%); // darken(@ui-layer1-background-color, 6%);
+
+// LayerX (Extra layer) -- Toolbar
+@ui-layerx-background-color: #5d5f60; // #3f3f3f;
+
+// Titlebar
+@ui-titlebar-text-color: #c6c8c8;
+
+// Widget (Buttons, ComboBox, ...)
+@ui-widget-color: @ui-layer1-background-color; // #595b5b;
+@ui-widget-border-color: lighten(@ui-widget-color, 10%);  // #5a5a5a; //  #333434;
+@ui-widget-text-color: #e3e3e3; //  #c6c8c8;
+@ui-widget-primary-color: #1c7aed; // #288edf;
+@ui-widget-text-weight: 400;
+@ui-widget-text-shadow: none; // 0 -1px rgba(0,0,0,0.69);
+@ui-widget-box-shadow: none; // inset 0 1px #737373;
+@ui-widget-frozen-text-color: darken(@ui-widget-text-color, 30%);
+@ui-widget-frozen-text-shadow: none; //0 -1px darken(@ui-widget-color, 15%);
+
+// Widget Table
+@ui-widget-table-row-odd-color: lighten(@ui-layer1-background-color, 4%);
+@ui-widget-table-row-even-color: lighten(@ui-layer1-background-color, 2%);
+
+// Widget Sunken (Selected Button, Input, TextArea, ...)
+@ui-widget-sunken-color: darken(@ui-widget-color, 4%); // #252525;
+@ui-widget-sunken-hover-color: lighten(@ui-widget-sunken-color, 4%);
+@ui-widget-sunken-box-shadow: none; // inset 0 1px rgba(0,0,0,0.1);
+
+// Widget Raisen (Switch?)
+@ui-widget-raisen-color: lighten(@ui-widget-color, 10%);
+@ui-widget-raisen-hover-color: lighten(@ui-widget-color, 5%);
+@ui-widget-raisen-box-shadow: none; // inset 0 1px rgba(0,0,0,0.1);
+
+// Widget (Selected)
+@ui-widget-selected-color: lighten(@ui-widget-color, 10%); // @ui-widget-sunken-color; // #3E3E3E;
+@ui-widget-selected-text-color: @ui-widget-primary-color; // #288edf;
+@ui-widget-selected-border-color: #27282a;
+@ui-widget-selected-shadow: none;
+
+// Widget (Hover)
+@ui-widget-hover-color: lighten(@ui-widget-color, 3%); // #626465;
+
+// Widget (Focus)
+@ui-widget-focus-text-color: #ffffff;
+
+// Widget Header
+@ui-widget-header-text-color: #b6b6b6; // #919191;
+@ui-widget-header-text-shadow: none; // rgba(0, 0, 0, 0.7) 0px -1px;
+
+// Widget Content
+@ui-widget-content-color: lighten(@ui-widget-color, 2%);
+@ui-widget-content-light-color: lighten(@ui-widget-content-color, 2%);
+@ui-widget-content-dark-color: darken(@ui-widget-content-color, 2%);
+@ui-widget-content-border-color: darken(@ui-widget-content-color, 3%);
+@ui-widget-content-hover-color: lighten(@ui-widget-content-color, 3%);
+
+// Widget Active
+@ui-widget-active-color: #1371e2; // #0079de;
+@ui-widget-active-light-color: lighten(@ui-widget-active-color, 3%);
+@ui-widget-active-dark-color: darken(@ui-widget-active-color, 3%);
+@ui-widget-active-border-color: darken(@ui-widget-active-color, 5%);
+
+// Icon colors
+@icon-color-project: #c75339;
+@icon-color-element: #ad9400;
+@icon-color-relation: #1390d6;
+@icon-color-diagram: #009944;
+
+
+@import "kendo.common.less";
+@import "kendo.staruml.less";
+@import "fonts.less";
+@import "../icon-font/icons.css";
+@import "icon-colors.less";
+@import "dialogs.less";
+@import "style.less";
+@import "layout.less";
+@import "../thirdparty/codemirror/codemirror.css";
+@import "codemirror-custom.less";

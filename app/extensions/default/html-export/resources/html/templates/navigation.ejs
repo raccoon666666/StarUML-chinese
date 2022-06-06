@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Navigation</title>
+        <%- include('head'); %>
+    </head>
+    <body>
+
+        <div style="padding-top: 1em; overflow-x: auto; width: 100%">
+            <div style="margin-bottom: 1em;">
+                <a href="<%= toUrl(root) %>" target="content">Home</a>
+                <span style="color: #ccc; margin-left: 5px; margin-right: 5px;">|</span>
+                <a href="diagrams.html" target="content">All Diagrams</a>
+                <span style="color: #ccc; margin-left: 5px; margin-right: 5px;">|</span>
+                <a href="element_index.html" target="content">Index</a>
+            </div>
+            <ol id='navigation-tree'>
+                <% var elem = root; %>
+                <li class='expanded'>
+                    <%- include('node', { elem: elem }) %>
+                    <% if (root.getChildNodes().length > 0) { %>
+                    <ol>
+                        <% root.getChildNodes(true).forEach(function (e1) { %>
+                        <% var elem = e1; %>
+                        <li>
+                            <%- include('node', { elem: elem }) %>
+                            <% if (e1.getChildNodes().length > 0) { %>
+                            <ol>
+                                <% e1.getChildNodes(true).forEach(function (e2) { %>
+                                <% var elem = e2; %>
+                                <li>
+                                    <%- include('node', { elem: elem }) %>
+                                    <% if (e2.getChildNodes().length > 0) { %>
+                                    <ol>
+                                        <% e2.getChildNodes(true).forEach(function (e3) { %>
+                                        <% var elem = e3; %>
+                                        <li>
+                                            <%- include('node', { elem: elem }) %>
+                                            <% if (e3.getChildNodes().length > 0) { %>
+                                            <ol>
+                                                <% e3.getChildNodes(true).forEach(function (e4) { %>
+                                                <% var elem = e4; %>
+                                                <li>
+                                                    <%- include('node', { elem: elem }) %>
+                                                    <% if (e4.getChildNodes().length > 0) { %>
+                                                    <ol>
+                                                        <% e4.getChildNodes(true).forEach(function (e5) { %>
+                                                        <% var elem = e5; %>
+                                                        <li>
+                                                            <%- include('node', { elem: elem }) %>
+                                                            <% if (e5.getChildNodes().length > 0) { %>
+                                                            <ol>
+                                                                <% e5.getChildNodes(true).forEach(function (e6) { %>
+                                                                <% var elem = e6; %>
+                                                                <li>
+                                                                    <%- include('node', { elem: elem }) %>
+                                                                    <% if (e6.getChildNodes().length > 0) { %>
+                                                                    <ol>
+                                                                        <% e6.getChildNodes(true).forEach(function (e7) { %>
+                                                                        <% var elem = e7; %>
+                                                                        <li>
+                                                                            <%- include('node', { elem: elem }) %>
+                                                                        </li>
+                                                                        <% }); %>
+                                                                    </ol>
+                                                                    <% } %>
+                                                                </li>
+                                                                <% }); %>
+                                                            </ol>
+                                                            <% } %>
+                                                        </li>
+                                                        <% }); %>
+                                                    </ol>
+                                                    <% } %>
+                                                </li>
+                                                <% }); %>
+                                            </ol>
+                                            <% } %>
+                                        </li>
+                                        <% }); %>
+                                    </ol>
+                                    <% } %>
+                                </li>
+                                <% }); %>
+                            </ol>
+                            <% } %>
+                        </li>
+                        <% }); %>
+                    </ol>
+                    <% } %>
+                </li>
+            </ol>
+        </div>
+        <script>
+            $('#navigation-tree').bonsai();
+        </script>
+    </body>
+</html>

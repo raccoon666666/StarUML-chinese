@@ -1,0 +1,63 @@
+{
+  "name": "StarUML",
+  "version": "4.0.1",
+  "apiVersion": "4.0.1",
+  "description": "A sophisticated software modeler",
+  "copyright": "Copyright© MKLabs Co.,Ltd.",
+  "homepage": "https://staruml.io",
+  "author": {
+    "name": "MKLabs Co.,Ltd.",
+    "email": "support@staruml.io"
+  },
+  "config": {
+    "product_id": "STARUML.V4",
+    "app_title": "StarUML",
+    "app_icon": "styles/icons/logo_64.png",
+    "update_info_url": "https://staruml.io/versions/latest",
+    "download_url": "https://staruml.io/download",
+    "purchase_url": "https://staruml.io/buy",
+    "validation_url": "https://staruml.io/license/validate",
+    "documentation_url": "https://docs.staruml.io",
+    "forum_url": "https://groups.google.com/forum/#!forum/staruml",
+    "release_notes_url": "https://staruml.io/download",
+    "feature_request_url": "https://staruml.uservoice.com",
+    "thirdparty_licenses_url": "https://staruml.io/thirdparty",
+    "defaultTemplate": "Default.mdj",
+    "extension_registry": "https://staruml.io/extensions/registry.json",
+    "extension_url": "https://staruml.io/extensions/{0}/{0}-{1}.zip"
+  },
+  "main": "./src/main-process/main.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/niklauslee/staruml.git"
+  },
+  "bugs": {
+    "url": "https://github.com/niklauslee/staruml/issues"
+  },
+  "dependencies": {
+    "dagre": "^0.8.1",
+    "decompress-zip": "^0.3.2",
+    "ejs": "^2.5.7",
+    "electron-updater": "^4.3.5",
+    "escape-html": "^1.0.3",
+    "file-url": "^2.0.2",
+    "filenamify": "^2.0.0",
+    "fs-extra": "^9.0.1",
+    "keycode": "^2.1.9",
+    "lodash": "^4.17.20",
+    "markdown": "^0.5.0",
+    "mustache": "^2.3.0",
+    "pdfkit": "^0.8.3",
+    "pegjs": "^0.10.0",
+    "request": "^2.81.0",
+    "semver": "^5.3.0",
+    "slash": "^1.0.0",
+    "sortablejs": "^1.5.1",
+    "temp": "^0.8.3",
+    "url-parse": "^1.4.7",
+    "setapp-lib-nodejs": "file:./setapp/NodeWrapper"
+  },
+  "setapp": {
+    "modulePath": "./setapp/libSetapp"
+  }
+}

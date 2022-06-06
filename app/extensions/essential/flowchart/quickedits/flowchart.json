@@ -1,0 +1,91 @@
+{
+  "components": [
+    {
+      "id": "fc.set-name",
+      "type": "input",
+      "hint": "name",
+      "property": "name",
+      "command": "engine:set-property"
+    },
+    {
+      "id": "fc.add-outgoing-process",
+      "type": "button",
+      "icon": "icon-tool-fc-outgoing-process",
+      "hint": "Add Outgoing Process",
+      "command": "fc:add-outgoing-process"
+    },
+    {
+      "id": "fc.add-incoming-process",
+      "type": "button",
+      "icon": "icon-tool-fc-incoming-process",
+      "hint": "Add Incoming Process",
+      "command": "fc:add-incoming-process"
+    },
+    {
+      "id": "fc.add-outgoing-decision",
+      "type": "button",
+      "icon": "icon-tool-fc-outgoing-decision",
+      "hint": "Add Outgoing Decision",
+      "command": "fc:add-outgoing-decision"
+    },
+    {
+      "id": "fc.add-incoming-decision",
+      "type": "button",
+      "icon": "icon-tool-fc-incoming-decision",
+      "hint": "Add Incoming Decision",
+      "command": "fc:add-incoming-decision"
+    }
+  ],
+  "quickedits": [
+    {
+      "id": "fc.node",
+      "targets": [
+        "FCProcessView",
+        "FCTerminatorView",
+        "FCDecisionView",
+        "FCDelayView",
+        "FCPredefinedProcessView",
+        "FCAlternateProcessView",
+        "FCDataView",
+        "FCDocumentView",
+        "FCMultiDocumentView",
+        "FCPreparationView",
+        "FCDisplayView",
+        "FCManualInputView",
+        "FCManualOperationView",
+        "FCCardView",
+        "FCPunchedTapeView",
+        "FCConnectorView",
+        "FCOffPageConnectorView",
+        "FCOrView",
+        "FCSummingJunctionView",
+        "FCCollateView",
+        "FCSortView",
+        "FCMergeView",
+        "FCExtractView",
+        "FCStoredDataView",
+        "FCDatabaseView",
+        "FCDirectAccessStorageView",
+        "FCInternalStorageView"
+      ],
+      "area": { "x1": "left", "y1": "nameLabel.top", "x2": "right", "y2": "nameLabel.bottom" },
+      "components": [
+        { "id": "fc.set-name", "section": "main" },
+        { "id": "uml.add-note", "section": "left" },
+        { "id": "fc.add-outgoing-process", "section": "right" },
+        { "id": "fc.add-incoming-process", "section": "right" },
+        { "id": "fc.add-outgoing-decision", "section": "right", "row": 2 },
+        { "id": "fc.add-incoming-decision", "section": "right", "row": 2 }
+      ]
+    },
+    {
+      "id": "fc.edge",
+      "targets": [ "FCFlowView", "FCFlowView.nameLabel" ],
+      "area": { "x1": "nameLabel.left", "y1": "nameLabel.top", "x2": "nameLabel.left", "y2": "nameLabel.bottom", "x2-margin": 70 },
+      "components": [
+        { "id": "fc.set-name", "section": "main" },
+        { "id": "uml.add-note", "section": "left" }
+      ]
+    }
+  ]
+}

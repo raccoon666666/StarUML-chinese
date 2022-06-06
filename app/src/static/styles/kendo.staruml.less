@@ -1,0 +1,1791 @@
+/*
+* Kendo UI Web v2013.2.716 (http://kendoui.com)
+* Copyright 2013 Telerik AD. All rights reserved.
+*
+* Kendo UI Web commercial licenses may be obtained at
+* https://www.kendoui.com/purchase/license-agreement/kendo-ui-web-commercial.aspx
+* If you do not own a commercial license, this file shall be governed by the
+* GNU General Public License (GPL) version 3.
+* For GPL requirements, please review: http://www.gnu.org/copyleft/gpl.html
+*/
+
+@image-folder: @ui-image-folder;
+@texture: none;
+@tooltip-texture: url('textures/highlight.png');
+@fallback-texture: url('textures/highlight.png');
+
+/* Widget Base Styles */
+@widget-text-color: @ui-widget-text-color;
+@widget-text-shadow: @ui-widget-text-shadow;
+@widget-gradient: none;
+@widget-background-color: @ui-widget-color;
+@widget-border-color: @ui-widget-border-color;
+@widget-shadow: @ui-widget-box-shadow;
+
+/* Windows, Menu panel, Dialogs Styles */
+@window-background-color: @ui-layer1-background-color;
+
+/* Inputs */
+@input-background-color: @ui-widget-sunken-color;
+@input-text-color: @ui-widget-text-color;
+
+/* Selects, Dropdowns */
+@select-background-color: @ui-widget-sunken-color;
+@select-border-color: @widget-border-color;
+@select-hover-background-color: @ui-widget-sunken-hover-color;
+@select-group-background-color: @select-background-color;
+
+/* Links */
+@link-text-color: @widget-text-color;
+
+/* Headers */
+@header-text-color: @widget-text-color;
+@header-background-color: #ededed;
+
+/* Group Base Styles */
+@group-background-color: @widget-background-color;
+@group-border-color: @widget-border-color;
+
+/* Content */
+@content-background-color: @widget-background-color;
+
+
+/* ---------- Widget States ------------------------------------------------ */
+
+/* Hover State */
+@hover-text-color: @widget-text-color;
+@hover-background-color: @ui-widget-hover-color;
+@hover-border-color: lighten(@ui-widget-border-color, 5%);
+@hover-gradient: @widget-gradient;
+@hover-shadow: none;
+
+/*Focused State*/
+@focused-border-color: @ui-widget-active-color; //  @widget-border-color;
+@focused-shadow: none; // 0 0 0 2px #6fb5f1;
+@focused-item-shadow: none;
+@focused-active-item-shadow: none;
+
+/* Selected State */
+@selected-text-color: @ui-widget-selected-text-color;
+@selected-background-color: @ui-widget-selected-color;
+@selected-border-color: @ui-widget-selected-border-color;
+@selected-gradient: @widget-gradient;
+@selected-shadow: @ui-widget-selected-shadow;
+
+/* Active (Focused) State */
+@active-text-color: @ui-widget-focus-text-color;
+@active-gradient: @widget-gradient;
+@active-background-color: @widget-background-color;
+@active-border-color: @widget-border-color;
+@active-shadow: none;
+
+/* Error State */
+@error-text-color: #fff;
+@error-background-color: #ff5252;
+@error-border-color: #e20000;
+
+/* Disabled State */
+@disabled-text-color: #9f9e9e;
+
+
+/* ------------------------------------------------------------------------- */
+
+/* Button */
+@button-text-color: @widget-text-color;
+@button-background-color: @widget-background-color;
+@button-border-color: @widget-border-color;
+
+/* ToolTip */
+@tooltip-text-color: #282828;
+@tooltip-background-color: #c6c6c6;
+@tooltip-border-color: @widget-border-color;
+
+/* Validation Message */
+@validation-text-color: #635145;
+@validation-background-color: #fff4c9;
+@validation-border-color: #ffe79e;
+
+/* Splitter */
+@splitbar-background-color: @header-background-color;
+
+/* Slider */
+@draghandle-border-radius: 7px;
+@draghandle-border-color: @widget-border-color;
+@draghandle-background-color: @widget-background-color;
+@draghandle-shadow: none;
+@draghandle-hover-border-color: @hover-border-color;
+@draghandle-hover-background-color: @hover-background-color;
+@draghandle-hover-shadow: none;
+
+/* Grid */
+@alt-background-color: #f5f5f5;
+@cell-border-color: @widget-border-color;
+@column-highlight-background-color: #f8f8f8;
+
+/* Scheduler */
+@scheduler-background-color: @widget-background-color;
+@current-time-color: @error-border-color;
+@event-background-color: #ffdac1;
+@event-text-color: @widget-text-color;
+
+/* Upload */
+@upload-progress-background-color: #d0f8ff;
+@upload-progress-text-color: #06c;
+@upload-success-background-color: #ddffd0;
+@upload-success-text-color: #28760b;
+@upload-error-background-color: #ffded7;
+@upload-error-text-color: #c00;
+
+/* Loading Indicators */
+@loading-panel-color: #fff;
+
+/* Shadows */
+@shadow-color: rgba(0, 0, 0, .1);
+@shadow-inset-color: #ddd;
+
+/* Border Radii */
+@main-border-radius: 3px;
+@list-border-radius: @main-border-radius - 1;
+@inner-border-radius: @main-border-radius - 1;
+@slider-border-radius: 13px;
+
+/* Icons */
+@default-icon-opacity: 0.8;
+
+/* Calendar */
+@calendar-border-radius: 4px;
+@calendar-content-text-color: @widget-text-color;
+@calendar-footer-background: @widget-background-color;
+@calendar-footer-text-decoration: none;
+@calendar-footer-hover-text-decoration: underline;
+@calendar-footer-hover-background: @widget-background-color;
+@calendar-header-hover-text-decoration: none;
+@calendar-header-hover-background: @hover-background-color;
+@calendar-footer-active-background: @widget-background-color;
+@calendar-group-background-color: @group-background-color;
+
+/* Menu */
+@menu-border-color: @widget-border-color;
+
+/* TabStrip */
+@tabstrip-items-border: @widget-border-color;
+@tabstrip-active-background: @widget-background-color;
+@tabstrip-tabs-color: @widget-text-color;
+
+/* Form */
+@form-widget-color: #2e2e2e;
+
+/* Dropdown */
+@drop-down-border-color: @widget-border-color;
+@drop-down-hover-border-color: @hover-border-color;
+@drop-down-focused-border-color: @focused-border-color;
+@drop-down-background: @widget-background-color;
+@drop-down-text-color: @widget-text-color;
+
+/* Secondary */
+@secondary-border-color: @widget-border-color;
+@secondary-text-color: @widget-text-color;
+
+/* Numeric */
+@numeric-selected-background: @selected-background-color;
+
+/* PanelBar */
+@panelbar-items-border: @widget-border-color;
+@panelbar-content-background: @content-background-color;
+@panelbar-content-color: @widget-text-color;
+
+/* Window */
+@window-shadow-style: 1px 1px 7px 1px;
+
+@filter-menu-content-background: @content-background-color;
+
+@icon-background-color: transparent;
+
+@import "template.less";
+
+/* ----- Overrides --------------------------------------------------------- */
+
+
+/* ----- ScrollBar --------------------------------------------------------- */
+
+
+/* ----- Widget Common ----------------------------------------------------- */
+
+.k-header {
+  background-color: @ui-widget-color;
+}
+
+.k-state-disabled {
+  opacity: 0.3;
+}
+
+.large {
+  font-size: 15px;
+}
+
+.small {
+  font-size: 12px;
+}
+
+/* ----- Icon ----------------------------------------------------- */
+
+.k-sprite.staruml-icon {
+  line-height: 1;
+  font-size: 16px;
+  text-indent: 0;
+}
+
+/* ----- Button ------------------------------------------------------------ */
+
+.k-button {
+  background-color: @widget-background-color;
+  padding: 0.1em 1.2em;
+  border-radius: 1em; //4px;
+  box-shadow: @widget-shadow;
+  color: @widget-text-color;
+  text-shadow: @widget-text-shadow;
+}
+
+.k-button:disabled {
+  opacity: 0.3;
+  cursor: default;
+  pointer-events: none;
+}
+
+.k-button:hover {
+  color: @hover-text-color;
+  background-color: @hover-background-color;
+}
+
+.k-button:focus,
+.k-button.k-state-selected:focus,
+.k-button.primary:focus,
+.k-button.primary.k-state-selected:focus
+{
+  box-shadow: inset 0 1px rgba(255,255,255,0.36), @focused-shadow;
+  outline: 0;
+}
+
+.k-button:active,
+.k-button.k-state-selected,
+.k-button.k-state-selected:hover
+{
+  background-color: @selected-background-color;
+  border-color: @ui-widget-border-color;
+  box-shadow: inset 0 1px rgba(0,0,0,0.05);
+}
+
+.k-button.primary {
+  background-color: @ui-widget-primary-color; // #288edf;
+  border: 1px solid @ui-widget-primary-color;
+  box-shadow: none; // inset 0 1px rgba(255,255,255,0.36);
+  color: #ffffff; // @ui-widget-text-color;
+  text-shadow: none; // 0 -1px rgba(0,0,0,0.36);
+}
+
+.k-button.primary:hover {
+  background-color: darken(@ui-widget-primary-color, 3%); // #4ca1e4;
+  border: 1px solid darken(@ui-widget-primary-color, 3%);
+}
+
+.k-button.primary:active,
+.k-button.primary.k-state-selected {
+  background-color: darken(@ui-widget-primary-color, 6%); // #1e7dc8;
+  box-shadow: none; // inset 0 1px rgba(0,0,0,0.12);
+}
+
+.k-button.outline {
+  border-color: @ui-widget-text-color;
+}
+
+.k-button.quiet {
+  background: transparent;
+  border: 1px solid transparent;
+  box-shadow: none;
+}
+
+.k-button.quiet:hover {
+  background-color: @ui-widget-hover-color;
+  text-shadow: @ui-widget-text-shadow;
+  border: 1px solid @widget-border-color;
+  box-shadow: @widget-shadow;
+}
+
+.k-button.quiet:active,
+.k-button.quiet.k-state-selected {
+  border: 1px solid @widget-border-color;
+  text-shadow: @ui-widget-text-shadow;
+  background-color: @selected-background-color;
+  box-shadow: inset 0 1px rgba(0,0,0,0.05);
+}
+
+.icon-button {
+  height: 2em;
+  width: 2em;
+  padding: 0.3em 0.3em;
+  border-radius: 4px;
+  
+  & > span.k-sprite {
+    vertical-align: baseline;
+  }
+  
+  &.small {
+    height: 1.95em;
+    width: 1.95em;
+    padding: 0.25em 0.25em;
+  }
+  
+  &.large {
+    height: 1.95em;
+    width: 1.95em;
+    padding: 0.3em 0.3em;
+  }
+  
+}
+
+
+/* ----- Button Group ---------------------------------------------------- */
+
+.k-button-bar {
+  display: table;
+  table-layout: fixed;
+  white-space: nowrap;
+  margin: 0;
+  padding: 0;
+  padding-left: 0.5px;
+  display: inline-block;
+  vertical-align: bottom;
+  
+  & > .k-button-bar__item {
+    display: table-cell;
+    width: auto;
+    border-radius: 0;
+    margin: 0;
+    border: 0;
+    
+    & > input {
+      border: 0;
+      clip: rect(0 0 0 0);
+      height: 2rem;
+      margin: 0 -2rem -2rem 0;
+      overflow: hidden;
+      padding: 0;
+      position: absolute;
+      width: auto;
+      opacity: 0.001;
+    }
+    
+    .k-button {
+      color: @ui-widget-text-color;
+      position: relative;
+      padding: 0.1rem 0.8rem;
+      letter-spacing: 0;
+      vertical-align: baseline;
+      border-radius: inherit;
+      background-color: @ui-widget-color; // @ui-widget-sunken-color;
+      
+      & > span.k-sprite {
+        vertical-align: text-top;
+      }
+      
+      &:hover {
+        color: @ui-widget-text-color;
+        background-color: @ui-widget-hover-color;
+      }
+    }
+    
+    :checked + .k-button,
+    .k-button:active {
+      color: @ui-widget-focus-text-color; // @ui-widget-text-color; // @widget-text-color;
+      background-color: @selected-background-color;
+      box-shadow: none; // inset 0 1px rgba(0,0,0,0.05);
+    }
+    
+    .k-button:focus,
+    .k-button.k-state-selected {
+      box-shadow: none; // inset 0 1px rgba(255,255,255,0.36), @focused-shadow;
+      outline: 0;
+      z-index: 1;
+    }
+    
+    &:first-child {
+      border-top-left-radius: 4px;
+      border-bottom-left-radius: 4px;
+    }
+    
+    &:not(:first-child) {
+      & > .k-button {
+        border-left: none;
+      }
+    }
+    
+    &:last-child {
+      border-top-right-radius: 4px;
+      border-bottom-right-radius: 4px;
+    }
+  }
+  
+}
+
+.k-button-bar.icon-group {
+  
+  .k-button {
+    padding: 0.1rem 0.3rem;
+    &:focus {
+      outline: none;
+    }
+  }
+  
+}
+
+
+/* -----Button-Bar ---------------------------------------------------- */
+
+.radio-button-bar {
+  display: table;
+  table-layout: fixed;
+  white-space: nowrap;
+  margin: 0;
+  padding: 0;
+  
+  & > .radio-button-bar__item {
+    display: table-cell;
+    width: auto;
+    border-radius: 0;
+    margin: 0;
+    border: 0;
+    
+    & > input {
+      border: 0;
+      clip: rect(0 0 0 0);
+      height: 2rem;
+      margin: 0 -2rem -2rem 0;
+      overflow: hidden;
+      padding: 0;
+      position: absolute;
+      width: auto;
+      opacity: 0.001;
+    }
+    
+    .k-button {
+      color: @ui-widget-text-color;
+      background-color: @ui-widget-color; // @ui-widget-sunken-color;
+      position: relative;
+      padding: 0.1rem 0.8rem;
+      letter-spacing: 0;
+      vertical-align: baseline;
+      border-radius: inherit;
+      user-select: none;
+      &:hover {
+        background-color: @ui-widget-hover-color;
+        color: @ui-widget-text-color;
+      }
+    }
+    
+    :checked + .k-button,
+    .k-button:active {
+      color: @ui-widget-focus-text-color; // @ui-widget-text-color; // #288edf;
+      background-color: @selected-background-color;
+      box-shadow: none; // inset 0 1px rgba(0,0,0,0.05);
+    }
+    
+    .k-button:focus,
+    .k-button.k-state-selected {
+      box-shadow: inset 0 1px rgba(255,255,255,0.36), @focused-shadow;
+      outline: 0;
+      z-index: 1;
+    }
+    
+    &:first-child {
+      border-top-left-radius: 4px;
+      border-bottom-left-radius: 4px;
+    }
+    
+    &:not(:first-child) {
+      & > .k-button {
+        border-left: none;
+      }
+    }
+    
+    &:last-child {
+      border-top-right-radius: 4px;
+      border-bottom-right-radius: 4px;
+    }
+  }
+}
+
+.radio-button-bar.icon-group {
+  .k-button {
+    padding: 0.1rem 0.3rem;
+  }
+}
+
+/* ----- Textbox --------------------------------------------------------- */
+
+input.k-textbox,
+.k-textbox > input,
+.k-numeric-wrap > input,
+.k-dropdown-wrap > input
+{
+  height: 1.95em;
+  letter-spacing: 0;
+  padding: 0.1em 0.8em;
+  border-radius: 4px;
+  background-color: @input-background-color;
+  color: @input-text-color;
+  box-shadow: @ui-widget-sunken-box-shadow;
+  vertical-align: top;
+  
+  &.small {
+    font-size: 12px;
+  }
+  
+  &.large {
+    font-size: 15px;
+  }
+  
+}
+
+input.k-textbox:hover,
+.k-textbox > input:hover
+{
+  background-color: @input-background-color;
+  border-color: @hover-border-color;
+}
+
+input.k-textbox:focus,
+.k-textbox > input:focus
+{
+  // background-color: @widget-background-color;
+  border: 1px solid @focused-border-color; // @widget-border-color;
+  color: @active-text-color;
+  box-shadow: @focused-shadow;
+}
+
+input.k-textbox:disabled,
+.k-textbox > input:disabled
+{
+  opacity: 0.3;
+}
+
+/* ----- Text Area -------------------------------------------------------- */
+
+textarea.k-textbox {
+  letter-spacing: 0;
+  border-radius: 4px;
+  background-color: @input-background-color;
+  color: @input-text-color;
+  box-shadow: @ui-widget-sunken-box-shadow;
+  vertical-align: top;
+  padding: 0.5em 0.8em;
+  resize: none;
+}
+
+textarea.k-textbox:hover
+{
+  background-color: @input-background-color;
+}
+
+textarea.k-textbox:focus
+{
+  // background-color: @widget-background-color;
+  border: 1px solid @focused-border-color; // @widget-border-color;
+  color: @active-text-color;
+  box-shadow: @focused-shadow;
+}
+
+textarea.k-textbox:disabled
+{
+  opacity: 0.3;
+}
+
+/* ----- Checkbox -------------------------------------------------------- */
+
+.k-checkbox {
+  line-height: 1rem;
+  position: relative;
+  display: inline-block;
+  padding: 0;
+  vertical-align: top;
+  cursor: default;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  
+  input[type="checkbox"] {
+    height: 1em;
+    width: 1em;
+    margin-top: 0;
+    margin-right: -1em;
+    margin-bottom: -1em;
+    margin-left: 0;
+    position: absolute;
+    overflow: hidden;
+    padding: 0;
+    border: 0;
+    opacity: 0.001;
+    z-index: 1;
+    vertical-align: top;
+    outline: none;
+  }
+
+  input[type="checkbox"]:checked + .k-checkbox__checkmark:before {
+    background-color: @ui-widget-text-color;
+  }
+  
+  input[type="checkbox"]:checked + .k-checkbox__checkmark:after {
+    opacity: 1;
+  }
+  
+}
+
+.k-checkbox__checkmark {
+  height: 1em;
+}
+
+
+.k-checkbox__checkmark:before {
+  content: '';
+  position: absolute;
+  width: 1em;
+  height: 1em;
+  background: transparent; // @widget-text-color; // @widget-background-color;
+  border: 1px solid @widget-text-color;
+  border-radius: 3px;
+  box-shadow: @widget-shadow;
+}
+
+.k-checkbox__checkmark {
+  width: 1em;
+  height: 1em;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  background-clip: padding-box;
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  cursor: default;
+}
+
+.k-checkbox__checkmark:after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 1px;
+  opacity: 0;
+  width: 0.7em;
+  height: 0.3em;
+  background: transparent;
+  border: 3px solid @ui-widget-color;
+  border-width: 3px;
+  border-top: none;
+  border-right: none;
+  border-radius: 0.5px;
+  -webkit-transform: rotate(-50deg);
+  -ms-transform: rotate(-50deg);
+  transform: rotate(-50deg);
+}
+
+input[type="checkbox"]:focus + .k-checkbox__checkmark:before {
+  box-shadow: none; // inset 0 1px rgba(255,255,255,0.36), @focused-shadow;
+  outline: 1px solid @ui-widget-primary-color;
+}
+
+input[type="checkbox"]:active + .k-checkbox__checkmark:before {
+  border: 1px solid @widget-text-color;
+  background-color: @selected-background-color;
+  box-shadow: none; // inset 0 1px rgba(0,0,0,0.05);
+}
+
+input[type="checkbox"]:disabled + .k-checkbox__checkmark {
+  opacity: 0.3;
+  cursor: default;
+  pointer-events: none;
+}
+
+input[type="checkbox"]:disabled:active + .k-checkbox__checkmark:before {
+  border: 1px solid @widget-text-color;
+  background: @widget-background-color;
+  box-shadow: @widget-shadow;
+}
+
+.k-checkbox__label {
+  margin-left: 0.2em;
+}
+
+/* ----- Radio Button (from Topcoat) --------------------------------------- */
+
+input[type="radio"] {
+  position: absolute;
+  overflow: hidden;
+  padding: 0;
+  border: 0;
+  opacity: 0.001;
+  z-index: 1;
+  vertical-align: top;
+  outline: none;
+}
+
+.k-radio-button__checkmark {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  background-clip: padding-box;
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  cursor: default;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.k-radio-button {
+  position: relative;
+  display: inline-block;
+  padding: 0;
+  vertical-align: top;
+  cursor: default;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.k-radio-button__checkmark:before,
+.k-radio-button__checkmark:after {
+  content: '';
+  position: absolute;
+  border-radius: 100%;
+}
+
+.k-radio-button__checkmark:after {
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.k-radio-button__checkmark:before {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  background-clip: padding-box;
+}
+
+input[type="radio"]:disabled + .k-radio-button__checkmark {
+  opacity: 0.3;
+  cursor: default;
+  pointer-events: none;
+}
+
+input[type="radio"] {
+  height: 1.063em;
+  width: 1.063em;
+  margin-top: 0;
+  margin-right: -1.063em;
+  margin-bottom: -1.063em;
+  margin-left: 0;
+}
+
+input[type="radio"]:checked + .k-radio-button__checkmark:after {
+  opacity: 1;
+}
+
+.k-radio-button {
+  color: @widget-text-color;
+  line-height: 1.063em;
+  
+  &.small {
+    .k-radio-button__checkmark:before {
+      height: 1em;
+      width: 1em;
+    }
+    
+    .k-radio-button__checkmark:after {
+      top: 0.3em;
+      left: 0.28em;
+    }
+  }
+  
+  &.large {
+    .k-radio-button__checkmark:after {
+      top: 0.32em;
+      left: 0.313em;
+    }
+  }
+  
+}
+
+.k-radio-button__checkmark:before {
+  width: 1.083em;
+  height: 1.083em;
+  background: @widget-background-color;
+  border: 1px solid ;
+  box-shadow: @widget-shadow;
+}
+
+.k-radio-button__checkmark {
+  position: relative;
+  width: 1.063em;
+  height: 1.063em;
+}
+
+.k-radio-button__checkmark:after {
+  opacity: 0;
+  width: 0.313em;
+  height: 0.313em;
+  background: @ui-widget-text-color;
+  border: 1px solid rgba(0,0,0,0.05);
+  box-shadow: 0 1px rgba(255,255,255,0.1);
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
+  top: 0.313em;
+  left: 0.313em;
+}
+
+input[type="radio"]:focus + .k-radio-button__checkmark:before {
+  border: 1px solid @ui-widget-primary-color; // @widget-border-color;
+  box-shadow: none; // inset 0 1px rgba(255,255,255,0.36), @focused-shadow;
+}
+
+input[type="radio"]:active + .k-radio-button__checkmark:before {
+  // border: 1px solid @widget-border-color;
+  background-color: @selected-background-color;
+  box-shadow: none; // inset 0 1px rgba(0,0,0,0.05);
+}
+
+input[type="radio"]:disabled:active + .k-radio-button__checkmark:before {
+  // border: 1px solid @widget-border-color;
+  background: @widget-background-color;
+  box-shadow: @widget-shadow;
+}
+
+/* ----- Switch ------------------------------------------------------------- */
+
+@switch-width: 32px;
+@switch-height: 16px;
+@switch-toggle-width: 12px;
+
+.k-switch {
+  input[type=checkbox].k-switch__input {
+    height: 0;
+    width: 0;
+    visibility: hidden;  
+  }
+  
+  .k-switch__toggle {
+    cursor: pointer;
+    text-indent: -9999px;
+    width: @switch-width;
+    height: @switch-height;
+    background: darken(@ui-widget-sunken-color, 5%); // @ui-widget-raisen-color;
+    display: block;
+    border-radius: @switch-height;
+    position: relative;
+  }
+  
+  .k-switch__toggle:after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: @switch-toggle-width;
+    height: @switch-toggle-width;
+    background: @ui-widget-color;
+    border-radius: @switch-toggle-width;
+    transition: 0.3s;
+  }
+  
+  .k-switch__toggle:active:after {
+    width: @switch-toggle-width;
+  }  
+
+  input:checked + .k-switch__toggle {
+    background: @ui-widget-primary-color;
+  }
+  
+  input:checked + .k-switch__toggle:after {
+    left: calc(100% - 2px);
+    transform: translateX(-100%);
+  }
+  
+  .k-switch__toggle:active:after {
+    width: @switch-toggle-width;
+  }
+}
+
+/* ----- Switch (from Topcoat) ------------------------------------------- */
+
+/*
+
+.k-switch {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  background-clip: padding-box;
+}
+
+.k-switch__input {
+  position: absolute;
+  overflow: hidden;
+  padding: 0;
+  border: 0;
+  opacity: 0.001;
+  z-index: 1;
+  vertical-align: top;
+  outline: none;
+}
+
+.k-switch__toggle {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  background-clip: padding-box;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: inherit;
+  background: transparent;
+  border: none;
+  cursor: default;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.k-switch__toggle:before,
+.k-switch__toggle:after {
+  content: '';
+  position: absolute;
+  z-index: 1;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  background-clip: padding-box;
+}
+
+.k-switch__input:disabled + .k-switch__toggle {
+  opacity: 0.3;
+  cursor: default;
+  pointer-events: none;
+}
+
+.k-switch {
+  font-size: 13px;
+  
+  &.small {
+    font-size: 12px;
+  }
+  
+  &.large {
+    font-size: 15px;
+  }
+  
+  padding: 0;
+  border-radius: 4px;
+  background-color: @ui-widget-sunken-color;
+  border: 1px solid @widget-border-color;
+  overflow: hidden;
+  width: @switch-width;
+  height: @switch-height;
+}
+
+.k-switch__toggle:before,
+.k-switch__toggle:after {
+  top: -1px;
+  width: @switch-width - @switch-toggle-width;
+}
+
+.k-switch__toggle:before {
+  content: 'ON';
+  color: #288edf;
+  background-color: @ui-widget-sunken-color;
+  right: @switch-toggle-width;
+  padding-left: 1em;
+}
+
+.k-switch__toggle {
+  line-height: @switch-height;
+  height: @switch-height;
+  width: @switch-toggle-width;
+  border-radius: 4px;
+  color: @widget-text-color;
+  text-shadow: @widget-text-shadow; // 0 -1px rgba(0,0,0,0.69);
+  background-color: @widget-background-color;
+  border: 1px solid @widget-border-color;
+  margin-left: -1px; //-0.6rem;
+  margin-bottom: -1px;
+  margin-top: -1px;
+  box-shadow: @widget-shadow;
+  -webkit-transition: margin-left 0.05s ease-in-out;
+  transition: margin-left 0.05s ease-in-out;
+}
+
+.k-switch__toggle:after {
+  content: 'OFF';
+  background-color: @ui-widget-sunken-color;
+  left: @switch-toggle-width;
+  padding-left: 0.6em;
+}
+
+.k-switch__input:checked + .k-switch__toggle {
+  margin-left: (@switch-width - @switch-toggle-width);
+}
+
+.k-switch__input:active + .k-switch__toggle {
+  border: 1px solid @widget-border-color;
+  box-shadow: @widget-shadow;
+}
+
+.k-switch__input:focus + .k-switch__toggle {
+  border: 1px solid #0036ff;
+  box-shadow: @focused-shadow;
+}
+
+.k-switch__input:disabled + .k-switch__toggle:after,
+.k-switch__input:disabled + .k-switch__toggle:before {
+  background: transparent;
+}
+
+*/
+
+/* ----- Select (Topcoat style) ------------------------------------------- */
+
+.k-select {
+  & > select {
+    -webkit-appearance:none;
+    background-color: @widget-background-color;
+    background-image: url('@{image-folder}/dropdown.svg');
+    background-origin: padding-box;
+    background-repeat: no-repeat;
+    background-position: 98% center;
+    border-radius: 4px;
+    box-shadow: @widget-shadow;
+    font-size: 13px;
+    font-weight: 400;
+    color: @widget-text-color;
+    text-shadow: @ui-widget-text-shadow;
+    border: 1px solid @widget-border-color;
+    padding: 0.1em .8em;
+    padding-right: 2em;
+    line-height: 1.68em;
+    display:inline;
+    vertical-align:middle;
+    overflow:hidden;
+    box-sizing:border-box;
+    margin: 0;
+    
+    &::-ms-expand {
+      display: none;
+    }
+    
+    &:focus {
+      border-color: @ui-widget-primary-color;
+      box-shadow: none; // inset 0 1px rgba(255,255,255,0.36), @focused-shadow;
+      outline:none;
+    }
+    
+    &:disabled {
+      opacity: 0.3;
+      cursor: default;
+      pointer-events: none;
+    }
+    
+    &:hover {
+      background-color: @hover-background-color;
+      border-color: @hover-border-color;
+    }
+  }
+  
+  &.small > select {
+    font-size: 12px;
+  }
+  
+  &.large > select {
+    font-size: 15px;
+  }
+  
+}
+
+/* ----- ComboBox (Topcoat style) ------------------------------------------- */
+
+.k-combo {
+  display: inline-block;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  vertical-align: middle;
+  
+  &.small > input,
+  &.small > select
+  {
+    font-size: 12px;
+  }
+  
+  &.large > input,
+  &.large > select
+  {
+    font-size: 15px;
+  }
+  
+  & > input {
+    -webkit-appearance:none;
+    margin: 0;
+    padding: 0.1em 0.8em;
+    padding-right: 2em;
+    border-radius: 4px;
+    background-color: @input-background-color;
+    color: @input-text-color;
+    box-shadow: @ui-widget-sunken-box-shadow;
+    vertical-align: top;
+    background-image: url('@{image-folder}/dropdown.svg');
+    background-origin: padding-box;
+    background-repeat: no-repeat;
+    background-position: 98% center;
+    font-size: 13px;
+    font-weight: 400;
+    color: @widget-text-color;
+    text-shadow: @ui-widget-text-shadow;
+    border: 1px solid @widget-border-color;
+    line-height: 1.68em;
+    display:inline;
+    overflow:hidden;
+    box-sizing:border-box;
+    outline: none;
+    width: 100%;
+    
+    &:hover {
+      background-color: @input-background-color;
+      border-color: @hover-border-color;
+    }
+    
+    &:focus {
+      // background-color: @widget-background-color;
+      border: 1px solid @focused-border-color; // @widget-border-color;
+      color: @active-text-color;
+      box-shadow: @focused-shadow;
+    }
+    
+    &:disabled {
+      opacity: 0.3;
+    }
+  }
+  
+  & > select {
+    background-color: @input-background-color;
+    color: @input-text-color;
+    opacity: 0;
+    position: absolute;
+    border: 0;
+    top: 1px;
+    right: 1px;
+    bottom: 1px;
+    -webkit-appearance: none;
+    width: 1.6em;
+    outline: none;
+  }
+}
+
+/* ----- Search (from Topcoat) ---------------------------------------------------- */
+
+.k-search-input-wrapper {
+  display: inline-block;
+
+  span.icon-tool-search {
+    position: relative;
+    z-index: 100000;
+    left: 25px;
+    top: 5px;
+  }
+}
+
+.k-search-input {
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: inherit;
+  background: transparent;
+  border: none;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  background-clip: padding-box;
+  vertical-align: top;
+  outline: none;
+  -webkit-appearance: none;
+}
+
+input[type="search"]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+}
+
+.k-search-input:disabled {
+  opacity: 0.3;
+  cursor: default;
+  pointer-events: none;
+}
+
+.k-search-input {
+  font-size: 13px;
+  height: 2em;
+  letter-spacing: 0;
+  padding: 0 0 0 2em;
+  background-color: @input-background-color;
+  color: @input-text-color;
+  box-shadow: @ui-widget-sunken-box-shadow;
+  vertical-align: top;
+  border: 1px solid @widget-border-color;
+  border-radius: 1em;
+  
+  &.small {
+    font-size: 12px;
+  }
+  
+  &.large {
+    font-size: 15px;
+  }
+}
+
+.k-search-input:focus {
+  background-color: @widget-background-color;
+  color: @widget-text-color;
+  border: 1px solid @ui-widget-primary-color;
+  box-shadow: none; // inset 0 1px 0 rgba(0,0,0,0.23), @focused-shadow;
+}
+
+.k-search-input::-webkit-search-cancel-button,
+.k-search-input::-webkit-search-decoration {
+  margin-right: 5px;
+}
+
+.k-search-input::-webkit-input-placeholder {
+  color: @ui-widget-frozen-text-color;
+  text-shadow: @ui-widget-frozen-text-shadow;
+}
+
+.k-search-input:focus::-webkit-input-placeholder {
+  color: @ui-widget-frozen-text-color;
+  text-shadow: @ui-widget-frozen-text-shadow;
+}
+
+.k-search-input:disabled::-webkit-input-placeholder {
+  color: @ui-widget-frozen-text-color;
+  text-shadow: @ui-widget-frozen-text-shadow;
+}
+
+/* ----- Color Input (Native) --------------------------------------------- */
+
+.k-color-input {
+  padding: 0;
+  margin: 0;
+  display: inline-block;
+  vertical-align: middle;
+  width: 1.8em;
+  height: 1.8em;
+  background-color: @widget-border-color;
+  border: 1px solid @widget-border-color;
+  border-radius: 4px;
+  cursor: pointer;
+  outline: none;
+  
+  &:focus {
+    border-color: @ui-widget-primary-color;
+  }
+
+  &:disabled {
+    opacity: 0.3;
+  }
+}
+
+.k-color-input::-webkit-color-swatch-wrapper {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  border-radius: 4px;
+}
+.k-color-input::-webkit-color-swatch {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 4px;
+}
+
+/* ----- Color Box -------------------------------------------------------- */
+
+.k-color-box {
+  padding: 0;
+  margin: 0;
+  display: inline-block;
+  vertical-align: middle;
+  width: 1.8em;
+  height: 1.8em;
+  border: 1px solid @widget-border-color;
+  background-color: @widget-background-color;
+  border: 0;
+  border-radius: 4px;
+  cursor: pointer;
+  
+  &.k-state-disabled {
+    opacity: 0.3;
+  }
+  
+  &.k-state-undetermined {
+    background-image: url("icons/colors.png");
+  }
+}
+
+/* ----- ColorPicker ------------------------------------------------------ */
+
+.k-colorpicker {
+  margin: 0;
+  
+  .k-picker-wrap {
+    height: 1.8em;
+    border: 1px solid @widget-border-color;
+    background-image: url("icons/null-color.svg");
+    background-position: 4px 3px;
+    background-repeat: no-repeat;
+    
+    .k-selected-color {
+      height: 100%;
+    }
+    
+    .k-select {
+      line-height: 1.8em;
+      background-color: @widget-background-color;
+      box-shadow: @widget-shadow;
+    }
+    
+  }
+  
+}
+
+/* ----- Input with Right Space ------------------------------------------- */
+
+.k-textbox.k-space-right {
+  height: 2rem;
+  background-color: @input-background-color;
+  color: @input-text-color;
+  box-shadow: @ui-widget-sunken-box-shadow;
+  padding-right: 2.1em;
+  
+  & > input[type="text"] {
+    height: 1.85rem;
+    letter-spacing: 0;
+    padding: 0 0 0 0.2rem;
+    border: 0;
+    background: transparent;
+    color: @input-text-color;
+    box-shadow: @ui-widget-sunken-box-shadow;
+    vertical-align: top;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    
+    &:focus {
+      background-color: @widget-background-color;
+      // border: 1px solid @widget-border-color;
+      color: @active-text-color;
+      box-shadow: @focused-shadow;
+    }
+  }
+  
+  & > a {
+    cursor: pointer;
+  }
+}
+
+/* ----- Dropdown (Kendo) --------------------------------------------------------- */
+
+.k-dropdown
+{
+  
+  height: 2rem;
+  
+  & > .k-dropdown-wrap {
+    height: 1.9rem;
+    border-radius: 4px;
+    box-shadow: @widget-shadow;
+    color: @widget-text-color;
+    text-shadow: 0 -1px rgba(0,0,0,0.69);
+    
+    span.k-input {
+      height: 1.8rem;
+      line-height: 1.8rem;
+      padding: 0 0.3rem;
+    }
+    
+    span.k-select {
+      height: 1.8rem;
+      line-height: 1.8rem;
+    }
+    
+    &.k-state-hover {
+      background-color: @hover-background-color;
+    }
+    
+    &.k-state-focused {
+      background-color: @widget-background-color;
+      box-shadow: inset 0 1px rgba(255,255,255,0.36), @focused-shadow;
+      outline: 0;
+    }
+    
+    &.k-state-active {
+      background-color: @selected-background-color;
+      box-shadow: inset 0 1px rgba(0,0,0,0.05);
+    }
+  }
+}
+
+/* ----- Numeric TextBox -------------------------------------------------- */
+
+.k-numerictextbox {
+  height: 2rem;
+  
+  & > span.k-numeric-wrap {
+    
+    &.k-state-default {
+      height: 1.9em;
+      background-color: @input-background-color;
+    }
+    
+    &.k-state-focused {
+      background-color: @widget-background-color;
+      border: 1px solid @widget-border-color;
+      color: @active-text-color;
+    }
+    
+    input[type="text"] {
+      padding-left: 0.2rem;
+      height: 1.7em;
+      background: transparent;
+    }
+    
+    span.k-select {
+      border-left: none;
+      
+      span.k-link {
+        height: 0.9rem;
+        &.k-state-selected {
+          background: transparent;
+        }
+      }
+    }
+  }
+}
+
+/* ----- ComboBox --------------------------------------------------------- */
+
+.k-combobox {
+  height: 2rem;
+  
+  & > span.k-dropdown-wrap {
+    height: 1.9rem;
+    background-color: @input-background-color;
+    color: @input-text-color;
+    box-shadow: @ui-widget-sunken-box-shadow;
+    
+    &.k-state-hover {
+      background-color: @input-background-color;
+      color: @active-text-color;
+      box-shadow: @ui-widget-sunken-box-shadow;
+    }
+    
+    &.k-state-focused {
+      background-color: @widget-background-color;
+      border: 1px solid @widget-border-color;
+      color: @active-text-color;
+      box-shadow: @focused-shadow;
+    }
+    
+    input[type="text"] {
+      padding-left: 0.2rem;
+      height: 1.6em;
+      background: transparent;
+    }
+    
+    span.k-select {
+      border-left: 0;
+    }
+  }
+}
+
+/* ----- ListView --------------------------------------------------------- */
+
+.k-listview {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  
+  & > div {
+    padding: 0.2em 0.7em;
+    overflow: hidden;
+    white-space: nowrap;
+    border-top: 1px solid transparent;
+    border-bottom: 1px solid transparent;
+    
+    &.k-state-selected {
+      color: @ui-widget-selected-text-color;
+      background-color: @ui-layer1-selected-color;
+      // border-top: 1px solid @ui-layer1-border-bottom-color;
+      // border-bottom: 1px solid @ui-layer1-border-top-color;
+    }
+  }
+}
+
+/* ----- TreeView ---------------------------------------------------------- */
+
+.treeview {
+  overflow: initial;
+  li.k-item {
+    .k-state-selected {
+      background-color: @ui-layer0-selected-color;
+      border: 1px solid @ui-widget-primary-color;
+      color: @ui-widget-focus-text-color;
+    }
+  }  
+}
+
+/* ----- PanelBar ---------------------------------------------------------- */
+
+.k-panelbar {
+  background: transparent;
+  border: 0;
+  
+  & > li.k-item {
+    background: transparent;
+    margin: 0;
+    
+    & > .k-header {
+      background: transparent;
+      border-bottom: 1px solid @ui-layer1-border-bottom-color;
+      color: @ui-widget-header-text-color;
+    }
+    
+    .k-panel {
+      background: transparent;
+      border: 0;
+      
+      & > li.k-item {
+        background: transparent;
+        border-top-width: 1px;
+        border-bottom-width: 1px;
+        
+        & > span.k-link {
+          font-size: 13px;
+          border-top: 1px solid transparent;
+          border-bottom: 1px solid transparent;
+        }
+        
+        & > span.k-link.k-state-hover {
+          background-color: @ui-layer1-hover-color;
+        }
+
+        & > span.k-link.k-state-selected {
+          background-color: @ui-layer1-selected-color;
+          color: @selected-text-color;
+          border-top: 1px solid transparent; // @ui-layer1-border-bottom-color;
+          border-bottom: 1px solid transparent; // @ui-layer1-border-top-color;
+        }
+      }
+    }
+  }
+}
+
+/* ----- Main Menu --------------------------------------------------------- */
+
+.k-menu-horizontal.k-menu.k-header {
+  background-color: #3a3f41;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  border-bottom: none;
+}
+
+.k-menu-horizontal.k-widget > li.k-item {
+  border: 0;
+  
+  & > .k-link {
+    padding-top: 0.3em;
+    padding-bottom: 0.3em;
+    
+    & > .k-icon.k-i-arrow-s {
+      background-image: none;
+      width: 0;
+    }
+  }
+}
+
+
+.k-menu-horizontal.k-widget .k-popup.k-group {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background-color: @window-background-color;
+  box-shadow: rgba(0, 0, 0, 0.3) 1px 1px 15px 3px;
+  border-color: @widget-border-color;
+  
+  & > .k-item {
+    
+    & > .k-link {
+      padding-top: 0.3em;
+      padding-bottom: 0.3em;
+      padding-right: 4em;
+      padding-left: 1.5em;
+      
+      & > .k-i-tick {
+        position: absolute;
+        top: 8px;
+        left: 4px;
+      }
+    }
+  }
+}
+
+
+/* ----- Context Menu ------------------------------------------------------ */
+
+.k-context-menu.k-menu.k-header,
+.k-context-menu .k-popup {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background-color: @window-background-color;
+  box-shadow: rgba(0, 0, 0, 0.3) 1px 1px 15px 3px;
+  border-radius: 4px;
+  border-color: @widget-border-color;
+}
+
+.k-context-menu .k-item.k-state-hover,
+.k-context-menu .k-item.k-state-border-down,
+.k-context-menu .k-item > .k-link.k-state-border-down,
+{
+  color: @selected-text-color;
+}
+
+.k-context-menu .k-item > .k-link,
+.k-context-menu .k-popup > .k-item > .k-link
+{
+  padding-top: 0.3em;
+  padding-right: 4em;
+  padding-bottom: 0.3em;
+  padding-left: 1.5em;
+}
+
+.k-context-menu .k-item > .k-link > .k-i-arrow-e {
+  margin-right: 10px;
+}
+
+.k-context-menu .k-item > .k-link > .k-i-tick,
+.k-context-menu .k-popup > .k-item > .k-link > .k-i-tick
+{
+  position: absolute;
+  top: 8px;
+  left: 4px;
+}
+
+.k-state-checked {
+  background-image:url('smiley.gif');
+  background-repeat:no-repeat;
+  background-attachment:fixed;
+  background-position: left top;
+}
+
+/* for Context Menu Separator */
+
+.k-menu-separator > .k-link {
+  padding: 0 !important;
+  margin: 0;
+}
+
+.k-menu-separator > .k-link > hr {
+  border: 0px;
+  border-bottom: 1px solid #363638;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-size: 2px;
+}
+
+/* ----- Window ------------------------------------------------------------ */
+
+div.k-window,
+div.k-window.k-state-focused {
+  background-image: none;
+  background-color: @window-background-color;
+  box-shadow: rgba(0, 0, 0, 0.3) 1px 1px 15px 3px;
+  border: 0;
+  
+  .k-window-titlebar {
+    background-color: @window-background-color;
+    height: 1.8em;
+    border: 0;
+    
+    .k-window-title {
+      font-size: 15px;
+      margin: 0.2em;
+      height: 1.3em;
+      top: 10px;
+      left: 15px;
+    }
+    
+    .k-window-actions {
+      top: 5px;
+      right: 10px;
+    }
+    
+  }
+  
+  div.k-window-content {
+    background-color: @window-background-color;
+    padding: 0;
+    padding-top: 10px;
+  }
+  
+}
+
+/* ----- Tooltip ------------------------------------------------------------ */
+
+@tooltip-background-color: @widget-background-color;
+
+.k-widget.k-tooltip.k-popup {
+  background-image: none;
+  background-color: @tooltip-background-color;
+  border-color: @tooltip-background-color;
+  color: #fff;
+  text-shadow: 0 -1px rgba(0,0,0,0.69);
+  font-size: 11px;
+  box-shadow: rgba(0, 0, 0, 0.3) 1px 1px 8px 2px;
+  
+  & > .k-callout {
+    border-top-color: @tooltip-background-color;
+  }
+}
+
+/* ----- Notification (Toast) ----------------------------------------------- */
+
+div.k-notification {
+  border: 0;
+  border-radius: 0.5em;
+  background-image: none;
+  background-color: rgba(0%,0%,0%,.7);
+  padding: .5em 1em;
+  margin-bottom: 10px;
+  color: #fff;
+  
+  &.k-notification-info {
+    background-color: rgba(0%,0%,0%,.7);
+  }
+  
+  &.k-notification-warning {
+    background-color: rgba(70%, 70%, 0%, 0.7);
+  }
+  
+  &.k-notification-error {
+    background-color: rgba(70%,0%,0%,.7);
+  }
+  
+}

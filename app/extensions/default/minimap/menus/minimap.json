@@ -1,0 +1,11 @@
+{
+  "menu": [
+    {
+      "id": "view",
+      "submenu": [
+        { "type": "separator" },
+        { "label": "右下小窗", "id": "view.minimap", "type": "checkbox", "command": "minimap:toggle" }
+      ]
+    }
+  ]
+}

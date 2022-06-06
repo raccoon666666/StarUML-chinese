@@ -1,0 +1,212 @@
+{
+  "TagKind": {
+    "kind": "enum",
+    "literals": [ "string", "reference", "boolean", "number" ]
+  },
+  "Element": {
+    "kind": "class",
+    "attributes": [
+      { "name": "_id",     "kind": "prim", "type": "String" },
+      { "name": "_parent", "kind": "ref",  "type": "Element" }
+    ]
+  },
+  "Model": {
+    "kind": "class",
+    "super": "Element",
+    "attributes": [
+      { "name": "name",          "kind": "prim", "type": "String", "visible": true },
+      { "name": "ownedElements", "kind": "objs", "type": "Element" }
+    ]
+  },
+  "Tag": {
+    "kind": "class",
+    "super": "Model",
+    "attributes": [
+      { "name": "kind",      "kind": "enum", "type": "TagKind", "visible": true },
+      { "name": "value",     "kind": "prim", "type": "String",  "visible": true, "multiline": true },
+      { "name": "reference", "kind": "ref",  "type": "Model",   "visible": true },
+      { "name": "checked",   "kind": "prim", "type": "Boolean", "visible": true, "default": false },
+      { "name": "number",    "kind": "prim", "type": "Integer", "visible": true, "default": 0 },
+      { "name": "hidden",    "kind": "prim", "type": "Boolean", "visible": true, "default": false }
+    ]
+  },
+  "Hyperlink": {
+    "kind": "class",
+    "super": "Model",
+    "attributes": [
+      { "name": "reference", "kind": "ref",  "type": "Model",   "visible": true },
+      { "name": "url",       "kind": "prim", "type": "String",  "visible": true, "default": "" }
+    ],
+    "view": "HyperlinkView"
+  },
+  "ExtensibleModel": {
+    "kind": "class",
+    "super": "Model",
+    "attributes": [
+      { "name": "documentation", "kind": "prim", "type": "String", "default": "" },
+      { "name": "tags",          "kind": "objs", "type": "Tag" }
+    ]
+  },
+  "Relationship": {
+    "kind": "class",
+    "super": "ExtensibleModel"
+  },
+  "DirectedRelationship": {
+    "kind": "class",
+    "super": "Relationship",
+    "attributes": [
+      { "name": "source", "kind": "ref", "type": "Model", "visible": true, "readOnly": true },
+      { "name": "target", "kind": "ref", "type": "Model", "visible": true, "readOnly": true }
+    ]
+  },
+  "RelationshipEnd": {
+    "kind": "class",
+    "super": "ExtensibleModel",
+    "attributes": [
+      { "name": "reference", "kind": "ref", "type": "Model", "visible": true, "readOnly": true }
+    ]
+  },
+  "UndirectedRelationship": {
+    "kind": "class",
+    "super": "Relationship",
+    "attributes": [
+      { "name": "end1", "kind": "obj", "type": "RelationshipEnd", "expand": true },
+      { "name": "end2", "kind": "obj", "type": "RelationshipEnd", "expand": true }
+    ]
+  },
+  "View": {
+    "kind": "class",
+    "super": "Element",
+    "attributes": [
+      { "name": "model",               "kind": "ref",    "type": "Element" },
+      { "name": "subViews",            "kind": "objs",   "type": "View" },
+      { "name": "containerView",       "kind": "ref",    "type": "View" },
+      { "name": "containedViews",      "kind": "refs",   "type": "View" },
+      { "name": "visible",             "kind": "prim",   "type": "Boolean", "default": true },
+      { "name": "enabled",             "kind": "prim",   "type": "Boolean", "default": true },
+      { "name": "selected",            "kind": "prim",   "type": "Boolean", "transient": true },
+      { "name": "lineColor",           "kind": "prim",   "type": "String", "default": "#000000" },
+      { "name": "fillColor",           "kind": "prim",   "type": "String", "default": "#ffffff" },
+      { "name": "fontColor",           "kind": "prim",   "type": "String", "default": "#000000" },
+      { "name": "font",                "kind": "custom", "type": "Font" },
+      { "name": "parentStyle",         "kind": "prim",   "type": "Boolean", "default": false, "transient": true },
+      { "name": "showShadow",          "kind": "prim",   "type": "Boolean", "default": true },
+      { "name": "containerChangeable", "kind": "prim",   "type": "Boolean", "default": false, "transient": false },
+      { "name": "containerExtending",  "kind": "prim",   "type": "Boolean", "default": false, "transient": false }
+    ]
+  },
+  "NodeView": {
+    "kind": "class",
+    "super": "View",
+    "attributes": [
+      { "name": "left",       "kind": "prim", "type": "Integer", "default": 0 },
+      { "name": "top",        "kind": "prim", "type": "Integer", "default": 0 },
+      { "name": "width",      "kind": "prim", "type": "Integer", "default": 0 },
+      { "name": "height",     "kind": "prim", "type": "Integer", "default": 0 },
+      { "name": "autoResize", "kind": "prim", "type": "Boolean", "default": false }
+    ]
+  },
+  "EdgeView": {
+    "kind": "class",
+    "super": "View",
+    "attributes": [
+      { "name": "head",      "kind": "ref",    "type": "View" },
+      { "name": "tail",      "kind": "ref",    "type": "View" },
+      { "name": "lineStyle", "kind": "prim",   "type": "Integer", "default": 0 },
+      { "name": "points",    "kind": "custom", "type": "Points" }
+    ]
+  },
+  "FreelineEdgeView": {
+    "kind": "class",
+    "super": "EdgeView",
+    "attributes": [
+      { "name": "lineMode",     "kind": "prim", "type": "Integer", "default": 0 },
+      { "name": "headEndStyle", "kind": "prim", "type": "Integer", "default": 0 },
+      { "name": "tailEndStyle", "kind": "prim", "type": "Integer", "default": 0 }
+    ]
+  },
+  "LabelView": {
+    "kind": "class",
+    "super": "NodeView",
+    "attributes": [
+      { "name": "underline",           "kind": "prim", "type": "Boolean", "default": false },
+      { "name": "text",                "kind": "prim", "type": "String", "default": "" },
+      { "name": "horizontalAlignment", "kind": "prim", "type": "Integer", "default": 2 },
+      { "name": "verticalAlignment",   "kind": "prim", "type": "Integer", "default": 5 },
+      { "name": "direction",           "kind": "prim", "type": "Integer", "default": 0, "transient": true },
+      { "name": "wordWrap",            "kind": "prim", "type": "Boolean", "default": false }
+    ]
+  },
+  "ParasiticView": {
+    "kind": "class",
+    "super": "NodeView",
+    "attributes": [
+      { "name": "alpha",    "kind": "prim", "type": "Real" },
+      { "name": "distance", "kind": "prim", "type": "Real" }
+    ]
+  },
+  "NodeParasiticView": {
+    "kind": "class",
+    "super": "ParasiticView",
+    "attributes": [
+      { "name": "hostNode", "kind": "ref", "type": "NodeView" }
+    ]
+  },
+  "EdgeParasiticView": {
+    "kind": "class",
+    "super": "ParasiticView",
+    "attributes": [
+      { "name": "hostEdge",     "kind": "ref",  "type": "EdgeView" },
+      { "name": "edgePosition", "kind": "prim", "type": "Integer", "default": 0 }
+    ]
+  },
+  "NodeLabelView": {
+    "kind": "class",
+    "super": "NodeParasiticView",
+    "attributes": [
+      { "name": "underline",           "kind": "prim", "type": "Boolean", "default": false },
+      { "name": "text",                "kind": "prim", "type": "String", "default": "" },
+      { "name": "horizontalAlignment", "kind": "prim", "type": "Integer", "default": 2 },
+      { "name": "verticalAlignment",   "kind": "prim", "type": "Integer", "default": 5 },
+      { "name": "wordWrap",            "kind": "prim", "type": "Boolean", "default": false }
+    ]
+  },
+  "EdgeLabelView": {
+    "kind": "class",
+    "super": "EdgeParasiticView",
+    "attributes": [
+      { "name": "underline",           "kind": "prim", "type": "Boolean", "default": false },
+      { "name": "text",                "kind": "prim", "type": "String", "default": "" },
+      { "name": "horizontalAlignment", "kind": "prim", "type": "Integer", "default": 2 },
+      { "name": "verticalAlignment",   "kind": "prim", "type": "Integer", "default": 5 },
+      { "name": "wordWrap",            "kind": "prim", "type": "Boolean", "default": false }
+    ]
+  },
+  "NodeNodeView": {
+    "kind": "class",
+    "super": "NodeParasiticView"
+  },
+  "EdgeNodeView": {
+    "kind": "class",
+    "super": "EdgeParasiticView"
+  },
+  "Diagram": {
+    "kind": "class",
+    "super": "ExtensibleModel",
+    "attributes": [
+      { "name": "visible",        "kind": "prim", "type": "Boolean", "default": true },
+      { "name": "defaultDiagram", "kind": "prim", "type": "Boolean", "visible": true, "default": false },
+      { "name": "ownedViews",     "kind": "objs", "type": "View" }
+    ]
+  },
+  "Project": {
+    "kind": "class",
+    "super": "ExtensibleModel",
+    "attributes": [
+      { "name": "author",         "kind": "prim", "type": "String",  "visible": true },
+      { "name": "company",        "kind": "prim", "type": "String",  "visible": true },
+      { "name": "copyright",      "kind": "prim", "type": "String",  "visible": true },
+      { "name": "version",        "kind": "prim", "type": "String",  "visible": true }
+    ]
+  }
+}

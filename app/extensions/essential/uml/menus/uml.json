@@ -1,0 +1,293 @@
+{
+  "menu": [
+    {
+      "id": "file.new-from-template",
+      "submenu": [
+        { "label": "UML Minimal", "command": "uml:new-from-template", "command-arg": "templates/UMLMinimal.mdj" },
+        { "label": "UML Conventional", "command": "uml:new-from-template", "command-arg": "templates/UMLConventional.mdj" },
+        { "label": "4+1 View Model", "command": "uml:new-from-template", "command-arg": "templates/4p1ViewModel.mdj" },
+        { "label": "Rational", "command": "uml:new-from-template", "command-arg": "templates/Rational.mdj" }
+      ]
+    },
+    {
+      "id": "format",
+      "submenu": [
+        { "type": "separator" },
+        {
+          "label": "Stereotype Display",
+          "id": "format.stereotype",
+          "submenu": [
+            { "label": "None", "id": "format.stereotype.none", "type": "checkbox", "command": "format:stereotype-none" },
+            { "label": "Label", "id": "format.stereotype.label", "type": "checkbox", "command": "format:stereotype-label" },
+            { "label": "Decoration", "id": "format.stereotype.decoration", "type": "checkbox", "command": "format:stereotype-decoration" },
+            { "label": "Decoration with Label", "id": "format.stereotype.decoration-label", "type": "checkbox", "command": "format:stereotype-decoration-label" },
+            { "label": "Icon", "id": "format.stereotype.icon", "type": "checkbox", "command": "format:stereotype-icon" },
+            { "label": "Icon with Label", "id": "format.stereotype.icon-label", "type": "checkbox", "command": "format:stereotype-icon-label" }
+          ]
+        },
+        { "label": "自动换行", "id": "format.word-wrap", "type": "checkbox", "command": "format:word-wrap" },
+        { "label": "显示可见性", "id": "format.show-visibility", "type": "checkbox", "command": "format:show-visibility" },
+        { "label": "显示命名空间", "id": "format.show-namespace", "type": "checkbox", "command": "format:show-namespace" },
+        { "label": "显示属性", "id": "format.show-property", "type": "checkbox", "command": "format:show-property" },
+        { "label": "显示类型", "id": "format.show-type", "type": "checkbox", "command": "format:show-type" },
+        { "label": "显示多重性", "id": "format.show-multiplicity", "type": "checkbox", "command": "format:show-multiplicity" },
+        { "label": "显示操作签名", "id": "format.show-operation-signature", "type": "checkbox", "command": "format:show-operation-signature" },
+        { "type": "separator" },
+        { "label": "抑制属性", "id": "format.suppress-attributes", "type": "checkbox", "command": "format:suppress-attributes" },
+        { "label": "抑制操作", "id": "format.suppress-operations", "type": "checkbox", "command": "format:suppress-operations" },
+        { "label": "Suppress Receptions", "id": "format.suppress-receptions", "type": "checkbox", "command": "format:suppress-receptions" },
+        { "label": "抑制字面量", "id": "format.suppress-literals", "type": "checkbox", "command": "format:suppress-literals" }
+      ]
+    },
+    {
+      "id": "model.add-diagram",
+      "submenu": [
+        { "label": "Class Diagram", "id": "uml.class-diagram", "command": "factory:create-diagram", "command-arg": {"id": "UMLClassDiagram"} },
+        { "label": "Package Diagram", "id": "uml.package-diagram", "command": "factory:create-diagram", "command-arg": {"id": "UMLPackageDiagram"} },
+        { "label": "Object Diagram", "id": "uml.object-diagram", "command": "factory:create-diagram", "command-arg": {"id": "UMLObjectDiagram"} },
+        { "label": "Composite Structure Diagram", "id": "uml.composite-structure-diagram", "command": "factory:create-diagram", "command-arg": {"id": "UMLCompositeStructureDiagram"} },
+        { "label": "Component Diagram", "id": "uml.component-diagram", "command": "factory:create-diagram", "command-arg": {"id": "UMLComponentDiagram"} },
+        { "label": "Deployment Diagram", "id": "uml.deployment-diagram", "command": "factory:create-diagram", "command-arg": {"id": "UMLDeploymentDiagram"} },
+        { "label": "Use Case Diagram", "id": "uml.usecase-diagram", "command": "factory:create-diagram", "command-arg": {"id": "UMLUseCaseDiagram"} },
+        { "label": "Sequence Diagram", "id": "uml.sequence-diagram", "command": "factory:create-diagram", "command-arg": {"id": "UMLSequenceDiagram"} },
+        { "label": "Communication Diagram", "id": "uml.communication-diagram", "command": "factory:create-diagram", "command-arg": {"id": "UMLCommunicationDiagram"} },
+        { "label": "Timing Diagram", "id": "uml.timing-diagram", "command": "factory:create-diagram", "command-arg": {"id": "UMLTimingDiagram"} },
+        { "label": "Interaction Overview Diagram", "id": "uml.interaction-overview-diagram", "command": "factory:create-diagram", "command-arg": {"id": "UMLInteractionOverviewDiagram"} },
+        { "label": "Information Flow Diagram", "id": "uml.information-flow-diagram", "command": "factory:create-diagram", "command-arg": {"id": "UMLInformationFlowDiagram"} },
+        { "label": "Statechart Diagram", "id": "uml.statechart-diagram", "command": "factory:create-diagram", "command-arg": {"id": "UMLStatechartDiagram"} },
+        { "label": "Activity Diagram", "id": "uml.activity-diagram", "command": "factory:create-diagram", "command-arg": {"id": "UMLActivityDiagram"} },
+        { "label": "Profile Diagram", "id": "uml.profile-diagram", "command": "factory:create-diagram", "command-arg": {"id": "UMLProfileDiagram"} }
+      ]
+    },
+    {
+      "id": "model.add",
+      "submenu": [
+        { "label": "Template Parameter", "id": "uml.template-parameter", "command": "factory:create-model", "command-arg": {"id": "UMLTemplateParameter", "field": "templateParameters"} },
+        { "label": "Template Parameter Substitution", "id": "uml.template-parameter-substitution", "command": "factory:create-model", "command-arg": {"id": "UMLTemplateParameterSubstitution", "field": "parameterSubstitutions"} },
+        { "label": "Parameter", "id": "uml.parameter", "command": "factory:create-model", "command-arg": {"id": "UMLParameter", "field": "parameters"} },
+        { "label": "Enumeration Literal", "id": "uml.enumeration-literal", "command": "factory:create-model", "command-arg": {"id": "UMLEnumerationLiteral", "field": "literals"} },
+        { "label": "Attribute", "id": "uml.attribute", "command": "factory:create-model", "command-arg": {"id": "UMLAttribute", "field": "attributes"} },
+        { "label": "Port", "id": "uml.port", "command": "factory:create-model", "command-arg": {"id": "UMLPort", "field": "attributes"} },
+        { "label": "Operation", "id": "uml.operation", "command": "factory:create-model", "command-arg": {"id": "UMLOperation", "field": "operations"} },
+        { "label": "Reception", "id": "uml.reception", "command": "factory:create-model", "command-arg": {"id": "UMLReception", "field": "receptions"} },
+        { "label": "Extension Point", "id": "uml.extension-point", "command": "factory:create-model", "command-arg": {"id": "UMLExtensionPoint", "field": "extensionPoints"} },
+        { "label": "Slot", "id": "uml.slot", "command": "factory:create-model", "command-arg": {"id": "UMLSlot", "field": "slots"} },
+        { "label": "Interaction Operand", "id": "uml.interaction-operand", "command": "factory:create-model", "command-arg": {"id": "UMLInteractionOperand", "field": "operands"} },
+        { "label": "Model", "id": "uml.model", "command": "factory:create-model", "command-arg": {"id": "UMLModel"} },
+        { "label": "Subsystem", "id": "uml.subsystem", "command": "factory:create-model", "command-arg": {"id": "UMLSubsystem"} },
+        { "label": "Package", "id": "uml.package", "command": "factory:create-model", "command-arg": {"id": "UMLPackage"} },
+        { "label": "Profile", "id": "uml.profile", "command": "factory:create-model", "command-arg": {"id": "UMLProfile"} },
+        { "label": "Class", "id": "uml.class", "command": "factory:create-model", "command-arg": {"id": "UMLClass"} },
+        { "label": "Interface", "id": "uml.interface", "command": "factory:create-model", "command-arg": {"id": "UMLInterface"} },
+        { "label": "Signal", "id": "uml.signal", "command": "factory:create-model", "command-arg": {"id": "UMLSignal"} },
+        { "label": "DataType", "id": "uml.datatype", "command": "factory:create-model", "command-arg": {"id": "UMLDataType"} },
+        { "label": "原始类型", "id": "uml.primitive-type", "command": "factory:create-model", "command-arg": {"id": "UMLPrimitiveType"} },
+        { "label": "Enumeration", "id": "uml.enumeration", "command": "factory:create-model", "command-arg": {"id": "UMLEnumeration"} },
+        { "label": "Artifact", "id": "uml.artifact", "command": "factory:create-model", "command-arg": {"id": "UMLArtifact"} },
+        { "label": "Component", "id": "uml.component", "command": "factory:create-model", "command-arg": {"id": "UMLComponent"} },
+        { "label": "Node", "id": "uml.node", "command": "factory:create-model", "command-arg": {"id": "UMLNode"} },
+        { "label": "UseCase", "id": "uml.usecase", "command": "factory:create-model", "command-arg": {"id": "UMLUseCase"} },
+        { "label": "Actor", "id": "uml.actor", "command": "factory:create-model", "command-arg": {"id": "UMLActor"} },
+        { "label": "Stereotype", "id": "uml.stereotype", "command": "factory:create-model", "command-arg": {"id": "UMLStereotype"} },
+        { "label": "Information Item", "id": "uml.information-item", "command": "factory:create-model", "command-arg": {"id": "UMLInformationItem"} },
+        { "label": "Collaboration", "id": "uml.collaboration", "command": "factory:create-model", "command-arg": {"id": "UMLCollaboration"} },
+        { "label": "Interaction", "id": "uml.interaction", "command": "factory:create-model", "command-arg": {"id": "UMLInteraction"} },
+        { "label": "State Machine", "id": "uml.state-machine", "command": "factory:create-model", "command-arg": {"id": "UMLStateMachine"} },
+        { "label": "Activity", "id": "uml.activity", "command": "factory:create-model", "command-arg": {"id": "UMLActivity"} },
+        { "label": "Opaque Behavior", "id": "uml.opaque-behavior", "command": "factory:create-model", "command-arg": {"id": "UMLOpaqueBehavior"} },
+        { "label": "State", "id": "uml.state", "command": "factory:create-model", "command-arg": {"id": "UMLState"} },
+        { "label": "Region", "id": "uml.region", "command": "factory:create-model", "command-arg": {"id": "UMLRegion"} },
+        { "label": "Entry Activity", "id": "uml.entry-activity", "command": "uml:create-model.entry-activity" },
+        { "label": "Do Activity", "id": "uml.do-activity", "command": "uml:create-model.do-activity" },
+        { "label": "Exit Activity", "id": "uml.exit-activity", "command": "uml:create-model.exit-activity" },
+        { "label": "Trigger", "id": "uml.trigger", "command": "factory:create-model", "command-arg": {"id": "UMLEvent", "field": "triggers"} },
+        { "label": "Effect", "id": "uml.effect", "command": "uml:create-model.effect" },
+        { "label": "Action", "id": "uml.action", "command": "factory:create-model", "command-arg": {"id": "UMLAction", "field": "nodes"} },
+        { "label": "Constraint", "id": "uml.constraint", "command": "uml:create-model.constraint" }
+      ]
+    },
+    {
+      "id": "model",
+      "submenu": [
+        { "type": "separator" },
+        {
+          "label": "Apply Profile",
+          "id": "uml.apply-profile",
+          "submenu": [
+            { "label": "UML Standard Profile (v2)", "id": "uml.apply-profile.uml-standard", "command": "uml:apply-profile.uml-standard" }
+          ]
+        }
+      ]
+    }
+  ],
+  "context-menu": {
+    "diagram-canvas": [
+      {
+        "id": "model.add",
+        "submenu": [
+          { "label": "Template Parameter", "id": "uml.template-parameter", "command": "factory:create-model", "command-arg": {"id": "UMLTemplateParameter", "field": "templateParameters"} },
+          { "label": "Template Parameter Substitution", "id": "uml.template-parameter-substitution", "command": "factory:create-model", "command-arg": {"id": "UMLTemplateParameterSubstitution", "field": "parameterSubstitutions"} },
+          { "label": "Parameter", "id": "uml.parameter", "command": "factory:create-model", "command-arg": {"id": "UMLParameter", "field": "parameters"} },
+          { "label": "Enumeration Literal", "id": "uml.enumeration-literal", "command": "factory:create-model", "command-arg": {"id": "UMLEnumerationLiteral", "field": "literals"} },
+          { "label": "Attribute", "id": "uml.attribute", "command": "factory:create-model", "command-arg": {"id": "UMLAttribute", "field": "attributes"} },
+          { "label": "Port", "id": "uml.port", "command": "factory:create-model", "command-arg": {"id": "UMLPort", "field": "attributes"} },
+          { "label": "Operation", "id": "uml.operation", "command": "factory:create-model", "command-arg": {"id": "UMLOperation", "field": "operations"} },
+          { "label": "Reception", "id": "uml.reception", "command": "factory:create-model", "command-arg": {"id": "UMLReception", "field": "receptions"} },
+          { "label": "Extension Point", "id": "uml.extension-point", "command": "factory:create-model", "command-arg": {"id": "UMLExtensionPoint", "field": "extensionPoints"} },
+          { "label": "Slot", "id": "uml.slot", "command": "factory:create-model", "command-arg": {"id": "UMLSlot", "field": "slots"} },
+          { "label": "Interaction Operand", "id": "uml.interaction-operand", "command": "factory:create-model", "command-arg": {"id": "UMLInteractionOperand", "field": "operands"} },
+          { "label": "Model", "id": "uml.model", "command": "factory:create-model", "command-arg": {"id": "UMLModel"} },
+          { "label": "Subsystem", "id": "uml.subsystem", "command": "factory:create-model", "command-arg": {"id": "UMLSubsystem"} },
+          { "label": "Package", "id": "uml.package", "command": "factory:create-model", "command-arg": {"id": "UMLPackage"} },
+          { "label": "Profile", "id": "uml.profile", "command": "factory:create-model", "command-arg": {"id": "UMLProfile"} },
+          { "label": "Class", "id": "uml.class", "command": "factory:create-model", "command-arg": {"id": "UMLClass"} },
+          { "label": "Interface", "id": "uml.interface", "command": "factory:create-model", "command-arg": {"id": "UMLInterface"} },
+          { "label": "Signal", "id": "uml.signal", "command": "factory:create-model", "command-arg": {"id": "UMLSignal"} },
+          { "label": "DataType", "id": "uml.datatype", "command": "factory:create-model", "command-arg": {"id": "UMLDataType"} },
+          { "label": "原始类型", "id": "uml.primitive-type", "command": "factory:create-model", "command-arg": {"id": "UMLPrimitiveType"} },
+          { "label": "Enumeration", "id": "uml.enumeration", "command": "factory:create-model", "command-arg": {"id": "UMLEnumeration"} },
+          { "label": "Artifact", "id": "uml.artifact", "command": "factory:create-model", "command-arg": {"id": "UMLArtifact"} },
+          { "label": "Component", "id": "uml.component", "command": "factory:create-model", "command-arg": {"id": "UMLComponent"} },
+          { "label": "Node", "id": "uml.node", "command": "factory:create-model", "command-arg": {"id": "UMLNode"} },
+          { "label": "UseCase", "id": "uml.usecase", "command": "factory:create-model", "command-arg": {"id": "UMLUseCase"} },
+          { "label": "Actor", "id": "uml.actor", "command": "factory:create-model", "command-arg": {"id": "UMLActor"} },
+          { "label": "Stereotype", "id": "uml.stereotype", "command": "factory:create-model", "command-arg": {"id": "UMLStereotype"} },
+          { "label": "Information Item", "id": "uml.information-item", "command": "factory:create-model", "command-arg": {"id": "UMLInformationItem"} },
+          { "label": "Collaboration", "id": "uml.collaboration", "command": "factory:create-model", "command-arg": {"id": "UMLCollaboration"} },
+          { "label": "Interaction", "id": "uml.interaction", "command": "factory:create-model", "command-arg": {"id": "UMLInteraction"} },
+          { "label": "State Machine", "id": "uml.state-machine", "command": "factory:create-model", "command-arg": {"id": "UMLStateMachine"} },
+          { "label": "Activity", "id": "uml.activity", "command": "factory:create-model", "command-arg": {"id": "UMLActivity"} },
+          { "label": "Opaque Behavior", "id": "uml.opaque-behavior", "command": "factory:create-model", "command-arg": {"id": "UMLOpaqueBehavior"} },
+          { "label": "State", "id": "uml.state", "command": "factory:create-model", "command-arg": {"id": "UMLState"} },
+          { "label": "Region", "id": "uml.region", "command": "factory:create-model", "command-arg": {"id": "UMLRegion", "field": "regions"} },
+          { "label": "Entry Activity", "id": "uml.entry-activity", "command": "uml:create-model.entry-activity" },
+          { "label": "Do Activity", "id": "uml.do-activity", "command": "uml:create-model.do-activity" },
+          { "label": "Exit Activity", "id": "uml.exit-activity", "command": "uml:create-model.exit-activity" },
+          { "label": "Trigger", "id": "uml.trigger", "command": "factory:create-model", "command-arg": {"id": "UMLEvent", "field": "triggers"} },
+          { "label": "Effect", "id": "uml.effect", "command": "uml:create-model.effect" },
+          { "label": "Action", "id": "uml.action", "command": "factory:create-model", "command-arg": {"id": "UMLAction", "field": "nodes"} },
+          { "label": "Constraint", "id": "uml.constraint", "command": "uml:create-model.constraint" }
+        ]
+      },
+      {
+        "id": "model.add-diagram",
+        "submenu": [
+          { "label": "Class Diagram", "id": "uml.class-diagram", "command": "factory:create-diagram", "command-arg": {"id": "UMLClassDiagram"} },
+          { "label": "Package Diagram", "id": "uml.package-diagram", "command": "factory:create-diagram", "command-arg": {"id": "UMLPackageDiagram"} },
+          { "label": "Object Diagram", "id": "uml.object-diagram", "command": "factory:create-diagram", "command-arg": {"id": "UMLObjectDiagram"} },
+          { "label": "Composite Structure Diagram", "id": "uml.composite-structure-diagram", "command": "factory:create-diagram", "command-arg": {"id": "UMLCompositeStructureDiagram"} },
+          { "label": "Component Diagram", "id": "uml.component-diagram", "command": "factory:create-diagram", "command-arg": {"id": "UMLComponentDiagram"} },
+          { "label": "Deployment Diagram", "id": "uml.deployment-diagram", "command": "factory:create-diagram", "command-arg": {"id": "UMLDeploymentDiagram"} },
+          { "label": "Use Case Diagram", "id": "uml.usecase-diagram", "command": "factory:create-diagram", "command-arg": {"id": "UMLUseCaseDiagram"} },
+          { "label": "Sequence Diagram", "id": "uml.sequence-diagram", "command": "factory:create-diagram", "command-arg": {"id": "UMLSequenceDiagram"} },
+          { "label": "Communication Diagram", "id": "uml.communication-diagram", "command": "factory:create-diagram", "command-arg": {"id": "UMLCommunicationDiagram"} },
+          { "label": "Timing Diagram", "id": "uml.timing-diagram", "command": "factory:create-diagram", "command-arg": {"id": "UMLTimingDiagram"} },
+          { "label": "Interaction Overview Diagram", "id": "uml.interaction-overview-diagram", "command": "factory:create-diagram", "command-arg": {"id": "UMLInteractionOverviewDiagram"} },
+          { "label": "Information Flow Diagram", "id": "uml.information-flow-diagram", "command": "factory:create-diagram", "command-arg": {"id": "UMLInformationFlowDiagram"} },
+          { "label": "Statechart Diagram", "id": "uml.statechart-diagram", "command": "factory:create-diagram", "command-arg": {"id": "UMLStatechartDiagram"} },
+          { "label": "Activity Diagram", "id": "uml.activity-diagram", "command": "factory:create-diagram", "command-arg": {"id": "UMLActivityDiagram"} },
+          { "label": "Profile Diagram", "id": "uml.profile-diagram", "command": "factory:create-diagram", "command-arg": {"id": "UMLProfileDiagram"} }
+        ]
+      },  
+      {
+        "id": "format",
+        "submenu": [
+          { "type": "separator" },
+          {
+            "label": "Stereotype Display",
+            "id": "format.stereotype",
+            "submenu": [
+              { "label": "None", "id": "format.stereotype.none", "type": "checkbox", "command": "format:stereotype-none" },
+              { "label": "Label", "id": "format.stereotype.label", "type": "checkbox", "command": "format:stereotype-label" },
+              { "label": "Decoration", "id": "format.stereotype.decoration", "type": "checkbox", "command": "format:stereotype-decoration" },
+              { "label": "Decoration with Label", "id": "format.stereotype.decoration-label", "type": "checkbox", "command": "format:stereotype-decoration-label" },
+              { "label": "Icon", "id": "format.stereotype.icon", "type": "checkbox", "command": "format:stereotype-icon" },
+              { "label": "Icon with Label", "id": "format.stereotype.icon-label", "type": "checkbox", "command": "format:stereotype-icon-label" }
+            ]
+          },
+          { "label": "Word Wrap", "id": "format.word-wrap", "type": "checkbox", "command": "format:word-wrap" },
+          { "label": "Show Visibility", "id": "format.show-visibility", "type": "checkbox", "command": "format:show-visibility" },
+          { "label": "Show Namespace", "id": "format.show-namespace", "type": "checkbox", "command": "format:show-namespace" },
+          { "label": "Show Property", "id": "format.show-property", "type": "checkbox", "command": "format:show-property" },
+          { "label": "Show Type", "id": "format.show-type", "type": "checkbox", "command": "format:show-type" },
+          { "label": "Show Multiplicity", "id": "format.show-multiplicity", "type": "checkbox", "command": "format:show-multiplicity" },
+          { "label": "Show Operation Signature", "id": "format.show-operation-signature", "type": "checkbox", "command": "format:show-operation-signature" },
+          { "type": "separator" },
+          { "label": "Suppress Attributes", "id": "format.suppress-attributes", "type": "checkbox", "command": "format:suppress-attributes" },
+          { "label": "Suppress Operations", "id": "format.suppress-operations", "type": "checkbox", "command": "format:suppress-operations" },
+          { "label": "Suppress Receptions", "id": "format.suppress-receptions", "type": "checkbox", "command": "format:suppress-receptions" },
+          { "label": "Suppress Literals", "id": "format.suppress-literals", "type": "checkbox", "command": "format:suppress-literals" }
+        ]
+      }
+    ],
+    "model-explorer": [
+      {
+        "id": "model.add-diagram",
+        "submenu": [
+          { "label": "Class Diagram", "id": "uml.class-diagram", "command": "factory:create-diagram", "command-arg": {"id": "UMLClassDiagram"} },
+          { "label": "Package Diagram", "id": "uml.package-diagram", "command": "factory:create-diagram", "command-arg": {"id": "UMLPackageDiagram"} },
+          { "label": "Object Diagram", "id": "uml.object-diagram", "command": "factory:create-diagram", "command-arg": {"id": "UMLObjectDiagram"} },
+          { "label": "Composite Structure Diagram", "id": "uml.composite-structure-diagram", "command": "factory:create-diagram", "command-arg": {"id": "UMLCompositeStructureDiagram"} },
+          { "label": "Component Diagram", "id": "uml.component-diagram", "command": "factory:create-diagram", "command-arg": {"id": "UMLComponentDiagram"} },
+          { "label": "Deployment Diagram", "id": "uml.deployment-diagram", "command": "factory:create-diagram", "command-arg": {"id": "UMLDeploymentDiagram"} },
+          { "label": "Use Case Diagram", "id": "uml.usecase-diagram", "command": "factory:create-diagram", "command-arg": {"id": "UMLUseCaseDiagram"} },
+          { "label": "Sequence Diagram", "id": "uml.sequence-diagram", "command": "factory:create-diagram", "command-arg": {"id": "UMLSequenceDiagram"} },
+          { "label": "Communication Diagram", "id": "uml.communication-diagram", "command": "factory:create-diagram", "command-arg": {"id": "UMLCommunicationDiagram"} },
+          { "label": "Timing Diagram", "id": "uml.timing-diagram", "command": "factory:create-diagram", "command-arg": {"id": "UMLTimingDiagram"} },
+          { "label": "Interaction Overview Diagram", "id": "uml.interaction-overview-diagram", "command": "factory:create-diagram", "command-arg": {"id": "UMLInteractionOverviewDiagram"} },
+          { "label": "Information Flow Diagram", "id": "uml.information-flow-diagram", "command": "factory:create-diagram", "command-arg": {"id": "UMLInformationFlowDiagram"} },
+          { "label": "Statechart Diagram", "id": "uml.statechart-diagram", "command": "factory:create-diagram", "command-arg": {"id": "UMLStatechartDiagram"} },
+          { "label": "Activity Diagram", "id": "uml.activity-diagram", "command": "factory:create-diagram", "command-arg": {"id": "UMLActivityDiagram"} },
+          { "label": "Profile Diagram", "id": "uml.profile-diagram", "command": "factory:create-diagram", "command-arg": {"id": "UMLProfileDiagram"} }
+        ]
+      },
+      {
+        "id": "model.add",
+        "submenu": [
+          { "label": "Template Parameter", "id": "uml.template-parameter", "command": "factory:create-model", "command-arg": {"id": "UMLTemplateParameter", "field": "templateParameters"} },
+          { "label": "Template Parameter Substitution", "id": "uml.template-parameter-substitution", "command": "factory:create-model", "command-arg": {"id": "UMLTemplateParameterSubstitution", "field": "parameterSubstitutions"} },
+          { "label": "Parameter", "id": "uml.parameter", "command": "factory:create-model", "command-arg": {"id": "UMLParameter", "field": "parameters"} },
+          { "label": "Enumeration Literal", "id": "uml.enumeration-literal", "command": "factory:create-model", "command-arg": {"id": "UMLEnumerationLiteral", "field": "literals"} },
+          { "label": "Attribute", "id": "uml.attribute", "command": "factory:create-model", "command-arg": {"id": "UMLAttribute", "field": "attributes"} },
+          { "label": "Port", "id": "uml.port", "command": "factory:create-model", "command-arg": {"id": "UMLPort", "field": "attributes"} },
+          { "label": "Operation", "id": "uml.operation", "command": "factory:create-model", "command-arg": {"id": "UMLOperation", "field": "operations"} },
+          { "label": "Reception", "id": "uml.reception", "command": "factory:create-model", "command-arg": {"id": "UMLReception", "field": "receptions"} },
+          { "label": "Extension Point", "id": "uml.extension-point", "command": "factory:create-model", "command-arg": {"id": "UMLExtensionPoint", "field": "extensionPoints"} },
+          { "label": "Slot", "id": "uml.slot", "command": "factory:create-model", "command-arg": {"id": "UMLSlot", "field": "slots"} },
+          { "label": "Interaction Operand", "id": "uml.interaction-operand", "command": "factory:create-model", "command-arg": {"id": "UMLInteractionOperand", "field": "operands"} },
+          { "label": "Model", "id": "uml.model", "command": "factory:create-model", "command-arg": {"id": "UMLModel"} },
+          { "label": "Subsystem", "id": "uml.subsystem", "command": "factory:create-model", "command-arg": {"id": "UMLSubsystem"} },
+          { "label": "Package", "id": "uml.package", "command": "factory:create-model", "command-arg": {"id": "UMLPackage"} },
+          { "label": "Profile", "id": "uml.profile", "command": "factory:create-model", "command-arg": {"id": "UMLProfile"} },
+          { "label": "Class", "id": "uml.class", "command": "factory:create-model", "command-arg": {"id": "UMLClass"} },
+          { "label": "Interface", "id": "uml.interface", "command": "factory:create-model", "command-arg": {"id": "UMLInterface"} },
+          { "label": "Signal", "id": "uml.signal", "command": "factory:create-model", "command-arg": {"id": "UMLSignal"} },
+          { "label": "DataType", "id": "uml.datatype", "command": "factory:create-model", "command-arg": {"id": "UMLDataType"} },
+          { "label": "原始类型", "id": "uml.primitive-type", "command": "factory:create-model", "command-arg": {"id": "UMLPrimitiveType"} },
+          { "label": "Enumeration", "id": "uml.enumeration", "command": "factory:create-model", "command-arg": {"id": "UMLEnumeration"} },
+          { "label": "Artifact", "id": "uml.artifact", "command": "factory:create-model", "command-arg": {"id": "UMLArtifact"} },
+          { "label": "Component", "id": "uml.component", "command": "factory:create-model", "command-arg": {"id": "UMLComponent"} },
+          { "label": "Node", "id": "uml.node", "command": "factory:create-model", "command-arg": {"id": "UMLNode"} },
+          { "label": "UseCase", "id": "uml.usecase", "command": "factory:create-model", "command-arg": {"id": "UMLUseCase"} },
+          { "label": "Actor", "id": "uml.actor", "command": "factory:create-model", "command-arg": {"id": "UMLActor"} },
+          { "label": "Stereotype", "id": "uml.stereotype", "command": "factory:create-model", "command-arg": {"id": "UMLStereotype"} },
+          { "label": "Information Item", "id": "uml.information-item", "command": "factory:create-model", "command-arg": {"id": "UMLInformationItem"} },
+          { "label": "Collaboration", "id": "uml.collaboration", "command": "factory:create-model", "command-arg": {"id": "UMLCollaboration"} },
+          { "label": "Interaction", "id": "uml.interaction", "command": "factory:create-model", "command-arg": {"id": "UMLInteraction"} },
+          { "label": "State Machine", "id": "uml.state-machine", "command": "factory:create-model", "command-arg": {"id": "UMLStateMachine"} },
+          { "label": "Activity", "id": "uml.activity", "command": "factory:create-model", "command-arg": {"id": "UMLActivity"} },
+          { "label": "Opaque Behavior", "id": "uml.opaque-behavior", "command": "factory:create-model", "command-arg": {"id": "UMLOpaqueBehavior"} },
+          { "label": "State", "id": "uml.state", "command": "factory:create-model", "command-arg": {"id": "UMLState", "field": "vertices"} },
+          { "label": "Region", "id": "uml.region", "command": "factory:create-model", "command-arg": {"id": "UMLRegion"} },
+          { "label": "Entry Activity", "id": "uml.entry-activity", "command": "uml:create-model.entry-activity" },
+          { "label": "Do Activity", "id": "uml.do-activity", "command": "uml:create-model.do-activity" },
+          { "label": "Exit Activity", "id": "uml.exit-activity", "command": "uml:create-model.exit-activity" },
+          { "label": "Trigger", "id": "uml.trigger", "command": "factory:create-model", "command-arg": {"id": "UMLEvent", "field": "triggers"} },
+          { "label": "Effect", "id": "uml.effect", "command": "uml:create-model.effect" },
+          { "label": "Action", "id": "uml.action", "command": "factory:create-model", "command-arg": {"id": "UMLAction", "field": "nodes"} },
+          { "label": "Constraint", "id": "uml.constraint", "command": "uml:create-model.constraint" }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,67 @@
+<!-- Splash Screen -->
+<div class="splash-screen"></div>
+
+<!-- Title Bar -->
+<div class="titlebar">
+  <div class="title"></div>
+</div>
+
+<!-- Main View -->
+<div class="main-view">
+  
+  <div id="sidebar" class="sidebar panel quiet-scrollbars horz-resizable right-resizer collapsible" data-minsize="0" data-forcesize=".content">
+    
+    <!-- Working Diagrams -->
+    <div id="working-diagrams" class="working-diagrams"></div>
+    
+    <!-- Toolbox -->
+    <div id="toolbox" class="vert-resizable top-resizer collapsible" data-minsize="60" data-forcesize=".working-diagrams">
+    </div>
+    
+  </div>
+  
+  <div class="content">
+    
+    <div class="content-holder">
+      
+      <!-- Diagram Editor -->
+      <div id="diagram-area-wrapper" style="position: relative">
+        <div id="diagram-area">
+          <canvas id="diagram-canvas" tabindex="0" style="outline: none;"></canvas>
+          <canvas id="hidden-canvas"></canvas>
+        </div>
+      </div>
+      
+      <!-- Bottom Panels are created here -->
+    </div>
+    
+    <!-- Toolbar -->
+    <div id="toolbar">
+      <div class="buttons">
+        <a id="toolbar-extension-manager" href="#" title="Extension Manager"></a>
+      </div>
+      <div class="bottom-buttons">
+      </div>
+    </div>
+    
+    <!-- Toast Holder -->
+    <div id="toast-holder"></div>
+    
+  </div>
+  
+  <div id="navigator" class="navigator panel quiet-scrollbars horz-resizable left-resizer collapsible" data-minsize="0" data-forcesize=".content">
+    
+    <!-- Model Explorer -->
+    <div id="model-explorer" class="model-explorer"></div>
+    
+    <!-- Editor -->
+    <div id="editors" class="vert-resizable top-resizer collapsible" data-minsize="60" data-forcesize=".model-explorer"></div>
+    
+  </div>
+  
+</div>
+
+<!-- Status Bar -->
+<div id="statusbar" class="statusbar"></div>
+
+<div id="toast" style="display: none"></div>

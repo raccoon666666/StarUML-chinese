@@ -1,0 +1,35 @@
+{
+  "id": "erd",
+  "name": "ERD",
+  "schema": {
+    "erd.entity": {
+      "text": "Entity",
+      "type": "section"
+    },
+    "erd.entity.fillColor": {
+      "text": "Fill Color",
+      "description": "Fill color of Subsystem.",
+      "type": "color",
+      "default": null,
+      "default-button": {
+        "text": "Use Default"
+      }
+    },
+    "erd.relationship": {
+      "text": "Relationship",
+      "type": "section"
+    },
+    "erd.relationship.lineStyle": {
+      "text": "Line Style",
+      "description": "Default line style of entity relationships.",
+      "type": "dropdown",
+      "options": [
+        { "value": 0, "text": "Rectilinear" },
+        { "value": 1, "text": "Oblique" },
+        { "value": 2, "text": "Rounded Rectilinear" },
+        { "value": 3, "text": "Curve" }
+      ],
+      "default": 2
+    }
+  }
+}

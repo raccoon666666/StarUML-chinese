@@ -1,0 +1,61 @@
+{
+  "id": "dfd",
+  "name": "Data Flow Diagram",
+  "schema": {
+    "dfd.dataflow": {
+      "text": "Data Flow",
+      "type": "section"
+    },
+    "dfd.dataflow.lineStyle": {
+      "text": "Line Style",
+      "description": "Default line style of Data Flow.",
+      "type": "dropdown",
+      "options": [
+        { "value": 0, "text": "Rectilinear" },
+        { "value": 1, "text": "Oblique" },
+        { "value": 2, "text": "Rounded Rectilinear" },
+        { "value": 3, "text": "Curve" }
+      ],
+      "default": 2
+    },
+    "dfd.external-entity": {
+      "text": "External Entity",
+      "type": "section"
+    },
+    "dfd.external-entity.fillColor": {
+      "text": "Fill Color",
+      "description": "Fill color of External Entity.",
+      "type": "color",
+      "default": null,
+      "default-button": {
+        "text": "Use Default"
+      }
+    },
+    "dfd.process": {
+      "text": "Process",
+      "type": "section"
+    },
+    "dfd.process.fillColor": {
+      "text": "Fill Color",
+      "description": "Fill color of Process.",
+      "type": "color",
+      "default": null,
+      "default-button": {
+        "text": "Use Default"
+      }
+    },
+    "dfd.datastore": {
+      "text": "Data Store",
+      "type": "section"
+    },
+    "dfd.datastore.fillColor": {
+      "text": "Fill Color",
+      "description": "Fill color of Data Store.",
+      "type": "color",
+      "default": null,
+      "default-button": {
+        "text": "Use Default"
+      }
+    }
+  }
+}

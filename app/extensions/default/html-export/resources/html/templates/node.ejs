@@ -1,0 +1,10 @@
+<div style="display: inline-block; white-space: nowrap">
+    <span class="node-icon <%= toIcon(elem) %>"></span>
+    <% if (elem instanceof type.Project) { %>
+        <strong>
+        <a href="<%= toUrl(elem) %>" target="content" style="white-space: nowrap;"><%= toText(elem) %></a>
+        </strong>
+    <% } else { %>
+        <a href="<%= toUrl(elem) %>" target="content" style="white-space: nowrap;"><%= toText(elem) %></a>
+    <% } %>
+</div>

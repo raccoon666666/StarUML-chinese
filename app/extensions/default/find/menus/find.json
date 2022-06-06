@@ -1,0 +1,11 @@
+{
+  "menu": [
+    {
+      "id": "model",
+      "submenu": [
+        { "type": "separator" },
+        { "label": "Find", "id": "model.find", "command": "find:find" }
+      ]
+    }
+  ]
+}

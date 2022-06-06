@@ -1,0 +1,159 @@
+{
+  "id": "sysml",
+  "name": "SysML",
+  "schema": {
+    "sysml.requirement": {
+      "text": "Requirement",
+      "type": "section"
+    },
+    "sysml.requirement.fillColor": {
+      "text": "Fill Color",
+      "description": "Fill color of Requirement.",
+      "type": "color",
+      "default": null,
+      "default-button": {
+        "text": "Use Default"
+      }
+    },
+    "sysml.block": {
+      "text": "Block",
+      "type": "section"
+    },
+    "sysml.block.fillColor": {
+      "text": "Fill Color",
+      "description": "Fill color of Block.",
+      "type": "color",
+      "default": null,
+      "default-button": {
+        "text": "Use Default"
+      }
+    },
+    "sysml.block.suppressConstraints": {
+      "text": "Suppress Constraints",
+      "description": "Suppress constraint compartment of Block.",
+      "type": "check",
+      "default": true
+    },
+    "sysml.block.suppressParts": {
+      "text": "Suppress Parts",
+      "description": "Suppress part compartment of Block.",
+      "type": "check",
+      "default": true
+    },
+    "sysml.block.suppressPorts": {
+      "text": "Suppress Ports",
+      "description": "Suppress port compartment of Block.",
+      "type": "check",
+      "default": true
+    },
+    "sysml.block.suppressReferences": {
+      "text": "Suppress References",
+      "description": "Suppress reference compartment of Block.",
+      "type": "check",
+      "default": true
+    },
+    "sysml.block.suppressValues": {
+      "text": "Suppress Values",
+      "description": "Suppress value compartment of Block.",
+      "type": "check",
+      "default": true
+    },
+    "sysml.block.suppressFlowProperties": {
+      "text": "Suppress FlowProperties",
+      "description": "Suppress flow property compartment of Block.",
+      "type": "check",
+      "default": true
+    },
+    "sysml.interface-block": {
+      "text": "InterfaceBlock",
+      "type": "section"
+    },
+    "sysml.interface-block.fillColor": {
+      "text": "Fill Color",
+      "description": "Fill color of InterfaceBlock.",
+      "type": "color",
+      "default": null,
+      "default-button": {
+        "text": "Use Default"
+      }
+    },
+    "sysml.constraint-block": {
+      "text": "ConstraintBlock",
+      "type": "section"
+    },
+    "sysml.constraint-block.fillColor": {
+      "text": "Fill Color",
+      "description": "Fill color of ConstraintBlock.",
+      "type": "color",
+      "default": null,
+      "default-button": {
+        "text": "Use Default"
+      }
+    },
+    "sysml.value-type": {
+      "text": "ValueType",
+      "type": "section"
+    },
+    "sysml.value-type.fillColor": {
+      "text": "Fill Color",
+      "description": "Fill color of ValueType.",
+      "type": "color",
+      "default": null,
+      "default-button": {
+        "text": "Use Default"
+      }
+    },
+    "sysml.part": {
+      "text": "Part",
+      "type": "section"
+    },
+    "sysml.part.fillColor": {
+      "text": "Fill Color",
+      "description": "Fill color of Part.",
+      "type": "color",
+      "default": null,
+      "default-button": {
+        "text": "Use Default"
+      }
+    },
+    "sysml.port": {
+      "text": "Port",
+      "type": "section"
+    },
+    "sysml.port.fillColor": {
+      "text": "Fill Color",
+      "description": "Fill color of Port.",
+      "type": "color",
+      "default": null,
+      "default-button": {
+        "text": "Use Default"
+      }
+    },
+    "sysml.constraint-property": {
+      "text": "ConstraintProperty",
+      "type": "section"
+    },
+    "sysml.constraint-property.fillColor": {
+      "text": "Fill Color",
+      "description": "Fill color of ConstraintProperty.",
+      "type": "color",
+      "default": null,
+      "default-button": {
+        "text": "Use Default"
+      }
+    },
+    "sysml.constraint-parameter": {
+      "text": "ConstraintParameter",
+      "type": "section"
+    },
+    "sysml.constraint-parameter.fillColor": {
+      "text": "Fill Color",
+      "description": "Fill color of ConstraintParameter.",
+      "type": "color",
+      "default": null,
+      "default-button": {
+        "text": "Use Default"
+      }
+    }
+  }
+}

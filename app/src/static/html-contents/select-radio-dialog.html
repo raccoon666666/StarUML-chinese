@@ -1,0 +1,19 @@
+<div class="select-radio-dialog dialog modal" data-title="Select One">
+    <div class="dialog-body">
+        <div class="dialog-message">{{{message}}}</div>
+        <form class='select-options-form'>
+            {{#options}}
+            <label class="k-radio-button">
+                <input type="radio" name="select-option" value="{{value}}" {{#checked}}checked{{/checked}}>
+                <div class="k-radio-button__checkmark"></div>
+                {{text}}
+            </label>
+            <br>
+            {{/options}}
+        </form>
+    </div>
+    <div class="dialog-footer">
+        <button class="k-button dialog-button primary" data-button-id="ok">{{Strings.OK}}</button>
+        <button class="k-button dialog-button" data-button-id="cancel">{{Strings.CANCEL}}</button>
+    </div>
+</div>

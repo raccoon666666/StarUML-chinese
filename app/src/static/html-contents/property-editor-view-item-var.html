@@ -1,0 +1,16 @@
+<tr>
+  <td>
+    <span class="property-name">{{prefix}}</span>{{name}}
+  </td>
+  <td>
+    <span style="display: inline-block; padding-right: 25px; position: relative; width: 100%; box-sizing: border-box;">
+      {{#element}}
+      <span class="k-sprite staruml-icon icon-{{element.getClassName}}" style="position: absolute; left: 4px; top: 3px; z-index: 1;"></span>
+      {{/element}}
+      <input type="text" class="small" value="{{val}}" style="width: 100%;">
+      <button tabindex="-1" id="{{buttonId}}" class="k-button icon-button small quiet" style="position: absolute; right: 0; top: 0;">
+        <span class="k-sprite staruml-icon icon-tool-search"></span>
+      </button>
+    </span>
+  </td>
+</tr>

@@ -1,0 +1,19 @@
+{
+  "menu": [
+    {
+      "id": "tools",
+      "submenu": [
+        {
+          "label": "图生成器",
+          "id": "tools.diagram-generator",
+          "submenu": [
+            { "label": "预览", "id": "tools.diagram-generator.overview", "command": "diagram-generator:overview" },
+            { "label": "已展开的预览", "id": "tools.diagram-generator.overview-expanded", "command": "diagram-generator:overview-expanded" },
+            { "label": "类型层次", "id": "tools.diagram-generator.type-hierarchy", "command": "diagram-generator:type-hierarchy" },
+            { "label": "包结构", "id": "tools.diagram-generator.package-structure", "command": "diagram-generator:package-structure" }
+          ]
+        }
+      ]
+    }
+  ]
+}

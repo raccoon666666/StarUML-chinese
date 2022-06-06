@@ -1,0 +1,4 @@
+{
+  "shift-alt-t": "debug:show-devtools",
+  "cmdctrl-r": "debug:reload"
+}

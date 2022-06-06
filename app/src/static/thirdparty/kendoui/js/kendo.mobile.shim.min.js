@@ -1,0 +1,9 @@
+/*
+* Kendo UI v2014.1.528 (http://www.telerik.com/kendo-ui)
+* Copyright 2014 Telerik AD. All rights reserved.
+*
+* Kendo UI commercial licenses may be obtained at
+* http://www.telerik.com/purchase/license-agreement/kendo-ui-complete
+* If you do not own a commercial license, this file shall be governed by the trial license terms.
+*/
+!function(e,define){define(["./kendo.popup.min"],e)}(function(){return function(e,t){var n=window.kendo,i=n.mobile.ui,r=n.ui.Popup,o='<div class="km-shim"/>',a="show",s="hide",l=i.Widget,u=l.extend({init:function(t,i){var a=this,s=n.mobile.application,u=n.support.mobileOS,c=s?s.os.name:u?u.name:"ios",d="ios"===c||"wp"===c||(s?s.os.skin:!1),p="blackberry"===c,f=i.align||(d?"bottom center":p?"center right":"center center"),h=i.position||(d?"bottom center":p?"center right":"center center"),g=i.effect||(d?"slideIn:up":p?"slideIn:left":"fade:in"),m=e(o).handler(a).hide();l.fn.init.call(a,t,i),a.shim=m,t=a.element,i=a.options,i.className&&a.shim.addClass(i.className),i.modal||a.shim.on("up","hide"),(s?s.element:e(document.body)).append(m),a.popup=new r(a.element,{anchor:m,modal:!0,appendTo:m,origin:f,position:h,animation:{open:{effects:g,duration:i.duration},close:{duration:i.duration}},deactivate:function(){m.hide()},open:function(){m.show()}}),n.notify(a)},events:[a,s],options:{name:"Shim",modal:!1,align:t,position:t,effect:t,duration:200},show:function(){this.popup.open(),this.trigger(a)},hide:function(t){t&&e.contains(this.shim.children().children(".k-popup")[0],t.target)||(this.popup.close(),this.trigger(s))},destroy:function(){l.fn.destroy.call(this),this.shim.kendoDestroy(),this.popup.destroy(),this.shim.remove()}});i.plugin(u)}(window.kendo.jQuery),window.kendo},"function"==typeof define&&define.amd?define:function(e,t){t()});

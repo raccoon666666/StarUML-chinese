@@ -1,0 +1,29 @@
+[
+  {
+    "name"          : "Helvetica",
+    "regular"       : "Helvetica",
+    "italic"        : "Helvetica-Oblique",
+    "bold"          : "Helvetica-Bold",
+    "boldItalic"    : "Helvetica-BoldOblique",
+    "unicodeRanges" : [0,1],
+    "predefined"    : true
+  },
+  {
+    "name"          : "Times",
+    "regular"       : "Times-Roman",
+    "italic"        : "Times-Italic",
+    "bold"          : "Times-Bold",
+    "boldItalic"    : "Times-BoldItalic",
+    "unicodeRanges" : [0,1],
+    "predefined"    : true
+  },
+  {
+    "name"          : "Courier",
+    "regular"       : "Courier",
+    "italic"        : "Courier-Oblique",
+    "bold"          : "Courier-Bold",
+    "boldItalic"    : "Courier-BoldOblique",
+    "unicodeRanges" : [0,1],
+    "predefined"    : true
+  }
+]

@@ -1,0 +1,14 @@
+{
+  "menu": [
+    {
+      "label": "调试",
+      "id": "debug",
+      "position": "before",
+      "relative-id": "help",
+      "submenu": [
+        { "label": "开发者工具", "id": "debug.show-devtools", "command": "debug:show-devtools" },
+        { "label": "刷新界面", "id": "debug.reload", "command": "debug:reload" }
+      ]
+    }
+  ]
+}

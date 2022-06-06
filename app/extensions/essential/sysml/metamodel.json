@@ -1,0 +1,388 @@
+{
+  "SysMLFlowDirectionKind": {
+    "kind": "enum",
+    "literals": [ "in", "out", "inout" ]
+  },
+  "SysMLFeatureDirectionKind": {
+    "kind": "enum",
+    "literals": [ "provided", "required", "providedRequired" ]
+  },
+  "SysMLDiagram": {
+    "kind": "class",
+    "super": "Diagram"
+  },
+  "SysMLRequirementDiagram": {
+    "kind": "class",
+    "super": "SysMLDiagram"
+  },
+  "SysMLBlockDefinitionDiagram": {
+    "kind": "class",
+    "super": "SysMLDiagram"
+  },
+  "SysMLInternalBlockDiagram": {
+    "kind": "class",
+    "super": "SysMLDiagram"
+  },
+  "SysMLParametricDiagram": {
+    "kind": "class",
+    "super": "SysMLInternalBlockDiagram",
+    "views": [
+      "SysMLConstraintPropertyView",
+      "SysMLConstraintParameterView"
+    ]
+  },
+  "SysMLStakeholder": {
+    "kind": "class",
+    "super": "UMLClassifier",
+    "view": "SysMLStakeholderView",
+    "attributes": [
+      { "name": "concern", "kind": "prim", "type": "String", "visible": true, "multiline": true, "default": "" }
+    ]
+  },
+  "SysMLView": {
+    "kind": "class",
+    "super": "UMLClass",
+    "view": "SysMLViewView"
+  },
+  "SysMLViewpoint": {
+    "kind": "class",
+    "super": "UMLClass",
+    "view": "SysMLViewpointView",
+    "attributes": [
+      { "name": "stakeholders", "kind": "refs", "type": "SysMLStakeholder", "visible": true },
+      { "name": "purpose", "kind": "prim", "type": "String", "visible": true, "default": "" },
+      { "name": "language", "kind": "prim", "type": "String", "visible": true, "default": "" },
+      { "name": "presentation", "kind": "prim", "type": "String", "visible": true, "default": "" }
+    ]
+  },
+  "SysMLConform": {
+    "kind": "class",
+    "super": "UMLGeneralization",
+    "view": "SysMLConformView"
+  },
+  "SysMLExpose": {
+    "kind": "class",
+    "super": "UMLDependency",
+    "view": "SysMLExposeView"
+  },
+  "SysMLAbstractRequirement": {
+    "kind": "class",
+    "super": "UMLClass",
+    "attributes": [
+      { "name": "id", "kind": "prim", "type": "String", "visible": true, "default": "" },
+      { "name": "text", "kind": "prim", "type": "String", "visible": true, "default": "" }
+    ]
+  },
+  "SysMLRequirement": {
+    "kind": "class",
+    "super": "SysMLAbstractRequirement",
+    "view": "SysMLRequirementView"
+  },
+  "SysMLTrace": {
+    "kind": "class",
+    "super": "UMLAbstraction",
+    "view": "SysMLTraceView",
+    "ordering": 1806
+  },
+  "SysMLCopy": {
+    "kind": "class",
+    "super": "SysMLTrace",
+    "view": "SysMLCopyView",
+    "ordering": 1806
+  },
+  "SysMLDeriveReqt": {
+    "kind": "class",
+    "super": "SysMLTrace",
+    "view": "SysMLDeriveReqtView",
+    "ordering": 1806
+  },
+  "SysMLVerify": {
+    "kind": "class",
+    "super": "SysMLTrace",
+    "view": "SysMLVerifyView",
+    "ordering": 1806
+  },
+  "SysMLSatisfy": {
+    "kind": "class",
+    "super": "SysMLTrace",
+    "view": "SysMLSatisfyView",
+    "ordering": 1806
+  },
+  "SysMLRefine": {
+    "kind": "class",
+    "super": "UMLAbstraction",
+    "view": "SysMLRefineView",
+    "ordering": 1806
+  },
+  "SysMLProperty": {
+    "kind": "class",
+    "super": "UMLAttribute",
+    "view": "SysMLPartView"
+  },
+  "SysMLFlowProperty": {
+    "kind": "class",
+    "super": "SysMLProperty",
+    "attributes": [
+      { "name": "direction", "kind": "enum", "type": "SysMLFlowDirectionKind", "default": "inout", "visible": true }
+    ]
+  },
+  "SysMLBlock": {
+    "kind": "class",
+    "super": "UMLClass",
+    "attributes": [
+      { "name": "isEncapsulated", "kind": "prim", "type": "Boolean", "visible": true, "default": false },
+      { "name": "constraints", "kind": "objs", "type": "SysMLProperty" },
+      { "name": "parts", "kind": "objs", "type": "SysMLProperty" },
+      { "name": "ports", "kind": "objs", "type": "SysMLPort" },
+      { "name": "references", "kind": "objs", "type": "SysMLProperty" },
+      { "name": "values", "kind": "objs", "type": "SysMLProperty" },
+      { "name": "properties", "kind": "objs", "type": "SysMLProperty" },
+      { "name": "flowProperties", "kind": "objs", "type": "SysMLFlowProperty" }
+    ],
+    "view": "SysMLBlockView",
+    "ordering": 1300
+  },
+  "SysMLValueType": {
+    "kind": "class",
+    "super": "UMLDataType",
+    "attributes": [
+      { "name": "unit", "kind": "ref", "type": "UMLInstance", "visible": true },
+      { "name": "quantityKind", "kind": "ref", "type": "UMLInstance", "visible": true }
+    ],
+    "view": "SysMLValueTypeView",
+    "ordering": 1301
+  },
+  "SysMLInterfaceBlock": {
+    "kind": "class",
+    "super": "SysMLBlock",
+    "view": "SysMLInterfaceBlockView"
+  },
+  "SysMLPort": {
+    "kind": "class",
+    "super": "UMLPort",
+    "view": "SysMLPortView"
+  },
+  "SysMLConnector": {
+    "kind": "class",
+    "super": "UMLConnector",
+    "view": "SysMLConnectorView"
+  },
+  "SysMLItemFlow": {
+    "kind": "class",
+    "super": "UMLInformationFlow",
+    "attributes": [
+      { "name": "itemProperty", "kind": "ref", "type": "SysMLProperty", "visible": true }
+    ]
+  },
+  "SysMLConstraintBlock": {
+    "kind": "class",
+    "super": "SysMLBlock",
+    "view": "SysMLConstraintBlockView",
+    "attributes": [
+      { "name": "parameters", "kind": "objs", "type": "SysMLProperty" }
+    ]
+  },
+  "SysMLPropertyValueCompartmentItemView": {
+    "kind": "class",
+    "super": "LabelView",
+    "attributes": [
+      { "name": "property", "kind": "prim", "type": "String", "visible": true, "default": "" },
+      { "name": "value", "kind": "prim", "type": "String", "visible": true, "default": "" }
+    ]
+  },
+  "SysMLPropertyValueCompartmentView": {
+    "kind": "class",
+    "super": "UMLListCompartmentView"
+  },
+  "SysMLClassifierView": {
+    "kind": "class",
+    "super": "UMLClassifierView",
+    "attributes": [
+      { "name": "suppressPropertyValues", "kind": "prim", "type": "Boolean", "default": false },
+      { "name": "propertyValueCompartment", "kind": "ref", "type": "SysMLPropertyValueCompartmentView", "embedded": "subViews" }
+    ]
+  },
+  "SysMLStakeholderView": {
+    "kind": "class",
+    "super": "SysMLClassifierView"
+  },
+  "SysMLViewView": {
+    "kind": "class",
+    "super": "SysMLClassifierView"
+  },
+  "SysMLViewpointView": {
+    "kind": "class",
+    "super": "SysMLClassifierView"
+  },
+  "SysMLConformView": {
+    "kind": "class",
+    "super": "UMLGeneralizationView"
+  },
+  "SysMLExposeView": {
+    "kind": "class",
+    "super": "UMLDependencyView"
+  },
+  "SysMLRequirementView": {
+    "kind": "class",
+    "super": "SysMLClassifierView"
+  },
+  "SysMLAbstractionView": {
+    "kind": "class",
+    "super": "UMLDependencyView"
+  },
+  "SysMLTraceView": {
+    "kind": "class",
+    "super": "SysMLAbstractionView"
+  },
+  "SysMLCopyView": {
+    "kind": "class",
+    "super": "SysMLTraceView"
+  },
+  "SysMLDeriveReqtView": {
+    "kind": "class",
+    "super": "SysMLTraceView"
+  },
+  "SysMLVerifyView": {
+    "kind": "class",
+    "super": "SysMLTraceView"
+  },
+  "SysMLSatisfyView": {
+    "kind": "class",
+    "super": "SysMLTraceView"
+  },
+  "SysMLRefineView": {
+    "kind": "class",
+    "super": "SysMLAbstractionView"
+  },
+  "SysMLConstraintCompartmentItemView": {
+    "kind": "class",
+    "super": "UMLAttributeView"
+  },
+  "SysMLConstraintCompartmentView": {
+    "kind": "class",
+    "super": "UMLListCompartmentView"
+  },
+  "SysMLPartCompartmentItemView": {
+    "kind": "class",
+    "super": "UMLAttributeView"
+  },
+  "SysMLPartCompartmentView": {
+    "kind": "class",
+    "super": "UMLListCompartmentView"
+  },
+  "SysMLPortCompartmentItemView": {
+    "kind": "class",
+    "super": "UMLAttributeView"
+  },
+  "SysMLPortCompartmentView": {
+    "kind": "class",
+    "super": "UMLListCompartmentView"
+  },
+  "SysMLReferenceCompartmentItemView": {
+    "kind": "class",
+    "super": "UMLAttributeView"
+  },
+  "SysMLReferenceCompartmentView": {
+    "kind": "class",
+    "super": "UMLListCompartmentView"
+  },
+  "SysMLValueCompartmentItemView": {
+    "kind": "class",
+    "super": "UMLAttributeView"
+  },
+  "SysMLValueCompartmentView": {
+    "kind": "class",
+    "super": "UMLListCompartmentView"
+  },
+  "SysMLPropertyCompartmentItemView": {
+    "kind": "class",
+    "super": "UMLAttributeView"
+  },
+  "SysMLPropertyCompartmentView": {
+    "kind": "class",
+    "super": "UMLListCompartmentView"
+  },
+  "SysMLFlowPropertyCompartmentItemView": {
+    "kind": "class",
+    "super": "UMLAttributeView"
+  },
+  "SysMLFlowPropertyCompartmentView": {
+    "kind": "class",
+    "super": "UMLListCompartmentView"
+  },
+  "SysMLBlockView": {
+    "kind": "class",
+    "super": "UMLClassifierView",
+    "attributes": [
+      { "name": "suppressConstraints", "kind": "prim", "type": "Boolean", "default": true },
+      { "name": "suppressParts", "kind": "prim", "type": "Boolean", "default": true },
+      { "name": "suppressPorts", "kind": "prim", "type": "Boolean", "default": true },
+      { "name": "suppressReferences", "kind": "prim", "type": "Boolean", "default": true },
+      { "name": "suppressValues", "kind": "prim", "type": "Boolean", "default": true },
+      { "name": "suppressProperties", "kind": "prim", "type": "Boolean", "default": true },
+      { "name": "suppressFlowProperties", "kind": "prim", "type": "Boolean", "default": true },
+      { "name": "constraintCompartment", "kind": "ref",  "type": "SysMLConstraintCompartmentView", "embedded": "subViews" },
+      { "name": "partCompartment", "kind": "ref",  "type": "SysMLPartCompartmentView", "embedded": "subViews" },
+      { "name": "portCompartment", "kind": "ref",  "type": "SysMLPortCompartmentView", "embedded": "subViews" },
+      { "name": "referenceCompartment", "kind": "ref",  "type": "SysMLReferenceCompartmentView", "embedded": "subViews" },
+      { "name": "valueCompartment", "kind": "ref",  "type": "SysMLValueCompartmentView", "embedded": "subViews" },
+      { "name": "propertyCompartment", "kind": "ref",  "type": "SysMLPropertyCompartmentView", "embedded": "subViews" },
+      { "name": "flowPropertyCompartment", "kind": "ref",  "type": "SysMLFlowPropertyCompartmentView", "embedded": "subViews" }
+    ]
+  },
+  "SysMLValueTypeView": {
+    "kind": "class",
+    "super": "SysMLClassifierView"
+  },
+  "SysMLInterfaceBlockView": {
+    "kind": "class",
+    "super": "SysMLBlockView"
+  },
+  "SysMLParameterCompartmentItemView": {
+    "kind": "class",
+    "super": "UMLAttributeView"
+  },
+  "SysMLParameterCompartmentView": {
+    "kind": "class",
+    "super": "UMLListCompartmentView"
+  },
+  "SysMLConstraintBlockView": {
+    "kind": "class",
+    "super": "UMLClassifierView",
+    "attributes": [
+      { "name": "suppressConstraints", "kind": "prim", "type": "Boolean", "default": true },
+      { "name": "suppressProperties", "kind": "prim", "type": "Boolean", "default": true },
+      { "name": "constraintCompartment", "kind": "ref",  "type": "SysMLConstraintCompartmentView", "embedded": "subViews" },
+      { "name": "parameterCompartment", "kind": "ref",  "type": "SysMLParameterCompartmentView", "embedded": "subViews" }
+    ]
+  },
+  "SysMLPartView": {
+    "kind": "class",
+    "super": "UMLPartView"
+  },
+  "SysMLPortView": {
+    "kind": "class",
+    "super": "UMLPortView"
+  },
+  "SysMLConnectorView": {
+    "kind": "class",
+    "super": "UMLConnectorView",
+    "attributes": [
+      { "name": "itemFlowToHeadLabel", "kind": "ref",  "type": "EdgeLabelView", "embedded": "subViews" },
+      { "name": "itemFlowToTailLabel", "kind": "ref",  "type": "EdgeLabelView", "embedded": "subViews" }
+    ]
+  },
+  "SysMLConstraintPropertyView": {
+    "kind": "class",
+    "super": "UMLPartView"
+  },
+  "SysMLConstraintParameterView": {
+    "kind": "class",
+    "super": "UMLFloatingNodeView",
+    "attributes": [
+      { "name": "showVisibility",   "kind": "prim", "type": "Boolean", "default": false },
+      { "name": "showType",         "kind": "prim", "type": "Boolean", "default": true },
+      { "name": "showMultiplicity", "kind": "prim", "type": "Boolean", "default": true }
+    ]
+  }
+}

@@ -1,0 +1,12 @@
+<div class="{{dlgClass}} template dialog modal" data-title="{{title}}">
+    <div class="dialog-body">
+        <div class="dialog-message">{{{message}}}</div>
+    </div>
+    {{#hasButtons}}
+    <div class="dialog-footer">
+        {{#buttons}}
+        <button class="k-button dialog-button {{className}}" data-button-id="{{id}}">{{{text}}}</button>
+        {{/buttons}}
+    </div>
+    {{/hasButtons}}
+</div>

@@ -1,0 +1,11 @@
+{
+  "menu": [
+    {
+      "id": "view",
+      "submenu": [
+        { "type": "separator" },
+        { "label": "缩略图", "id": "view.diagram-thumbnails", "type": "checkbox", "command": "diagram-thumbnails:toggle" }
+      ]
+    }
+  ]
+}

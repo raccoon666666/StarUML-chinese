@@ -1,0 +1,28 @@
+{
+  "menu": [
+    {
+      "id": "model.add-diagram",
+      "submenu": [
+        { "label": "Flowchart Diagram", "id": "flowchart.diagram", "command": "factory:create-diagram", "command-arg": { "id": "FCFlowchartDiagram" } }
+      ]
+    }
+  ],
+  "context-menu": {
+    "diagram-canvas": [
+      {
+        "id": "model.add-diagram",
+        "submenu": [
+          { "label": "Flowchart Diagram", "id": "flowchart.diagram", "command": "factory:create-diagram", "command-arg": { "id": "FCFlowchartDiagram" } }
+        ]
+      }  
+    ],
+    "model-explorer": [
+      {
+        "id": "model.add-diagram",
+        "submenu": [
+          { "label": "Flowchart Diagram", "id": "flowchart.diagram", "command": "factory:create-diagram", "command-arg": { "id": "FCFlowchartDiagram" } }
+        ]
+      }
+    ]
+  }
+}

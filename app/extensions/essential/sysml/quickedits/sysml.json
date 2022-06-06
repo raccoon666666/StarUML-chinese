@@ -1,0 +1,445 @@
+{
+  "components": [
+    { "id": "sysml.add-sub-requirement", "type": "button", "icon": "icon-tool-add-sub-requirement", "hint": "Add Sub-Requirement", "command": "sysml:add-sub-requirement" },
+    {
+      "id": "sysml.add-constraint-property",
+      "type": "button",
+      "icon": "icon-tool-constraint-property",
+      "hint": "Add Constraint Property",
+      "command": "uml:add-compartment-item",
+      "command-arg": {
+        "type": "SysMLProperty",
+        "parent-model": "model",
+        "field": "constraints",
+        "parent-view": "view",
+        "compartment": "constraintCompartment",
+        "name-prefix": "Constraint",
+        "suppress-property": "suppressConstraints"
+      }
+    },
+    {
+      "id": "sysml.add-part",
+      "type": "button",
+      "icon": "icon-tool-part-property",
+      "hint": "Add Part",
+      "command": "uml:add-compartment-item",
+      "command-arg": {
+        "type": "SysMLProperty",
+        "parent-model": "model",
+        "field": "parts",
+        "parent-view": "view",
+        "compartment": "partCompartment",
+        "name-prefix": "Part",
+        "model-init": {
+          "aggregation": "composite"
+        },
+        "suppress-property": "suppressParts"
+      }
+    },
+    {
+      "id": "sysml.add-reference",
+      "type": "button",
+      "icon": "icon-tool-reference-property",
+      "hint": "Add Reference",
+      "command": "uml:add-compartment-item",
+      "command-arg": {
+        "type": "SysMLProperty",
+        "parent-model": "model",
+        "field": "references",
+        "parent-view": "view",
+        "compartment": "referenceCompartment",
+        "name-prefix": "Reference",
+        "suppress-property": "suppressReferences"
+      }
+    },
+    {
+      "id": "sysml.add-value",
+      "type": "button",
+      "icon": "icon-tool-value-property",
+      "hint": "Add Value",
+      "command": "uml:add-compartment-item",
+      "command-arg": {
+        "type": "SysMLProperty",
+        "parent-model": "model",
+        "field": "values",
+        "parent-view": "view",
+        "compartment": "valueCompartment",
+        "name-prefix": "Value",
+        "model-init": {
+          "aggregation": "composite"
+        },
+        "suppress-property": "suppressValues"
+      }
+    },
+    {
+      "id": "sysml.add-property",
+      "type": "button",
+      "icon": "icon-tool-property",
+      "hint": "Add Property",
+      "key": "cmdctrl-enter",
+      "command": "uml:add-compartment-item",
+      "command-arg": {
+        "type": "SysMLProperty",
+        "parent-model": "model",
+        "field": "properties",
+        "parent-view": "view",
+        "compartment": "propertyCompartment",
+        "name-prefix": "Property",
+        "suppress-property": "suppressProperties"
+      }
+    },
+    {
+      "id": "sysml.add-flow-property",
+      "type": "button",
+      "icon": "icon-tool-flow-property",
+      "hint": "Add Flow Property",
+      "command": "uml:add-compartment-item",
+      "command-arg": {
+        "type": "SysMLFlowProperty",
+        "parent-model": "model",
+        "field": "flowProperties",
+        "parent-view": "view",
+        "compartment": "flowPropertyCompartment",
+        "name-prefix": "FlowProperty",
+        "suppress-property": "suppressFlowProperties"
+      }
+    },
+    {
+      "id": "sysml.add-parameter",
+      "type": "button",
+      "icon": "icon-tool-parameter-property",
+      "hint": "Add Parameter",
+      "command": "uml:add-compartment-item",
+      "command-arg": {
+        "type": "SysMLProperty",
+        "parent-model": "model",
+        "field": "parameters",
+        "parent-view": "view",
+        "compartment": "parameterCompartment",
+        "name-prefix": "Parameter",
+        "suppress-property": "suppressProperties"
+      }
+    },
+    { "id": "sysml.add-composited-block", "type": "button", "icon": "icon-tool-composition", "hint": "Add Composited Block", "command": "sysml:add-composited-block"  },
+    { "id": "sysml.add-port", "type": "button", "icon": "icon-tool-port", "hint": "Add Port", "command": "sysml:add-port" },
+    { "id": "sysml.select-block", "type": "button", "icon": "icon-tool-select-block", "hint": "Select Block", "command": "sysml:select-block" },
+    { "id": "sysml.create-block", "type": "button", "icon": "icon-tool-create-block", "hint": "Create Block", "command": "sysml:create-block" },
+    { "id": "sysml.select-value-type", "type": "button", "icon": "icon-tool-select-value-type", "hint": "Select Value Type", "command": "sysml:select-value-type" },
+    { "id": "sysml.create-value-type", "type": "button", "icon": "icon-tool-create-value-type", "hint": "Create Value Type", "command": "sysml:create-value-type" },
+    { "id": "sysml.create-item-flow", "type": "button", "icon": "icon-tool-create-item-flow", "hint": "Create Item Flow", "command": "sysml:create-item-flow" },
+    {
+      "id": "sysml.select-constraint-block",
+      "type": "button",
+      "icon": "icon-tool-select-constraint-block",
+      "hint": "Select ConstraintBlock",
+      "command": "sysml:select-constraint-block"
+    },
+    {
+      "id": "sysml.create-constraint-block",
+      "type": "button",
+      "icon": "icon-tool-create-constraint-block",
+      "hint": "Create ConstraintBlock",
+      "command": "sysml:create-constraint-block"
+    },
+    { "id": "sysml.add-constraint-parameter", "type": "button", "icon": "icon-tool-constraint-parameter", "hint": "Add Constraint Parameter", "command": "sysml:add-constraint-parameter" }
+  ],
+  "quickedits": [
+    {
+      "id": "sysml.classifier",
+      "targets": [ "SysMLStakeholderView", "SysMLViewView", "SysMLViewpointView" ],
+      "area": { "x1": "left", "y1": "nameCompartment.nameLabel.top", "x2": "right", "y2": "nameCompartment.nameLabel.bottom" },
+      "components": [
+        { "id": "uml.name-expression", "section": "main" },
+        { "id": "uml.visibility", "section": "left" },
+        { "id": "uml.add-note", "section": "left", "row": 2 },
+        { "id": "uml.add-constraint", "section": "left", "row": 2 },
+        { "id": "uml.add-attribute", "section": "right" },
+        { "id": "uml.add-operation", "section": "right" },
+        { "id": "uml.open-up-compartment-item" },
+        { "id": "uml.open-down-compartment-item" }
+      ]
+    },
+    {
+      "id": "sysml.directed-relationship",
+      "targets": [
+        "SysMLCopyView", "SysMLCopyView.nameLabel", "SysMLCopyView.stereotypeLabel", "SysMLCopyView.propertyLabel",
+        "SysMLDeriveReqtView", "SysMLDeriveReqtView.nameLabel", "SysMLDeriveReqtView.stereotypeLabel", "SysMLDeriveReqtView.propertyLabel",
+        "SysMLVerifyView", "SysMLVerifyView.nameLabel", "SysMLVerifyView.stereotypeLabel", "SysMLVerifyView.propertyLabel",
+        "SysMLSatisfyView", "SysMLSatisfyView.nameLabel", "SysMLSatisfyView.stereotypeLabel", "SysMLSatisfyView.propertyLabel",
+        "SysMLRefineView", "SysMLRefineView.nameLabel", "SysMLRefineView.stereotypeLabel", "SysMLRefineView.propertyLabel"
+      ],
+      "area": { "x1": "nameLabel.left", "y1": "nameLabel.top", "x2": "nameLabel.left", "y2": "nameLabel.bottom", "x2-margin": 70 },
+      "components": [
+        { "id": "uml.name-expression", "section": "main" },
+        { "id": "uml.visibility", "section": "left" },
+        { "id": "uml.add-note", "section": "left", "row": 2 },
+        { "id": "uml.add-constraint", "section": "left", "row": 2 }
+      ]
+    },
+    {
+      "id": "sysml.requirement",
+      "targets": [ "SysMLRequirementView" ],
+      "area": { "x1": "left", "y1": "nameCompartment.nameLabel.top", "x2": "right", "y2": "nameCompartment.nameLabel.bottom" },
+      "components": [
+        { "id": "uml.name-expression", "section": "main" },
+        { "id": "uml.visibility", "section": "left" },
+        { "id": "uml.add-note", "section": "left", "row": 2 },
+        { "id": "uml.add-constraint", "section": "left", "row": 2 },
+        { "id": "sysml.add-sub-requirement", "section": "right" }
+      ]
+    },
+    {
+      "id": "sysml.value-type",
+      "targets": [ "SysMLValueTypeView" ],
+      "area": { "x1": "left", "y1": "nameCompartment.nameLabel.top", "x2": "right", "y2": "nameCompartment.nameLabel.bottom" },
+      "components": [
+        { "id": "uml.name-expression", "section": "main" },
+        { "id": "uml.visibility", "section": "left" },
+        { "id": "uml.add-note", "section": "left", "row": 2 },
+        { "id": "uml.add-constraint", "section": "left", "row": 2 },
+        { "id": "uml.add-attribute", "section": "right" },
+        { "id": "uml.add-operation", "section": "right" },
+        { "id": "uml.add-reception", "section": "right" },
+        { "id": "uml.open-up-compartment-item" },
+        { "id": "uml.open-down-compartment-item" }
+      ]
+    },
+    {
+      "id": "sysml.block",
+      "targets": [ "SysMLBlockView", "SysMLInterfaceBlockView" ],
+      "area": { "x1": "left", "y1": "nameCompartment.nameLabel.top", "x2": "right", "y2": "nameCompartment.nameLabel.bottom" },
+      "components": [
+        { "id": "uml.name-expression", "section": "main" },
+        { "id": "uml.visibility", "section": "left" },
+        { "id": "uml.add-note", "section": "left", "row": 2 },
+        { "id": "uml.add-constraint", "section": "left", "row": 2 },
+        { "id": "sysml.add-part", "section": "right" },
+        { "id": "sysml.add-reference", "section": "right" },
+        { "id": "sysml.add-value", "section": "right" },
+        { "id": "sysml.add-flow-property", "section": "right" },
+        { "id": "sysml.add-constraint-property", "section": "right", "row": 2 },
+        { "id": "sysml.add-property", "section": "right", "row": 2 },
+        { "id": "uml.add-operation", "section": "right", "row": 2 },
+        { "id": "uml.add-reception", "section": "right", "row": 2 },
+        { "id": "sysml.add-port", "section": "right", "row": 3 },
+        { "id": "sysml.add-composited-block", "section": "right", "row": 3 },
+        { "id": "uml.open-up-compartment-item" },
+        { "id": "uml.open-down-compartment-item" }
+      ]
+    },
+    {
+      "id": "sysml.constraint-block",
+      "targets": [ "SysMLConstraintBlockView" ],
+      "area": { "x1": "left", "y1": "nameCompartment.nameLabel.top", "x2": "right", "y2": "nameCompartment.nameLabel.bottom" },
+      "components": [
+        { "id": "uml.name-expression", "section": "main" },
+        { "id": "uml.visibility", "section": "left" },
+        { "id": "uml.add-note", "section": "left", "row": 2 },
+        { "id": "uml.add-constraint", "section": "left", "row": 2 },
+        { "id": "sysml.add-constraint", "section": "right" },
+        { "id": "sysml.add-parameter", "section": "right" },
+        { "id": "uml.open-up-compartment-item" },
+        { "id": "uml.open-down-compartment-item" }
+      ]
+    },
+    {
+      "id": "sysml.port",
+      "targets": [ "SysMLPortView", "SysMLPortView.nameLabel", "SysMLPortView.stereotypeLabel", "SysMLPortView.propertyLabel" ],
+      "area": { "x1": "nameLabel.left", "y1": "nameLabel.top", "x2": "nameLabel.left", "y2": "nameLabel.bottom", "x2-margin": 100 },
+      "components": [
+        { "id": "uml.name-expression", "section": "main" },
+        { "id": "uml.visibility", "section": "left" },
+        { "id": "uml.add-note", "section": "left", "row": 2 },
+        { "id": "uml.add-constraint", "section": "left", "row": 2 },
+        { "id": "sysml.select-block", "section": "right" },
+        { "id": "sysml.create-block", "section": "right" },
+        { "id": "uml.add-provided-interface", "section": "right", "row": 2 },
+        { "id": "uml.add-required-interface", "section": "right", "row": 2 }
+      ]
+    },
+    {
+      "id": "sysml.part",
+      "targets": [ "SysMLPartView" ],
+      "area": { "x1": "left", "y1": "nameCompartment.nameLabel.top", "x2": "right", "y2": "nameCompartment.nameLabel.bottom" },
+      "components": [
+        { "id": "uml.name-expression", "section": "main" },
+        { "id": "uml.visibility", "section": "left" },
+        { "id": "uml.add-note", "section": "left", "row": 2 },
+        { "id": "uml.add-constraint", "section": "left", "row": 2 },
+        { "id": "sysml.select-block", "section": "right" },
+        { "id": "sysml.create-block", "section": "right" },
+        { "id": "sysml.select-value-type", "section": "right" },
+        { "id": "sysml.create-value-type", "section": "right" },
+        { "id": "sysml.add-port", "section": "right", "row": 2 }
+      ]
+    },
+    {
+      "id": "sysml.constraint-compartment-item",
+      "targets": [ "SysMLConstraintCompartmentItemView" ],
+      "area": { "x1": "_parent.left", "y1": "top", "x2": "_parent.right", "y2": "bottom" },
+      "components": [
+        { "id": "uml.attribute-expression", "section": "main" },
+        { "id": "uml.visibility", "section": "left" },
+        { "id": "uml.add-compartment-item", "command-arg": { "parent-view": "view._parent._parent", "type": "SysMLProperty", "field": "constraints", "compartment": "constraintCompartment", "name-prefix": "Constraint" }, "section": "right" },
+        { "id": "uml.delete-compartment-item", "section": "right" },
+        { "id": "uml.move-up-compartment-item", "command-arg": { "field": "constraints" }, "section": "right" },
+        { "id": "uml.move-down-compartment-item", "command-arg": { "field": "constraints" }, "section": "right" },
+        { "id": "uml.open-up-compartment-item" },
+        { "id": "uml.open-down-compartment-item" }
+      ]
+    },
+    {
+      "id": "sysml.part-compartment-item",
+      "targets": [ "SysMLPartCompartmentItemView" ],
+      "area": { "x1": "_parent.left", "y1": "top", "x2": "_parent.right", "y2": "bottom" },
+      "components": [
+        { "id": "uml.attribute-expression", "section": "main" },
+        { "id": "uml.visibility", "section": "left" },
+        { "id": "uml.add-compartment-item", "command-arg": { "parent-view": "view._parent._parent", "type": "SysMLProperty", "field": "parts", "compartment": "partCompartment", "name-prefix": "Part" }, "section": "right" },
+        { "id": "uml.delete-compartment-item", "section": "right" },
+        { "id": "uml.move-up-compartment-item", "command-arg": { "field": "parts" }, "section": "right" },
+        { "id": "uml.move-down-compartment-item", "command-arg": { "field": "parts" }, "section": "right" },
+        { "id": "uml.open-up-compartment-item" },
+        { "id": "uml.open-down-compartment-item" }
+      ]
+    },
+    {
+      "id": "sysml.reference-compartment-item",
+      "targets": [ "SysMLReferenceCompartmentItemView" ],
+      "area": { "x1": "_parent.left", "y1": "top", "x2": "_parent.right", "y2": "bottom" },
+      "components": [
+        { "id": "uml.attribute-expression", "section": "main" },
+        { "id": "uml.visibility", "section": "left" },
+        { "id": "uml.add-compartment-item", "command-arg": { "parent-view": "view._parent._parent", "type": "SysMLProperty", "field": "references", "compartment": "referenceCompartment", "name-prefix": "Reference" }, "section": "right" },
+        { "id": "uml.delete-compartment-item", "section": "right" },
+        { "id": "uml.move-up-compartment-item", "command-arg": { "field": "references" }, "section": "right" },
+        { "id": "uml.move-down-compartment-item", "command-arg": { "field": "references" }, "section": "right" },
+        { "id": "uml.open-up-compartment-item" },
+        { "id": "uml.open-down-compartment-item" }
+      ]
+    },
+    {
+      "id": "sysml.value-compartment-item",
+      "targets": [ "SysMLValueCompartmentItemView" ],
+      "area": { "x1": "_parent.left", "y1": "top", "x2": "_parent.right", "y2": "bottom" },
+      "components": [
+        { "id": "uml.attribute-expression", "section": "main" },
+        { "id": "uml.visibility", "section": "left" },
+        { "id": "uml.add-compartment-item", "command-arg": { "parent-view": "view._parent._parent", "type": "SysMLProperty", "field": "values", "compartment": "valueCompartment", "name-prefix": "Value" }, "section": "right" },
+        { "id": "uml.delete-compartment-item", "section": "right" },
+        { "id": "uml.move-up-compartment-item", "command-arg": { "field": "values" }, "section": "right" },
+        { "id": "uml.move-down-compartment-item", "command-arg": { "field": "values" }, "section": "right" },
+        { "id": "uml.open-up-compartment-item" },
+        { "id": "uml.open-down-compartment-item" }
+      ]
+    },
+    {
+      "id": "sysml.property-compartment-item",
+      "targets": [ "SysMLPropertyCompartmentItemView" ],
+      "area": { "x1": "_parent.left", "y1": "top", "x2": "_parent.right", "y2": "bottom" },
+      "components": [
+        { "id": "uml.attribute-expression", "section": "main" },
+        { "id": "uml.visibility", "section": "left" },
+        { "id": "uml.add-compartment-item", "command-arg": { "parent-view": "view._parent._parent", "type": "SysMLProperty", "field": "properties", "compartment": "propertyCompartment", "name-prefix": "Property" }, "section": "right" },
+        { "id": "uml.delete-compartment-item", "section": "right" },
+        { "id": "uml.move-up-compartment-item", "command-arg": { "field": "properties" }, "section": "right" },
+        { "id": "uml.move-down-compartment-item", "command-arg": { "field": "properties" }, "section": "right" },
+        { "id": "uml.open-up-compartment-item" },
+        { "id": "uml.open-down-compartment-item" }
+      ]
+    },
+    {
+      "id": "sysml.flow-property-compartment-item",
+      "targets": [ "SysMLFlowPropertyCompartmentItemView" ],
+      "area": { "x1": "_parent.left", "y1": "top", "x2": "_parent.right", "y2": "bottom" },
+      "components": [
+        { "id": "uml.attribute-expression", "section": "main" },
+        { "id": "uml.visibility", "section": "left" },
+        { "id": "uml.add-compartment-item", "command-arg": { "parent-view": "view._parent._parent", "type": "SysMLFlowProperty", "field": "flowProperties", "compartment": "flowPropertyCompartment", "name-prefix": "FlowProperty" }, "section": "right" },
+        { "id": "uml.delete-compartment-item", "section": "right" },
+        { "id": "uml.move-up-compartment-item", "command-arg": { "field": "flowProperties" }, "section": "right" },
+        { "id": "uml.move-down-compartment-item", "command-arg": { "field": "flowProperties" }, "section": "right" },
+        { "id": "uml.open-up-compartment-item" },
+        { "id": "uml.open-down-compartment-item" }
+      ]
+    },
+    {
+      "id": "sysml.parameter-compartment-item",
+      "targets": [ "SysMLParameterCompartmentItemView" ],
+      "area": { "x1": "_parent.left", "y1": "top", "x2": "_parent.right", "y2": "bottom" },
+      "components": [
+        { "id": "uml.attribute-expression", "section": "main" },
+        { "id": "uml.visibility", "section": "left" },
+        { "id": "uml.add-compartment-item", "command-arg": { "parent-view": "view._parent._parent", "type": "SysMLProperty", "field": "parameters", "compartment": "parameterCompartment", "name-prefix": "Parameter" }, "section": "right" },
+        { "id": "uml.delete-compartment-item", "section": "right" },
+        { "id": "uml.move-up-compartment-item", "command-arg": { "field": "parameters" }, "section": "right" },
+        { "id": "uml.move-down-compartment-item", "command-arg": { "field": "parameters" }, "section": "right" },
+        { "id": "uml.open-up-compartment-item" },
+        { "id": "uml.open-down-compartment-item" }
+      ]
+    },
+    {
+      "id": "sysml.connector",
+      "targets": [ "SysMLConnectorView", "SysMLConnectorView.nameLabel", "SysMLConnectorView.stereotypeLabel", "SysMLConnectorView.propertyLabel", "SysMLConnectorView.itemFlowLabel" ],
+      "area": { "x1": "nameLabel.left", "y1": "nameLabel.top", "x2": "nameLabel.left", "y2": "nameLabel.bottom", "x2-margin": 70 },
+      "components": [
+        { "id": "uml.name-expression", "section": "main" },
+        { "id": "uml.visibility", "section": "left" },
+        { "id": "uml.add-note", "section": "left", "row": 2 },
+        { "id": "uml.add-constraint", "section": "left", "row": 2 },
+        { "id": "sysml.create-item-flow", "section": "right" }
+      ]
+    },
+    {
+      "id": "sysml.connector-end1",
+      "targets": [ "SysMLConnectorView:end1", "SysMLConnectorView.tailRoleNameLabel", "SysMLConnectorView.tailPropertyLabel", "SysMLConnectorView.tailMultiplicityLabel" ],
+      "area": { "x1": "tailRoleNameLabel.left", "y1": "tailRoleNameLabel.top", "x2": "tailRoleNameLabel.left", "y2": "tailRoleNameLabel.bottom", "x2-margin": 70 },
+      "components": [
+        { "id": "uml.name-expression", "property": "end1.textualNotation", "command-arg": { "set-model": "end1" }, "section": "main" },
+        { "id": "uml.aggregation-kind", "property": "end1.aggregation", "command-arg": { "set-model": "end1", "property": "aggregation" }, "section": "left" },
+        { "id": "uml.navigability", "property": "end1.navigable", "command-arg": { "set-model": "end1", "property": "navigable" }, "section": "left" },
+        { "id": "uml.visibility", "property": "end1.visibility", "command-arg": { "set-model": "end1", "property": "visibility"  }, "section": "left" },
+        { "id": "uml.multiplicity", "property": "end1.multiplicity", "command-arg": { "set-model": "end1", "property": "multiplicity" }, "section": "right" }
+      ]
+    },
+    {
+      "id": "sysml.connector-end2",
+      "targets": [ "SysMLConnectorView:end2", "SysMLConnectorView.headRoleNameLabel", "SysMLConnectorView.headPropertyLabel", "SysMLConnectorView.headMultiplicityLabel" ],
+      "area": { "x1": "headRoleNameLabel.left", "y1": "headRoleNameLabel.top", "x2": "headRoleNameLabel.left", "y2": "headRoleNameLabel.bottom", "x2-margin": 70 },
+      "components": [
+        { "id": "uml.name-expression", "property": "end2.textualNotation", "command-arg": { "set-model": "end2" }, "section": "main" },
+        { "id": "uml.aggregation-kind", "property": "end2.aggregation", "command-arg": { "set-model": "end2", "property": "aggregation" }, "section": "left" },
+        { "id": "uml.navigability", "property": "end2.navigable", "command-arg": { "set-model": "end2", "property": "navigable" }, "section": "left" },
+        { "id": "uml.visibility", "property": "end2.visibility", "command-arg": { "set-model": "end2", "property": "visibility" }, "section": "left" },
+        { "id": "uml.multiplicity", "property": "end2.multiplicity", "command-arg": { "set-model": "end2", "property": "multiplicity" }, "section": "right" }
+      ]
+    },
+    {
+      "id": "sysml.constraint-property",
+      "targets": [ "SysMLConstraintPropertyView" ],
+      "area": { "x1": "left", "y1": "nameCompartment.nameLabel.top", "x2": "right", "y2": "nameCompartment.nameLabel.bottom" },
+      "components": [
+        { "id": "uml.name-expression", "section": "main" },
+        { "id": "uml.visibility", "section": "left" },
+        { "id": "uml.add-note", "section": "left", "row": 2 },
+        { "id": "uml.add-constraint", "section": "left", "row": 2 },
+        { "id": "sysml.select-constraint-block", "section": "right" },
+        { "id": "sysml.create-constraint-block", "section": "right" },
+        { "id": "sysml.add-constraint-parameter", "section": "right" }
+      ]
+    },
+    {
+      "id": "sysml.constraint-parameter",
+      "targets": [ "SysMLConstraintParameterView", "SysMLConstraintParameterView.nameLabel", "SysMLConstraintParameterView.stereotypeLabel", "SysMLConstraintParameterView.propertyLabel" ],
+      "area": { "x1": "nameLabel.left", "y1": "nameLabel.top", "x2": "nameLabel.left", "y2": "nameLabel.bottom", "x2-margin": 100 },
+      "components": [
+        { "id": "uml.name-expression", "section": "main" },
+        { "id": "uml.visibility", "section": "left" },
+        { "id": "uml.add-note", "section": "left", "row": 2 },
+        { "id": "uml.add-constraint", "section": "left", "row": 2 },
+        { "id": "sysml.select-block", "section": "right" },
+        { "id": "sysml.create-block", "section": "right" }
+      ]
+    }
+  ]
+}

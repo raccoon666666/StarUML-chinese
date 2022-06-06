@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>All Diagrams</title>
+        <%- include('head') %>
+    </head>
+    <body>
+        <div>
+            <h1>All Diagrams</h1>
+
+            <!-- Diagrams -->
+
+            <% var _diagrams = app.repository.getInstancesOf("Diagram"); %>
+            <% if (_diagrams.length > 0) { %>
+            <section class="element-list">
+                <div>
+                    <% _diagrams.forEach(function (d) { %>
+                    <div style="display: inline-block; width: 250px; vertical-align: top;">
+                        <div class="member">
+                            <a href="<%= toUrl(d) %>">
+                            <img src="<%= toDiagram(d) %>">
+                            <div style="text-align: center; margin-top: 1em;"><%- toName(d) %></div>
+                            </a>
+                        </div>
+                    </div>
+                    <% }); %>
+                </div>
+            </section>
+            <% } %>
+
+        </div>
+    </body>
+</html>

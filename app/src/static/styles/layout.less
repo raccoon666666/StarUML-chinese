@@ -1,0 +1,549 @@
+@border-color: #2d2e2e;
+@titlebar-height: 22px;
+@titlebar-text-color: @ui-titlebar-text-color;
+
+@statusbar-height: 26px;
+@toolbar-width: 30px;
+@sidebar-width: 200px;
+@toolbox-height: 400px;
+@navigator-width: 300px;
+@editors-height: 400px;
+
+@z-index-brackets-panel-resizer: 1100;
+
+html, body {
+  background: @ui-layer0-background-color;
+  height: 100%;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+  cursor: default;
+}
+
+.box {
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+}
+
+.hbox {
+  .box;
+  -webkit-box-orient: horizontal;
+  -moz-box-orient: horizontal;
+  box-orient: horizontal;
+}
+
+.vbox {
+  .box;
+  -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+  box-orient: vertical;
+}
+
+.titlebar {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: @titlebar-height;
+  color: @titlebar-text-color;
+  padding-top: 2px;
+
+  .title {
+    width: 100%;
+    text-align: center;    
+  }
+}
+
+.statusbar {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: @statusbar-height;
+  background-color: @ui-layer1-background-color;
+  border-top: 1px solid @ui-layer1-border-color; // @ui-layer0-background-color;
+  
+  .left-section {
+    float: left;
+    height: 100%;
+    
+    .selected-element {
+      
+      .element {
+        display: inline-block;
+        height: 100%;
+        padding: 0.3em 0.5em;
+        border-right: 1px solid @ui-layer1-border-color; // @ui-layer0-background-color;
+        box-sizing: border-box;
+        
+        .k-sprite {
+          margin-right: 3px;
+          margin-bottom: 2px;
+        }
+
+        .active-element-name {
+          color: @ui-widget-selected-text-color;
+        }
+
+        .active-element-class {
+          color: @ui-widget-frozen-text-color;
+          text-shadow: @ui-widget-frozen-text-shadow;
+          font-size: 11px;
+        }
+      }
+    }
+    
+    .item {
+      display: inline-block;
+      height: 100%;
+      padding: 0.3em 0em;
+      border-right: 1px solid @ui-layer1-border-color; // @ui-layer0-background-color;
+      box-sizing: border-box;
+    }
+    
+  }
+  
+  .right-section {
+    float: right;
+    height: 100%;
+    
+    .item {
+      display: inline-block;
+      height: 100%;
+      padding: 0.3em 0em;
+      border-left: 1px solid @ui-layer1-border-color; // @ui-layer0-background-color;
+      box-sizing: border-box;
+    }
+    
+    .validation {
+      padding-left: 8px;
+      padding-right: 5px;
+      cursor: pointer;
+    }
+    
+    .zoom {
+      padding-left: 1em;
+      padding-right: 1em;
+    }
+    
+  }
+  
+}
+
+.main-view {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: @titlebar-height;
+  bottom: @statusbar-height;
+  background: #fff;
+
+  .sidebar {
+    height: 100%;
+    .vbox;
+    width: @sidebar-width;  // changed dynamically via Resizer
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: @ui-layer0-background-color;
+    
+    #working-diagrams {
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: @toolbox-height;
+      background-color: @ui-layer0-background-color;
+    }
+    
+    #toolbox {
+      width: 100%;
+      position: absolute;
+      height: @toolbox-height;
+      left: 0;
+      bottom: 0;
+      background-color: @ui-layer1-background-color;
+
+      #ui-toolbox {
+        box-shadow: none;
+      }
+    }
+    
+  }
+  
+  .content {
+    height: 100%;
+    position: absolute;
+    padding: 0;
+    top: 0;
+    left: @sidebar-width;  // changed dynamically via Resizer
+    right: @navigator-width;
+    background-color: #ccc;
+    
+    .content-holder {
+      box-sizing: border-box;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: @toolbar-width;
+      
+      #diagram-area {
+        height: 100%;
+        background-color: #ccc;
+        background-image: url("icons/canvas_background.png");
+        background-repeat: no-repeat;
+        background-position: center center;
+        border: 0;
+        position: relative;
+        overflow: hidden;
+        
+        #diagram-canvas {
+          background-color: #fff;
+        }
+        
+        #hidden-canvas {
+          display: none;
+        }
+      }
+      
+    }
+    
+    #toolbar {
+      background-color: @ui-layerx-background-color;
+      box-sizing: border-box;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: @toolbar-width;
+      
+      .buttons {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        text-align: center;
+      }
+      
+      .bottom-buttons {
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        text-align: center;
+      }
+      
+      a {
+        box-sizing: border-box;
+        display: block;
+        border-radius: 4px;
+        width: 24px;
+        height: 24px;
+        margin-left: 3px;
+        margin-top: 3px;
+        margin-bottom: 3px;
+        border: 0;
+        background-color: transparent;
+      }
+      
+      a:hover {
+        background-color: darken(@ui-layerx-background-color, 5%);
+      }
+      
+      a:active {
+        background-color: darken(@ui-layerx-background-color, 10%);
+      }
+      
+      #toolbar-extension-manager {
+        background-color: transparent;
+        background-image: url("icons/plug.svg");
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-clip: content-box;
+        
+        &.selected {
+          background-position: -24px 0;
+        }
+      }
+      
+      #toolbar-updates-available {
+        background-color: transparent;
+        background-image: url("icons/package.svg");
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-clip: content-box;
+      }
+      
+    }
+    
+    #toast-holder {
+      position: absolute;
+      left: 10px;
+      top: 10px;
+      height: auto;
+      width: auto;
+    }
+    
+  }
+  
+  .navigator {
+    height: 100%;
+    .vbox;
+    width: @navigator-width;  // changed dynamically via Resizer
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: @ui-layer0-background-color;
+    
+    #model-explorer {
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: @editors-height;
+      background-color: @ui-layer0-background-color;
+    }
+    
+    #editors {
+      width: 100%;
+      position: absolute;
+      height: @editors-height;
+      left: 0;
+      bottom: 0;
+      background-color: @ui-layer1-background-color;
+    }
+    
+  }
+  
+}
+
+
+.resizing-container {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: @z-index-brackets-panel-resizer;
+  
+  &.horz-resizing {
+    cursor: col-resize;
+  }
+  
+  &.vert-resizing {
+    cursor: row-resize;
+  }
+}
+
+.vert-resizer {
+  position: absolute;
+  height: 6px;
+  width: 100%;
+  z-index: @z-index-brackets-panel-resizer;
+  opacity: 0;
+  cursor: row-resize;
+}
+
+.horz-resizer {
+  position: absolute;
+  height: 100%;
+  width: 6px;
+  z-index: @z-index-brackets-panel-resizer;
+  opacity: 0;
+  cursor: col-resize;
+}
+
+/* Styles for Views */
+
+@view-header-height: 34px;
+
+.view-holder {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  
+  .view-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: @view-header-height;
+    padding: 0;
+    vertical-align: middle;
+    
+    .view-header-title {
+      display: inline-block;
+      white-space: nowrap;
+      color: @ui-widget-header-text-color;
+      padding-left: 1em;
+      padding-top: 0.7em;
+      text-shadow: none; // @ui-widget-header-text-shadow;
+      text-transform: uppercase;
+      vertical-align: middle;
+    }
+    
+    .view-header-button {
+      padding-top: 3px;
+      padding-bottom: 3px;
+      height: 1.5em;
+      margin-bottom: 0px;
+      position: absolute;
+      top: 7px;
+      
+      .view-header-button-icon {
+        background: url('@{image-folder}/settings.svg') 0 0 no-repeat;
+        background-position: center;
+        width: 13px;
+        height: 13px;
+        display: block;
+        margin-left: 1px;
+      }
+    }
+    
+  }
+  
+  .view-content {
+    position: absolute;
+    left: 0;
+    top: @view-header-height;
+    width: 100%;
+    bottom: 0;
+    overflow: auto;
+  }
+  
+}
+
+/* Bottom Panel */
+
+.bottom-panel {
+  background-color: @ui-layer1-background-color;
+  display: none;
+  height: 200px;
+  border-top-style: solid;
+  border-left-style: solid;
+  border-right-style: solid;
+  border-width: 1px;
+  border-color: @ui-layer1-border-color; // @ui-layer0-background-color;
+  
+  .toolbar {
+    background-color: @ui-layer1-background-color;
+    height: auto;
+    box-shadow: @widget-shadow;
+    position: relative;
+    border-bottom: 1px solid @ui-layer1-border-bottom-color;
+    
+    .title {
+      height: 1.4em;
+      font-size: 13px;
+      padding: 0.7em 0.7em;
+      text-transform: uppercase;
+    }
+    
+    .close {
+      background-image: url("@{image-folder}/close-button.svg");
+      background-repeat: no-repeat;
+      display: inline-block;
+      vertical-align: middle;
+      width: 16px;
+      height: 16px;
+      margin-bottom: 2px;
+      cursor: pointer;
+      position: absolute;
+      right: 7px;
+      // vertically centers close button
+      top: 50%;
+      margin-top: -10px;
+    }
+
+    .close:hover {
+      background-position: -15px 0px;
+    }
+  }
+  
+  .panel-content {
+    overflow: auto;
+  }
+  
+  /*
+  .check-all {
+    margin: 7px 15px 7px 7px;
+  }
+  
+  .table-container {
+    height: 170px;
+    overflow: auto;
+    
+    .highlight {
+      background: @bc-white;
+      border-radius: 2px;
+    }
+    
+    tr.selected td {
+      background-color: @tc-selected-row;
+      color: @bc-black;
+    }
+  }
+  */
+}
+
+
+/* Scroller Shadow */
+
+.scroller-shadow {
+  background-size: 100%;
+  background-repeat: no-repeat;
+  height: 5px;
+  position: fixed;
+  z-index: 2;
+  
+  &.top {
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0)); // Standard, IE10
+    background-repeat: repeat-x;
+    background-position: 0 -5px;
+    background-color: transparent; /* override background-color: @endColor from #gradient.vertical */
+  }
+  
+  &.bottom {
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.1)); // Standard, IE10
+    background-repeat: repeat-x;
+    background-position: 0 5px;
+    background-color: transparent; /* override background-color: @endColor from #gradient.vertical */
+  }
+}
+
+/* Editor View */
+
+.editor-view {
+  
+  .editor-view-header {
+    padding-left: 0.7em;
+    padding-top: 0.3em;
+    padding-bottom: 0.3em;
+    
+    .suppress-button {
+      cursor: pointer;
+      background-image: url("@{image-folder}/expanded.svg");
+      background-position: 0px 0px;
+      background-repeat: no-repeat;
+      width: 16px;
+      height: 16px;
+      display: inline-block;
+      vertical-align: bottom;
+      
+      &.collapsed {
+        background-image: url("@{image-folder}/collapsed.svg");
+      }
+    }
+  }
+  
+  .editor-view-body {
+    padding-left: 1.2em;
+    padding-right: 1.2em;
+    padding-bottom: 0.3em;
+  }
+}

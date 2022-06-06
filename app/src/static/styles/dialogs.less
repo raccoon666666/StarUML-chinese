@@ -1,0 +1,809 @@
+/* ----- Dialogs (NEW) ----------------------------------------------------------- */
+
+
+.k-overlay {
+  opacity: 0 !important;
+}
+
+.dialog {
+  
+  .dialog-toolbar {
+    
+    padding: 1em;
+    text-align: right;
+    border-bottom: 1px solid @ui-widget-content-border-color;
+    
+    .left {
+      float: left;
+      margin-left: 0;
+      margin-right: 5px;
+    }
+  }
+  
+  .dialog-body {
+    padding-top: 0em;
+    padding-bottom: 0em;
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+  }
+  
+  .no-padding {
+    padding: 0;
+  }
+  
+  .dialog-footer {
+    
+    padding: 1.5em;
+    text-align: right;
+    
+    /* right align */
+    & > * {
+      margin-left: 5px;
+      margin-right: 0;
+    }
+    
+    .left {
+      float: left;
+      margin-left: 0;
+      margin-right: 5px;
+    }
+    
+    button {
+      min-width: 70px;
+    }
+    
+  }
+  
+  &.template {
+    
+    min-width: 400px;
+    
+    .dialog-body {
+      min-height: 40px;
+    }
+    
+  }
+  
+  .dialog-button {
+    /*
+    font-size: 14px;
+    padding-left: .7em;
+    padding-right: .7em;
+    */
+  }
+  
+}
+
+// Input Dialog
+
+.input-dialog {
+  
+  .dialog-body {
+    
+    min-width: 300px;
+    
+    .input-box {
+      margin-top: .6em;
+      width: 100%;
+    }
+    
+  }
+  
+}
+
+// Text Dialog
+
+.text-dialog {
+  
+  .dialog-body {
+    
+    min-width: 300px;
+    
+    .text-box {
+      margin-top: .6em;
+      width: 100%;
+      min-height: 120px;
+    }
+    
+  }
+  
+}
+
+.information-dialog {
+  .dialog-body {
+    max-width: 400px;
+    .dialog-message {
+      width: 100%;
+    }
+  }
+}
+
+// Select Radio Dialog
+
+.select-radio-dialog {
+  
+  .dialog-body {
+    
+    min-width: 300px;
+    
+    .dialog-message {
+      margin-bottom: .7em;
+    }
+    
+    .select-options-form {
+      
+      .k-radio-button {
+        margin-bottom: .7em;
+      }
+      
+    }
+    
+  }
+  
+}
+
+// Select Dropdown Dialog
+
+.select-dropdown-dialog {
+  
+  .dialog-body {
+    
+    min-width: 300px;
+    
+    .dialog-message {
+      margin-bottom: .7em;
+    }
+    
+  }
+  
+}
+
+// Color Dialog
+
+.color-dialog {
+  
+  .dialog-body {
+    width: 430px;
+    height: 240px;
+    
+    td {
+      vertical-align: top;
+    }
+    
+    .color-picker {
+      border: 0;
+    }
+    
+    .color-palette {
+      margin-left: 5px;
+    }
+    
+  }
+  
+}
+
+// Font Dialog
+
+.font-dialog {
+  
+  .dialog-body {
+    
+    table {
+      padding: 0;
+      border-spacing: 0;
+      margin-bottom: .3em;
+    }
+    
+    .item-label {
+      margin-bottom: .2em;
+    }
+    
+    .font-face {
+      width: 200px;
+      margin-right: 1em;
+    }
+    
+    .font-size {
+      width: 70px;
+      margin-right: 1em;
+    }
+    
+    .font-color {
+    }
+    
+    .font-preview {
+      border: 1px solid @widget-border-color;
+      background-color: #fff;
+      width: 180px;
+      height: 95px;
+      line-height: 95px;
+      text-align: center;
+      vertical-align: middle;
+      text-shadow: none;
+    }
+    
+    .color-palette {
+      background: transparent;
+      display: inline-block;
+      top: 0;
+      margin-left: 1em;
+      margin-top: 19px;
+    }
+    
+  }
+  
+}
+
+// Simple Dialog
+
+.simple-dialog {
+  
+  .dialog-body {
+    min-height: 20px !important;
+  }
+  
+}
+
+
+// About Dialog
+
+.about-dialog {
+  
+  .dialog-body {
+    min-width: 400px;
+  }
+  
+}
+
+// Enter License Dialog
+
+.enter-license-dialog {
+  
+  .dialog-body {
+    min-width: 350px;
+    min-height: 70px;
+
+    .license-key {
+      width: 350px;
+      margin-top: 5px;
+      font-family: "SourceCodePro";
+    }
+  }
+}
+
+// Unregistered Dialog
+
+.unregistered-dialog {
+  
+  .dialog-body {
+    max-width: 350px;
+    max-height: 300px;
+    min-height: 80px;
+  }
+  
+}
+
+
+// Tag Edit Dialog
+
+.tag-edit-dialog {
+  
+  .dialog-body {
+    
+    min-width: 300px;
+    
+    & > table {
+      
+      width: 100%;
+      border-spacing: 5px;
+      border-collapse: separate;
+      padding: 0;
+      
+      tr {
+        
+        td:first-child {
+          text-align: right;
+          width: 20%;
+          padding-right: 5px;
+        }
+        
+        td:last-child {
+          text-align: left;
+          width: 80%;
+        }
+        
+      }
+      
+      .tag-name {
+        width: 270px;
+      }
+      
+      .tag-type {
+        width: 270px;
+      }
+      
+      .string-value {
+        width: 270px;
+        height: 100px;
+      }
+      
+      .number-value {
+        /* width: 270px; */
+      }
+      
+      .boolean-literals {
+        width: 270px;
+      }
+      
+      .reference-wrapper {
+        width: 270px;
+      }
+      
+    }
+  }
+  
+}
+
+// Element Picker
+
+.element-picker {
+  
+  .quick-search-wrapper {
+    span.icon-tool-search {
+      position: absolute;
+      z-index: 100000;
+      left: 7px;
+      top: 5px;
+    }
+
+    span.k-widget.k-autocomplete {
+      width: 100%;
+      height: 22px;
+      padding: 0;
+      padding-right: 1.5em;
+      border-radius: 1em;
+      border: none;
+      
+      & > input.k-input {
+        margin: 0;
+        padding: 0 0 0 1.5em;
+        border: 1px solid @widget-border-color;
+        background-color: @input-background-color;
+        color: @input-text-color;
+        box-shadow: @ui-widget-sunken-box-shadow;
+        vertical-align: top;
+        border-radius: 1em;
+
+        &:focus {
+          background-color: @widget-background-color;
+          border-color: @ui-widget-primary-color;
+        }
+      }
+    }
+  }
+  
+  .dialog-body {
+    width: 400px;
+    height: 250px;
+    padding-top: 25px;
+    
+    .treeview-wrapper {
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      
+      .treeview {
+        margin-left: 1em;
+        margin-right: 1em;
+        margin-top: 0;
+        margin-bottom: 1em;
+      }
+      
+    }
+    
+  }
+  
+}
+
+// Element List Picker
+
+.element-list-picker {
+  
+  .dialog-body {
+    min-width: 400px;
+    height: 200px;
+    
+    .listview-wrapper {
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      
+      .listview {
+        background: transparent;
+        border: 0;
+        
+        & > div {
+          padding-left: 1.3em !important;
+          padding-right: 1.3em !important;
+          overflow: hidden;
+          white-space: nowrap;
+        }
+      }
+    }
+    
+  }
+  
+}
+
+// Element List Editor
+.element-list-editor {  
+  .dialog-body {
+    min-width: 400px;
+    height: 200px;
+    .listview-wrapper {
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      .listview {
+        background: transparent;
+        border: 0;
+        & > div {
+          padding-left: 1.3em !important;
+          padding-right: 1.3em !important;
+          overflow: hidden;
+          white-space: nowrap;
+        }
+      }
+    }
+  }
+}
+
+// Tag Editor
+.tag-editor {
+  .dialog-body {
+    min-width: 500px;
+    height: 300px;
+    .listview-wrapper {
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      .listview {
+        background: transparent;
+        border: 0;
+        box-shadow: none;
+        & > div {
+          padding-left: 1.3em !important;
+          padding-right: 1.3em !important;
+          overflow: hidden;
+          white-space: nowrap;
+        }
+
+        .tag-kind-string {
+          color: white;
+        }
+        .tag-kind-reference {
+          color: white;
+        }
+        .tag-kind-boolean {
+          color: white;
+        }
+        .tag-kind-number {
+          color: white;
+        }
+        .tag-kind-hidden {
+          color: white;
+        }
+      }
+    }
+  }
+}
+
+// Tag Value Editor
+.tag-value-editor {
+  .dialog-body {
+    min-width: 300px;
+    height: 200px;
+    .item {
+      margin-bottom: .5em;
+      .item-label {
+        margin-bottom: .3em;
+      }  
+    }
+  }
+}
+
+// Preference Dialog
+
+@schema-section-width: 150px;
+
+.preference-dialog {
+  
+  .dialog-body {
+    position: relative;
+    width: 600px;
+    height: 350px;
+    padding-left: @schema-section-width;
+    box-sizing: border-box;
+    
+    .schema-section {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: @schema-section-width;
+      height: 100%;
+      overflow-x: hidden;
+      overflow-y: auto;
+      
+      .listview {
+        background: transparent;
+        width: 100%;
+        border: 0;
+        padding-top: .3em;
+        padding-bottom: .3em;
+        box-shadow: none;
+        
+        & > div {
+          padding-left: 1em;
+          padding-right: 1em;
+          padding-top: 0.2em;
+          padding-bottom: 0.2em;
+        }
+        
+      }
+      
+    }
+    
+    .item-section {
+      width: 100%;
+      height: 100%;
+      padding-left: 15px;
+      padding-right: 15px;
+      overflow-x: hidden;
+      overflow-y: auto;
+      box-sizing: border-box;
+      
+      .grid {
+        width: 100%;
+        
+        .preference-section {
+          text-align: left;
+          font-size: 13px;
+          color: @ui-widget-header-text-color;
+          text-shadow: @ui-widget-header-text-shadow; // rgba(0, 0, 0, 0.7) 0px -1px;
+          padding-bottom: 5px;
+          margin-top: 5px;
+          margin-bottom: 5px;
+          border-bottom: 1px solid @ui-layer1-border-bottom-color;
+        }
+        
+        td:first-child {
+          width: 0%;
+          vertical-align: top;
+          text-align: right;
+          min-width: 150px;
+          
+          .widget {
+            max-width: 200px;
+          }
+        }
+        
+        td:last-child {
+          width: 100%;
+          vertical-align: top;
+          
+          .name {
+            font-size: 13px;
+            color: @ui-widget-header-text-color;
+            padding-left: 10px;
+          }
+          
+          .description {
+            font-size: 12px;
+            color: @ui-widget-text-color;
+            padding-left: 10px;
+            padding-bottom: 5px;
+          }
+          
+        }
+        
+      }
+      
+    }
+  }
+  
+}
+
+// Extension Manager Dialog
+
+.extension-manager-dialog {
+  
+  width: 700px;
+  
+  .dialog-toolbar {
+    
+    .button-registry {
+      padding-left: 1.5em;
+      padding-right: 1.5em;
+    }
+    
+    .button-installed {
+      padding-left: 1.5em;
+      padding-right: 1.5em;
+    }
+    
+    .update-notifications {
+      background-color: #00a651;
+      border-radius: 3px;
+      padding-left: .4em;
+      padding-right: .4em;
+      border: 0;
+      margin-left: .5em;
+      box-shadow: none;
+      text-shadow: none;
+      color: #ffffff;
+      position: absolute;
+      right: -0.6em;
+      top: -0.8em;
+    }
+    
+  }
+  
+  .dialog-body {
+    height: 250px;
+    overflow: scroll;
+    
+    .empty-message {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      margin-top: -1em;
+      text-align: center;
+    }
+    
+    .info-message {
+      padding: 1em;
+      background-color: @ui-widget-sunken-color;
+    }
+    
+    .spinner {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-top: -18px;
+      margin-left: -18px;
+    }
+    
+    .extension-list {
+      
+      & > table {
+        width: 100%;
+        border-spacing: 0;
+      }
+      tr:nth-child(even) {
+        background-color: @ui-widget-table-row-even-color;
+      }
+      tr:nth-child(odd) {
+        background-color: @ui-widget-table-row-odd-color;
+      }
+      td {
+        padding-top: .5em;
+        padding-bottom: .5em;
+        vertical-align: top;
+      }
+      .ext-info {
+        padding-left: 15px;
+        width: 220px;
+      }
+      .ext-name {
+        display: block;
+        font-size: 15px;
+        font-weight: normal;
+        cursor: text;
+      }
+      .ext-desc {
+        width: auto;
+        font-weight: normal;
+        cursor: text;
+        p {
+          margin: 0;
+        }
+      }
+      .ext-author {
+        width: 60px;
+        text-align: center;
+      }
+      .ext-author-image {
+        width: 32px;
+        height: 32px;
+        border-radius: 50em;
+      }
+      .muted {
+        color: #888;
+      }
+      .error {
+        font-weight: bold;
+        color: #ff5656;
+      }
+      .ext-author-name {
+        font-size: 11px;
+        display: block;
+      }
+      .ext-version,
+      .ext-date {
+        font-size: 11px;
+        display: inline-block;
+      }
+      .ext-keywords {
+        font-weight: 200;
+      }
+      .ext-action {
+        font-size: 12px;
+        padding-right: 15px;
+        text-align: right;
+        vertical-align: middle;
+        width: 150px;
+      }
+      .load-error {
+        display: inline-block;
+        margin-top: 240px;
+      }
+      
+    }
+  }
+  
+}
+
+// Install Extension Dialog
+
+.install-extension-dialog {
+  
+  .dialog-body {
+    width: 500px;
+    
+    .url {
+      width: 100%;
+    }
+  }
+}
+
+// Check Update Dialog
+
+.check-updates-dialog {
+  
+  .dialog-body {
+    
+    width: 400px;
+    height: 100px;
+    overflow-y: auto;
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+    
+    .main-message {
+      font-size: 15px;
+      margin-bottom: 1em;
+    }    
+  }
+}
+
+.print-dialog {
+  
+  .dialog-body {
+    
+    table {
+      padding: 0;
+      border: 0;
+      margin: 0;
+      border-spacing: 0;
+      
+      td {
+        vertical-align: top;
+      }
+      
+      td:nth-child(2) {
+        padding-left: 20px;
+      }
+      
+    }
+  }
+  
+}

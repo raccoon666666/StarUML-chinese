@@ -1,0 +1,62 @@
+<div class="tag-value-editor dialog modal" data-title="Tag">
+  <div class="dialog-body">
+    <div class="item">
+      <div class="item-label">Name:</div>
+      <label class="tag-name">
+        <input type='text' class='k-input k-textbox input-box' style="width: 100%">
+      </label>
+    </div>
+    <div class="item">
+      <div class="item-label">Kind:</div>
+      <label class="tag-kind k-select" style="width: 100%; padding: 0; margin: 0;">
+        <select style="width: 100%;">
+          <option value="string">string</option>
+          <option value="reference">reference</option>
+          <option value="boolean">boolean</option>
+          <option value="number">number</option>
+        </select>
+      </label>
+    </div>
+    <div class="item">
+      <div class="item-label">Value:</div>
+      <div class="tag-value-string">
+        <textarea type='text' class='k-textbox text-box primary' style="width: 100%"></textarea>
+      </div>
+      <div class="tag-value-boolean">
+        <label style="width: 100%; padding: 0; margin: 0;" class="k-select">
+          <select style="width: 100%;">
+            <option value="false">false</option>
+            <option value="true">true</option>
+          </select>
+        </label>  
+      </div>
+      <div class="tag-value-number">
+        <input type="number" class="k-input k-textbox" style="width: 100%;">
+      </div>
+      <div class="tag-value-reference">
+        <div style="border: 1px solid #999999; padding: .35em .5em; border-radius: 4px;">
+          <span style="display: inline-block; padding-right: 25px; position: relative; width: 100%; box-sizing: border-box;">
+            <div style="display: inline-block">
+              <span class="icon"></span>
+              <span class="name"></span>
+            </div>
+            <button tabindex="-1" id="{{buttonId}}" class="k-button icon-button quiet" style="position: absolute; right: 0; top: -4px;">
+              <span class="k-sprite staruml-icon icon-tool-search"></span>
+            </button>
+          </span>
+        </div>
+      </div>
+      <div class="tag-hidden-property" style="margin-top: 0.5rem;">
+        <label class="k-checkbox">
+          <input type="checkbox" class="tag-hidden">
+          <div class="k-checkbox__checkmark"></div>
+          <span class="k-checkbox__label">Hidden</span>
+      </label>
+      </div>
+    </div>
+  </div>
+  <div class="dialog-footer">
+    <button class="k-button dialog-button primary" data-button-id="ok">{{Strings.OK}}</button>
+    <button class="k-button dialog-button outline" data-button-id="cancel">{{Strings.CANCEL}}</button>
+  </div>
+</div>

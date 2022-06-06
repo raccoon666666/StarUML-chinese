@@ -1,0 +1,9 @@
+/*
+* Kendo UI v2014.1.528 (http://www.telerik.com/kendo-ui)
+* Copyright 2014 Telerik AD. All rights reserved.
+*
+* Kendo UI commercial licenses may be obtained at
+* http://www.telerik.com/purchase/license-agreement/kendo-ui-complete
+* If you do not own a commercial license, this file shall be governed by the trial license terms.
+*/
+!function(e,define){define(["./kendo.mobile.shim.min","./kendo.mobile.view.min"],e)}(function(){return function(e){var t=window.kendo,n=t.mobile.ui,i=n.Shim,o=n.Widget,r="open",a="close",s="init",l='<div class="km-modalview-wrapper" />',d=n.View.extend({init:function(e,n){var r,d,c=this;o.fn.init.call(c,e,n),e=c.element,n=c.options,r=e[0].style.width||"auto",d=e[0].style.height||"auto",e.addClass("km-modalview").wrap(l),c.wrapper=e.parent().css({width:n.width||r||300,height:n.height||d||300}).addClass("auto"==d?" km-auto-height":""),e.css({width:"",height:""}),c.shim=new i(c.wrapper,{modal:n.modal,position:"center center",align:"center center",effect:"fade:in",className:"km-modalview-root",hide:function(){c.trigger(a)}}),t.support.mobileOS.wp&&c.shim.shim.on("click",!1),c._layout(),c._scroller(),c._model(),c.element.css("display",""),c.trigger(s)},events:[s,r,a],options:{name:"ModalView",modal:!0,width:null,height:null},destroy:function(){o.fn.destroy.call(this),this.shim.destroy()},open:function(t){var n=this;n.target=e(t),n.shim.show(),n.trigger("show",{view:n})},openFor:function(e){this.open(e),this.trigger(r,{target:e})},close:function(){this.shim.hide(),this.trigger(a)}});n.plugin(d)}(window.kendo.jQuery),window.kendo},"function"==typeof define&&define.amd?define:function(e,t){t()});

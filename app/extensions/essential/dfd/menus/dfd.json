@@ -1,0 +1,55 @@
+{
+  "menu": [
+    {
+      "id": "model.add-diagram",
+      "submenu": [
+        { "label": "Data Flow Diagram", "id": "dfd.diagram", "command": "factory:create-diagram", "command-arg": { "id": "DFDDiagram" } }
+      ]
+    },
+    {
+      "id": "model.add",
+      "submenu": [
+        { "label": "Data Flow Model", "id": "dfd.data-flow-model", "command": "factory:create-model", "command-arg": {"id":"DFDDataFlowModel"} },
+        { "label": "External Entity", "id": "dfd.external-entity", "command": "factory:create-model", "command-arg": {"id":"DFDExternalEntity"} },
+        { "label": "Process", "id": "dfd.process", "command": "factory:create-model", "command-arg": {"id":"DFDProcess"} },
+        { "label": "Data Store", "id": "dfd.data-store", "command": "factory:create-model", "command-arg": {"id":"DFDDataStore"} }
+      ]
+    }
+  ],
+  "context-menu": {
+    "diagram-canvas": [
+      {
+        "id": "model.add",
+        "submenu": [
+          { "label": "Data Flow Model", "id": "dfd.data-flow-model", "command": "factory:create-model", "command-arg": {"id":"DFDDataFlowModel"} },
+          { "label": "External Entity", "id": "dfd.external-entity", "command": "factory:create-model", "command-arg": {"id":"DFDExternalEntity"} },
+          { "label": "Process", "id": "dfd.process", "command": "factory:create-model", "command-arg": {"id":"DFDProcess"} },
+          { "label": "Data Store", "id": "dfd.data-store", "command": "factory:create-model", "command-arg": {"id":"DFDDataStore"} }
+        ]
+      },
+      {
+        "id": "model.add-diagram",
+        "submenu": [
+          { "label": "Data Flow Diagram", "id": "dfd.diagram", "command": "factory:create-diagram", "command-arg": { "id": "DFDDiagram" } }
+        ]
+      }  
+    ],
+    "model-explorer": [
+      {
+        "id": "model.add-diagram",
+        "submenu": [
+          { "label": "Data Flow Diagram", "id": "dfd.diagram", "command": "factory:create-diagram", "command-arg": { "id": "DFDDiagram" } }
+        ]
+      },
+      {
+        "id": "model.add",
+        "submenu": [
+          { "label": "Data Flow Model", "id": "dfd.data-flow-model", "command": "factory:create-model", "command-arg": {"id":"DFDDataFlowModel"} },
+          { "label": "External Entity", "id": "dfd.external-entity", "command": "factory:create-model", "command-arg": {"id":"DFDExternalEntity"} },
+          { "label": "Process", "id": "dfd.process", "command": "factory:create-model", "command-arg": {"id":"DFDProcess"} },
+          { "label": "Data Store", "id": "dfd.data-store", "command": "factory:create-model", "command-arg": {"id":"DFDDataStore"} }
+        ]
+      }
+    ]
+  }
+}

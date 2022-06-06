@@ -1,0 +1,248 @@
+{
+  "menu": [
+    {
+      "label": "StarUML",
+      "id": "app",
+      "submenu": [
+        { "label": "About StarUML", "id": "app.about", "command": "help:about" },
+        { "type": "separator" },
+        { "label": "Preferences...", "id": "app.preferences", "command": "application:preferences" },
+        { "type": "separator" },
+        { "label": "Services", "role": "services", "submenu": [] },
+        { "type": "separator" },
+        { "label": "Hide StarUML", "role": "hide" },
+        { "label": "Hide Others", "role": "hideothers" },
+        { "label": "Show All", "role": "unhide" },
+        { "type": "separator" },
+        { "label": "Quit", "id": "app.quit", "role": "quit" }
+      ]
+    },
+    {
+      "label": "File",
+      "id": "file",
+      "submenu": [
+        { "label": "New", "id": "file.new", "command": "application:new" },
+        { "label": "New From Template", "id": "file.new-from-template", "command": "application:new-from-template" },
+        { "label": "Open...", "id": "file.open", "command": "project:open" },
+        { "label": "Open Recent", "id": "file.open-recent", "submenu": [] },
+        { "label": "Save", "id": "file.save", "command": "project:save" },
+        { "label": "Save As...", "id": "file.save-as", "command": "project:save-as" },
+        { "label": "Close", "id": "file.close", "command": "project:close" },
+        { "type": "separator" },
+        {
+          "label": "Import",
+          "id": "file.import",
+          "submenu": [
+            { "label": "Fragment...", "id": "file.import.fragment", "command": "project:import-fragment" }
+          ]
+        },
+        {
+          "label": "Export",
+          "id": "file.export",
+          "submenu": [
+            { "label": "Fragment...", "id": "file.export.fragment", "command": "project:export-fragment" }
+          ]
+        },
+        {
+          "label": "Export Diagram As",
+          "id": "file.export-diagram-as",
+          "submenu": [
+            { "label": "PNG...", "id": "file.export-diagram-as.png", "command": "project:export-diagram-to-png" },
+            { "label": "JPEG...", "id": "file.export-diagram-as.jpeg", "command": "project:export-diagram-to-jpeg" },
+            { "label": "SVG...", "id": "file.export-diagram-as.svg", "command": "project:export-diagram-to-svg" },
+            { "type": "separator" },
+            { "label": "All to PNGs...", "id": "file.export-diagram-as.all-to-pngs", "command": "project:export-diagram-all-to-pngs" },
+            { "label": "All to JPEGs...", "id": "file.export-diagram-as.all-to-jpegs", "command": "project:export-diagram-all-to-jpegs" },
+            { "label": "All to SVGs...", "id": "file.export-diagram-as.all-to-svg", "command": "project:export-diagram-all-to-svgs" }
+          ]
+        },
+        { "type": "separator" },
+        { "label": "Print to PDF...", "id": "file.print-to-pdf", "command": "project:print-to-pdf" }
+      ]
+    },
+    {
+      "label": "Edit",
+      "id": "edit",
+      "submenu": [
+        { "label": "Undo", "id": "edit.undo", "command": "edit:undo" },
+        { "label": "Redo", "id": "edit.redo", "command": "edit:redo" },
+        { "type": "separator" },
+        { "label": "Cut", "id": "edit.cut", "command": "edit:cut" },
+        { "label": "Copy", "id": "edit.copy", "command": "edit:copy" },
+        { "label": "Copy Diagram As Image", "id": "edit.copy-diagram-as-image", "command": "edit:copy-diagram-as-image" },
+        { "label": "Paste", "id": "edit.paste", "command": "edit:paste" },
+        { "label": "Delete", "id": "edit.delete", "command": "edit:delete" },
+        { "label": "Delete From Model", "id": "edit.delete-from-model", "command": "edit:delete-from-model" },
+        { "type": "separator" },
+        { "label": "Move Up", "id": "edit.move-up", "command": "edit:move-up" },
+        { "label": "Move Down", "id": "edit.move-down", "command": "edit:move-down" },
+        { "type": "separator" },
+        { "label": "Select All", "id": "edit.select-all", "command": "edit:select-all" },
+        { "label": "Select In Explorer", "id": "edit.select-in-explorer", "command": "edit:select-in-explorer" },
+        { "label": "Select In Diagram", "id": "edit.select-in-diagram", "command": "edit:select-in-diagram" }
+      ]
+    },
+    {
+      "label": "Format",
+      "id": "format",
+      "submenu": [
+        { "label": "Font...", "id": "format.font", "command": "format:font" },
+        { "label": "Fill Color...", "id": "format.fill-color", "command": "format:fill-color" },
+        { "label": "Line Color...", "id": "format.line-color", "command": "format:line-color" },
+        { "type": "separator" },
+        {
+          "label": "Line Style",
+          "id": "format.linestyle",
+          "submenu": [
+            { "label": "Rectilinear", "id": "format.linestyle.rectilinear", "type": "checkbox", "command": "format:linestyle-rectilinear" },
+            { "label": "Oblique", "id": "format.linestyle.oblique", "type": "checkbox", "command": "format:linestyle-oblique" },
+            { "label": "RoundRect", "id": "format.linestyle.roundrect", "type": "checkbox", "command": "format:linestyle-roundrect" },
+            { "label": "Curve", "id": "format.linestyle.curve", "type": "checkbox", "command": "format:linestyle-curve" }
+          ]
+        },
+        { "label": "Auto Resize", "id": "format.auto-resize", "type": "checkbox", "command": "format:auto-resize" },
+        { "label": "Show Shadow", "id": "format.show-shadow", "type": "checkbox", "command": "format:show-shadow" }
+      ]
+    },
+    {
+      "label": "Model",
+      "id": "model",
+      "submenu": [
+        { "label": "Add Diagram", "id": "model.add-diagram", "command": "model:add-diagram" },
+        { "label": "Add", "id": "model.add", "command": "model:add" },
+        { "type": "separator" },
+        { "label": "Tag Editor...", "id": "model.tag-editor", "command": "model:tag-editor" }
+      ]
+    },
+    {
+      "label": "Tools",
+      "id": "tools",
+      "submenu": [
+        { "label": "Extension Manager...", "id": "tools.extension-manager", "command": "tools:extension-manager" }
+      ]
+    },
+    {
+      "label": "View",
+      "id": "view",
+      "submenu": [
+        { "label": "Quick Find...", "id": "view.quick-find", "command": "view:quick-find" },
+        { "label": "Command Palette...", "id": "view.command-palette", "command": "view:command-palette" },
+        { "type": "separator" },
+        { "label": "Close Diagram", "id": "view.close-diagram", "command": "view:close-diagram" },
+        { "label": "Close Other Diagrams", "id": "view.close-other-diagrams", "command": "view:close-other-diagrams" },
+        { "label": "Close All Diagrams", "id": "view.close-all-diagrams", "command": "view:close-all-diagrams" },
+        { "type": "separator" },
+        { "label": "Next Diagram", "id": "view.next-diagram", "command": "view:next-diagram" },
+        { "label": "Previous Diagram", "id": "view.previous-diagram", "command": "view:previous-diagram" },
+        { "type": "separator" },
+        { "label": "Zoom In", "id": "view.zoom-in", "command": "view:zoom-in" },
+        { "label": "Zoom Out", "id": "view.zoom-out", "command": "view:zoom-out" },
+        { "label": "Actual Size", "id": "view.actual-size", "command": "view:actual-size" },
+        { "label": "Fit To Window", "id": "view.fit-to-window", "command": "view:fit-to-window" },
+        { "type": "separator" },
+        { "label": "Show Grid", "id": "view.show-grid", "type": "checkbox", "command": "view:show-grid" },
+        { "label": "Snap to Grid", "id": "view.snap-to-grid", "type": "checkbox", "command": "view:snap-to-grid" },
+        { "type": "separator" },
+        { "label": "Sidebar", "id": "view.sidebar", "type": "checkbox", "command": "view:sidebar" },
+        { "label": "Navigator", "id": "view.navigator", "type": "checkbox", "command": "view:navigator" },
+        { "label": "Toolbar", "id": "view.toolbar", "type": "checkbox", "command": "view:toolbar" },
+        { "label": "Statusbar", "id": "view.statusbar", "type": "checkbox", "command": "view:statusbar" },
+        { "label": "Toolbox", "id": "view.toolbox", "type": "checkbox", "command": "view:toolbox" },
+        { "label": "Editors", "id": "view.editors", "type": "checkbox", "command": "view:editors" }
+      ]
+    },
+    {
+      "label": "Window",
+      "role": "window",
+      "id": "window",
+      "submenu": [
+        { "label": "Minimize", "role": "minimize" },
+        { "label": "Zoom", "role": "zoom" },
+        { "label": "Enter Full Screen", "role": "togglefullscreen" },
+        { "type": "separator" },
+        { "label": "Bring All to Front", "role": "front" }
+      ]
+    },
+    {
+      "label": "Help",
+      "role": "help",
+      "id": "help",
+      "submenu": [
+        { "label": "Check For Updates...", "id": "help.check-for-updates", "command": "help:check-for-updates" },
+        { "type": "separator", "id": "help.separator-1" },
+        { "label": "Enter License Key...", "id": "help.enter-license-key", "command": "help:enter-license-key" },
+        { "label": "Delete License Key...", "id": "help.delete-license-key", "command": "help:delete-license-key" },
+        { "type": "separator", "id": "help.separator-2" },
+        { "label": "Documentation...", "id": "help.documentation", "command": "help:documentation" },
+        { "label": "Forum...", "id": "help.forum", "command": "help:forum" },
+        { "label": "Request Feature...", "id": "help.request-feature", "command": "help:request-feature" }
+      ]
+    }
+  ],
+  "context-menu": {
+    "diagram-canvas": [
+      { "label": "Add", "id": "model.add", "command": "model:add" },
+      { "label": "Add Diagram", "id": "model.add-diagram", "command": "model:add-diagram" },
+      { "type": "separator" },
+      {
+        "label": "Format",
+        "id": "format",
+        "submenu": [
+          { "label": "Font...", "id": "format.font", "command": "format:font" },
+          { "label": "Fill Color...", "id": "format.fill-color", "command": "format:fill-color" },
+          { "label": "Line Color...", "id": "format.line-color", "command": "format:line-color" },
+          { "type": "separator" },
+          {
+            "label": "Line Style",
+            "id": "format.linestyle",
+            "submenu": [
+              { "label": "Rectilinear", "id": "format.linestyle.rectilinear", "type": "checkbox", "command": "format:linestyle-rectilinear" },
+              { "label": "Oblique", "id": "format.linestyle.oblique", "type": "checkbox", "command": "format:linestyle-oblique" },
+              { "label": "RoundRect", "id": "format.linestyle.roundrect", "type": "checkbox", "command": "format:linestyle-roundrect" },
+              { "label": "Curve", "id": "format.linestyle.curve", "type": "checkbox", "command": "format:linestyle-curve" }
+            ]
+          },
+          { "label": "Auto Resize", "id": "format.auto-resize", "type": "checkbox", "command": "format:auto-resize" },
+          { "label": "Show Shadow", "id": "format.show-shadow", "type": "checkbox", "command": "format:show-shadow" }
+        ]
+      },
+      { "type": "separator" },
+      { "label": "Cut", "id": "edit.cut", "command": "edit:cut" },
+      { "label": "Copy", "id": "edit.copy", "command": "edit:copy" },
+      { "label": "Paste", "id": "edit.paste", "command": "edit:paste" },
+      { "label": "Select All", "id": "edit.select-all", "command": "edit:select-all" },
+      { "label": "Delete", "id": "edit.delete", "command": "edit:delete" },
+      { "label": "Delete From Model", "id": "edit.delete-from-model", "command": "edit:delete-from-model" },
+      { "type": "separator" },
+      { "label": "Select In Explorer", "id": "edit.select-in-explorer", "command": "edit:select-in-explorer" },
+      { "label": "Select In Diagram", "id": "edit.select-in-diagram", "command": "edit:select-in-diagram" }
+    ],
+    "model-explorer": [
+      { "label": "Add Diagram", "id": "model.add-diagram", "command": "model:add-diagram" },
+      { "label": "Add", "id": "model.add", "command": "model:add" },
+      { "type": "separator" },
+      { "label": "Cut", "id": "edit.cut", "command": "edit:cut" },
+      { "label": "Copy", "id": "edit.copy", "command": "edit:copy" },
+      { "label": "Paste", "id": "edit.paste", "command": "edit:paste" },
+      { "label": "Delete From Model", "id": "edit.delete-from-model", "command": "edit:delete-from-model" },
+      { "type": "separator" },
+      { "label": "Move Up", "id": "edit.move-up", "command": "edit:move-up" },
+      { "label": "Move Down", "id": "edit.move-down", "command": "edit:move-down" },
+      { "type": "separator" },
+      { "label": "Select In Diagram", "id": "edit.select-in-diagram", "command": "edit:select-in-diagram" }
+    ],
+    "working-diagrams": [
+      { "label": "Close Diagram", "id": "view.close-diagram", "command": "view:close-diagram" },
+      { "label": "Close Other Diagrams", "id": "view.close-other-diagrams", "command": "view:close-other-diagrams" },
+      { "label": "Close All Diagrams", "id": "view.close-all-diagrams", "command": "view:close-all-diagrams" },
+      { "type": "separator" },
+      { "label": "Rename", "id": "view.rename-diagram", "command": "view:rename-diagram" }
+    ],
+    "model-explorer-settings": [
+      { "label": "Sort By Added", "id": "explorer.sort-by-added", "type": "checkbox", "command": "explorer:sort-by-added" },
+      { "label": "Sort By Name", "id": "explorer.sort-by-name", "type": "checkbox", "command": "explorer:sort-by-name" },
+      { "type": "separator" },
+      { "label": "Show Stereotype Text", "id": "explorer.show-stereotype-text", "type": "checkbox", "command": "explorer:show-stereotype-text" }
+    ]
+  }
+}

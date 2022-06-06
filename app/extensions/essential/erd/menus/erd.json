@@ -1,0 +1,70 @@
+{
+  "menu": [
+    {
+      "id": "file.new-from-template",
+      "submenu": [
+        { "label": "Data Model", "command": "erd:new-from-template", "command-arg": "templates/DataModel.mdj" }
+      ]
+    },
+    {
+      "id": "format",
+      "submenu": [
+        { "label": "Suppress Columns", "id": "erd.suppress-columns", "type": "checkbox", "command": "erd:suppress-columns" }
+      ]
+    },
+    {
+      "id": "model.add-diagram",
+      "submenu": [
+        { "label": "ER Diagram", "id": "erd.diagram", "command": "factory:create-diagram", "command-arg": {"id": "ERDDiagram"} }
+      ]
+    },
+    {
+      "id": "model.add",
+      "submenu": [
+        { "label": "Data Model", "id": "erd.model", "command": "factory:create-model", "command-arg": {"id":"ERDDataModel"} },
+        { "label": "Entity", "id": "erd.entity", "command": "factory:create-model", "command-arg": {"id":"ERDEntity"} },
+        { "label": "Column", "id": "erd.column", "command": "factory:create-model", "command-arg": {"id":"ERDColumn", "field": "columns"} }
+      ]
+    }
+  ],
+  "context-menu": {
+    "diagram-canvas": [
+      {
+        "id": "model.add",
+        "submenu": [
+          { "label": "Data Model", "id": "erd.model", "command": "factory:create-model", "command-arg": {"id":"ERDDataModel"} },
+          { "label": "Entity", "id": "erd.entity", "command": "factory:create-model", "command-arg": {"id":"ERDEntity"} },
+          { "label": "Column", "id": "erd.column", "command": "factory:create-model", "command-arg": {"id":"ERDColumn", "field": "columns"} }
+        ]
+      },
+      {
+        "id": "model.add-diagram",
+        "submenu": [
+          { "label": "ER Diagram", "id": "erd.diagram", "command": "factory:create-diagram", "command-arg": {"id": "ERDDiagram"} }
+        ]
+      },  
+      {
+        "id": "format",
+        "submenu": [
+          { "label": "Suppress Columns", "id": "erd.suppress-columns", "type": "checkbox", "command": "erd:suppress-columns" }
+        ]
+      }
+    ],
+    "model-explorer": [
+      {
+        "id": "model.add-diagram",
+        "submenu": [
+          { "label": "ER Diagram", "id": "erd.diagram", "command": "factory:create-diagram", "command-arg": {"id": "ERDDiagram"} }
+        ]
+      },
+      {
+        "id": "model.add",
+        "submenu": [
+          { "label": "Data Model", "id": "erd.model", "command": "factory:create-model", "command-arg": {"id":"ERDDataModel"} },
+          { "label": "Entity", "id": "erd.entity", "command": "factory:create-model", "command-arg": {"id":"ERDEntity"} },
+          { "label": "Column", "id": "erd.column", "command": "factory:create-model", "command-arg": {"id":"ERDColumn", "field": "columns"} }
+        ]
+      }
+    ]
+  }
+}

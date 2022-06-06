@@ -1,0 +1,153 @@
+{
+  "components": [
+    {
+      "id": "erd.set-name",
+      "type": "input",
+      "hint": "name",
+      "property": "name",
+      "command": "engine:set-property"
+    },
+    {
+      "id": "erd.primary-key",
+      "type": "dropdown",
+      "hint": "Primary Key",
+      "property": "primaryKey",
+      "dropdown-width": 180,
+      "items": [
+        { "icon": "icon-tool-erd-column-key", "text": "Primary Key", "value": true },
+        { "icon": "icon-tool-erd-column-non-key", "text": "Not Key", "value": false }
+      ],
+      "command": "engine:set-property"
+    },
+    {
+      "id": "erd.column-expression",
+      "type": "input",
+      "hint": "name : type (length)",
+      "property": "textualNotation",
+      "command": "erd:set-column-expression"
+    },
+    {
+      "id": "erd.add-column",
+      "type": "button",
+      "icon": "icon-tool-erd-column",
+      "hint": "Add Column",
+      "key": "cmdctrl-enter",
+      "command": "uml:add-compartment-item",
+      "command-arg": {
+        "type": "ERDColumn",
+        "parent-model": "model",
+        "field": "columns",
+        "parent-view": "view",
+        "compartment": "columnCompartment",
+        "name-prefix": "Column"
+      }
+    },
+    {
+      "id": "erd.add-one-to-one",
+      "type": "button",
+      "icon": "icon-tool-erd-one-to-one",
+      "hint": "Add One to One",
+      "command": "erd:add-one-to-one"
+    },
+    {
+      "id": "erd.add-one-to-many",
+      "type": "button",
+      "icon": "icon-tool-erd-one-to-many",
+      "hint": "Add One to Many",
+      "command": "erd:add-one-to-many"
+    },
+    {
+      "id": "erd.add-many-to-many",
+      "type": "button",
+      "icon": "icon-tool-erd-many-to-many",
+      "hint": "Add Many to Many",
+      "command": "erd:add-many-to-many"
+    },
+    {
+      "id": "erd.set-identifying",
+      "type": "dropdown",
+      "hint": "Identifying",
+      "property": "identifying",
+      "dropdown-width": 180,
+      "items": [
+        { "icon": "icon-tool-erd-identifying", "text": "Identifying", "value": true },
+        { "icon": "icon-tool-erd-non-identifying", "text": "Non-Identifying", "value": false }
+      ],
+      "command": "engine:set-property"
+    },
+    {
+      "id": "erd.set-cardinality",
+      "type": "dropdown",
+      "hint": "Cardinality",
+      "property": "cardinality",
+      "dropdown-width": 190,
+      "items": [
+        { "icon": "icon-tool-erd-zero-one", "text": "Zero or One", "value": "0..1" },
+        { "icon": "icon-tool-erd-one", "text": "One and Only One", "value": "1" },
+        { "icon": "icon-tool-erd-zero-many", "text": "Zero or Many", "value": "0..*" },
+        { "icon": "icon-tool-erd-many", "text": "One or Many", "value": "1..*" }
+      ],
+      "command": "engine:set-property"
+    }
+  ],
+  "quickedits": [
+    {
+      "id": "erd.column",
+      "targets": [ "ERDColumnView" ],
+      "area": { "x1": "_parent.left", "y1": "top", "x2": "_parent.right", "y2": "bottom" },
+      "components": [
+        { "id": "erd.column-expression", "section": "main" },
+        { "id": "erd.primary-key", "section": "left" },
+        { "id": "uml.add-compartment-item", "command-arg": { "parent-view": "view._parent._parent", "type": "ERDColumn", "field": "columns", "compartment": "columnCompartment", "name-prefix": "Column" }, "section": "right" },
+        { "id": "uml.delete-compartment-item", "section": "right" },
+        { "id": "uml.move-up-compartment-item", "command-arg": { "field": "columns" }, "section": "right" },
+        { "id": "uml.move-down-compartment-item", "command-arg": { "field": "columns" }, "section": "right" },
+        { "id": "uml.open-up-compartment-item" },
+        { "id": "uml.open-down-compartment-item" }
+      ]
+    },
+    {
+      "id": "erd.entity",
+      "targets": [ "ERDEntityView" ],
+      "area": { "x1": "left", "y1": "nameLabel.top", "x2": "right", "y2": "nameLabel.bottom" },
+      "components": [
+        { "id": "erd.set-name", "section": "main" },
+        { "id": "uml.add-note", "section": "left" },
+        { "id": "erd.add-column", "section": "right" },
+        { "id": "erd.add-one-to-one", "section": "right", "row": 2 },
+        { "id": "erd.add-one-to-many", "section": "right", "row": 2 },
+        { "id": "erd.add-many-to-many", "section": "right", "row": 2 },
+        { "id": "uml.open-up-compartment-item" },
+        { "id": "uml.open-down-compartment-item" }
+      ]
+    },
+    {
+      "id": "erd.relationship",
+      "targets": [ "ERDRelationshipView", "ERDRelationshipView.nameLabel" ],
+      "area": { "x1": "nameLabel.left", "y1": "nameLabel.top", "x2": "nameLabel.left", "y2": "nameLabel.bottom", "x2-margin": 70 },
+      "components": [
+        { "id": "erd.set-name", "section": "main" },
+        { "id": "erd.set-identifying", "section": "left" },
+        { "id": "uml.add-note", "section": "left", "row": 2}
+      ]
+    },
+    {
+      "id": "erd.relationship-end1",
+      "targets": [ "ERDRelationshipView:end1", "ERDRelationshipView.tailNameLabel" ],
+      "area": { "x1": "tailNameLabel.left", "y1": "tailNameLabel.top", "x2": "tailNameLabel.left", "y2": "tailNameLabel.bottom", "x2-margin": 70 },
+      "components": [
+        { "id": "erd.set-name", "section": "main", "property": "end1.name", "command-arg": { "set-model": "end1", "property": "name" } },
+        { "id": "erd.set-cardinality", "section": "right", "property": "end1.cardinality", "command-arg": { "set-model": "end1", "property": "cardinality" } }
+      ]
+    },
+    {
+      "id": "erd.relationship-end2",
+      "targets": [ "ERDRelationshipView:end2", "ERDRelationshipView.headNameLabel" ],
+      "area": { "x1": "headNameLabel.left", "y1": "headNameLabel.top", "x2": "headNameLabel.left", "y2": "headNameLabel.bottom", "x2-margin": 70 },
+      "components": [
+        { "id": "erd.set-name", "section": "main", "property": "end2.name", "command-arg": { "set-model": "end2", "property": "name" } },
+        { "id": "erd.set-cardinality", "section": "right", "property": "end2.cardinality", "command-arg": { "set-model": "end2", "property": "cardinality" } }
+      ]
+    }
+  ]
+}

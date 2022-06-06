@@ -1,0 +1,31 @@
+[
+  {
+    "label": "BCE",
+    "id": "uml.robustness",
+    "diagram-types": [ "UMLClassDiagram" ],
+    "auto-expands": [ "UMLClassDiagram" ],
+    "items": [
+      {
+        "label": "边界类",
+        "id": "UMLBoundary",
+        "icon": "icon-UMLBoundary",
+        "rubberband": "rect",
+        "command": "robustness:create"
+      },
+      {
+        "label": "实体类",
+        "id": "UMLEntity",
+        "icon": "icon-UMLEntity",
+        "rubberband": "rect",
+        "command": "robustness:create"
+      },
+      {
+        "label": "控制类",
+        "id": "UMLControl",
+        "icon": "icon-UMLControl",
+        "rubberband": "rect",
+        "command": "robustness:create"
+      }
+    ]
+  }
+]

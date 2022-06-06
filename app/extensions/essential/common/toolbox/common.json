@@ -1,0 +1,18 @@
+[
+  {
+    "label": "注释",
+    "id": "annotation",
+    "items": [
+      { "label": "文字", "id": "Text", "icon": "icon-UMLText", "rubberband": "rect", "command-arg": { "min-width": 60, "min-height": 15 } },
+      { "label": "文本框", "id": "TextBox", "icon": "icon-UMLTextBox", "rubberband": "rect", "command-arg": { "min-width": 60, "min-height": 15 } },
+      { "label": "直线", "id": "FreeLine", "icon": "icon-FreeLine", "rubberband": "line" },
+      { "label": "便签", "id": "Note", "icon": "icon-UMLNote", "rubberband": "rect", "command-arg": { "min-width": 70, "min-height": 40 } },
+      { "label": "便签连接", "id": "NoteLink", "icon": "icon-UMLNoteLink", "rubberband": "line" },
+      { "label": "超链接", "id": "Hyperlink", "icon": "icon-Hyperlink", "rubberband": "rect", "command-arg": { "min-width": 70, "min-height": 20 } },
+      { "label": "矩形", "id": "Rect", "icon": "icon-Rectangle", "rubberband": "rect", "command-arg": { "min-width": 50, "min-height": 50 } },
+      { "label": "圆角矩形", "id": "RoundRect", "icon": "icon-RoundedRectangle", "rubberband": "rect", "command-arg": { "min-width": 50, "min-height": 50 } },
+      { "label": "椭圆", "id": "Ellipse", "icon": "icon-Ellipse", "rubberband": "rect", "command-arg": { "min-width": 50, "min-height": 50 } },
+      { "label": "图片", "id": "Image", "icon": "icon-Image", "rubberband": "rect", "command-arg": { "min-width": 100, "min-height": 100 } }
+    ]
+  }
+]

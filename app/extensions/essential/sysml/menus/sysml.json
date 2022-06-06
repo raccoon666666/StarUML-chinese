@@ -1,0 +1,121 @@
+{
+  "menu": [
+    {
+      "id": "model.add-diagram",
+      "submenu": [
+        { "label": "Requirement Diagram", "id": "sysml.requirement-diagram", "command": "factory:create-diagram", "command-arg": {"id": "SysMLRequirementDiagram"} },
+        { "label": "Block Definition Diagram", "id": "sysml.block-definition-diagram", "command": "factory:create-diagram", "command-arg": {"id": "SysMLBlockDefinitionDiagram"} },
+        { "label": "Internal Block Diagram", "id": "sysml.internal-block-diagram", "command": "factory:create-diagram", "command-arg": {"id": "SysMLInternalBlockDiagram"} },
+        { "label": "Parametric Diagram", "id": "sysml.parametric-diagram", "command": "factory:create-diagram", "command-arg": {"id": "SysMLParametricDiagram"} }
+      ]
+    },
+    {
+      "id": "model.add",
+      "submenu": [
+        { "label": "Requirement", "id": "sysml.requirement", "command": "factory:create-model", "command-arg": {"id": "SysMLRequirement"} },
+        { "label": "Block", "id": "sysml.block", "command": "factory:create-model", "command-arg": {"id": "SysMLBlock"} },
+        { "label": "Value Type", "id": "sysml.value-type", "command": "factory:create-model", "command-arg": {"id": "SysMLValueType"} },
+        { "label": "Interface Block", "id": "sysml.interface-block", "command": "factory:create-model", "command-arg": {"id": "SysMLInterfaceBlock"} },
+        { "label": "Constraint Block", "id": "sysml.constraint-block", "command": "factory:create-model", "command-arg": {"id": "SysMLConstraintBlock"} },
+        { "label": "Part", "id": "sysml.part", "command": "factory:create-model", "command-arg": {"id": "SysMLProperty", "field": "parts", "generate-name": "Part", "model-init": { "aggregation": "composite" } } },
+        { "label": "Reference", "id": "sysml.reference", "command": "factory:create-model", "command-arg": {"id": "SysMLProperty", "field": "references", "generate-name": "Reference"} },
+        { "label": "Value", "id": "sysml.value", "command": "factory:create-model", "command-arg": {"id": "SysMLProperty", "field": "values", "generate-name": "Value", "model-init": { "aggregation": "composite" } } },
+        { "label": "Port", "id": "sysml.port", "command": "factory:create-model", "command-arg": {"id": "SysMLPort", "field": "ports"} },
+        { "label": "Property", "id": "sysml.property", "command": "factory:create-model", "command-arg": {"id": "SysMLProperty", "field": "properties"} },
+        { "label": "Constraint Property", "id": "sysml.constraint", "command": "factory:create-model", "command-arg": {"id": "SysMLProperty", "field": "constraints", "generate-name": "Constraint"} },
+        { "label": "Flow Property", "id": "sysml.flow-property", "command": "factory:create-model", "command-arg": {"id": "SysMLFlowProperty", "field": "flowProperties", "generate-name": "FlowProperty"} },
+        { "label": "Parameter", "id": "sysml.parameter", "command": "factory:create-model", "command-arg": {"id": "SysMLProperty", "field": "parameters", "generate-name": "Parameter"} }
+  ]
+    },
+    {
+      "id": "format",
+      "submenu": [
+        { "type": "separator" },
+        { "label": "Suppress Property Values", "id": "format.suppress-property-values", "type": "checkbox", "command": "format:suppress-property-values" },
+        { "label": "Suppress Constraints", "id": "format.suppress-constraints", "type": "checkbox", "command": "format:suppress-constraints" },
+        { "label": "Suppress Parts", "id": "format.suppress-parts", "type": "checkbox", "command": "format:suppress-parts" },
+        { "label": "Suppress Ports", "id": "format.suppress-ports", "type": "checkbox", "command": "format:suppress-ports" },
+        { "label": "Suppress References", "id": "format.suppress-references", "type": "checkbox", "command": "format:suppress-references" },
+        { "label": "Suppress Values", "id": "format.suppress-values", "type": "checkbox", "command": "format:suppress-values" },
+        { "label": "Suppress Properties", "id": "format.suppress-properties", "type": "checkbox", "command": "format:suppress-properties" },
+        { "label": "Suppress Flow Properties", "id": "format.suppress-flow-properties", "type": "checkbox", "command": "format:suppress-flow-properties" },
+        { "type": "separator" }
+      ]
+    }
+  ],
+  "context-menu": {
+    "diagram-canvas": [
+      {
+        "id": "model.add",
+        "submenu": [
+          { "label": "Requirement", "id": "sysml.requirement", "command": "factory:create-model", "command-arg": {"id": "SysMLRequirement"} },
+          { "label": "Block", "id": "sysml.block", "command": "factory:create-model", "command-arg": {"id": "SysMLBlock"} },
+          { "label": "Value Type", "id": "sysml.value-type", "command": "factory:create-model", "command-arg": {"id": "SysMLValueType"} },
+          { "label": "Interface Block", "id": "sysml.interface-block", "command": "factory:create-model", "command-arg": {"id": "SysMLInterfaceBlock"} },
+          { "label": "Constraint Block", "id": "sysml.constraint-block", "command": "factory:create-model", "command-arg": {"id": "SysMLConstraintBlock"} },
+          { "label": "Part", "id": "sysml.part", "command": "factory:create-model", "command-arg": {"id": "SysMLProperty", "field": "parts", "generate-name": "Part", "model-init": { "aggregation": "composite" } } },
+          { "label": "Reference", "id": "sysml.reference", "command": "factory:create-model", "command-arg": {"id": "SysMLProperty", "field": "references", "generate-name": "Reference"} },
+          { "label": "Value", "id": "sysml.value", "command": "factory:create-model", "command-arg": {"id": "SysMLProperty", "field": "values", "generate-name": "Value", "model-init": { "aggregation": "composite" } } },
+          { "label": "Port", "id": "sysml.port", "command": "factory:create-model", "command-arg": {"id": "SysMLPort", "field": "ports"} },
+          { "label": "Property", "id": "sysml.property", "command": "factory:create-model", "command-arg": {"id": "SysMLProperty", "field": "properties"} },
+          { "label": "Constraint Property", "id": "sysml.constraint", "command": "factory:create-model", "command-arg": {"id": "SysMLProperty", "field": "constraints", "generate-name": "Constraint"} },
+          { "label": "Flow Property", "id": "sysml.flow-property", "command": "factory:create-model", "command-arg": {"id": "SysMLFlowProperty", "field": "flowProperties", "generate-name": "FlowProperty"} },
+          { "label": "Parameter", "id": "sysml.parameter", "command": "factory:create-model", "command-arg": {"id": "SysMLProperty", "field": "parameters", "generate-name": "Parameter"} }
+        ]
+      },
+      {
+        "id": "model.add-diagram",
+        "submenu": [
+          { "label": "Requirement Diagram", "id": "sysml.requirement-diagram", "command": "factory:create-diagram", "command-arg": {"id": "SysMLRequirementDiagram"} },
+          { "label": "Block Definition Diagram", "id": "sysml.block-definition-diagram", "command": "factory:create-diagram", "command-arg": {"id": "SysMLBlockDefinitionDiagram"} },
+          { "label": "Internal Block Diagram", "id": "sysml.internal-block-diagram", "command": "factory:create-diagram", "command-arg": {"id": "SysMLInternalBlockDiagram"} },
+          { "label": "Parametric Diagram", "id": "sysml.parametric-diagram", "command": "factory:create-diagram", "command-arg": {"id": "SysMLParametricDiagram"} }
+        ]
+      },  
+      {
+        "id": "format",
+        "submenu": [
+          { "type": "separator" },
+          { "label": "Suppress Property Values", "id": "format.suppress-property-values", "type": "checkbox", "command": "format:suppress-property-values" },
+          { "label": "Suppress Constraints", "id": "format.suppress-constraints", "type": "checkbox", "command": "format:suppress-constraints" },
+          { "label": "Suppress Parts", "id": "format.suppress-parts", "type": "checkbox", "command": "format:suppress-parts" },
+          { "label": "Suppress Ports", "id": "format.suppress-ports", "type": "checkbox", "command": "format:suppress-ports" },
+          { "label": "Suppress References", "id": "format.suppress-references", "type": "checkbox", "command": "format:suppress-references" },
+          { "label": "Suppress Values", "id": "format.suppress-values", "type": "checkbox", "command": "format:suppress-values" },
+          { "label": "Suppress Properties", "id": "format.suppress-properties", "type": "checkbox", "command": "format:suppress-properties" },
+          { "label": "Suppress Flow Properties", "id": "format.suppress-flow-properties", "type": "checkbox", "command": "format:suppress-flow-properties" },
+          { "type": "separator" }
+        ]
+      }
+    ],
+    "model-explorer": [
+      {
+        "id": "model.add-diagram",
+        "submenu": [
+          { "label": "Requirement Diagram", "id": "sysml.requirement-diagram", "command": "factory:create-diagram", "command-arg": {"id": "SysMLRequirementDiagram"} },
+          { "label": "Block Definition Diagram", "id": "sysml.block-definition-diagram", "command": "factory:create-diagram", "command-arg": {"id": "SysMLBlockDefinitionDiagram"} },
+          { "label": "Internal Block Diagram", "id": "sysml.internal-block-diagram", "command": "factory:create-diagram", "command-arg": {"id": "SysMLInternalBlockDiagram"} },
+          { "label": "Parametric Diagram", "id": "sysml.parametric-diagram", "command": "factory:create-diagram", "command-arg": {"id": "SysMLParametricDiagram"} }  
+        ]
+      },
+      {
+        "id": "model.add",
+        "submenu": [
+          { "label": "Requirement", "id": "sysml.requirement", "command": "factory:create-model", "command-arg": {"id": "SysMLRequirement"} },
+          { "label": "Block", "id": "sysml.block", "command": "factory:create-model", "command-arg": {"id": "SysMLBlock"} },
+          { "label": "Value Type", "id": "sysml.value-type", "command": "factory:create-model", "command-arg": {"id": "SysMLValueType"} },
+          { "label": "Interface Block", "id": "sysml.interface-block", "command": "factory:create-model", "command-arg": {"id": "SysMLInterfaceBlock"} },
+          { "label": "Constraint Block", "id": "sysml.constraint-block", "command": "factory:create-model", "command-arg": {"id": "SysMLConstraintBlock"} },
+          { "label": "Part", "id": "sysml.part", "command": "factory:create-model", "command-arg": {"id": "SysMLProperty", "field": "parts", "generate-name": "Part", "model-init": { "aggregation": "composite" } } },
+          { "label": "Reference", "id": "sysml.reference", "command": "factory:create-model", "command-arg": {"id": "SysMLProperty", "field": "references", "generate-name": "Reference"} },
+          { "label": "Value", "id": "sysml.value", "command": "factory:create-model", "command-arg": {"id": "SysMLProperty", "field": "values", "generate-name": "Value", "model-init": { "aggregation": "composite" } } },
+          { "label": "Port", "id": "sysml.port", "command": "factory:create-model", "command-arg": {"id": "SysMLPort", "field": "ports"} },
+          { "label": "Property", "id": "sysml.property", "command": "factory:create-model", "command-arg": {"id": "SysMLProperty", "field": "properties"} },
+          { "label": "Constraint Property", "id": "sysml.constraint", "command": "factory:create-model", "command-arg": {"id": "SysMLProperty", "field": "constraints", "generate-name": "Constraint"} },
+          { "label": "Flow Property", "id": "sysml.flow-property", "command": "factory:create-model", "command-arg": {"id": "SysMLFlowProperty", "field": "flowProperties", "generate-name": "FlowProperty"} },
+          { "label": "Parameter", "id": "sysml.parameter", "command": "factory:create-model", "command-arg": {"id": "SysMLProperty", "field": "parameters", "generate-name": "Parameter" } }
+        ]
+      }
+    ]
+  }
+}

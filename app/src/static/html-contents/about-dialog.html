@@ -1,0 +1,27 @@
+﻿<div class="about-dialog dialog modal" data-title="About">
+    <div class="dialog-body">
+        <table>
+            <tr>
+                <td valign="top">
+                    <img style="margin-right: 1em;" src="{{metadata.config.app_icon}}">
+                </td>
+                <td valign="top">
+                    <div style="font-size: 20px;">{{metadata.name}}</div>
+                    <div style="font-size: 14px; margin-top: 1rem;">
+                        <span class="licensed-to">注册给</span>
+                    </div>
+                    <div style="font-size: 16px;""><span class="license" style="font-weight: 600;"></span></div>
+                    <div style="font-size: 14px; margin-top: .5rem;" class="licenseType"></div>
+                    <div style="font-size: 14px;"><span class="quantity"></span></div>
+                    <br>
+                    <div>{{metadata.copyright}}</div>
+                    <div><b>Version {{metadata.version}}</b></div>
+                    <div><a class="thirdparty" href="#">Third party softwares</a></div>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="dialog-footer">
+        <button class="k-button dialog-button primary" data-button-id="close">{{Strings.CLOSE}}</button>
+    </div>
+</div>

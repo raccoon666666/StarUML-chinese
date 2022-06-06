@@ -1,0 +1,14 @@
+[
+  {
+    "label": "Data Flow",
+    "id": "dfd",
+    "diagram-types": [ "DFDDiagram" ],
+    "auto-expands": [ "DFDDiagram" ],
+    "items": [
+      { "label": "External Entity", "id": "DFDExternalEntity", "icon": "icon-DFDExternalEntity", "rubberband": "rect" },
+      { "label": "Process", "id": "DFDProcess", "icon": "icon-DFDProcess", "rubberband": "rect" },
+      { "label": "Data Store", "id": "DFDDataStore", "icon": "icon-DFDDataStore", "rubberband": "rect" },
+      { "label": "Data Flow", "id": "DFDDataFlow", "icon": "icon-DFDDataFlow", "rubberband": "line" }
+    ]
+  }
+]

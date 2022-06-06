@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>StarUML</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  
+  <link id="theme-css" rel="stylesheet" type="text/css" href="./styles/staruml-dark.css">
+  
+  <!-- Load jQuery, @See: https://github.com/electron/electron/issues/254 -->
+  <script>window.$ = window.jQuery = require('./thirdparty/jquery-2.1.0.min.js');</script>
+  
+  <!-- Pre-load third party scripts that cannot be async loaded. -->
+  <script src="./thirdparty/kendoui/js/kendo.web.min.js"></script>
+  <script src="./thirdparty/jquery-ui/jquery-ui-1.10.4.custom.js"></script>
+  <script src="./thirdparty/jquery-mousewheel/jquery.mousewheel.min.js"></script>
+  <script src="./thirdparty/codemirror/codemirror.js"></script>
+  <script src="./thirdparty/codemirror/markdown.js"></script>
+</head>
+
+<body>
+</body>
+<script>
+  require('../index.js')
+</script>
+
+</html>

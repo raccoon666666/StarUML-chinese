@@ -1,0 +1,64 @@
+.diagram-thumbnails-panel .listview {
+  border: 0;
+  background: transparent;
+}
+.diagram-thumbnails-panel .listview > .diagram-thumbnail.k-state-selected {
+  background-color: transparent;
+}
+.diagram-thumbnails-panel .listview > .diagram-thumbnail.k-state-selected > .wrapper canvas {
+  background-color: #d1f1ff;
+}
+.diagram-thumbnails-panel .listview > .diagram-thumbnail.k-state-selected > .wrapper .diagram-thumbnail-name {
+  background-color: #c3c3c3;
+}
+.diagram-thumbnails-panel .listview > .diagram-thumbnail {
+  float: left;
+  position: relative;
+  width: 120px;
+  height: 105px;
+  padding: 7px;
+  margin: 0;
+  border: 0;
+}
+.diagram-thumbnails-panel .listview > .diagram-thumbnail > .wrapper {
+  box-shadow: rgba(0, 0, 0, 0.1) 1px 1px 4px 2px;
+  line-height: 0;
+  border-radius: 5px;
+}
+.diagram-thumbnails-panel .listview > .diagram-thumbnail > .wrapper canvas {
+  width: 120px;
+  height: 80px;
+  background-color: white;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+.diagram-thumbnails-panel .listview > .diagram-thumbnail > .wrapper .diagram-thumbnail-name {
+  width: 110px;
+  overflow: hidden;
+  padding-top: 13px;
+  padding-bottom: 13px;
+  padding-left: 5px;
+  padding-right: 5px;
+  background-color: #e5e5e5;
+  color: #646464;
+  font-size: 12px;
+  text-shadow: none;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+.diagram-thumbnails-panel .listview > .diagram-thumbnail > .wrapper .diagram-thumbnail-name .name {
+  cursor: pointer;
+}
+.diagram-thumbnails-panel .listview > .diagram-thumbnail > .wrapper .diagram-thumbnail-name .name:hover {
+  color: #868686;
+}
+#toolbar-diagram-thumbnails-view {
+  background-color: transparent;
+  background-image: url("icon_diagram_thumbnails.svg");
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  background-clip: content-box;
+}
+#toolbar-diagram-thumbnails-view.selected {
+  background-position: -24px 0;
+}

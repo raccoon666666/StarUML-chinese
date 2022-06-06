@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="48px" height="24px" viewBox="0 0 48 24" enable-background="new 0 0 48 24" xml:space="preserve">
+<g id="Page-1">
+	<g id="Core" transform="translate(-253.000000, -211.000000)">
+		<g id="extension" transform="translate(253.500000, 211.500000)">
+			<path id="Shape" fill="#DEDFDF" d="M18.5,10.5h-1.2V7.3c0-0.88-0.72-1.6-1.6-1.6h-3.2V4.5c0-1.12-0.88-2-2-2c-1.12,0-2,0.88-2,2
+				v1.2H5.3c-0.88,0-1.6,0.72-1.6,1.6v3.04h1.2c1.2,0,2.16,0.96,2.16,2.16c0,1.201-0.96,2.16-2.16,2.16H3.7v3.041
+				c0,0.879,0.72,1.6,1.6,1.6h3.04V18.1c0-1.199,0.96-2.16,2.16-2.16c1.2,0,2.16,0.961,2.16,2.16v1.201h3.04
+				c0.88,0,1.6-0.721,1.6-1.6V14.5h1.2c1.12,0,2-0.879,2-2C20.5,11.38,19.62,10.5,18.5,10.5L18.5,10.5z"/>
+		</g>
+	</g>
+</g>
+<g id="Page-1_1_">
+	<g id="Core_1_" transform="translate(-253.000000, -211.000000)">
+		<g id="extension_1_" transform="translate(253.500000, 211.500000)">
+			<path id="Shape_1_" fill="#2f8bfa" d="M42.5,10.5h-1.201V7.3c0-0.88-0.719-1.6-1.6-1.6H36.5V4.5c0-1.12-0.881-2-2-2
+				c-1.121,0-2,0.88-2,2v1.2h-3.201c-0.879,0-1.6,0.72-1.6,1.6v3.04h1.2c1.2,0,2.16,0.96,2.16,2.16c0,1.201-0.96,2.16-2.16,2.16
+				h-1.2v3.041c0,0.879,0.721,1.6,1.6,1.6h3.041V18.1c0-1.199,0.959-2.16,2.16-2.16c1.199,0,2.16,0.961,2.16,2.16v1.201h3.039
+				c0.881,0,1.6-0.721,1.6-1.6V14.5H42.5c1.119,0,2-0.879,2-2C44.5,11.38,43.619,10.5,42.5,10.5L42.5,10.5z"/>
+		</g>
+	</g>
+</g>
+<circle fill="#2f8bfa" cx="44" cy="3" r="2"/>
+</svg>

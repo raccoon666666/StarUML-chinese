@@ -1,0 +1,597 @@
+{
+  "id": "uml",
+  "name": "UML",
+  "schema": {
+    "uml.package": {
+      "text": "Package",
+      "type": "section"
+    },
+    "uml.package.fillColor": {
+      "text": "Fill Color",
+      "description": "Fill color of Package.",
+      "type": "color",
+      "default": null,
+      "default-button": {
+        "text": "Use Default"
+      }
+    },
+    "uml.model": {
+      "text": "Model",
+      "type": "section"
+    },
+    "uml.model.fillColor": {
+      "text": "Fill Color",
+      "description": "Fill color of Model.",
+      "type": "color",
+      "default": null,
+      "default-button": {
+        "text": "Use Default"
+      }
+    },
+    "uml.subsystem": {
+      "text": "Subsystem",
+      "type": "section"
+    },
+    "uml.subsystem.fillColor": {
+      "text": "Fill Color",
+      "description": "Fill color of Subsystem.",
+      "type": "color",
+      "default": null,
+      "default-button": {
+        "text": "Use Default"
+      }
+    },
+    "uml.class": {
+      "text": "Class",
+      "type": "section"
+    },
+    "uml.class.fillColor": {
+      "text": "Fill Color",
+      "description": "Fill color of Class.",
+      "type": "color",
+      "default": null,
+      "default-button": {
+        "text": "Use Default"
+      }
+    },
+    "uml.class.stereotypeDisplay": {
+      "text": "Stereotype Display",
+      "description": "Default stereotype display of Class.",
+      "type": "dropdown",
+      "options": [
+        { "value": "none", "text": "None" },
+        { "value": "label", "text": "Label" },
+        { "value": "decoration", "text": "Decoration" },
+        { "value": "decoration-label", "text": "Decoration with Label" },
+        { "value": "icon", "text": "Icon" },
+        { "value": "icon-label", "text": "Icon with Label" }
+      ],
+      "default": "label"
+    },
+    "uml.class.suppressAttributes": {
+      "text": "Suppress Attributes",
+      "description": "Suppress attributes of Class.",
+      "type": "check",
+      "default": false
+    },
+    "uml.class.suppressOperations": {
+      "text": "Suppress Operations",
+      "description": "Suppress operations of Class.",
+      "type": "check",
+      "default": false
+    },
+    "uml.interface": {
+      "text": "Interface",
+      "type": "section"
+    },
+    "uml.interface.fillColor": {
+      "text": "Fill Color",
+      "description": "Fill color of Interface.",
+      "type": "color",
+      "default": null,
+      "default-button": {
+        "text": "Use Default"
+      }
+    },
+    "uml.interface.stereotypeDisplay": {
+      "text": "Stereotype Display",
+      "description": "Default stereotype display of Interface.",
+      "type": "dropdown",
+      "options": [
+        { "value": "none", "text": "None" },
+        { "value": "label", "text": "Label" },
+        { "value": "decoration", "text": "Decoration" },
+        { "value": "decoration-label", "text": "Decoration with Label" },
+        { "value": "icon", "text": "Icon" },
+        { "value": "icon-label", "text": "Icon with Label" }
+      ],
+      "default": "icon"
+    },
+    "uml.interface.suppressAttributes": {
+      "text": "Suppress Attributes",
+      "description": "Suppress attributes of Interface.",
+      "type": "check",
+      "default": true
+    },
+    "uml.interface.suppressOperations": {
+      "text": "Suppress Operations",
+      "description": "Suppress operations of Interface.",
+      "type": "check",
+      "default": true
+    },
+    "uml.signal": {
+      "text": "Signal",
+      "type": "section"
+    },
+    "uml.signal.fillColor": {
+      "text": "Fill Color",
+      "description": "Fill color of Signal.",
+      "type": "color",
+      "default": null,
+      "default-button": {
+        "text": "Use Default"
+      }
+    },
+    "uml.datatype": {
+      "text": "DataType",
+      "type": "section"
+    },
+    "uml.datatype.fillColor": {
+      "text": "Fill Color",
+      "description": "Fill color of DataType.",
+      "type": "color",
+      "default": null,
+      "default-button": {
+        "text": "Use Default"
+      }
+    },
+    "uml.primitivetype": {
+      "text": "Primitive Type",
+      "type": "section"
+    },
+    "uml.primitivetype.fillColor": {
+      "text": "Fill Color",
+      "description": "Fill color of Primitive Type.",
+      "type": "color",
+      "default": null,
+      "default-button": {
+        "text": "Use Default"
+      }
+    },
+    "uml.enumeration": {
+      "text": "Enumeration",
+      "type": "section"
+    },
+    "uml.enumeration.fillColor": {
+      "text": "Fill Color",
+      "description": "Fill color of Enumeration.",
+      "type": "color",
+      "default": null,
+      "default-button": {
+        "text": "Use Default"
+      }
+    },
+    "uml.enumeration.stereotypeDisplay": {
+      "text": "Stereotype Display",
+      "description": "Default stereotype display of Enumeration.",
+      "type": "dropdown",
+      "options": [
+        { "value": "none", "text": "None" },
+        { "value": "label", "text": "Label" },
+        { "value": "decoration", "text": "Decoration" },
+        { "value": "decoration-label", "text": "Decoration with Label" },
+        { "value": "icon", "text": "Icon" },
+        { "value": "icon-label", "text": "Icon with Label" }
+      ],
+      "default": "label"
+    },
+    "uml.enumeration.suppressAttributes": {
+      "text": "Suppress Attributes",
+      "description": "Suppress attributes of Enumeration.",
+      "type": "check",
+      "default": true
+    },
+    "uml.enumeration.suppressOperations": {
+      "text": "Suppress Operations",
+      "description": "Suppress operations of Enumeration.",
+      "type": "check",
+      "default": true
+    },
+    "uml.enumeration.suppressLiterals": {
+      "text": "Suppress Literals",
+      "description": "Suppress literals of Enumeration.",
+      "type": "check",
+      "default": false
+    },
+    "uml.port": {
+      "text": "Port",
+      "type": "section"
+    },
+    "uml.port.fillColor": {
+      "text": "Fill Color",
+      "description": "Fill color of Port.",
+      "type": "color",
+      "default": null,
+      "default-button": {
+        "text": "Use Default"
+      }
+    },
+    "uml.part": {
+      "text": "Part",
+      "type": "section"
+    },
+    "uml.part.fillColor": {
+      "text": "Fill Color",
+      "description": "Fill color of Part.",
+      "type": "color",
+      "default": null,
+      "default-button": {
+        "text": "Use Default"
+      }
+    },
+    "uml.collaboration": {
+      "text": "Collaboration",
+      "type": "section"
+    },
+    "uml.collaboration.fillColor": {
+      "text": "Fill Color",
+      "description": "Fill color of Collaboration.",
+      "type": "color",
+      "default": null,
+      "default-button": {
+        "text": "Use Default"
+      }
+    },
+    "uml.collaborationuse": {
+      "text": "Collaboration Use",
+      "type": "section"
+    },
+    "uml.collaborationuse.fillColor": {
+      "text": "Fill Color",
+      "description": "Fill color of Collaboration Use.",
+      "type": "color",
+      "default": null,
+      "default-button": {
+        "text": "Use Default"
+      }
+    },
+    "uml.artifact": {
+      "text": "Artifact",
+      "type": "section"
+    },
+    "uml.artifact.fillColor": {
+      "text": "Fill Color",
+      "description": "Fill color of Artifact.",
+      "type": "color",
+      "default": null,
+      "default-button": {
+        "text": "Use Default"
+      }
+    },
+    "uml.artifact.stereotypeDisplay": {
+      "text": "Stereotype Display",
+      "description": "Default stereotype display of Artifact.",
+      "type": "dropdown",
+      "options": [
+        { "value": "none", "text": "None" },
+        { "value": "label", "text": "Label" },
+        { "value": "decoration", "text": "Decoration" },
+        { "value": "decoration-label", "text": "Decoration with Label" },
+        { "value": "icon", "text": "Icon" },
+        { "value": "icon-label", "text": "Icon with Label" }
+      ],
+      "default": "icon"
+    },
+    "uml.artifact.suppressAttributes": {
+      "text": "Suppress Attributes",
+      "description": "Suppress attributes of Artifact.",
+      "type": "check",
+      "default": true
+    },
+    "uml.artifact.suppressOperations": {
+      "text": "Suppress Operations",
+      "description": "Suppress operations of Artifact.",
+      "type": "check",
+      "default": true
+    },
+    "uml.component": {
+      "text": "Component",
+      "type": "section"
+    },
+    "uml.component.fillColor": {
+      "text": "Fill Color",
+      "description": "Fill color of Component.",
+      "type": "color",
+      "default": null,
+      "default-button": {
+        "text": "Use Default"
+      }
+    },
+    "uml.component.stereotypeDisplay": {
+      "text": "Stereotype Display",
+      "description": "Default stereotype display of Component.",
+      "type": "dropdown",
+      "options": [
+        { "value": "none", "text": "None" },
+        { "value": "label", "text": "Label" },
+        { "value": "decoration", "text": "Decoration" },
+        { "value": "decoration-label", "text": "Decoration with Label" },
+        { "value": "icon", "text": "Icon" },
+        { "value": "icon-label", "text": "Icon with Label" }
+      ],
+      "default": "label"
+    },
+    "uml.component.suppressAttributes": {
+      "text": "Suppress Attributes",
+      "description": "Suppress attributes of Component.",
+      "type": "check",
+      "default": true
+    },
+    "uml.component.suppressOperations": {
+      "text": "Suppress Operations",
+      "description": "Suppress operations of Component.",
+      "type": "check",
+      "default": true
+    },
+    "uml.node": {
+      "text": "Node",
+      "type": "section"
+    },
+    "uml.node.fillColor": {
+      "text": "Fill Color",
+      "description": "Fill color of Node.",
+      "type": "color",
+      "default": null,
+      "default-button": {
+        "text": "Use Default"
+      }
+    },
+    "uml.node.stereotypeDisplay": {
+      "text": "Stereotype Display",
+      "description": "Default stereotype display of Node.",
+      "type": "dropdown",
+      "options": [
+        { "value": "none", "text": "None" },
+        { "value": "label", "text": "Label" },
+        { "value": "decoration", "text": "Decoration" },
+        { "value": "decoration-label", "text": "Decoration with Label" },
+        { "value": "icon", "text": "Icon" },
+        { "value": "icon-label", "text": "Icon with Label" }
+      ],
+      "default": "label"
+    },
+    "uml.node.suppressAttributes": {
+      "text": "Suppress Attributes",
+      "description": "Suppress attributes of Node.",
+      "type": "check",
+      "default": true
+    },
+    "uml.node.suppressOperations": {
+      "text": "Suppress Operations",
+      "description": "Suppress operations of Node.",
+      "type": "check",
+      "default": true
+    },
+    "uml.object": {
+      "text": "Object",
+      "type": "section"
+    },
+    "uml.object.fillColor": {
+      "text": "Fill Color",
+      "description": "Fill color of Object.",
+      "type": "color",
+      "default": null,
+      "default-button": {
+        "text": "Use Default"
+      }
+    },
+    "uml.artifactinstance": {
+      "text": "Artifact Instance",
+      "type": "section"
+    },
+    "uml.artifactinstance.fillColor": {
+      "text": "Fill Color",
+      "description": "Fill color of Artifact Instance.",
+      "type": "color",
+      "default": null,
+      "default-button": {
+        "text": "Use Default"
+      }
+    },
+    "uml.componentinstance": {
+      "text": "Component Instance",
+      "type": "section"
+    },
+    "uml.componentinstance.fillColor": {
+      "text": "Fill Color",
+      "description": "Fill color of Component Instance.",
+      "type": "color",
+      "default": null,
+      "default-button": {
+        "text": "Use Default"
+      }
+    },
+    "uml.nodeinstance": {
+      "text": "Node Instance",
+      "type": "section"
+    },
+    "uml.nodeinstance.fillColor": {
+      "text": "Fill Color",
+      "description": "Fill color of Node Instance.",
+      "type": "color",
+      "default": null,
+      "default-button": {
+        "text": "Use Default"
+      }
+    },
+    "uml.usecase": {
+      "text": "Use Case",
+      "type": "section"
+    },
+    "uml.usecase.fillColor": {
+      "text": "Fill Color",
+      "description": "Fill color of Use Case.",
+      "type": "color",
+      "default": null,
+      "default-button": {
+        "text": "Use Default"
+      }
+    },
+    "uml.usecase.stereotypeDisplay": {
+      "text": "Stereotype Display",
+      "description": "Default stereotype display of Use Case.",
+      "type": "dropdown",
+      "options": [
+        { "value": "none", "text": "None" },
+        { "value": "label", "text": "Label" },
+        { "value": "decoration", "text": "Decoration" },
+        { "value": "decoration-label", "text": "Decoration with Label" },
+        { "value": "icon", "text": "Icon" },
+        { "value": "icon-label", "text": "Icon with Label" }
+      ],
+      "default": "label"
+    },
+    "uml.usecase.suppressAttributes": {
+      "text": "Suppress Attributes",
+      "description": "Suppress attributes of Use Case.",
+      "type": "check",
+      "default": true
+    },
+    "uml.usecase.suppressOperations": {
+      "text": "Suppress Operations",
+      "description": "Suppress operations of Use Case.",
+      "type": "check",
+      "default": true
+    },
+    "uml.actor": {
+      "text": "Actor",
+      "type": "section"
+    },
+    "uml.actor.fillColor": {
+      "text": "Fill Color",
+      "description": "Fill color of Actor.",
+      "type": "color",
+      "default": null,
+      "default-button": {
+        "text": "Use Default"
+      }
+    },
+    "uml.actor.stereotypeDisplay": {
+      "text": "Stereotype Display",
+      "description": "Default stereotype display of Actor.",
+      "type": "dropdown",
+      "options": [
+        { "value": "none", "text": "None" },
+        { "value": "label", "text": "Label" },
+        { "value": "decoration", "text": "Decoration" },
+        { "value": "decoration-label", "text": "Decoration with Label" },
+        { "value": "icon", "text": "Icon" },
+        { "value": "icon-label", "text": "Icon with Label" }
+      ],
+      "default": "label"
+    },
+    "uml.actor.suppressAttributes": {
+      "text": "Suppress Attributes",
+      "description": "Suppress attributes of Actor.",
+      "type": "check",
+      "default": true
+    },
+    "uml.actor.suppressOperations": {
+      "text": "Suppress Operations",
+      "description": "Suppress operations of Actor.",
+      "type": "check",
+      "default": true
+    },
+    "uml.lifeline": {
+      "text": "Lifeline",
+      "type": "section"
+    },
+    "uml.lifeline.fillColor": {
+      "text": "Fill Color",
+      "description": "Fill color of Lifeline.",
+      "type": "color",
+      "default": null,
+      "default-button": {
+        "text": "Use Default"
+      }
+    },
+    "uml.state": {
+      "text": "State",
+      "type": "section"
+    },
+    "uml.state.fillColor": {
+      "text": "Fill Color",
+      "description": "Fill color of State.",
+      "type": "color",
+      "default": null,
+      "default-button": {
+        "text": "Use Default"
+      }
+    },
+    "uml.action": {
+      "text": "Action",
+      "type": "section"
+    },
+    "uml.action.fillColor": {
+      "text": "Fill Color",
+      "description": "Fill color of Action.",
+      "type": "color",
+      "default": null,
+      "default-button": {
+        "text": "Use Default"
+      }
+    },
+    "uml.objectnode": {
+      "text": "Object Node",
+      "type": "section"
+    },
+    "uml.objectnode.fillColor": {
+      "text": "Fill Color",
+      "description": "Fill color of Object Node.",
+      "type": "color",
+      "default": null,
+      "default-button": {
+        "text": "Use Default"
+      }
+    },
+    "uml.metaclass": {
+      "text": "MetaClass",
+      "type": "section"
+    },
+    "uml.metaclass.fillColor": {
+      "text": "Fill Color",
+      "description": "Fill color of MetaClass.",
+      "type": "color",
+      "default": null,
+      "default-button": {
+        "text": "Use Default"
+      }
+    },
+    "uml.stereotype": {
+      "text": "Stereotype",
+      "type": "section"
+    },
+    "uml.stereotype.fillColor": {
+      "text": "Fill Color",
+      "description": "Fill color of Stereotype.",
+      "type": "color",
+      "default": null,
+      "default-button": {
+        "text": "Use Default"
+      }
+    },
+    "uml.note": {
+      "text": "Note",
+      "type": "section"
+    },
+    "uml.note.fillColor": {
+      "text": "Fill Color",
+      "description": "Fill color of Note.",
+      "type": "color",
+      "default": null,
+      "default-button": {
+        "text": "Use Default"
+      }
+    }
+  }
+}

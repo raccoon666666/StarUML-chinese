@@ -1,0 +1,162 @@
+﻿{
+  "id": "general",
+  "name": "常规",
+  "schema": {
+    "general": {
+      "text": "常规",
+      "type": "section"
+    },
+    "general.working-file": {
+      "text": "自动加载工作文件",
+      "description": "应用程序启动时自动加载最新的工作文件",
+      "type": "check",
+      "default": false
+    },
+    "general.auto-backup": {
+      "text": "自动备份",
+      "description": "自动备份工作模型",
+      "type": "check",
+      "default": true
+    },
+    "theme": {
+      "text": "UI主题",
+      "type": "section"
+    },
+    "theme.default": {
+      "text": "默认主题",
+      "description": "默认的UI主题.",
+      "type": "dropdown",
+      "options": [
+        { "value": "dark", "text": "暗主题" },
+        { "value": "light", "text": "亮主题" }
+      ],
+      "default": "dark"
+    },
+    "view": {
+      "text": "默认的视图样式",
+      "type": "section"
+    },
+    "view.font": {
+      "text": "字体风格",
+      "description": "视图元素的默认字体.",
+      "type": "font",
+      "default": "Arial"
+    },
+    "view.fontSize": {
+      "text": "字体大小",
+      "description": "视图元素的默认字体大小.",
+      "type": "combo",
+      "options": [
+        { "value": 8,  "text": "8"  },
+        { "value": 9,  "text": "9"  },
+        { "value": 10, "text": "10" },
+        { "value": 11, "text": "11" },
+        { "value": 12, "text": "12" },
+        { "value": 13, "text": "13" },
+        { "value": 14, "text": "14" },
+        { "value": 16, "text": "16" },
+        { "value": 20, "text": "20" },
+        { "value": 24, "text": "24" },
+        { "value": 28, "text": "28" },
+        { "value": 32, "text": "32" }
+      ],
+      "default": 13
+    },
+    "view.fillColor": {
+      "text": "填充颜色",
+      "description": "默认视图元素的填充颜色.",
+      "type": "color",
+      "default": "#ffffff"
+    },
+    "view.lineColor": {
+      "text": "线条颜色",
+      "description": "默认视图元素的颜色.",
+      "type": "color",
+      "default": "#000000"
+    },
+    "view.fontColor": {
+      "text": "字体颜色",
+      "description": "默认视图元素的字体颜色.",
+      "type": "color",
+      "default": "#000000"
+    },
+    "view.lineStyle": {
+      "text": "线条样式",
+      "description": "默认端点类型视图元素的线条样式.",
+      "type": "dropdown",
+      "options": [
+        { "value": 0, "text": "直线" },
+        { "value": 1, "text": "倾斜" },
+        { "value": 2, "text": "Rounded Rectilinear" },
+        { "value": 3, "text": "Curve" }
+      ],
+      "default": 1
+    },
+    "view.showShadow": {
+      "text": "显示阴影",
+      "description": "默认显示视图元素的阴影.",
+      "type": "check",
+      "default": true
+    },
+    "diagramEditor": {
+      "text": "图形编辑器",
+      "type": "section"
+    },
+    "diagramEditor.showGrid": {
+      "text": "显示栅格",
+      "description": "编辑器中显示网格图.",
+      "type": "check",
+      "default": true
+    },
+    "diagramEditor.snapToGrid": {
+      "text": "对齐网格",
+      "description": "Snap to grid on diagram editor.",
+      "type": "check",
+      "default": true
+    },
+    "diagramEditor.gridSize": {
+      "text": "栅格大小",
+      "description": "默认大小(宽度和高度)的网格.",
+      "type": "combo",
+      "options": [
+        { "value": 2,  "text": "2"  },
+        { "value": 4,  "text": "4"  },
+        { "value": 6,  "text": "6" },
+        { "value": 8,  "text": "8" },
+        { "value": 10, "text": "10" },
+        { "value": 12, "text": "12" },
+        { "value": 14, "text": "14" },
+        { "value": 16, "text": "16" },
+        { "value": 18, "text": "18" },
+        { "value": 20, "text": "20" }
+      ],
+      "default": 8
+    },
+    "diagramEditor.backgroundColor": {
+      "text": "背景颜色",
+      "description": "图编辑器的背景颜色.",
+      "type": "color",
+      "default": "#ffffff"
+    },
+    "validation": {
+      "text": "检验",
+      "type": "section"
+    },
+    "validation.validateModel": {
+      "text": "验证模型",
+      "description": "当打开或保存文件异步验证模型.",
+      "type": "check",
+      "default": true
+    },
+    "checkUpdate": {
+      "text": "检查更新",
+      "type": "section"
+    },
+    "checkUpdate.checkUpdateOnStart": {
+      "text": "启动时检查更新",
+      "description": "在应用程序启动时检查更新.",
+      "type": "check",
+      "default": true
+    }
+  }
+}

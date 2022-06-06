@@ -1,0 +1,668 @@
+[
+  {
+    "label": "信息流图",
+    "id": "uml.information-flow",
+    "diagram-types": [ "UMLInformationFlowDiagram" ],
+    "auto-expands": [ "UMLInformationFlowDiagram" ],
+    "items": [
+      { "label": "信息项", "id": "UMLInformationItem", "icon": "icon-UMLInformationItem", "rubberband": "rect" },
+      { "label": "信息流", "id": "UMLInformationFlow", "icon": "icon-UMLInformationFlow", "rubberband": "line" }
+    ]
+  },
+  {
+    "label": "用例图",
+    "id": "uml.usecase",
+    "diagram-types": [ "UMLUseCaseDiagram", "UMLInformationFlowDiagram" ],
+    "auto-expands": [ "UMLUseCaseDiagram" ],
+    "items": [
+      { "label": "包", "id": "UMLPackage", "icon": "icon-UMLPackage", "rubberband": "rect" },
+      { "label": "用例主题", "id": "UMLUseCaseSubject", "icon": "icon-UMLUseCaseSubject", "rubberband": "rect" },
+      { "label": "用例", "id": "UMLUseCase", "icon": "icon-UMLUseCase", "rubberband": "rect" },
+      { "label": "参与者", "id": "UMLActor", "icon": "icon-UMLActor", "rubberband": "rect" },
+      { "label": "框架", "id": "UMLFrame", "icon": "icon-UMLFrame", "rubberband": "rect", "command": "uml:create-model-and-view.frame" },
+      { "label": "关联", "id": "UMLAssociation", "icon": "icon-UMLAssociation", "rubberband": "line" },
+      {
+        "label": "指向性关联",
+        "id": "UMLDirectedAssociation",
+        "icon": "icon-UMLDirectedAssociation",
+        "rubberband": "line",
+        "command-arg": {
+          "id": "UMLAssociation",
+          "model-init": {
+            "end1": { "navigable": "unspecified" },
+            "end2": { "navigable": "navigable" }
+          }
+        }
+      },
+      { "label": "泛化", "id": "UMLGeneralization", "icon": "icon-UMLGeneralization", "rubberband": "line" },
+      { "label": "依赖", "id": "UMLDependency", "icon": "icon-UMLDependency", "rubberband": "line" },
+      { "label": "包含", "id": "UMLInclude", "icon": "icon-UMLInclude", "rubberband": "line" },
+      { "label": "扩展", "id": "UMLExtend", "icon": "icon-UMLExtend", "rubberband": "line" }
+    ]
+  },
+  {
+    "label": "类(基本)",
+    "id": "uml.class",
+    "diagram-types": [ "UMLClassDiagram", "UMLCompositeStructureDiagram", "UMLInformationFlowDiagram" ],
+    "auto-expands": [ "UMLClassDiagram", "UMLCompositeStructureDiagram" ],
+    "items": [
+      { "label": "类", "id": "UMLClass", "icon": "icon-UMLClass", "rubberband": "rect" },
+      { "label": "接口", "id": "UMLInterface", "icon": "icon-UMLInterface", "rubberband": "rect" },
+      { "label": "关联", "id": "UMLAssociation", "icon": "icon-UMLAssociation", "rubberband": "line" },
+      {
+        "label": "指向性关联",
+        "id": "UMLDirectedAssociation",
+        "icon": "icon-UMLDirectedAssociation",
+        "rubberband": "line",
+        "command-arg": {
+          "id": "UMLAssociation",
+          "model-init": {
+            "end1": { "navigable": "unspecified" },
+            "end2": { "navigable": "navigable" }
+          }
+        }
+      },
+      {
+        "label": "聚合",
+        "id": "UMLAggregation",
+        "icon": "icon-UMLAggregation",
+        "rubberband": "line",
+        "command-arg": {
+          "id": "UMLAssociation",
+          "model-init": {
+            "end2": { "aggregation": "shared" }
+          }
+        }
+      },
+      {
+        "label": "组合",
+        "id": "UMLComposition",
+        "icon": "icon-UMLComposition",
+        "rubberband": "line",
+        "command-arg": {
+          "id": "UMLAssociation",
+          "model-init": {
+            "end2": { "aggregation": "composite" }
+          }
+        }
+      },
+      { "label": "依赖", "id": "UMLDependency", "icon": "icon-UMLDependency", "rubberband": "line" },
+      { "label": "泛化", "id": "UMLGeneralization", "icon": "icon-UMLGeneralization", "rubberband": "line" },
+      { "label": "接口实现", "id": "UMLInterfaceRealization", "icon": "icon-UMLInterfaceRealization", "rubberband": "line" }
+    ]
+  },
+  {
+    "label": "类图(高级)",
+    "id": "uml.class-adv",
+    "diagram-types": [ "UMLClassDiagram", "UMLCompositeStructureDiagram" ],
+    "items": [
+      { "label": "信号", "id": "UMLSignal", "icon": "icon-UMLSignal", "rubberband": "rect" },
+      { "label": "数据类型", "id": "UMLDataType", "icon": "icon-UMLDataType", "rubberband": "rect" },
+      { "label": "原始类型", "id": "UMLPrimitiveType", "icon": "icon-UMLPrimitiveType", "rubberband": "rect" },
+      { "label": "集合", "id": "UMLEnumeration", "icon": "icon-UMLEnumeration", "rubberband": "rect" },
+      { "label": "框架", "id": "UMLFrame", "icon": "icon-UMLFrame", "rubberband": "rect", "command": "uml:create-model-and-view.frame" },
+      {
+        "label": "N元关联节点",
+        "id": "UMLNaryAssociationNode",
+        "icon": "icon-UMLNaryAssociationNode",
+        "rubberband": "rect",
+        "command-arg": {
+          "model-init": {
+            "name": ""
+          }
+        }
+      },
+      { "label": "关联类", "id": "UMLAssociationClass", "icon": "icon-UMLAssociationClassLink", "rubberband": "line" },
+      { "label": "模板绑定", "id": "UMLTemplateBinding", "icon": "icon-UMLTemplateBinding", "rubberband": "line" },
+      { "label": "实现", "id": "UMLRealization", "icon": "icon-UMLRealization", "rubberband": "line" }
+    ]
+  },
+  {
+    "label": "包图",
+    "id": "uml.package",
+    "diagram-types": [ "UMLClassDiagram", "UMLPackageDiagram" ],
+    "auto-expands": [ "UMLPackageDiagram" ],
+    "items": [
+      { "label": "包", "id": "UMLPackage", "icon": "icon-UMLPackage", "rubberband": "rect" },
+      { "label": "模型", "id": "UMLModel", "icon": "icon-UMLModel", "rubberband": "rect" },
+      { "label": "子系统", "id": "UMLSubsystem", "icon": "icon-UMLSubsystem", "rubberband": "rect" },
+      { "label": "内嵌", "id": "UMLContainment", "icon": "icon-UMLContainment", "rubberband": "line" },
+      { "label": "依赖", "id": "UMLDependency", "icon": "icon-UMLDependency", "rubberband": "line" }
+    ]
+  },
+  {
+    "label": "构件图",
+    "id": "uml.component",
+    "diagram-types": [ "UMLComponentDiagram", "UMLDeploymentDiagram" ],
+    "auto-expands": [ "UMLComponentDiagram", "UMLDeploymentDiagram" ],
+    "items": [
+      { "label": "构件", "id": "UMLComponent", "icon": "icon-UMLComponent", "rubberband": "rect" },
+      { "label": "工件", "id": "UMLArtifact", "icon": "icon-UMLArtifact", "rubberband": "rect" },
+      { "label": "接口", "id": "UMLInterface", "icon": "icon-UMLInterface", "rubberband": "rect" },
+      { "label": "框架", "id": "UMLFrame", "icon": "icon-UMLFrame", "rubberband": "rect", "command": "uml:create-model-and-view.frame" },
+      { "label": "依赖", "id": "UMLDependency", "icon": "icon-UMLDependency", "rubberband": "line" },
+      { "label": "接口实现", "id": "UMLInterfaceRealization", "icon": "icon-UMLInterfaceRealization", "rubberband": "line" },
+      { "label": "构件实现", "id": "UMLComponentRealization", "icon": "icon-UMLComponentRealization", "rubberband": "line" }
+    ]
+  },
+  {
+    "label": "部署图",
+    "id": "uml.deployment",
+    "diagram-types": [ "UMLComponentDiagram", "UMLDeploymentDiagram" ],
+    "auto-expands": [ "UMLComponentDiagram", "UMLDeploymentDiagram" ],
+    "items": [
+      { "label": "节点", "id": "UMLNode", "icon": "icon-UMLNode", "rubberband": "rect" },
+      { "label": "部署", "id": "UMLDeployment", "icon": "icon-UMLDependency", "rubberband": "line" },
+      { "label": "通信路径", "id": "UMLCommunicationPath", "icon": "icon-UMLCommunicationPath", "rubberband": "line" }
+    ]
+  },
+  {
+    "label": "组合结构图",
+    "id": "uml.compositestructure",
+    "diagram-types": [ "UMLClassDiagram", "UMLCompositeStructureDiagram", "UMLComponentDiagram" ],
+    "auto-expands": [ "UMLCompositeStructureDiagram" ],
+    "items": [
+      { "label": "协作", "id": "UMLCollaboration", "icon": "icon-UMLCollaboration", "rubberband": "rect" },
+      { "label": "端口", "id": "UMLPort", "icon": "icon-UMLPort", "rubberband": "point", "command-arg": { "parasitic": true } },
+      { "label": "Part", "id": "UMLPart", "icon": "icon-UMLPart", "rubberband": "rect", "command-arg": { "parasitic": true } },
+      { "label": "连接器", "id": "UMLConnector", "icon": "icon-UMLConnector", "rubberband": "line" },
+      { "label": "协作使用", "id": "UMLCollaborationUse", "icon": "icon-UMLCollaborationUse", "rubberband": "rect" },
+      { "label": "角色绑定", "id": "UMLRoleBinding", "icon": "icon-UMLDependency", "rubberband": "line" },
+      { "label": "实现", "id": "UMLRealization", "icon": "icon-UMLRealization", "rubberband": "line" }
+    ]
+  },
+  {
+    "label": "实例图",
+    "id": "uml.instance",
+    "diagram-types": [ "UMLClassDiagram", "UMLObjectDiagram", "UMLComponentDiagram", "UMLDeploymentDiagram" ],
+    "auto-expands": [ "UMLObjectDiagram" ],
+    "items": [
+      { "label": "对象", "id": "UMLObject", "icon": "icon-UMLObject", "rubberband": "rect" },
+      { "label": "工件实例", "id": "UMLArtifactInstance", "icon": "icon-UMLArtifactInstance", "rubberband": "rect" },
+      { "label": "构件实例", "id": "UMLComponentInstance", "icon": "icon-UMLComponentInstance", "rubberband": "rect" },
+      { "label": "节点实例", "id": "UMLNodeInstance", "icon": "icon-UMLNodeInstance", "rubberband": "rect" },
+      { "label": "连接", "id": "UMLLink", "icon": "icon-UMLLink", "rubberband": "line" },
+      {
+        "label": "指向性连接",
+        "id": "UMLDirectedLink",
+        "icon": "icon-UMLDirectedLink",
+        "rubberband": "line",
+        "command-arg": {
+          "id": "UMLLink",
+          "model-init": {
+            "end1": { "navigable": "unspecified" },
+            "end2": { "navigable": "navigable" }
+          }
+        }
+      },
+      { "label": "连接对象", "id": "UMLLinkObject", "icon": "icon-UMLLinkObjectLink", "rubberband": "line" }
+    ]
+  },
+  {
+    "label": "交互图(基本)",
+    "id": "uml.sequence",
+    "diagram-types": [ "UMLSequenceDiagram" ],
+    "auto-expands": [ "UMLSequenceDiagram" ],
+    "items": [
+      { "label": "生命线", "id": "UMLLifeline", "icon": "icon-UMLLifeline", "rubberband": "rect" },
+      {
+        "label": "消息",
+        "id": "UMLMessage",
+        "icon": "icon-UMLMessage",
+        "rubberband": "line",
+        "command-arg": {
+          "connectable-views": [ "UMLSeqLifelineView", "UMLMessageEndpointView", "UMLTimeSegmentView" ]
+        }
+      },
+      {
+        "label": "自关联信息",
+        "id": "UMLSelfMessage",
+        "icon": "icon-UMLSelfMessage",
+        "rubberband": "point",
+        "command-arg": {
+          "id": "UMLMessage",
+          "connectable-views": [ "UMLSeqLifelineView" ],
+          "self-connection": true
+        }
+      },
+      {
+        "label": "异步消息",
+        "id": "UMLAsyncMessage",
+        "icon": "icon-UMLAsyncMessage",
+        "rubberband": "line",
+        "command-arg": {
+          "id": "UMLMessage",
+          "connectable-views": [ "UMLSeqLifelineView", "UMLMessageEndpointView" ],
+          "model-init": {
+            "messageSort": "asynchCall"
+          }
+        }
+      },
+      {
+        "label": "回复消息",
+        "id": "UMLReplyMessage",
+        "icon": "icon-UMLReplyMessage",
+        "rubberband": "line",
+        "command-arg": {
+          "id": "UMLMessage",
+          "connectable-views": [ "UMLSeqLifelineView", "UMLMessageEndpointView" ],
+          "model-init": {
+            "name": "",
+            "messageSort": "reply"
+          }
+        }
+      },
+      {
+        "label": "创建消息",
+        "id": "UMLCreateMessage",
+        "icon": "icon-UMLCreateMessage",
+        "rubberband": "line",
+        "command-arg": {
+          "id": "UMLMessage",
+          "connectable-views": [ "UMLSeqLifelineView", "UMLMessageEndpointView" ],
+          "model-init": {
+            "name": "",
+            "messageSort": "createMessage"
+          }
+        }
+      },
+      {
+        "label": "删除消息",
+        "id": "UMLDeleteMessage",
+        "icon": "icon-UMLDeleteMessage",
+        "rubberband": "line",
+        "command-arg": {
+          "id": "UMLMessage",
+          "connectable-views": [ "UMLSeqLifelineView", "UMLMessageEndpointView" ],
+          "model-init": {
+            "name": "",
+            "messageSort": "deleteMessage"
+          }
+        }
+      },
+      {
+        "label": "异步信号消息",
+        "id": "UMLAsyncSignalMessage",
+        "icon": "icon-UMLAsyncSignalMessage",
+        "rubberband": "line",
+        "command-arg": {
+          "id": "UMLMessage",
+          "connectable-views": [ "UMLSeqLifelineView", "UMLMessageEndpointView" ],
+          "model-init": {
+            "messageSort": "asynchSignal"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "label": "交互图(高级)",
+    "id": "uml.sequence-adv",
+    "diagram-types": [ "UMLSequenceDiagram" ],
+    "items": [
+      {
+        "label": "发现消息",
+        "id": "UMLFoundMessage",
+        "icon": "icon-UMLFoundMessage",
+        "rubberband": "line",
+        "command-arg": {
+          "connectable-views": [ "UMLSeqLifelineView", "UMLMessageEndpointView" ]
+        }
+      },
+      {
+        "label": "丢失消息",
+        "id": "UMLLostMessage",
+        "icon": "icon-UMLLostMessage",
+        "rubberband": "line",
+        "command-arg": {
+          "connectable-views": [ "UMLSeqLifelineView", "UMLMessageEndpointView" ]
+        }
+      },
+      { "label": "端点", "id": "UMLEndpoint", "icon": "icon-UMLEndpoint", "rubberband": "point" },
+      { "label": "边界", "id": "UMLGate", "icon": "icon-UMLGate", "rubberband": "point" },
+      { "label": "不变量", "id": "UMLStateInvariant", "icon": "icon-UMLStateInvariant", "rubberband": "point" },
+      { "label": "连续", "id": "UMLContinuation", "icon": "icon-UMLContinuation", "rubberband": "rect" },
+      { "label": "交互片段", "id": "UMLCombinedFragment", "icon": "icon-UMLCombinedFragment", "rubberband": "rect" },
+      { "label": "交互使用", "id": "UMLInteractionUse", "icon": "icon-UMLInteractionUse", "rubberband": "rect" },
+      { "label": "时间约束", "id": "UMLTimeConstraint", "icon": "icon-UMLTimeConstraint", "rubberband": "point" },
+      { "label": "期间约束", "id": "UMLDurationConstraint", "icon": "icon-UMLDurationConstraint", "rubberband": "rect" },
+      { "label": "框架", "id": "UMLFrame", "icon": "icon-UMLFrame", "rubberband": "rect", "command": "uml:create-model-and-view.frame" }
+    ]
+  },
+  {
+    "label": "通信图",
+    "id": "uml.communication",
+    "diagram-types": [ "UMLCommunicationDiagram" ],
+    "auto-expands": [ "UMLCommunicationDiagram" ],
+    "items": [
+      { "label": "生命线", "id": "UMLLifeline", "icon": "icon-UMLObject", "rubberband": "rect" },
+      { "label": "连接器", "id": "UMLConnector", "icon": "icon-UMLConnector", "rubberband": "line" },
+      {
+        "label": "自连接",
+        "id": "UMLSelfConnector",
+        "icon": "icon-UMLSelfConnector",
+        "rubberband": "point",
+        "command-arg": {
+          "id": "UMLConnector",
+          "self-connection": true
+        }
+      },
+      {
+        "label": "转发消息",
+        "id": "UMLForwardMessage",
+        "icon": "icon-UMLForwardMessage",
+        "rubberband": "line",
+        "command-arg": {
+          "id": "UMLMessage",
+          "direction": "forward"
+        }
+      },
+      {
+        "label": "反向消息",
+        "id": "UMLReverseMessage",
+        "icon": "icon-UMLReverseMessage",
+        "rubberband": "line",
+        "command-arg": {
+          "id": "UMLMessage",
+          "direction": "reverse"
+        }
+      },
+      { "label": "框架", "id": "UMLFrame", "icon": "icon-UMLFrame", "rubberband": "rect", "command": "uml:create-model-and-view.frame" }
+    ]
+  },
+  {
+    "label": "定时图",
+    "id": "uml.timing",
+    "diagram-types": [ "UMLTimingDiagram" ],
+    "auto-expands": [ "UMLTimingDiagram" ],
+    "items": [
+      { "label": "生命线", "id": "UMLLifeline", "icon": "icon-UMLTimingLifeline", "rubberband": "point" },
+      { "label": "状态/条件", "id": "UMLTimingState", "icon": "icon-UMLStateCondition", "rubberband": "point" },
+      { "label": "时段", "id": "UMLTimeSegment", "icon": "icon-UMLTimeSegment", "rubberband": "rect" },
+      { "label": "时刻", "id": "UMLTimeTick", "icon": "icon-UMLTimeTick", "rubberband": "point" },
+      { "label": "时间约束", "id": "UMLTimeConstraint", "icon": "icon-UMLTimeConstraint", "rubberband": "point" },
+      { "label": "期间约束", "id": "UMLDurationConstraint", "icon": "icon-UMLDurationConstraint", "rubberband": "rect" },
+      { "label": "消息", "id": "UMLMessage", "icon": "icon-UMLMessage", "rubberband": "line" }
+    ]
+  },
+  {
+    "label": "Interaction Overview",
+    "id": "uml.interaction-overview",
+    "diagram-types": [ "UMLInteractionOverviewDiagram" ],
+    "auto-expands": [ "UMLInteractionOverviewDiagram" ],
+    "items": [
+      { "label": "Interaction Use", "id": "UMLInteractionUseInOverview", "icon": "icon-UMLInteractionUse", "rubberband": "react" },
+      { "label": "Interaction (Inline)", "id": "UMLInteractionInOverview", "icon": "icon-UMLInteraction", "rubberband": "react" },
+      { "label": "Initial", "id": "UMLInitialNode", "icon": "icon-UMLInitialNode", "rubberband": "point" },
+      { "label": "Final", "id": "UMLActivityFinalNode", "icon": "icon-UMLActivityFinalNode", "rubberband": "point" },
+      { "label": "Fork", "id": "UMLForkNode", "icon": "icon-UMLForkNode", "rubberband": "rect" },
+      { "label": "Join", "id": "UMLJoinNode", "icon": "icon-UMLJoinNode", "rubberband": "rect" },
+      { "label": "Merge", "id": "UMLMergeNode", "icon": "icon-UMLMergeNode", "rubberband": "point" },
+      { "label": "Decision", "id": "UMLDecisionNode", "icon": "icon-UMLDecisionNode", "rubberband": "point" },
+      { "label": "Control Flow", "id": "UMLControlFlow", "icon": "icon-UMLControlFlow", "rubberband": "line" }
+    ]
+  },
+  {
+    "label": "Statechart (Basic)",
+    "id": "uml.statechart",
+    "diagram-types": [ "UMLStatechartDiagram" ],
+    "auto-expands": [ "UMLStatechartDiagram" ],
+    "items": [
+      { "label": "Simple State", "id": "UMLState", "icon": "icon-UMLState", "rubberband": "rect" },
+      {
+        "label": "Initial State",
+        "id": "UMLInitialState",
+        "icon": "icon-UMLInitialState",
+        "rubberband": "point",
+        "command-arg": {
+          "id": "UMLPseudostate",
+          "pseudostateKind": "initial"
+        }
+      },
+      {
+        "label": "Choice",
+        "id": "UMLChoice",
+        "icon": "icon-UMLChoice",
+        "rubberband": "point",
+        "command-arg": {
+          "id": "UMLPseudostate",
+          "pseudostateKind": "choice"
+        }
+      },
+      {
+        "label": "Join",
+        "id": "UMLJoin",
+        "icon": "icon-UMLJoin",
+        "rubberband": "rect",
+        "command-arg": {
+          "id": "UMLPseudostate",
+          "pseudostateKind": "join"
+        }
+      },
+      {
+        "label": "Fork",
+        "id": "UMLFork",
+        "icon": "icon-UMLFork",
+        "rubberband": "rect",
+        "command-arg": {
+          "id": "UMLPseudostate",
+          "pseudostateKind": "fork"
+        }
+      },
+      { "label": "Final State", "id": "UMLFinalState", "icon": "icon-UMLFinalState", "rubberband": "point" },
+      { "label": "Transition", "id": "UMLTransition", "icon": "icon-UMLTransition", "rubberband": "line" },
+      {
+        "label": "Self Transition",
+        "id": "UMLSelfTransition",
+        "icon": "icon-UMLSelfTransition",
+        "rubberband": "point",
+        "command-arg": {
+          "id": "UMLTransition",
+          "self-connection": true
+        }
+      }
+    ]
+  },
+  {
+    "label": "Statechart (Advanced)",
+    "id": "uml.statechart-adv",
+    "diagram-types": [ "UMLStatechartDiagram" ],
+    "items": [
+      {
+        "label": "Composite State",
+        "id": "UMLCompositeState",
+        "icon": "icon-UMLCompositeState",
+        "rubberband": "rect",
+        "command-arg": {
+          "id": "UMLState",
+          "regionCount": 1
+        }
+      },
+      { "label": "Submachine State", "id": "UMLSubmachineState", "icon": "icon-UMLSubmachineState", "rubberband": "rect" },
+      {
+        "label": "Orthogonal State",
+        "id": "UMLOrthogonalState",
+        "icon": "icon-UMLOrthogonalState",
+        "rubberband": "rect",
+        "command-arg": {
+          "id": "UMLState",
+          "regionCount": 2
+        }
+      },
+      {
+        "label": "Junction",
+        "id": "UMLJunction",
+        "icon": "icon-UMLJunction",
+        "rubberband": "point",
+        "command-arg": {
+          "id": "UMLPseudostate",
+          "pseudostateKind": "junction"
+        }
+      },
+      {
+        "label": "Shallow History",
+        "id": "UMLShallowHistory",
+        "icon": "icon-UMLShallowHistory",
+        "rubberband": "point",
+        "command-arg": {
+          "id": "UMLPseudostate",
+          "pseudostateKind": "shallowHistory"
+        }
+      },
+      {
+        "label": "Deep History",
+        "id": "UMLDeepHistory",
+        "icon": "icon-UMLDeepHistory",
+        "rubberband": "point",
+        "command-arg": {
+          "id": "UMLPseudostate",
+          "pseudostateKind": "deepHistory"
+        }
+      },
+      {
+        "label": "Entry Point",
+        "id": "UMLEntryPoint",
+        "icon": "icon-UMLEntryPoint",
+        "rubberband": "point",
+        "command-arg": {
+          "id": "UMLPseudostate",
+          "pseudostateKind": "entryPoint"
+        }
+      },
+      {
+        "label": "Exit Point",
+        "id": "UMLExitPoint",
+        "icon": "icon-UMLExitPoint",
+        "rubberband": "point",
+        "command-arg": {
+          "id": "UMLPseudostate",
+          "pseudostateKind": "exitPoint"
+        }
+      },
+      {
+        "label": "Terminate",
+        "id": "UMLTerminate",
+        "icon": "icon-UMLTerminate",
+        "rubberband": "point",
+        "command-arg": {
+          "id": "UMLPseudostate",
+          "pseudostateKind": "terminate"
+        }
+      },
+      { "label": "Connection Point Reference", "id": "UMLConnectionPointReference", "icon": "icon-UMLConnectionPointReference", "rubberband": "point", "command-arg": { "parasitic": true } },
+      { "label": "框架", "id": "UMLFrame", "icon": "icon-UMLFrame", "rubberband": "rect", "command": "uml:create-model-and-view.frame" }
+    ]
+  },
+  {
+    "label": "Activities (Basic)",
+    "id": "uml.activity",
+    "diagram-types": [ "UMLActivityDiagram" ],
+    "auto-expands": [ "UMLActivityDiagram" ],
+    "items": [
+      { "label": "Action", "id": "UMLAction", "icon": "icon-UMLAction", "rubberband": "rect" },
+      { "label": "Initial", "id": "UMLInitialNode", "icon": "icon-UMLInitialNode", "rubberband": "point" },
+      { "label": "Final", "id": "UMLActivityFinalNode", "icon": "icon-UMLActivityFinalNode", "rubberband": "point" },
+      { "label": "Fork", "id": "UMLForkNode", "icon": "icon-UMLForkNode", "rubberband": "rect" },
+      { "label": "Join", "id": "UMLJoinNode", "icon": "icon-UMLJoinNode", "rubberband": "rect" },
+      { "label": "Merge", "id": "UMLMergeNode", "icon": "icon-UMLMergeNode", "rubberband": "point" },
+      { "label": "Decision", "id": "UMLDecisionNode", "icon": "icon-UMLDecisionNode", "rubberband": "point" },
+      { "label": "Control Flow", "id": "UMLControlFlow", "icon": "icon-UMLControlFlow", "rubberband": "line" }
+    ]
+  },
+  {
+    "label": "Activities (Advanced)",
+    "id": "uml.activity-adv",
+    "diagram-types": [ "UMLActivityDiagram" ],
+    "items": [
+      {
+        "label": "Swimlane (Vertical)",
+        "id": "UMLSwimlaneVert",
+        "icon": "icon-UMLSwimlaneVert",
+        "rubberband": "rect",
+        "command-arg": {
+          "id": "UMLActivityPartition",
+          "view-init": {
+            "isVertical": true
+          }
+        }
+      },
+      {
+        "label": "Swimlane (Horizontal)",
+        "id": "UMLSwimlaneHorz",
+        "icon": "icon-UMLSwimlaneHorz",
+        "rubberband": "rect",
+        "command-arg": {
+          "id": "UMLActivityPartition",
+          "view-init": {
+            "isVertical": false
+          }
+        }
+      },
+      { "label": "Interruptible Activity Region", "id": "UMLInterruptibleActivityRegion", "icon": "icon-UMLInterruptibleActivityRegion", "rubberband": "rect" },
+      { "label": "Structured Activity", "id": "UMLStructuredActivityNode", "icon": "icon-UMLStructuredActivityNode", "rubberband": "rect" },
+      { "label": "Input Pin", "id": "UMLInputPin", "icon": "icon-UMLInputPin", "rubberband": "point", "command-arg": { "parasitic": true } },
+      { "label": "Output Pin", "id": "UMLOutputPin", "icon": "icon-UMLOutputPin", "rubberband": "point", "command-arg": { "parasitic": true } },
+      {
+        "label": "Send Signal",
+        "id": "UMLSendSignal",
+        "icon": "icon-UMLSendSignal",
+        "rubberband": "rect",
+        "command-arg": {
+          "id": "UMLAction",
+          "model-init": {
+            "kind": "sendSignal"
+          }
+        }
+      },
+      {
+        "label": "Accept Signal",
+        "id": "UMLAcceptSignal",
+        "icon": "icon-UMLAcceptSignal",
+        "rubberband": "rect",
+        "command-arg": {
+          "id": "UMLAction",
+          "model-init": {
+            "kind": "acceptSignal"
+          }
+        }
+      },
+      {
+        "label": "Accept Time Event",
+        "id": "UMLAcceptTimeEvent",
+        "icon": "icon-UMLAcceptTimeEvent",
+        "rubberband": "rect",
+        "command-arg": {
+          "id": "UMLAction",
+          "model-init": {
+            "kind": "timeEvent"
+          }
+        }
+      },
+      { "label": "Flow Final", "id": "UMLFlowFinalNode", "icon": "icon-UMLFlowFinalNode", "rubberband": "point" },
+      { "label": "框架", "id": "UMLFrame", "icon": "icon-UMLFrame", "rubberband": "rect", "command": "uml:create-model-and-view.frame" },
+      { "label": "Object Node", "id": "UMLObjectNode", "icon": "icon-UMLObjectNode", "rubberband": "rect" },
+      { "label": "Central Buffer", "id": "UMLCentralBufferNode", "icon": "icon-UMLCentralBufferNode", "rubberband": "rect" },
+      { "label": "Datastore", "id": "UMLDataStoreNode", "icon": "icon-UMLDataStoreNode", "rubberband": "rect" },
+      { "label": "Expansion Region", "id": "UMLExpansionRegion", "icon": "icon-UMLExpansionRegion", "rubberband": "rect" },
+      { "label": "Input Expansion Node", "id": "UMLInputExpansionNode", "icon": "icon-UMLInputExpansionNode", "rubberband": "point", "command-arg": { "parasitic": true } },
+      { "label": "Output Expansion Node", "id": "UMLOutputExpansionNode", "icon": "icon-UMLOutputExpansionNode", "rubberband": "point", "command-arg": { "parasitic": true } },
+      { "label": "Object Flow", "id": "UMLObjectFlow", "icon": "icon-UMLObjectFlow", "rubberband": "line" },
+      { "label": "Exception Handler", "id": "UMLExceptionHandler", "icon": "icon-UMLExceptionHandler", "rubberband": "line" },
+      { "label": "Activity Interrupt", "id": "UMLActivityInterrupt", "icon": "icon-UMLActivityInterrupt", "rubberband": "line" },
+      { "label": "Activity Edge Connector", "id": "UMLActivityEdgeConnector", "icon": "icon-UMLActivityEdgeConnector", "rubberband": "point" }
+    ]
+  },
+  {
+    "label": "Profiles",
+    "id": "uml.profile",
+    "diagram-types": [ "UMLProfileDiagram" ],
+    "auto-expands": [ "UMLProfileDiagram" ],
+    "items": [
+      { "label": "MetaClass", "id": "UMLMetaClass", "icon": "icon-UMLMetaClass", "rubberband": "rect" },
+      { "label": "Stereotype", "id": "UMLStereotype", "icon": "icon-UMLStereotype", "rubberband": "rect" },
+      { "label": "Enumeration", "id": "UMLEnumeration", "icon": "icon-UMLEnumeration", "rubberband": "rect" },
+      { "label": "Extension", "id": "UMLExtension", "icon": "icon-UMLExtension", "rubberband": "line" },
+      { "label": "Generalization", "id": "UMLGeneralization", "icon": "icon-UMLGeneralization", "rubberband": "line" }
+    ]
+  }
+]

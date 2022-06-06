@@ -1,0 +1,49 @@
+<div class="font-dialog dialog modal" data-title="Font">
+    <div class="dialog-body">
+        <table>
+            <tr>
+                <td>
+                    <div class="item-label">Face:</div>
+                    <label class="font-face k-combo">
+                        <input type="text" style="width: 100%;">
+                        <select tabindex="-1">
+                            {{#faces}}
+                            <option value="{{value}}">{{text}}</option>
+                            {{/faces}}
+                        </select>
+                    </label>
+                </td>
+                <td>
+                    <div class="item-label">Size:</div>
+                    <label class="font-size k-combo">
+                        <input type="text" style="width: 100%;">
+                        <select tabindex="-1">
+                            {{#sizes}}
+                            <option value='{{.}}'>{{.}}</option>
+                            {{/sizes}}
+                        </select>
+                    </label>
+                </td>
+                <td>
+                    <div class="item-label">Color:</div>
+                    <input class="font-color" type="color">
+                </td>
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <td>
+                    <div class="item-label">Preview:</div>
+                    <div class='font-preview'>AaBb123</div>
+                </td>
+                <td>
+                    <div class="color-palette"></div>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="dialog-footer">
+        <button class="k-button dialog-button primary" data-button-id="ok">{{Strings.OK}}</button>
+        <button class="k-button dialog-button outline" data-button-id="cancel">{{Strings.CANCEL}}</button>
+    </div>
+</div>

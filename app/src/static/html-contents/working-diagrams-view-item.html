@@ -1,0 +1,9 @@
+<li data-id="{{_id}}" class="working-diagram">
+    <span data-id="{{_id}}" class="close-button"></span>
+    <span class="diagram-icon k-sprite staruml-icon icon-{{getClassName}}"></span>
+    <span class="name">{{name}}</span>
+    {{#_parent}}
+    <span class="parent"> — </span>
+    <span class="parent namespace">{{name}}</span>
+    {{/_parent}}
+</li>

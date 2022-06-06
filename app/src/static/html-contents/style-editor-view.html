@@ -1,0 +1,325 @@
+<div class="editor-view" data-id="styleEditor">
+    <hr>
+    <div class="editor-view-header">
+        <span class="suppress-button"></span>
+        <label class="header">Styles</label>
+    </div>
+    <div class="editor-view-body">
+        <table class='property-grid small'>
+            <!-- Font -->
+            <tr>
+                <td>
+                    Font
+                </td>
+                <td>
+                    <div style="width: 100%; display: block; position: relative; padding-right: 60px; box-sizing: border-box;">
+                        <label class="font-face k-combo small" style="width: 100%; margin: 0; padding: 0">
+                            <input type="text" style="width: 100%;">
+                            <select tabindex="-1">
+                            </select>
+                        </label>
+                        <label class="font-size k-combo small" style="position: absolute; right: 0; top: 0; width: 55px;">
+                            <input type="text" style="width: 100%;">
+                            <select tabindex="-1">
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="15">15</option>
+                                <option value="16">16</option>
+                                <option value="18">18</option>
+                                <option value="20">20</option>
+                                <option value="22">22</option>
+                                <option value="24">24</option>
+                                <option value="26">26</option>
+                                <option value="28">28</option>
+                                <option value="32">32</option>
+                                <option value="36">36</option>
+                                <option value="42">42</option>
+                            </select>
+                        </label>
+                    </div>
+                </td>
+            </tr>
+
+            <!-- Color -->
+            <tr>
+                <td>
+                    Color
+                </td>
+                <td>
+                    <span class="k-sprite staruml-icon icon-tool-fill-color" style="margin-right: 3px;"></span>
+                    <input type="color" class="fill-color k-color-input small" title="Fill Color" value="#ffffff">
+                    <span style="display: inline-block; width: 3px;"></span>
+
+                    <span class="k-sprite staruml-icon icon-tool-line-color" style="margin-right: 3px;"></span>
+                    <input type="color" class="line-color k-color-input small" title="Line Color" value="#000000">
+                    <span style="display: inline-block; width: 3px;"></span>
+
+                    <span class="k-sprite staruml-icon icon-tool-font-color" style="margin-right: 3px;"></span>
+                    <input type="color" class="font-color k-color-input small" title="Text Color" value="#000000">
+                </td>
+            </tr>
+
+            <!-- Line Style -->
+            <tr>
+                <td>
+                    Line Style
+                </td>
+                <td>
+                    <div style="display: flex; flex-direction: row;">
+                        <div class="radio-button-bar icon-group" style="margin-right: 0.2rem;">
+                            <label class="radio-button-bar__item">
+                                <input id="style-editor-line-style-rectilinear" type="radio" name="line-style" value="0">
+                                <label for="style-editor-line-style-rectilinear" class="line-style k-button small" title="Rectilinear"><span class="k-sprite staruml-icon icon-tool-rectilinear"/></label>
+                            </label>
+                            <label class="radio-button-bar__item">
+                                <input id="style-editor-line-style-oblique" type="radio" name="line-style" value="1">
+                                <label for="style-editor-line-style-oblique" class="line-style k-button small" title="Oblique"><span class="k-sprite staruml-icon icon-tool-oblique"/></label>
+                            </label>
+                            <label class="radio-button-bar__item">
+                                <input id="style-editor-line-style-roundrect" type="radio" name="line-style" value="2">
+                                <label for="style-editor-line-style-roundrect" class="line-style k-button small" title="Rounded Rectilinear"><span class="k-sprite staruml-icon icon-tool-rounded-rectilinear"/></label>
+                            </label>
+                            <label class="radio-button-bar__item">
+                                <input id="style-editor-line-style-curve" type="radio" name="line-style" value="3">
+                                <label for="style-editor-line-style-curve" class="line-style k-button small" title="Curve"><span class="k-sprite staruml-icon icon-tool-curve"/></label>
+                            </label>
+                        </div>
+                        <div class="style-editor-line-mode radio-button-bar icon-group" style="margin-right: 0.2rem;">
+                            <label class="radio-button-bar__item">
+                                <input id="style-editor-line-mode-solid" type="radio" name="line-mode" value="0">
+                                <label for="style-editor-line-mode-solid" class="line-mode k-button small" title="Solid"><span class="k-sprite staruml-icon icon-tool-linemode-solid"/></label>
+                            </label>
+                            <label class="radio-button-bar__item">
+                                <input id="style-editor-line-mode-dotted" type="radio" name="line-mode" value="1">
+                                <label for="style-editor-line-mode-dotted" class="line-mode k-button small" title="Dotted"><span class="k-sprite staruml-icon icon-tool-linemode-dotted"/></label>
+                            </label>
+                            <label class="radio-button-bar__item">
+                                <input id="style-editor-line-mode-dashed" type="radio" name="line-mode" value="2">
+                                <label for="style-editor-line-mode-dashed" class="line-mode k-button small" title="Dashed"><span class="k-sprite staruml-icon icon-tool-linemode-dashed"/></label>
+                            </label>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+
+            <!-- Line End -->
+            <tr class="style-editor-line-end">
+                <td>
+                    Line End
+                </td>
+                <td>
+                    <div style="display: flex; flex-direction: row;">
+                        <div class="style-editor-tail-end-style radio-button-bar icon-group" style="margin-right: 0.2rem;">
+                            <label class="radio-button-bar__item">
+                                <input id="style-editor-tail-end-style-flat" type="radio" name="tail-end-style" value="0">
+                                <label for="style-editor-tail-end-style-flat" class="tail-end-style k-button small" title="Flat (Tail)"><span class="k-sprite staruml-icon icon-tool-tail-end-style-flat"/></label>
+                            </label>
+                            <label class="radio-button-bar__item">
+                                <input id="style-editor-tail-end-style-stick" type="radio" name="tail-end-style" value="1">
+                                <label for="style-editor-tail-end-style-stick" class="tail-end-style k-button small" title="Stick Arrow (Tail)"><span class="k-sprite staruml-icon icon-tool-tail-end-style-stick"/></label>
+                            </label>
+                            <label class="radio-button-bar__item">
+                                <input id="style-editor-tail-end-style-solid" type="radio" name="tail-end-style" value="2">
+                                <label for="style-editor-tail-end-style-solid" class="tail-end-style k-button small" title="Solid Arrow (Tail)"><span class="k-sprite staruml-icon icon-tool-tail-end-style-solid"/></label>
+                            </label>
+                        </div>
+                        <div class="style-editor-head-end-style radio-button-bar icon-group">
+                            <label class="radio-button-bar__item">
+                                <input id="style-editor-head-end-style-flat" type="radio" name="head-end-style" value="0">
+                                <label for="style-editor-head-end-style-flat" class="head-end-style k-button small" title="Flat (Head)"><span class="k-sprite staruml-icon icon-tool-head-end-style-flat"/></label>
+                            </label>
+                            <label class="radio-button-bar__item">
+                                <input id="style-editor-head-end-style-stick" type="radio" name="head-end-style" value="1">
+                                <label for="style-editor-head-end-style-stick" class="head-end-style k-button small" title="Stick Arrow (Head)"><span class="k-sprite staruml-icon icon-tool-head-end-style-stick"/></label>
+                            </label>
+                            <label class="radio-button-bar__item">
+                                <input id="style-editor-head-end-style-solid" type="radio" name="head-end-style" value="2">
+                                <label for="style-editor-head-end-style-solid" class="head-end-style k-button small" title="Solid Arrow (Head)"><span class="k-sprite staruml-icon icon-tool-head-end-style-solid"/></label>
+                            </label>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+
+            <!-- Format -->
+            <tr>
+                <td>
+                    Format
+                </td>
+                <td>
+                    <div class="k-button-bar icon-group">
+                        <div class="k-button-bar__item">
+                            <input type="checkbox" class="auto-resize">
+                            <label class="k-button auto-resize" title="Auto Resize"><span class="k-sprite staruml-icon icon-tool-auto-resize"/></label>
+                        </div>
+                        <div class="k-button-bar__item">
+                            <input type="checkbox" class="show-shadow">
+                            <label class="k-button show-shadow" title="Show Shadow"><span class="k-sprite staruml-icon icon-tool-show-shadow"/></label>
+                        </div>
+                        <div class="k-button-bar__item">
+                            <input type="checkbox" class="word-wrap">
+                            <label class="k-button word-wrap" title="Word Wrap"><span class="k-sprite staruml-icon icon-tool-wordwrap"/></label>
+                        </div>
+                    </div>
+                    <div style="display: inline-block; vertical-align: bottom">
+                        <label class="k-select small stereotype-display">
+                            <select title="Stereotype Display">
+                                <option value="none">None</option>
+                                <option value="label">Label</option>
+                                <option value="decoration">Decoration</option>
+                                <option value="decoration-label">Decoration with Label</option>
+                                <option value="icon">Icon</option>
+                                <option value="icon-label">Icon with Label</option>
+                            </select>
+                        </label>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <div class="k-button-bar icon-group">
+                        <div class="k-button-bar__item">
+                            <input type="checkbox" class="show-visibility">
+                            <label class="k-button show-visibility" title="Show Visibility"><span class="k-sprite staruml-icon icon-tool-show-visibility"/></label>
+                        </div>
+                        <div class="k-button-bar__item">
+                            <input type="checkbox" class="show-namespace">
+                            <label class="k-button show-namespace" title="Show Namespace"><span class="k-sprite staruml-icon icon-tool-show-namespace"/></label>
+                        </div>
+                        <div class="k-button-bar__item">
+                            <input type="checkbox" class="show-property">
+                            <label class="k-button show-property" title="Show Property"><span class="k-sprite staruml-icon icon-tool-show-property"/></label>
+                        </div>
+                        <div class="k-button-bar__item">
+                            <input type="checkbox" class="show-type">
+                            <label class="k-button show-type" title="Show Type"><span class="k-sprite staruml-icon icon-tool-show-type"/></label>
+                        </div>
+                    </div>
+                    <div class="k-button-bar icon-group">
+                        <div class="k-button-bar__item">
+                            <input type="checkbox" class="suppress-attributes">
+                            <label class="k-button suppress-attributes" title="Suppress Attributes"><span class="k-sprite staruml-icon icon-tool-suppress-attributes"/></label>
+                        </div>
+                        <div class="k-button-bar__item">
+                            <input type="checkbox" class="suppress-operations">
+                            <label class="k-button suppress-operations" title="Suppress Operations"><span class="k-sprite staruml-icon icon-tool-suppress-operations"/></label>
+                        </div>
+                        <div class="k-button-bar__item">
+                            <input type="checkbox" class="suppress-receptions">
+                            <label class="k-button suppress-receptions" title="Suppress Receptions"><span class="k-sprite staruml-icon icon-tool-suppress-receptions"/></label>
+                        </div>
+                        <div class="k-button-bar__item">
+                            <input type="checkbox" class="suppress-literals">
+                            <label class="k-button suppress-literals" title="Suppress Literals"><span class="k-sprite staruml-icon icon-tool-suppress-literals"/></label>
+                        </div>
+                        <div class="k-button-bar__item">
+                            <input type="checkbox" class="suppress-columns">
+                            <label class="k-button suppress-columns" title="Suppress Columns"><span class="k-sprite staruml-icon icon-tool-suppress-columns"/></label>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+
+            <!-- Text Alignment -->
+            <tr class="style-editor-text-align">
+                <td>
+                    Text Alignment
+                </td>
+                <td style="display: flex; flex-direction: row;">
+                    <div class="horz-text-align radio-button-bar icon-group" style="margin-right: 0.2rem;">
+                        <label class="radio-button-bar__item">
+                            <input id="horz-text-align-left" type="radio" name="horz-text-align" value="0">
+                            <label for="horz-text-align-left" class="horz-text-align k-button small" title="Left"><span class="k-sprite staruml-icon icon-tool-text-align-left"/></label>
+                        </label>
+                        <label class="radio-button-bar__item">
+                            <input id="horz-text-align-center" type="radio" name="horz-text-align" value="2">
+                            <label for="horz-text-align-center" class="horz-text-align k-button small" title="Center"><span class="k-sprite staruml-icon icon-tool-text-align-center"/></label>
+                        </label>
+                        <label class="radio-button-bar__item">
+                            <input id="horz-text-align-right" type="radio" name="horz-text-align" value="1">
+                            <label for="horz-text-align-right" class="horz-text-align k-button small" title="Right"><span class="k-sprite staruml-icon icon-tool-text-align-right"/></label>
+                        </label>
+                    </div>
+                    <div class="vert-text-align radio-button-bar icon-group" style="margin-right: 0.2rem;">
+                        <label class="radio-button-bar__item">
+                            <input id="vert-text-align-left" type="radio" name="vert-text-align" value="3">
+                            <label for="vert-text-align-left" class="vert-text-align k-button small" title="Top"><span class="k-sprite staruml-icon icon-tool-text-align-top"/></label>
+                        </label>
+                        <label class="radio-button-bar__item">
+                            <input id="vert-text-align-center" type="radio" name="vert-text-align" value="5">
+                            <label for="vert-text-align-center" class="vert-text-align k-button small" title="Middle"><span class="k-sprite staruml-icon icon-tool-text-align-middle"/></label>
+                        </label>
+                        <label class="radio-button-bar__item">
+                            <input id="vert-text-align-right" type="radio" name="vert-text-align" value="4">
+                            <label for="vert-text-align-right" class="vert-text-align k-button small" title="Bottom"><span class="k-sprite staruml-icon icon-tool-text-align-bottom"/></label>
+                        </label>
+                    </div>
+                </td>
+            </tr>
+
+            <!-- Alignment -->
+            <tr>
+                <td>
+                    Alignment
+                </td>
+                <td>
+                    <div class="k-button-bar icon-group">
+                        <div class="k-button-bar__item">
+                            <button class="k-button send-to-back" title="Send to Back"><span class="k-sprite staruml-icon icon-tool-send-to-back"/></button>
+                        </div>
+                        <div class="k-button-bar__item">
+                            <button class="k-button bring-to-front" title="Bring to Front"><span class="k-sprite staruml-icon icon-tool-bring-to-front"/></button>
+                        </div>
+                    </div>
+                    <div class="k-button-bar icon-group">
+                        <div class="k-button-bar__item">
+                            <button class="k-button align-left" title="Align Left"><span class="k-sprite staruml-icon icon-tool-align-left"/></button>
+                        </div>
+                        <div class="k-button-bar__item">
+                            <button class="k-button align-center" title="Align Center"><span class="k-sprite staruml-icon icon-tool-align-center"/></button>
+                        </div>
+                        <div class="k-button-bar__item">
+                            <button class="k-button align-right" title="Align Right"><span class="k-sprite staruml-icon icon-tool-align-right"/></button>
+                        </div>
+                    </div>
+                    <div class="k-button-bar icon-group">
+                        <div class="k-button-bar__item">
+                            <button class="k-button align-top" title="Align Top"><span class="k-sprite staruml-icon icon-tool-align-top"/></button>
+                        </div>
+                        <div class="k-button-bar__item">
+                            <button class="k-button align-middle" title="Align Middle"><span class="k-sprite staruml-icon icon-tool-align-middle"/></button>
+                        </div>
+                        <div class="k-button-bar__item">
+                            <button class="k-button align-bottom" title="Align Bottom"><span class="k-sprite staruml-icon icon-tool-align-bottom"/></button>
+                        </div>
+                    </div>
+                    <div class="k-button-bar icon-group">
+                        <div class="k-button-bar__item">
+                            <button class="k-button space-equal-horz" title="Space Equally, Horizontally"><span class="k-sprite staruml-icon icon-tool-align-space-even-horz"/></button>
+                        </div>
+                        <div class="k-button-bar__item">
+                            <button class="k-button space-equal-vert" title="Space Equally, Vertically"><span class="k-sprite staruml-icon icon-tool-align-space-even-vert"/></button>
+                        </div>
+                    </div>
+                    <div class="k-button-bar icon-group">
+                        <div class="k-button-bar__item">
+                            <button class="k-button set-width-equal" title="Set Width Equally"><span class="k-sprite staruml-icon icon-tool-set-width-equal"/></button>
+                        </div>
+                        <div class="k-button-bar__item">
+                            <button class="k-button set-height-equal" title="Set Height Equally"><span class="k-sprite staruml-icon icon-tool-set-height-equal"/></button>
+                        </div>
+                        <div class="k-button-bar__item">
+                            <button class="k-button set-size-equal" title="Set Size Equally"><span class="k-sprite staruml-icon icon-tool-set-size-equal"/></button>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+
+        </table>
+    </div>
+</div>

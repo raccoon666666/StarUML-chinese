@@ -1,0 +1,82 @@
+{
+  "components": [
+    {
+      "id": "dfd.set-name",
+      "type": "input",
+      "hint": "name",
+      "property": "name",
+      "command": "engine:set-property"
+    },
+    {
+      "id": "dfd.add-outgoing-process",
+      "type": "button",
+      "icon": "icon-tool-outgoing-process",
+      "hint": "Add Outgoing Process",
+      "command": "dfd:add-outgoing-process"
+    },
+    {
+      "id": "dfd.add-outgoing-datastore",
+      "type": "button",
+      "icon": "icon-tool-outgoing-datastore",
+      "hint": "Add Outgoing Data Store",
+      "command": "dfd:add-outgoing-datastore"
+    },
+    {
+      "id": "dfd.add-incoming-external-entity",
+      "type": "button",
+      "icon": "icon-tool-incoming-external-entity",
+      "hint": "Add Incoming External Entity",
+      "command": "dfd:add-incoming-external-entity"
+    },
+    {
+      "id": "dfd.add-incoming-process",
+      "type": "button",
+      "icon": "icon-tool-incoming-process",
+      "hint": "Add Incoming Process",
+      "command": "dfd:add-incoming-process"
+    }
+  ],
+  "quickedits": [
+    {
+      "id": "dfd.external-entity",
+      "targets": [ "DFDExternalEntityView" ],
+      "area": { "x1": "left", "y1": "nameLabel.top", "x2": "right", "y2": "nameLabel.bottom" },
+      "components": [
+        { "id": "dfd.set-name", "section": "main" },
+        { "id": "uml.add-note", "section": "left" },
+        { "id": "dfd.add-outgoing-process", "section": "right" }
+      ]
+    },
+    {
+      "id": "dfd.process",
+      "targets": [ "DFDProcessView" ],
+      "area": { "x1": "left", "y1": "nameLabel.top", "x2": "right", "y2": "nameLabel.bottom" },
+      "components": [
+        { "id": "dfd.set-name", "section": "main" },
+        { "id": "uml.add-note", "section": "left" },
+        { "id": "dfd.add-incoming-external-entity", "section": "right" },
+        { "id": "dfd.add-outgoing-process", "section": "right" },
+        { "id": "dfd.add-outgoing-datastore", "section": "right" }
+      ]
+    },
+    {
+      "id": "dfd.data-store",
+      "targets": [ "DFDDataStoreView" ],
+      "area": { "x1": "left", "y1": "nameLabel.top", "x2": "right", "y2": "nameLabel.bottom" },
+      "components": [
+        { "id": "dfd.set-name", "section": "main" },
+        { "id": "uml.add-note", "section": "left" },
+        { "id": "dfd.add-incoming-process", "section": "right" }
+      ]
+    },
+    {
+      "id": "dfd.data-flow",
+      "targets": [ "DFDDataFlowView", "DFDDataFlowView.nameLabel" ],
+      "area": { "x1": "nameLabel.left", "y1": "nameLabel.top", "x2": "nameLabel.left", "y2": "nameLabel.bottom", "x2-margin": 70 },
+      "components": [
+        { "id": "dfd.set-name", "section": "main" },
+        { "id": "uml.add-note", "section": "left" }
+      ]
+    }
+  ]
+}

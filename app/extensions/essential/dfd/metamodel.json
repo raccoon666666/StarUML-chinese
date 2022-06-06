@@ -1,0 +1,80 @@
+{
+  "DFDElement": {
+    "kind": "class",
+    "super": "ExtensibleModel",
+    "attributes": [
+      { "name": "id", "kind": "prim", "type": "String", "visible": true, "default": "" }
+    ]
+  },
+  "DFDDataFlowModel": {
+    "kind": "class",
+    "super": "DFDElement"
+  },
+  "DFDExternalEntity": {
+    "kind": "class",
+    "super": "DFDElement",
+    "view": "DFDExternalEntityView"
+  },
+  "DFDProcess": {
+    "kind": "class",
+    "super": "DFDElement",
+    "view": "DFDProcessView"
+  },
+  "DFDDataStore": {
+    "kind": "class",
+    "super": "DFDElement",
+    "view": "DFDDataStoreView"
+  },
+  "DFDDataFlow": {
+    "kind": "class",
+    "super": "DirectedRelationship",
+    "view": "DFDDataFlowView"
+  },  
+  "DFDDiagram": {
+    "kind": "class",
+    "super": "Diagram",
+    "views": [
+      "DFDExternalEntityView",
+      "DFDProcessView",
+      "DFDDataStoreView",
+      "DFDDataFlowView"
+    ]
+  },
+  "DFDGeneralNodeView": {
+    "kind": "class",
+    "super": "NodeView",
+    "attributes": [
+      { "name": "nameLabel", "kind": "ref",  "type": "LabelView", "embedded": "subViews" },
+      { "name": "wordWrap",  "kind": "prim", "type": "Boolean", "default": true }
+    ]
+  },
+  "DFDGeneralEdgeView": {
+    "kind": "class",
+    "super": "EdgeView",
+    "attributes": [
+      { "name": "nameLabel", "kind": "ref",  "type": "EdgeLabelView", "embedded": "subViews" }
+    ]
+  },
+  "DFDExternalEntityView": {
+    "kind": "class",
+    "super": "DFDGeneralNodeView"
+  },
+  "DFDProcessView": {
+    "kind": "class",
+    "super": "DFDGeneralNodeView",
+    "attributes": [
+      { "name": "idLabel", "kind": "ref",  "type": "EdgeLabelView", "embedded": "subViews" }
+    ]
+  },
+  "DFDDataStoreView": {
+    "kind": "class",
+    "super": "DFDGeneralNodeView",
+    "attributes": [
+      { "name": "idLabel", "kind": "ref",  "type": "EdgeLabelView", "embedded": "subViews" }
+    ]
+  },
+  "DFDDataFlowView": {
+    "kind": "class",
+    "super": "DFDGeneralEdgeView"
+  }
+}

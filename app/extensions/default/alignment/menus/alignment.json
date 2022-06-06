@@ -1,0 +1,66 @@
+{
+  "menu": [
+    {
+      "id": "format",
+      "submenu": [
+        { "type": "separator" },
+        {
+          "label": "Alignment",
+          "id": "format.alignment",
+          "submenu": [
+            { "label": "Send To Back", "id": "format.alignment.send-to-back", "command": "alignment:send-to-back" },
+            { "label": "Bring To Front", "id": "format.alignment.bring-to-front", "command": "alignment:bring-to-front" },
+            { "type": "separator" },
+            { "label": "Align Left", "id": "format.alignment.align-left", "command": "alignment:align-left" },
+            { "label": "Align Right", "id": "format.alignment.align-right", "command": "alignment:align-right" },
+            { "label": "Align Center", "id": "format.alignment.align-center", "command": "alignment:align-center" },
+            { "type": "separator" },
+            { "label": "Align Top", "id": "format.alignment.align-top", "command": "alignment:align-top" },
+            { "label": "Align Bottom", "id": "format.alignment.align-bottom", "command": "alignment:align-bottom" },
+            { "label": "Align Middle", "id": "format.alignment.align-middle", "command": "alignment:align-middle" },
+            { "type": "separator" },
+            { "label": "Space Equally, Horizontally", "id": "format.alignment.space-equally-horizontally", "command": "alignment:space-equally-horizontally" },
+            { "label": "Space Equally, Vertically", "id": "format.alignment.space-equally-vertically", "command": "alignment:space-equally-vertically" },
+            { "type": "separator" },
+            { "label": "Set Width Equally", "id": "format.alignment.set-width-equally", "command": "alignment:set-width-equally" },
+            { "label": "Set Height Equally", "id": "format.alignment.set-height-equally", "command": "alignment:set-height-equally" },
+            { "label": "Set Size Equally", "id": "format.alignment.set-size-equally", "command": "alignment:set-size-equally" }
+          ]
+        }
+      ]
+    }
+  ],
+  "context-menu": {
+    "diagram-canvas": [
+      {
+        "id": "format",
+        "submenu": [
+          { "type": "separator" },
+          {
+            "label": "Alignment",
+            "id": "format.alignment",
+            "submenu": [
+              { "label": "Send To Back", "id": "format.alignment.send-to-back", "command": "alignment:send-to-back" },
+              { "label": "Bring To Front", "id": "format.alignment.bring-to-front", "command": "alignment:bring-to-front" },
+              { "type": "separator" },
+              { "label": "Align Left", "id": "format.alignment.align-left", "command": "alignment:align-left" },
+              { "label": "Align Right", "id": "format.alignment.align-right", "command": "alignment:align-right" },
+              { "label": "Align Center", "id": "format.alignment.align-center", "command": "alignment:align-center" },
+              { "type": "separator" },
+              { "label": "Align Top", "id": "format.alignment.align-top", "command": "alignment:align-top" },
+              { "label": "Align Bottom", "id": "format.alignment.align-bottom", "command": "alignment:align-bottom" },
+              { "label": "Align Middle", "id": "format.alignment.align-middle", "command": "alignment:align-middle" },
+              { "type": "separator" },
+              { "label": "Space Equally, Horizontally", "id": "format.alignment.space-equally-horizontally", "command": "alignment:space-equally-horizontally" },
+              { "label": "Space Equally, Vertically", "id": "format.alignment.space-equally-vertically", "command": "alignment:space-equally-vertically" },
+              { "type": "separator" },
+              { "label": "Set Width Equally", "id": "format.alignment.set-width-equally", "command": "alignment:set-width-equally" },
+              { "label": "Set Height Equally", "id": "format.alignment.set-height-equally", "command": "alignment:set-height-equally" },
+              { "label": "Set Size Equally", "id": "format.alignment.set-size-equally", "command": "alignment:set-size-equally" }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

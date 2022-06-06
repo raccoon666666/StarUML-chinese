@@ -1,0 +1,43 @@
+[
+  {
+    "label": "Entity-Relationship",
+    "id": "erd",
+    "diagram-types": [ "ERDDiagram" ],
+    "auto-expands": [ "ERDDiagram" ],
+    "items": [
+      { "label": "Entity", "id": "ERDEntity", "icon": "icon-ERDEntity", "rubberband": "rect" },
+      { "label": "One to One Relationship", "id": "ERDRelationship", "icon": "icon-ERDOneToOne", "rubberband": "line" },
+      {
+        "label": "One to Many Relationship",
+        "id": "ERDRelationshipOneToMany",
+        "icon": "icon-ERDOneToMany",
+        "rubberband": "line",
+        "command-arg": {
+          "id": "ERDRelationship",
+          "model-init": {
+            "end2": {
+              "cardinality": "0..*"
+            }
+          }
+        }
+      },
+      {
+        "label": "Many to Many Relationship",
+        "id": "ERDRelationshipManyToMany",
+        "icon": "icon-ERDManyToMany",
+        "rubberband": "line",
+        "command-arg": {
+          "id": "ERDRelationship",
+          "model-init": {
+            "end1": {
+              "cardinality": "0..*"
+            },
+            "end2": {
+              "cardinality": "0..*"
+            }
+          }
+        }
+      }
+    ]
+  }
+]

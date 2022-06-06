@@ -1,0 +1,135 @@
+[
+  {
+    "label": "Requirements",
+    "id": "sysml.requirement",
+    "diagram-types": [ "SysMLRequirementDiagram" ],
+    "auto-expands": [ "SysMLRequirementDiagram" ],
+    "items": [
+      { "label": "包", "id": "UMLPackage", "icon": "icon-UMLPackage", "rubberband": "rect" },
+      { "label": "Requirement", "id": "SysMLRequirement", "icon": "icon-SysMLRequirement", "rubberband": "rect" },
+      { "label": "Copy", "id": "SysMLCopy", "icon": "icon-UMLDependency", "rubberband": "line" },
+      { "label": "DeriveReqt", "id": "SysMLDeriveReqt", "icon": "icon-UMLDependency", "rubberband": "line" },
+      { "label": "Verify", "id": "SysMLVerify", "icon": "icon-UMLDependency", "rubberband": "line" },
+      { "label": "Satisfy", "id": "SysMLSatisfy", "icon": "icon-UMLDependency", "rubberband": "line" },
+      { "label": "Refine", "id": "SysMLRefine", "icon": "icon-UMLDependency", "rubberband": "line" },
+      { "label": "Containment", "id": "UMLContainment", "icon": "icon-UMLContainment", "rubberband": "line" }
+    ]
+  },
+  {
+    "label": "Block",
+    "id": "sysml.block",
+    "diagram-types": [ "SysMLBlockDefinitionDiagram" ],
+    "auto-expands": [ "SysMLBlockDefinitionDiagram" ],
+    "items": [
+      {
+        "label": "Block",
+        "id": "SysMLBlock",
+        "icon": "icon-SysMLBlock",
+        "rubberband": "rect",
+        "command-arg": {
+          "view-init": {
+            "suppressAttributes": true,
+            "suppressOperations": true
+          }
+        }
+      },
+      {
+        "label": "Value Type",
+        "id": "SysMLValueType",
+        "icon": "icon-SysMLValueType",
+        "rubberband": "rect",
+        "command-arg": {
+          "view-init": {
+            "suppressAttributes": true,
+            "suppressOperations": true
+          }
+        }
+      },
+      { "label": "Interface Block", "id": "SysMLInterfaceBlock", "icon": "icon-SysMLInterfaceBlock", "rubberband": "rect" },
+      { "label": "Constraint Block", "id": "SysMLConstraintBlock", "icon": "icon-SysMLConstraintBlock", "rubberband": "rect" },
+      { "label": "集合", "id": "UMLEnumeration", "icon": "icon-UMLEnumeration", "rubberband": "rect" },
+      { "label": "信号", "id": "UMLSignal", "icon": "icon-UMLSignal", "rubberband": "rect" },
+      { "label": "端口", "id": "SysMLPort", "icon": "icon-UMLPort", "rubberband": "point", "command-arg": { "parasitic": true } },
+      { "label": "对象", "id": "UMLObject", "icon": "icon-UMLObject", "rubberband": "rect" },
+      { "label": "关联", "id": "UMLAssociation", "icon": "icon-UMLAssociation", "rubberband": "line" },
+      {
+        "label": "指向性关联",
+        "id": "UMLDirectedAssociation",
+        "icon": "icon-UMLDirectedAssociation",
+        "rubberband": "line",
+        "command-arg": {
+          "id": "UMLAssociation",
+          "model-init": {
+            "end1": { "navigable": "unspecified" },
+            "end2": { "navigable": "navigable" }
+          }
+        }
+      },
+      {
+        "label": "聚合",
+        "id": "UMLAggregation",
+        "icon": "icon-UMLAggregation",
+        "rubberband": "line",
+        "command-arg": {
+          "id": "UMLAssociation",
+          "model-init": {
+            "end2": { "aggregation": "shared" }
+          }
+        }
+      },
+      {
+        "label": "组合",
+        "id": "UMLComposition",
+        "icon": "icon-UMLComposition",
+        "rubberband": "line",
+        "command-arg": {
+          "id": "UMLAssociation",
+          "model-init": {
+            "end2": { "aggregation": "composite" }
+          }
+        }
+      },
+      { "label": "依赖", "id": "UMLDependency", "icon": "icon-UMLDependency", "rubberband": "line" },
+      { "label": "泛化", "id": "UMLGeneralization", "icon": "icon-UMLGeneralization", "rubberband": "line" },
+      { "label": "接口实现", "id": "UMLInterfaceRealization", "icon": "icon-UMLInterfaceRealization", "rubberband": "line" },
+      { "label": "Connector", "id": "SysMLConnector", "icon": "icon-UMLConnector", "rubberband": "line" },
+      { "label": "Containment", "id": "UMLContainment", "icon": "icon-UMLContainment", "rubberband": "line" }
+    ]
+  },
+  {
+    "label": "Internal Block",
+    "id": "sysml.internal-block",
+    "diagram-types": [ "SysMLInternalBlockDiagram", "SysMLParametricDiagram" ],
+    "auto-expands": [ "SysMLInternalBlockDiagram" ],
+    "items": [
+      { "label": "Part", "id": "SysMLPart", "icon": "icon-SysMLPart", "rubberband": "rect" },
+      { "label": "Reference", "id": "SysMLReference", "icon": "icon-SysMLReference", "rubberband": "rect" },
+      { "label": "Value", "id": "SysMLValue", "icon": "icon-SysMLValue", "rubberband": "rect" },
+      { "label": "Port", "id": "SysMLPort", "icon": "icon-SysMLPort", "rubberband": "rect", "command-arg": { "parasitic": true } },
+      { "label": "Connector", "id": "SysMLConnector", "icon": "icon-UMLConnector", "rubberband": "line" }
+    ]
+  },
+  {
+    "label": "Parametric",
+    "id": "sysml.parametric",
+    "diagram-types": [ "SysMLParametricDiagram" ],
+    "auto-expands": [ "SysMLParametricDiagram" ],
+    "items": [
+      { "label": "Constraint Property", "id": "SysMLConstraintProperty", "icon": "icon-SysMLConstraintProperty", "rubberband": "rect" },
+      { "label": "Constraint Parameter", "id": "SysMLConstraintParameter", "icon": "icon-SysMLConstraintParameter", "rubberband": "rect", "command-arg": { "parasitic": true } }
+    ]
+  },
+  {
+    "label": "Viewpoints",
+    "id": "sysml.viewpoint",
+    "diagram-types": [ "SysMLRequirementDiagram", "SysMLBlockDefinitionDiagram", "UMLPackageDiagram" ],
+    "auto-expands": [],
+    "items": [
+      { "label": "Stakeholder", "id": "SysMLStakeholder", "icon": "icon-UMLClass", "rubberband": "rect" },
+      { "label": "View", "id": "SysMLView", "icon": "icon-UMLClass", "rubberband": "rect" },
+      { "label": "Viewpoint", "id": "SysMLViewpoint", "icon": "icon-UMLClass", "rubberband": "rect" },
+      { "label": "Conform", "id": "SysMLConform", "icon": "icon-UMLGeneralization", "rubberband": "line" },
+      { "label": "Expose", "id": "SysMLExpose", "icon": "icon-UMLDependency", "rubberband": "line" }
+    ]
+  }
+]

@@ -1,0 +1,19 @@
+{
+  "cmdctrl-shift-0": "format:stereotype-none",
+  "cmdctrl-shift-1": "format:stereotype-label",
+  "cmdctrl-shift-2": "format:stereotype-decoration",
+  "cmdctrl-shift-3": "format:stereotype-decoration-label",
+  "cmdctrl-shift-4": "format:stereotype-icon",
+  "cmdctrl-shift-5": "format:stereotype-icon-label",
+  "cmdctrl-shift-w": "format:word-wrap",
+  "cmdctrl-shift-v": "format:show-visibility",
+  "cmdctrl-shift-n": "format:show-namespace",
+  "cmdctrl-shift-b": "format:show-property",
+  "cmdctrl-shift-y": "format:show-type",
+  "cmdctrl-shift-m": "format:show-multiplicity",
+  "cmdctrl-shift-g": "format:show-operation-signature",
+  "cmdctrl-shift-a": "format:suppress-attributes",
+  "cmdctrl-shift-o": "format:suppress-operations",
+  "cmdctrl-shift-e": "format:suppress-receptions",
+  "cmdctrl-shift-t": "format:suppress-literals"
+}

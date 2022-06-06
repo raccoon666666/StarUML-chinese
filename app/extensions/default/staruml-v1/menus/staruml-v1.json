@@ -1,0 +1,10 @@
+{
+  "menu": [
+    {
+      "id": "file.import",
+      "submenu": [
+        { "label": "StarUML 1 File (.uml)...", "id": "file.import.staruml-v1", "command": "staruml-v1:import" }
+      ]
+    }
+  ]
+}

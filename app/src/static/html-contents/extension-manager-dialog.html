@@ -1,0 +1,25 @@
+<div class="extension-manager-dialog dialog modal" data-title="Extension Manager">
+  <div class="dialog-toolbar">
+    <div class="radio-button-bar left">
+      <label class="radio-button-bar__item">
+        <input id="extension-manager-radio-button-registry" type="radio" name="extension-tab" value="registry">
+        <label for="extension-manager-radio-button-registry" class="k-button button-registry">Registry</label>
+      </label>
+      <label class="radio-button-bar__item">
+        <input id="extension-manager-radio-button-installed" type="radio" name="extension-tab" value="installed">
+        <label for="extension-manager-radio-button-installed" class="k-button button-installed">Installed<span class="update-notifications"></span></label>
+      </label>
+    </div>
+    <div class="k-search-input-wrapper">
+        <span class="staruml-icon icon-tool-search"></span>
+        <input type="search" value="" placeholder="search" class="search k-search-input">
+    </div>
+  </div>
+  <div class="dialog-body no-padding">
+    <div class="spinner"></div>
+  </div>
+  <div class="dialog-footer">
+    <button class="k-button dialog-button outline left install-from-url">Install From Url...</button>
+    <button class="k-button dialog-button primary" data-button-id="close">{{Strings.CLOSE}}</button>
+  </div>
+</div>

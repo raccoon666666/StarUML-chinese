@@ -1,0 +1,83 @@
+{
+  "ERDElement": {
+    "kind": "class",
+    "super": "ExtensibleModel"
+  },
+  "ERDDataModel": {
+    "kind": "class",
+    "super": "ERDElement"
+  },
+  "ERDDiagram": {
+    "kind": "class",
+    "super": "Diagram",
+    "views": [
+      "ERDEntityView",
+      "ERDRelationshipView"
+    ]
+  },
+  "ERDColumn": {
+    "kind": "class",
+    "super": "ERDElement",
+    "attributes": [
+      { "name": "type",        "kind": "prim", "type": "String",    "visible": true, "options": [ "VARCHAR", "BOOLEAN", "INTEGER", "CHAR", "BINARY", "VARBINARY", "BLOB", "TEXT", "SMALLINT", "BIGINT", "DECIMAL", "NUMERIC", "FLOAT", "DOUBLE", "BIT", "DATE", "TIME", "DATETIME", "TIMESTAMP", "GEOMETRY", "POINT", "LINESTRING", "POLYGON" ], "default": "" },
+      { "name": "length",      "kind": "prim", "type": "String",    "visible": true, "default": "" },
+      { "name": "primaryKey",  "kind": "prim", "type": "Boolean",   "visible": true, "default": false },
+      { "name": "foreignKey",  "kind": "prim", "type": "Boolean",   "visible": true, "default": false },
+      { "name": "referenceTo", "kind": "ref",  "type": "ERDColumn", "visible": true },
+      { "name": "nullable",    "kind": "prim", "type": "Boolean",   "visible": true, "default": false },
+      { "name": "unique",      "kind": "prim", "type": "Boolean",   "visible": true, "default": false }
+    ]
+  },
+  "ERDEntity": {
+    "kind": "class",
+    "super": "ERDElement",
+    "view": "ERDEntityView",
+    "attributes": [
+      { "name": "columns", "kind": "objs", "type": "ERDColumn" }
+    ],
+    "ordering": 1200
+  },
+  "ERDRelationshipEnd": {
+    "kind": "class",
+    "super": "RelationshipEnd",
+    "attributes": [
+      { "name": "cardinality", "kind": "prim", "type": "String", "visible": true, "default": "1", "options": [ "0..1", "1", "0..*", "1..*" ] }
+    ],
+    "ordering": 1800
+  },
+  "ERDRelationship": {
+    "kind": "class",
+    "super": "UndirectedRelationship",
+    "view": "ERDRelationshipView",
+    "attributes": [
+      { "name": "identifying", "kind": "prim", "type": "Boolean", "visible": true, "default": true }
+    ],
+    "ordering": 1801
+  },
+  "ERDColumnView": {
+    "kind": "class",
+    "super": "NodeView"
+  },
+  "ERDColumnCompartmentView": {
+    "kind": "class",
+    "super": "NodeView"
+  },
+  "ERDEntityView": {
+    "kind": "class",
+    "super": "NodeView",
+    "attributes": [
+      { "name": "suppressColumns",   "kind": "prim", "type": "Boolean", "default": false },
+      { "name": "nameLabel",         "kind": "ref", "type": "LabelView", "embedded": "subViews" },
+      { "name": "columnCompartment", "kind": "ref", "type": "ERDColumnCompartmentView", "embedded": "subViews" }
+    ]
+  },
+  "ERDRelationshipView": {
+    "kind": "class",
+    "super": "EdgeView",
+    "attributes": [
+      { "name": "nameLabel",     "kind": "ref",  "type": "EdgeLabelView", "embedded": "subViews" },
+      { "name": "tailNameLabel", "kind": "ref",  "type": "EdgeLabelView", "embedded": "subViews" },
+      { "name": "headNameLabel", "kind": "ref",  "type": "EdgeLabelView", "embedded": "subViews" }
+    ]
+  }
+}

@@ -1,0 +1,373 @@
+{
+  "id": "flowchart",
+  "name": "Flowchart",
+  "schema": {
+    "flowchart.flow": {
+      "text": "Flow",
+      "type": "section"
+    },
+    "flowchart.flow.lineStyle": {
+      "text": "Line Style",
+      "description": "Default line style of flow.",
+      "type": "dropdown",
+      "options": [
+        { "value": 0, "text": "Rectilinear" },
+        { "value": 1, "text": "Oblique" },
+        { "value": 2, "text": "Rounded Rectilinear" },
+        { "value": 3, "text": "Curve" }
+      ],
+      "default": 2
+    },
+    "flowchart.process": {
+      "text": "Process",
+      "type": "section"
+    },
+    "flowchart.process.fillColor": {
+      "text": "Fill Color",
+      "description": "Fill color of Process.",
+      "type": "color",
+      "default": null,
+      "default-button": {
+        "text": "Use Default"
+      }
+    },
+    "flowchart.terminator": {
+      "text": "Terminator",
+      "type": "section"
+    },
+    "flowchart.terminator.fillColor": {
+      "text": "Fill Color",
+      "description": "Fill color of Terminator.",
+      "type": "color",
+      "default": null,
+      "default-button": {
+        "text": "Use Default"
+      }
+    },
+    "flowchart.decision": {
+      "text": "Decision",
+      "type": "section"
+    },
+    "flowchart.decision.fillColor": {
+      "text": "Fill Color",
+      "description": "Fill color of Decision.",
+      "type": "color",
+      "default": null,
+      "default-button": {
+        "text": "Use Default"
+      }
+    },
+    "flowchart.delay": {
+      "text": "Delay",
+      "type": "section"
+    },
+    "flowchart.delay.fillColor": {
+      "text": "Fill Color",
+      "description": "Fill color of Delay.",
+      "type": "color",
+      "default": null,
+      "default-button": {
+        "text": "Use Default"
+      }
+    },
+    "flowchart.predefined-process": {
+      "text": "Predefined Process",
+      "type": "section"
+    },
+    "flowchart.predefined-process.fillColor": {
+      "text": "Fill Color",
+      "description": "Fill color of Predefined Process.",
+      "type": "color",
+      "default": null,
+      "default-button": {
+        "text": "Use Default"
+      }
+    },
+    "flowchart.alternate-process": {
+      "text": "Alternate Process",
+      "type": "section"
+    },
+    "flowchart.alternate-process.fillColor": {
+      "text": "Fill Color",
+      "description": "Fill color of Alternate Process.",
+      "type": "color",
+      "default": null,
+      "default-button": {
+        "text": "Use Default"
+      }
+    },
+    "flowchart.data": {
+      "text": "Data",
+      "type": "section"
+    },
+    "flowchart.data.fillColor": {
+      "text": "Fill Color",
+      "description": "Fill color of Data.",
+      "type": "color",
+      "default": null,
+      "default-button": {
+        "text": "Use Default"
+      }
+    },
+    "flowchart.document": {
+      "text": "Document",
+      "type": "section"
+    },
+    "flowchart.document.fillColor": {
+      "text": "Fill Color",
+      "description": "Fill color of Document.",
+      "type": "color",
+      "default": null,
+      "default-button": {
+        "text": "Use Default"
+      }
+    },
+    "flowchart.multidocument": {
+      "text": "Multi-Document",
+      "type": "section"
+    },
+    "flowchart.multidocument.fillColor": {
+      "text": "Fill Color",
+      "description": "Fill color of Multi-Document.",
+      "type": "color",
+      "default": null,
+      "default-button": {
+        "text": "Use Default"
+      }
+    },
+    "flowchart.preparation": {
+      "text": "Preparation",
+      "type": "section"
+    },
+    "flowchart.preparation.fillColor": {
+      "text": "Fill Color",
+      "description": "Fill color of Preparation.",
+      "type": "color",
+      "default": null,
+      "default-button": {
+        "text": "Use Default"
+      }
+    },
+    "flowchart.display": {
+      "text": "Display",
+      "type": "section"
+    },
+    "flowchart.display.fillColor": {
+      "text": "Fill Color",
+      "description": "Fill color of Display.",
+      "type": "color",
+      "default": null,
+      "default-button": {
+        "text": "Use Default"
+      }
+    },
+    "flowchart.manual-input": {
+      "text": "Manual Input",
+      "type": "section"
+    },
+    "flowchart.manual-input.fillColor": {
+      "text": "Fill Color",
+      "description": "Fill color of Manual Input.",
+      "type": "color",
+      "default": null,
+      "default-button": {
+        "text": "Use Default"
+      }
+    },
+    "flowchart.manual-operation": {
+      "text": "Manual Operation",
+      "type": "section"
+    },
+    "flowchart.manual-operation.fillColor": {
+      "text": "Fill Color",
+      "description": "Fill color of Manual Operation.",
+      "type": "color",
+      "default": null,
+      "default-button": {
+        "text": "Use Default"
+      }
+    },
+    "flowchart.card": {
+      "text": "Card",
+      "type": "section"
+    },
+    "flowchart.card.fillColor": {
+      "text": "Fill Color",
+      "description": "Fill color of Card.",
+      "type": "color",
+      "default": null,
+      "default-button": {
+        "text": "Use Default"
+      }
+    },
+    "flowchart.punched-tape": {
+      "text": "Punched Tape",
+      "type": "section"
+    },
+    "flowchart.punched-tape.fillColor": {
+      "text": "Fill Color",
+      "description": "Fill color of Punched Tape.",
+      "type": "color",
+      "default": null,
+      "default-button": {
+        "text": "Use Default"
+      }
+    },
+    "flowchart.connector": {
+      "text": "Connector",
+      "type": "section"
+    },
+    "flowchart.connector.fillColor": {
+      "text": "Fill Color",
+      "description": "Fill color of Connector.",
+      "type": "color",
+      "default": null,
+      "default-button": {
+        "text": "Use Default"
+      }
+    },
+    "flowchart.off-page-connector": {
+      "text": "Off-Page Connector",
+      "type": "section"
+    },
+    "flowchart.off-page-connector.fillColor": {
+      "text": "Fill Color",
+      "description": "Fill color of Off-Page Connector.",
+      "type": "color",
+      "default": null,
+      "default-button": {
+        "text": "Use Default"
+      }
+    },
+    "flowchart.or": {
+      "text": "Or",
+      "type": "section"
+    },
+    "flowchart.or.fillColor": {
+      "text": "Fill Color",
+      "description": "Fill color of Or.",
+      "type": "color",
+      "default": null,
+      "default-button": {
+        "text": "Use Default"
+      }
+    },
+    "flowchart.summing-junction": {
+      "text": "Summing Junction",
+      "type": "section"
+    },
+    "flowchart.summing-junction.fillColor": {
+      "text": "Fill Color",
+      "description": "Fill color of Summing Junction.",
+      "type": "color",
+      "default": null,
+      "default-button": {
+        "text": "Use Default"
+      }
+    },
+    "flowchart.collate": {
+      "text": "Collate",
+      "type": "section"
+    },
+    "flowchart.collate.fillColor": {
+      "text": "Fill Color",
+      "description": "Fill color of Collate.",
+      "type": "color",
+      "default": null,
+      "default-button": {
+        "text": "Use Default"
+      }
+    },
+    "flowchart.sort": {
+      "text": "Sort",
+      "type": "section"
+    },
+    "flowchart.sort.fillColor": {
+      "text": "Fill Color",
+      "description": "Fill color of Sort.",
+      "type": "color",
+      "default": null,
+      "default-button": {
+        "text": "Use Default"
+      }
+    },
+    "flowchart.merge": {
+      "text": "Merge",
+      "type": "section"
+    },
+    "flowchart.merge.fillColor": {
+      "text": "Fill Color",
+      "description": "Fill color of Merge.",
+      "type": "color",
+      "default": null,
+      "default-button": {
+        "text": "Use Default"
+      }
+    },
+    "flowchart.extract": {
+      "text": "Extract",
+      "type": "section"
+    },
+    "flowchart.extract.fillColor": {
+      "text": "Fill Color",
+      "description": "Fill color of Extract.",
+      "type": "color",
+      "default": null,
+      "default-button": {
+        "text": "Use Default"
+      }
+    },
+    "flowchart.stored-data": {
+      "text": "Stored Data",
+      "type": "section"
+    },
+    "flowchart.stored-data.fillColor": {
+      "text": "Fill Color",
+      "description": "Fill color of Stored Data.",
+      "type": "color",
+      "default": null,
+      "default-button": {
+        "text": "Use Default"
+      }
+    },
+    "flowchart.database": {
+      "text": "Database",
+      "type": "section"
+    },
+    "flowchart.database.fillColor": {
+      "text": "Fill Color",
+      "description": "Fill color of Database.",
+      "type": "color",
+      "default": null,
+      "default-button": {
+        "text": "Use Default"
+      }
+    },
+    "flowchart.direct-access-storage": {
+      "text": "Direct Access Storage",
+      "type": "section"
+    },
+    "flowchart.direct-access-storage.fillColor": {
+      "text": "Fill Color",
+      "description": "Fill color of Direct Access Storage.",
+      "type": "color",
+      "default": null,
+      "default-button": {
+        "text": "Use Default"
+      }
+    },
+    "flowchart.internal-storage": {
+      "text": "Internal Storage",
+      "type": "section"
+    },
+    "flowchart.internal-storage.fillColor": {
+      "text": "Fill Color",
+      "description": "Fill color of Internal Storage.",
+      "type": "color",
+      "default": null,
+      "default-button": {
+        "text": "Use Default"
+      }
+    }
+  }
+}

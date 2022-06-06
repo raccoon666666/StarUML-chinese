@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title><%= element.name %></title>
+    <%- include('head') %>
+  </head>
+  <body>
+    <div>
+
+      <!-- Name Title -->
+
+      <h1><%= toName(element) %></h1>
+
+      <!-- Type and Stereotype -->
+
+      <section style="margin-top: .5em;">
+        <span class="alert alert-info">
+          <span class="node-icon <%= toIcon(element) %>"></span>
+          <%= element.getClassName() %>
+        </span>
+        <% if (element.stereotype instanceof type.UMLStereotype) { %>
+          <span style="margin-left: 10px" class="alert alert-info"><%- toValue(element.stereotype) %></span>
+        <% } else if (typeof element.stereotype === "string") { %>
+          <span style="margin-left: 10px" class="alert alert-info">«<%- toValue(element.stereotype) %>»</span>
+        <% } %>
+      </section>
+
+      <!-- Path -->
+
+      <section style="margin-top: 10px">
+        <% var terms = []; %>
+        <% element.traverseUp(function (e) { terms.unshift(e); }); %>
+        <% for (var i = 0, len = terms.length; i < len; i++) { %>
+          <% if (i > 0) { %><span>::</span><% } %>
+          <span class="label label-info"><%- toValue(terms[i]) %></span>
+        <% } %>
+      </section>
+
+      <!-- Diagram -->
+
+      <% if (element instanceof type.Diagram) { %>
+      <section>
+        <h3>Diagram</h3>
+        <img src="<%= toDiagram(element) %>">
+      </section>
+      <% } %>
+
+      <!-- Description -->
+
+      <% if (element instanceof type.ExtensibleModel) { %>
+      <section>
+        <h3>Description</h3>
+        <div>
+          <% if (element.documentation.trim().length === 0) { %>
+            <span class="label label-info">none</span>
+          <% } else { %>
+            <%- markdown(element.documentation) %>
+          <% } %>
+        </div>
+      </section>
+      <% } %>
+
+      <!-- Specification -->
+
+      <% if ((element instanceof type.UMLConstraint || element instanceof type.UMLOperation) && (element.specification.length > 0)) { %>
+      <section>
+        <h3>Specification</h3>
+        <pre><%= element.specification %></pre>
+      </section>
+      <% } %>
+
+      <!-- Directed Relationship -->
+
+      <% if (element instanceof type.DirectedRelationship && element.source && element.target) { %>
+      <section class="element-list">
+        <table width="100%">
+          <tr>
+            <td width="50%">
+              <h3>Source</h3>
+              <ul class="nav nav-list">
+                <li><%- toValue(element.source) %></a></li>
+              </ul>
+            </td>
+            <td width="50%">
+              <h3>Target</h3>
+              <ul class="nav nav-list">
+                <li><%- toValue(element.target) %></a></li>
+              </ul>
+            </td>
+          </tr>
+        </table>
+      </section>
+      <% } %>
+
+      <!-- Undirected Relationship -->
+
+      <% if (element instanceof type.UndirectedRelationship && element.end1 && element.end2) { %>
+      <section class="element-list">
+        <table width="100%">
+          <tr>
+            <td width="50%" style="padding-right: 1em">
+              <h3>End1</h3>
+              <% var elem = element.end1, properties = elem.getMetaAttributes(); %>
+              <%- include('properties', { elem: elem, properties: properties }) %>
+            </td>
+            <td width="50%" style="padding-right: 1em">
+              <h3>End2</h3>
+              <% var elem = element.end2, properties = elem.getMetaAttributes(); %>
+              <%- include('properties', { elem: elem, properties: properties }) %>
+            </td>
+          </tr>
+        </table>
+      </section>
+      <% } %>
+
+      <!-- Classifier -->
+
+      <% if (element instanceof type.UMLClassifier) { %>
+        <% var title = "Generalized Elements", list = element.getGeneralElements() || []; %>
+        <%- include('list', { title: title, list: list }) %>
+
+        <% var title = "Specialized Elements", list = element.getSpecialElements() || []; %>
+        <%- include('list', { title: title, list: list }) %>
+
+        <% var title = "Interfaces", list = element.getInterfaces() || []; %>
+        <%- include('list', { title: title, list: list }) %>
+
+        <% var title = "Components", list = element.getComponents() || []; %>
+        <%- include('list', { title: title, list: list }) %>
+
+        <% var title = "Deployment Targets", list = element.getDeploymentTargets() || []; %>
+        <%- include('list', { title: title, list: list }) %>
+      <% } %>
+
+      <!-- Interface -->
+
+      <% if (element instanceof type.UMLInterface) { %>
+        <% var title = "Implementing Classifiers", list = element.getImplementingClassifiers() || []; %>
+        <%- include('list', { title: title, list: list }) %>
+      <% } %>
+
+      <!-- Component -->
+
+      <% if (element instanceof type.UMLComponent) { %>
+        <% var title = "Realizing Classifiers", list = element.getRealizingClassifiers() || []; %>
+        <%- include('list', { title: title, list: list }) %>
+      <% } %>
+
+      <!-- Node -->
+
+      <% if (element instanceof type.UMLNode) { %>
+        <% var title = "Deployed Elements", list = element.getDeployedElements() || []; %>
+        <%- include('list', { title: title, list: list }) %>
+      <% } %>
+
+      <!-- Actor -->
+
+      <% if (element instanceof type.UMLActor) { %>
+        <% var title = "Use Cases", list = element.getUseCases() || []; %>
+        <%- include('list', { title: title, list: list }) %>
+      <% } %>
+
+      <!-- Use Case -->
+
+      <% if (element instanceof type.UMLUseCase) { %>
+        <% var title = "Actors", list = element.getActors() || []; %>
+        <%- include('list', { title: title, list: list }) %>
+
+        <% var title = "Included Use Cases", list = element.getIncludedUseCases() || []; %>
+        <%- include('list', { title: title, list: list }) %>
+
+        <% var title = "Extending Use Cases", list = element.getExtendingUseCases() || []; %>
+        <%- include('list', { title: title, list: list }) %>
+      <% } %>
+
+      <!-- Template Parameters -->
+
+      <% if (element instanceof type.UMLModelElement && element.templateParameters && element.templateParameters.length > 0) { %>
+      <section>
+        <h3>Template Parameters</h3>
+        <table class="table table-striped table-bordered">
+          <tr>
+            <th>Visibility</th>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Description</th>
+          </tr>
+          <% element.templateParameters.forEach(function (param) { %>
+          <tr>
+            <td><%= param.visibility %></td>
+            <td><a href="<%= toUrl(param) %>"><%= toName(param) %></a></td>
+            <td><%- toValue(param.parameterType) %></td>
+            <td><%- markdown(param.documentation) %></td>
+          </tr>
+          <% }); %>
+        </table>
+      </section>
+      <% } %>
+
+      <!-- Literals -->
+
+      <% if (element instanceof type.UMLEnumeration && element.literals && element.literals.length > 0) { %>
+      <section>
+        <h3>Literals</h3>
+        <table class="table table-striped table-bordered">
+          <tr>
+            <th>Visibility</th>
+            <th>Name</th>
+            <th>Description</th>
+          </tr>
+          <% element.literals.forEach(function (literal) { %>
+          <tr>
+            <td><%= literal.visibility %></td>
+            <td><a href="<%= toUrl(literal) %>"><%= toName(literal) %></a></td>
+            <td><%- markdown(literal.documentation) %></td>
+          </tr>
+          <% }); %>
+        </table>
+      </section>
+      <% } %>
+
+      <!-- Attributes -->
+
+      <% if (element instanceof type.UMLClassifier && element.attributes && element.attributes.length > 0) { %>
+      <section>
+        <h3>Attributes</h3>
+        <table class="table table-striped table-bordered">
+          <tr>
+            <th>Visibility</th>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Description</th>
+          </tr>
+          <% element.attributes.forEach(function (attr) { %>
+          <tr>
+            <td><%= attr.visibility %></td>
+            <td><a href="<%= toUrl(attr) %>"><%= toName(attr) %></a></td>
+            <td><%- toType(attr.type) %> <%= attr.multiplicity ? `[${attr.multiplicity}]` : '' %></td>
+            <td><%- markdown(attr.documentation) %></td>
+          </tr>
+          <% }); %>
+        </table>
+      </section>
+      <% } %>
+
+      <!-- Operations -->
+
+      <% if (element instanceof type.UMLClassifier && element.operations && element.operations.length > 0) { %>
+      <section>
+        <h3>Operations</h3>
+        <table class="table table-striped table-bordered">
+          <tr>
+            <th>Visibility</th>
+            <th>Name</th>
+            <th>Description</th>
+          </tr>
+          <% element.operations.forEach(function (op) { %>
+          <tr>
+            <td><%= op.visibility %></td>
+            <td><a href="<%= toUrl(op) %>"><%= op.getString({showOperationSignature: true, showType: true, showMultiplicity: true}) %></a></td>
+            <td><%- markdown(op.documentation) %></td>
+          </tr>
+          <% }); %>
+        </table>
+      </section>
+      <% } %>
+
+      <!-- Receptions -->
+
+      <% if (element instanceof type.UMLClassifier && element.receptions && element.receptions.length > 0) { %>
+      <section>
+        <h3>Receptions</h3>
+        <table class="table table-striped table-bordered">
+          <tr>
+            <th>Visibility</th>
+            <th>Name</th>
+            <th>Signal</th>
+            <th>Description</th>
+          </tr>
+          <% element.receptions.forEach(function (recep) { %>
+          <tr>
+            <td><%= recep.visibility %></td>
+            <td><a href="<%= toUrl(recep) %>"><%= recep.getString({showOperationSignature: true, showType: true, showMultiplicity: true}) %></a></td>
+            <td><%- toType(recep.signal) %></td>
+            <td><%- markdown(recep.documentation) %></td>
+          </tr>
+          <% }); %>
+        </table>
+      </section>
+      <% } %>
+
+      <!-- Extension Points -->
+
+      <% if (element instanceof type.UMLUseCase && element.extensionPoints && element.extensionPoints.length > 0) { %>
+      <section>
+        <h3>Extension Points</h3>
+        <table class="table table-striped table-bordered">
+          <tr>
+            <th>Name</th>
+            <th>Location</th>
+            <th>Description</th>
+          </tr>
+          <% element.extensionPoints.forEach(function (ep) { %>
+          <tr>
+            <td><a href="<%= toUrl(ep) %>"><%= toName(ep) %></a></td>
+            <td><%- toValue(ep.location) %></td>
+            <td><%- markdown(ep.documentation) %></td>
+          </tr>
+          <% }); %>
+        </table>
+      </section>
+      <% } %>
+
+      <!-- Parameters -->
+
+      <% if (element instanceof type.UMLBehavioralFeature && element.parameters && element.parameters.length > 0) { %>
+      <section>
+        <h3>Parameters</h3>
+        <table class="table table-striped table-bordered">
+          <tr>
+            <th>Direction</th>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Description</th>
+          </tr>
+          <% element.parameters.forEach(function (param) { %>
+          <tr>
+            <td><%= param.direction %></td>
+            <td><a href="<%= toUrl(param) %>"><%= toName(param) %></a></td>
+            <td><%- toValue(param.type) %> <%= param.multiplicity ? `[${param.multiplicity}]` : '' %></td>
+            <td><%- markdown(param.documentation) %></td>
+          </tr>
+          <% }); %>
+        </table>
+      </section>
+      <% } %>
+
+      <!-- Diagrams -->
+
+      <%
+      var _diagrams = [];
+      if (element.ownedElements && element.ownedElements.length > 0) {
+        element.ownedElements.forEach(function (e) {
+          if (e instanceof type.Diagram) { _diagrams.push(e); }
+        });
+      }
+      %>
+      <% if (_diagrams.length > 0) { %>
+      <section class="element-list">
+        <h3>Diagrams</h3>
+        <div>
+          <% _diagrams.forEach(function (d) { %>
+          <div style="display: inline-block; width: 250px; vertical-align: top;">
+            <div class="member">
+              <a href="<%= toUrl(d) %>">
+                <img src="<%= toDiagram(d) %>">
+                <div style="text-align: center; margin-top: 1em;"><%- toName(d) %></div>
+              </a>
+            </div>
+          </div>
+          <% }); %>
+        </div>
+      </section>
+      <% } %>
+
+      <!-- Behavior -->
+
+      <% if (element instanceof type.UMLBehavior) { %>
+        <% var title = "Preconditions", list = element.preconditions || []; %>
+        <%- include('list', { title: title, list: list }) %>
+
+        <% var title = "Postconditions", list = element.postconditions || []; %>
+        <%- include('list', { title: title, list: list }) %>
+      <% } %>
+
+      <!-- Action -->
+
+      <% if (element instanceof type.UMLAction) { %>
+        <% var title = "Inputs", list = element.inputs || []; %>
+        <%- include('list', { title: title, list: list }) %>
+
+        <% var title = "Outputs", list = element.outputs || []; %>
+        <%- include('list', { title: title, list: list }) %>
+
+        <% var title = "Triggers", list = element.triggers || []; %>
+        <%- include('list', { title: title, list: list }) %>
+
+        <% var title = "Local Preconditions", list = element.localPreconditions || []; %>
+        <%- include('list', { title: title, list: list }) %>
+
+        <% var title = "Local Postconditions", list = element.localPostconditions || []; %>
+        <%- include('list', { title: title, list: list }) %>
+      <% } %>
+
+      <!-- Interaction -->
+
+      <% if (element instanceof type.UMLInteraction) { %>
+        <% var title = "Fragments", list = element.fragments || []; %>
+        <%- include('list', { title: title, list: list }) %>
+
+        <% var title = "Participants", list = element.participants || []; %>
+        <%- include('list', { title: title, list: list }) %>
+
+        <% var title = "Messages", list = element.messages || []; %>
+        <%- include('list', { title: title, list: list }) %>
+      <% } %>
+
+      <!-- CombinedFragment -->
+
+      <% if (element instanceof type.UMLCombinedFragment) { %>
+        <% var title = "Interaction Operands", list = element.operands || []; %>
+        <%- include('list', { title: title, list: list }) %>
+      <% } %>
+
+      <!-- Activity -->
+
+      <% if (element instanceof type.UMLActivity) { %>
+        <% var title = "Groups", list = element.groups || []; %>
+        <%- include('list', { title: title, list: list }) %>
+
+        <% var title = "Nodes", list = element.nodes || []; %>
+        <%- include('list', { title: title, list: list }) %>
+
+        <% var title = "Edges", list = element.edges || []; %>
+        <%- include('list', { title: title, list: list }) %>
+      <% } %>
+
+      <!-- State Machine -->
+
+      <% if (element instanceof type.UMLStateMachine) { %>
+        <% var title = "Regions", list = element.regions || []; %>
+        <%- include('list', { title: title, list: list }) %>
+      <% } %>
+
+      <!-- State Machine -->
+
+      <% if (element instanceof type.UMLRegion) { %>
+        <% var title = "Vertices", list = element.vertices || []; %>
+        <%- include('list', { title: title, list: list }) %>
+
+        <% var title = "Transitions", list = element.transitions || []; %>
+        <%- include('list', { title: title, list: list }) %>
+      <% } %>
+
+      <!-- State -->
+
+      <% if (element instanceof type.UMLState) { %>
+        <% var title = "Entry Activities", list = element.entryActivities || []; %>
+        <%- include('list', { title: title, list: list }) %>
+
+        <% var title = "Do Activities", list = element.doActivities || []; %>
+        <%- include('list', { title: title, list: list }) %>
+
+        <% var title = "Exit Activities", list = element.exitActivities || []; %>
+        <%- include('list', { title: title, list: list }) %>
+
+        <% var title = "Connections", list = element.connections || []; %>
+        <%- include('list', { title: title, list: list }) %>
+
+        <% var title = "Regions", list = element.regions || []; %>
+        <%- include('list', { title: title, list: list }) %>
+      <% } %>
+
+      <!-- Vertex -->
+
+      <% if (element instanceof type.UMLVertex) { %>
+        <% var title = "Incoming Transitions", list = element.getIncomingTransitions() || []; %>
+        <%- include('list', { title: title, list: list }) %>
+
+        <% var title = "Outgoing Transitions", list = element.getOutgoingTransitions() || []; %>
+        <%- include('list', { title: title, list: list }) %>
+      <% } %>
+
+      <!-- Transition -->
+
+      <% if (element instanceof type.UMLTransition) { %>
+        <% var title = "Triggers", list = element.triggers || []; %>
+        <%- include('list', { title: title, list: list }) %>
+
+        <% var title = "Effects", list = element.effects || []; %>
+        <%- include('list', { title: title, list: list }) %>
+      <% } %>
+
+      <!-- Data Model (ERD) -->
+
+      <% if (element instanceof type.ERDDataModel) { %>
+        <% var title = "Entities", list = _.filter(element.ownedElements, function (e) { return e instanceof type.ERDEntity }); %>
+        <%- include('list', { title: title, list: list }) %>
+      <% } %>
+
+      <!-- Columns (ERD) -->
+
+      <% if (element instanceof type.ERDEntity) { %>
+      <section>
+        <h3>Columns</h3>
+        <% var elem = element, columns = elem.columns || []; %>
+        <table class="table table-striped table-bordered">
+          <tr>
+            <th width="20%">Name</th>
+            <th width="20%">Type</th>
+            <th width="10%">Primary Key</th>
+            <th width="10%">Foreign Key</th>
+            <th width="20%">Reference To</th>
+            <th width="10%">Nullable</th>
+            <th width="10%">Unique</th>
+          </tr>
+          <% columns.forEach(function (col) { %>
+          <tr>
+            <td><a href="<%= toUrl(col) %>"><%= toName(col) %></a></td>
+            <td><%= col.getTypeString() %></td>
+            <td><%- toValue(col.primaryKey) %></td>
+            <td><%- toValue(col.foreignKey) %></td>
+            <td>
+              <% if (col.referenceTo && col.referenceTo._parent) {%>
+                <%- toValue(col.referenceTo._parent) %> ::
+              <% } %>
+              <%- toValue(col.referenceTo) %>
+            </td>
+            <td><%- toValue(col.nullable) %></td>
+            <td><%- toValue(col.unique) %></td>
+          </tr>
+          <% }); %>
+        </table>                
+      </section>
+      <% } %>
+
+      <!-- Related Entities (ERD) -->
+
+      <% if (element instanceof type.ERDEntity) { %>
+      <section>
+        <h3>Related Entities</h3>
+        <% var elem = element, rels = elem.getRelationships() || []; %>
+        <table class="table table-striped table-bordered">
+          <tr>
+            <th width="25%">Entity</th>
+            <th width="25%">Cardinality</th>
+            <th width="25%">Reference Name</th>
+            <th width="25%">Relationship</th>
+          </tr>
+          <% rels.forEach(function (rel) { %>
+          <%   var end = (rel.end1.reference === elem) ? rel.end2 : rel.end1;  %>
+          <tr>
+            <td><%- toValue(end.reference) %></td>
+            <td><%- toValue(end.cardinality) %></td>
+            <td><%- toValue(end.name) %></td>
+            <td><%- toValue(rel) %></td>
+          </tr>
+          <% }); %>
+        </table>                
+      </section>
+      <% } %>
+
+      <!-- Data Flows (DFD) -->
+
+      <% if (element instanceof type.DFDElement) { %>
+        <% var title = "Incoming Data Flows", list = element.getIncomingFlows() || []; %>
+        <%- include('list', { title: title, list: list }) %>
+
+        <% var title = "Outgoing Data Flows", list = element.getOutgoingFlows() || []; %>
+        <%- include('list', { title: title, list: list }) %>
+      <% } %>
+
+      <!-- Flows (Flowchart) -->
+
+      <% if (element instanceof type.FCModelElement) { %>
+        <% var title = "Incoming Flows", list = element.getIncomingFlows() || []; %>
+        <%- include('list', { title: title, list: list }) %>
+
+        <% var title = "Outgoing Flows", list = element.getOutgoingFlows() || []; %>
+        <%- include('list', { title: title, list: list }) %>
+      <% } %>
+
+      <!-- Properties -->
+
+      <section>
+        <h3>Properties</h3>
+        <% var elem = element, properties = elem.getMetaAttributes(); %>
+        <%- include('properties', { elem: elem, properties: properties }) %>
+      </section>
+
+      <!-- Tags -->
+
+      <% if (element instanceof type.Model && element.tags && element.tags.length > 0) { %>
+      <section>
+        <h3>Tags</h3>
+        <table class="table table-striped table-bordered">
+          <tr>
+            <th>Name</th>
+            <th>Kind</th>
+            <th>Value</th>
+          </tr>
+          <% element.tags.forEach(function (tag) { %>
+          <tr>
+            <td><%= tag.name %></td>
+            <td><span class="label label-info"><%= tag.kind %></span></td>
+            <td>
+              <% if (tag.kind === type.Tag.TK_BOOLEAN) { %>
+              <%- toValue(tag.checked) %>
+              <% } else if (tag.kind === type.Tag.TK_REFERENCE) { %>
+              <%- toValue(tag.reference) %>
+              <% } else if (tag.kind === type.Tag.TK_NUMBER) { %>
+              <%- toValue(tag.number) %>
+              <% } else { %>
+              <%- toValue(tag.value) %>
+              <% } %>
+            </td>
+          </tr>
+          <% }); %>
+        </table>
+      </section>
+      <% } %>
+
+      <!-- Constraints, Dependencies, Dependants -->
+
+      <% if (element instanceof type.UMLModelElement) { %>
+        <% var title = "Constraints", list = element.getConstraints() || []; %>
+        <%- include('list', { title: title, list: list }) %>
+
+        <% var title = "Dependencies", list = element.getDependencies() || []; %>
+        <%- include('list', { title: title, list: list }) %>
+
+        <% var title = "Dependants", list = element.getDependants() || []; %>
+        <%- include('list', { title: title, list: list }) %>
+      <% } %>
+
+      <!-- Relationships -->
+
+      <% var title = "Relationships", list = app.repository.getRelationshipsOf(element) || []; %>
+      <%- include('list', { title: title, list: list }) %>
+
+      <!-- Owned Elements -->
+
+      <% var title = "Owned Elements", list = element.ownedElements || []; %>
+      <%- include('list', { title: title, list: list }) %>
+
+    </div>
+  </body>
+</html>

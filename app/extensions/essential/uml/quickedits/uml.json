@@ -1,0 +1,1589 @@
+{
+  "components": [
+    { "id": "uml.name-expression", "type": "input", "hint": "<< stereotype >> name", "property": "textualNotation", "command": "uml:set-name-expression" },
+    { "id": "uml.attribute-expression", "type": "input", "hint": "<< stereotype >> name : type [ multiplicity ] = value", "property": "textualNotation", "command": "uml:set-attribute-expression" },
+    { "id": "uml.operation-expression", "type": "input", "hint": "<< stereotype >> name (param1 : type1 [multiplicity] = default1, param2, ...) : returnType", "property": "textualNotation", "command": "uml:set-operation-expression" },
+    { "id": "uml.template-parameter-expression", "type": "input", "hint": "<< stereotype >> name : type = value", "property": "textualNotation", "command": "uml:set-template-parameter-expression" },
+    { "id": "uml.object-expression", "type": "input", "hint": "<< stereotype >> name : type", "property": "textualNotation", "command": "uml:set-object-expression" },
+    { "id": "uml.slot-expression", "type": "input", "hint": "<< stereotype >> name : type = value", "property": "textualNotation", "command": "uml:set-slot-expression" },
+    { "id": "uml.add-note", "type": "button", "icon": "icon-tool-note", "hint": "Add Note", "command": "uml:add-note" },
+    { "id": "uml.add-constraint", "type": "button", "icon": "icon-tool-constraint", "hint": "Add Constraint", "command": "uml:add-constraint" },
+    {
+      "id": "uml.visibility",
+      "type": "dropdown",
+      "hint": "Visibility",
+      "property": "visibility",
+      "dropdown-width": 150,
+      "items": [
+        { "icon": "icon-tool-public", "text": "public", "value": "public" },
+        { "icon": "icon-tool-protected", "text": "protected", "value": "protected" },
+        { "icon": "icon-tool-private", "text": "private", "value": "private" },
+        { "icon": "icon-tool-package", "text": "package", "value": "package" }
+      ],
+      "command": "engine:set-property"
+    },
+    {
+      "id": "uml.add-attribute",
+      "type": "button",
+      "icon": "icon-tool-attribute",
+      "hint": "Add Attribute",
+      "key": "cmdctrl-enter",
+      "command": "uml:add-compartment-item",
+      "command-arg": {
+        "type": "UMLAttribute",
+        "parent-model": "model",
+        "field": "attributes",
+        "parent-view": "view",
+        "compartment": "attributeCompartment",
+        "name-prefix": "Attribute",
+        "suppress-property": "suppressAttributes"
+      }
+    },
+    {
+      "id": "uml.add-literal",
+      "type": "button",
+      "icon": "icon-tool-enumeration-literal",
+      "hint": "Add Literal",
+      "key": "cmdctrl-enter",
+      "command": "uml:add-compartment-item",
+      "command-arg": {
+        "type": "UMLEnumerationLiteral",
+        "parent-model": "model",
+        "field": "literals",
+        "parent-view": "view",
+        "compartment": "enumerationLiteralCompartment",
+        "name-prefix": "Literal",
+        "suppress-property": "suppressLiterals"
+      }
+    },
+    {
+      "id": "uml.add-operation",
+      "type": "button",
+      "icon": "icon-tool-operation",
+      "hint": "Add Operation",
+      "key": "cmdctrl-shift-enter",
+      "command": "uml:add-compartment-item",
+      "command-arg": {
+        "type": "UMLOperation",
+        "parent-model": "model",
+        "field": "operations",
+        "parent-view": "view",
+        "compartment": "operationCompartment",
+        "name-prefix": "Operation",
+        "suppress-property": "suppressOperations"
+      }
+    },
+    {
+      "id": "uml.add-template-parameter",
+      "type": "button",
+      "icon": "icon-tool-template-parameter",
+      "hint": "Add Template Parameter",
+      "command": "uml:add-compartment-item",
+      "command-arg": {
+        "type": "UMLTemplateParameter",
+        "parent-model": "model",
+        "field": "templateParameters",
+        "parent-view": "view",
+        "compartment": "templateParameterCompartment",
+        "name-prefix": "TemplateParameter"
+      }
+    },
+    {
+      "id": "uml.add-reception",
+      "type": "button",
+      "icon": "icon-tool-reception",
+      "hint": "Add Reception",
+      "command": "uml:add-compartment-item",
+      "command-arg": {
+        "type": "UMLReception",
+        "parent-model": "model",
+        "field": "receptions",
+        "parent-view": "view",
+        "compartment": "receptionCompartment",
+        "name-prefix": "Reception",
+        "suppress-property": "suppressReceptions"
+      }
+    },
+    {
+      "id": "uml.add-slot",
+      "type": "button",
+      "icon": "icon-tool-slot",
+      "hint": "Add Slot",
+      "key": "cmdctrl-enter",
+      "command": "uml:add-compartment-item",
+      "command-arg": {
+        "type": "UMLSlot",
+        "parent-model": "model",
+        "field": "slots",
+        "parent-view": "view",
+        "compartment": "slotCompartment",
+        "name-prefix": "Slot"
+      }
+    },
+    { "id": "uml.add-subclass", "type": "button", "icon": "icon-tool-subclass", "hint": "Add Sub-Class", "command": "uml:add-subclass" },
+    { "id": "uml.add-superclass", "type": "button", "icon": "icon-tool-superclass", "hint": "Add Super-Class", "command": "uml:add-superclass" },
+    { "id": "uml.add-subinterface", "type": "button", "icon": "icon-tool-subinterface", "hint": "Add Sub-Interface", "command": "uml:add-subinterface" },
+    { "id": "uml.add-superinterface", "type": "button", "icon": "icon-tool-superinterface", "hint": "Add Super-Interface", "command": "uml:add-superinterface" },
+    { "id": "uml.add-realizing-class", "type": "button", "icon": "icon-tool-realizing-class", "hint": "Add Realizing Class", "command": "uml:add-realizing-class" },
+    { "id": "uml.add-provided-interface", "type": "button", "icon": "icon-tool-interface", "hint": "Add Provided Interface", "command": "uml:add-provided-interface" },
+    { "id": "uml.add-required-interface", "type": "button", "icon": "icon-tool-required-interface", "hint": "Add Required Interface", "command": "uml:add-required-interface" },
+    { "id": "uml.add-associated-class", "type": "button", "icon": "icon-tool-association", "hint": "Add Associated Class", "command": "uml:add-associated-class" },
+    { "id": "uml.add-aggregated-class", "type": "button", "icon": "icon-tool-aggregation", "hint": "Add Aggregated Class", "command": "uml:add-aggregated-class"  },
+    { "id": "uml.add-composited-class", "type": "button", "icon": "icon-tool-composition", "hint": "Add Composited Class", "command": "uml:add-composited-class"  },
+    { "id": "uml.add-port", "type": "button", "icon": "icon-tool-port", "hint": "Add Port", "command": "uml:add-port" },
+    { "id": "uml.add-part", "type": "button", "icon": "icon-tool-part", "hint": "Add Part", "command": "uml:add-part" },
+    { "id": "uml.add-compartment-item", "type": "button", "icon": "icon-tool-add", "hint": "Add", "key": "cmdctrl-enter", "command": "uml:add-compartment-item" },
+    { "id": "uml.delete-compartment-item", "type": "button", "icon": "icon-tool-delete", "hint": "Delete", "key": "cmdctrl-delete", "command": "uml:delete-compartment-item" },
+    { "id": "uml.move-up-compartment-item", "type": "button", "icon": "icon-tool-moveup", "hint": "Move Up", "key": "cmdctrl-up", "command": "uml:move-up-compartment-item" },
+    { "id": "uml.move-down-compartment-item", "type": "button", "icon": "icon-tool-movedown", "hint": "Move Down", "key": "cmdctrl-down", "command": "uml:move-down-compartment-item" },
+    { "id": "uml.open-up-compartment-item", "type": "shortcut", "key": "up", "command": "uml:open-up-compartment-item" },
+    { "id": "uml.open-down-compartment-item", "type": "shortcut", "key": "down", "command": "uml:open-down-compartment-item" },
+    {
+      "id": "uml.select-signal",
+      "type": "button",
+      "icon": "icon-tool-select-signal",
+      "hint": "Select Signal",
+      "command": "uml:select-signal"
+    },
+    {
+      "id": "uml.select-type",
+      "type": "button",
+      "icon": "icon-tool-select-type",
+      "hint": "Select Type",
+      "command": "uml:select-type"
+    },
+    {
+      "id": "uml.create-type",
+      "type": "button",
+      "icon": "icon-tool-create-type",
+      "hint": "Create Type",
+      "command": "uml:create-type"
+    },
+    { "id": "uml.add-connected-part", "type": "button", "icon": "icon-tool-connected-part", "hint": "Add Connected Part", "command": "uml:add-connected-part"  },
+    { "id": "uml.add-linked-object", "type": "button", "icon": "icon-tool-linked-object", "hint": "Add Linked Object", "command": "uml:add-linked-object"  },
+    {
+      "id": "uml.end-order",
+      "type": "dropdown",
+      "hint": "Order of Ends",
+      "property": "showEndOrder",
+      "view-only": true,
+      "dropdown-width": 240,
+      "items": [
+        { "icon": "icon-tool-end-order-hide", "text": "Hide", "value": "hide" },
+        { "icon": "icon-tool-end-order-forward", "text": "Forward (End1 to End2)", "value": "forward" },
+        { "icon": "icon-tool-end-order-backward", "text": "Backward (End2 to End1)", "value": "backward" }
+      ],
+      "command": "engine:set-property"
+    },
+    {
+      "id": "uml.select-owner-attribute",
+      "type": "button",
+      "icon": "icon-tool-select-owner-attribute",
+      "hint": "Select Owner Attribute",
+      "command": "uml:select-owner-attribute"
+    },    
+    {
+      "id": "uml.navigability",
+      "type": "dropdown",
+      "hint": "Navigability",
+      "property": "navigable",
+      "dropdown-width": 170,
+      "items": [
+        { "icon": "icon-tool-unspecified", "text": "Unspecified", "value": "unspecified" },
+        { "icon": "icon-tool-navigable", "text": "Navigable", "value": "navigable" },
+        { "icon": "icon-tool-not-navigable", "text": "Not Navigable", "value": "notNavigable" }
+      ],
+      "command": "engine:set-property"
+    },
+    {
+      "id": "uml.aggregation-kind",
+      "type": "dropdown",
+      "hint": "Aggregation Kind",
+      "property": "aggregation",
+      "dropdown-width": 150,
+      "items": [
+        { "icon": "icon-tool-associate", "text": "none", "value": "none" },
+        { "icon": "icon-tool-shared", "text": "shared", "value": "shared" },
+        { "icon": "icon-tool-composite", "text": "composite", "value": "composite" }
+      ],
+      "command": "engine:set-property"
+    },
+    {
+      "id": "uml.multiplicity",
+      "type": "combo",
+      "hint": "Multiplicity",
+      "property": "multiplicity",
+      "width": 70,
+      "items": [
+        { "text": "0..1", "value": "0..1" },
+        { "text": "1", "value": "1" },
+        { "text": "0..*", "value": "0..*" },
+        { "text": "1..*", "value": "1..*" },
+        { "text": "*", "value": "*" }
+      ],
+      "command": "engine:set-property"
+    },
+    {
+      "id": "uml.add-qualifier-end1",
+      "type": "button",
+      "icon": "icon-tool-attribute",
+      "hint": "Add Qualifier",
+      "command": "uml:add-compartment-item",
+      "command-arg": {
+        "type": "UMLAttribute",
+        "parent-model": "model.end1",
+        "field": "qualifiers",
+        "parent-view": "view",
+        "compartment": "tailQualifiersCompartment",
+        "name-prefix": "Qualifier"
+      }
+    },
+    {
+      "id": "uml.add-qualifier-end2",
+      "type": "button",
+      "icon": "icon-tool-attribute",
+      "hint": "Add Qualifier",
+      "command": "uml:add-compartment-item",
+      "command-arg": {
+        "type": "UMLAttribute",
+        "parent-model": "model.end2",
+        "field": "qualifiers",
+        "parent-view": "view",
+        "compartment": "headQualifiersCompartment",
+        "name-prefix": "Qualifier"
+      }
+    },
+    {
+      "id": "uml.add-template-parameter-substitution",
+      "type": "button",
+      "icon": "icon-tool-template-parameter-substitution",
+      "hint": "Add Template Parameter Substitution",
+      "command": "uml:add-template-parameter-substitution"
+    },
+    { "id": "uml.add-subpackage", "type": "button", "icon": "icon-tool-subpackage", "hint": "Add Sub-Package", "command": "uml:add-subpackage" },
+    { "id": "uml.add-dependant-package", "type": "button", "icon": "icon-tool-dependant-package", "hint": "Add Dependant Package", "command": "uml:add-dependant-package" },
+    { "id": "uml.add-depending-package", "type": "button", "icon": "icon-tool-depending-package", "hint": "Add Depending Package", "command": "uml:add-depending-package" },
+    {
+      "id": "uml.view-text",
+      "type": "textarea",
+      "view-only": true,
+      "property": "text",
+      "hint": "Edit text (Shift+Enter = New Line)",
+      "command": "engine:set-property"
+    },
+    {
+      "id": "uml.view-input",
+      "type": "input",
+      "view-only": true,
+      "property": "text",
+      "hint": "Edit text",
+      "command": "engine:set-property"
+    },
+    {
+      "id": "uml.constraint-specification",
+      "type": "textarea",
+      "property": "text",
+      "hint": "Edit specification (Shift+Enter = New Line)",
+      "command": "uml:set-constraint-specification"
+    },
+    { "id": "uml.add-communicating-node", "type": "button", "icon": "icon-tool-communicating-node", "hint": "Add Communicating Node", "command": "uml:add-communicating-node" },
+    { "id": "uml.add-deployed-artifact", "type": "button", "icon": "icon-tool-deployed-artifact", "hint": "Add Deployed Artifact", "command": "uml:add-deployed-artifact" },
+    { "id": "uml.add-deployed-component", "type": "button", "icon": "icon-tool-deployed-component", "hint": "Add Deployed Component", "command": "uml:add-deployed-component" },
+    {
+      "id": "uml.add-extension-point",
+      "type": "button",
+      "icon": "icon-tool-extension-point",
+      "hint": "Add Extension Point",
+      "key": "cmdctrl-enter",
+      "command": "uml:add-compartment-item",
+      "command-arg": {
+        "type": "UMLExtensionPoint",
+        "parent-model": "model",
+        "field": "extensionPoints",
+        "parent-view": "view",
+        "compartment": "extensionPointCompartment",
+        "name-prefix": "ExtensionPoint"
+      }
+    },
+    { "id": "uml.add-associated-actor", "type": "button", "icon": "icon-tool-associated-actor", "hint": "Add Associated Actor", "command": "uml:add-associated-actor" },
+    { "id": "uml.add-included-usecase", "type": "button", "icon": "icon-tool-included-usecase", "hint": "Add Included Use Case", "command": "uml:add-included-usecase" },
+    { "id": "uml.add-extended-usecase", "type": "button", "icon": "icon-tool-extended-usecase", "hint": "Add Extended Use Case", "command": "uml:add-extended-usecase" },
+    { "id": "uml.add-subactor", "type": "button", "icon": "icon-tool-subactor", "hint": "Add Sub-Actor", "command": "uml:add-subactor" },
+    { "id": "uml.add-superactor", "type": "button", "icon": "icon-tool-superactor", "hint": "Add Super-Actor", "command": "uml:add-superactor" },
+    { "id": "uml.add-associated-usecase", "type": "button", "icon": "icon-tool-associated-usecase", "hint": "Add Associated Use Case", "command": "uml:add-associated-usecase" },
+    { "id": "uml.lifeline-expression", "type": "input", "property": "textualNotation", "hint": "<< stereotype >> name [selector] : type", "command": "uml:set-lifeline-expression" },
+    {
+      "id": "uml.select-type-for-lifeline",
+      "type": "button",
+      "icon": "icon-tool-select-type",
+      "hint": "Select Type",
+      "command": "uml:select-type-for-lifeline"
+    },
+    {
+      "id": "uml.create-type-for-lifeline",
+      "type": "button",
+      "icon": "icon-tool-create-type",
+      "hint": "Create Type",
+      "command": "uml:create-type-for-lifeline"
+    },
+    {
+      "id": "uml.add-message-lifeline",
+      "type": "button",
+      "icon": "icon-tool-message-lifeline",
+      "hint": "Add Message with Lifeline",
+      "command": "uml:add-message-lifeline"
+    },
+    {
+      "id": "uml.add-create-message-lifeline",
+      "type": "button",
+      "icon": "icon-tool-create-message-lifeline",
+      "hint": "Add Create Message with Lifeline",
+      "command": "uml:add-create-message-lifeline"
+    },
+    {
+      "id": "uml.add-self-message",
+      "type": "button",
+      "icon": "icon-tool-self-message",
+      "hint": "Add Self Message",
+      "command": "uml:add-self-message"
+    },
+    {
+      "id": "uml.add-found-message",
+      "type": "button",
+      "icon": "icon-tool-found-message",
+      "hint": "Add Found Message",
+      "command": "uml:add-found-message"
+    },
+    {
+      "id": "uml.add-lost-message",
+      "type": "button",
+      "icon": "icon-tool-lost-message",
+      "hint": "Add Lost Message",
+      "command": "uml:add-lost-message"
+    },
+    {
+      "id": "uml.add-message-from-gate",
+      "type": "button",
+      "icon": "icon-tool-message-from-gate",
+      "hint": "Add Message from Gate",
+      "command": "uml:add-message-from-gate"
+    },
+    {
+      "id": "uml.add-message-to-gate",
+      "type": "button",
+      "icon": "icon-tool-message-to-gate",
+      "hint": "Add Message to Gate",
+      "command": "uml:add-message-to-gate"
+    },
+    {
+      "id": "uml.message-expression",
+      "type": "input",
+      "property": "textualNotation",
+      "hint": "<< stereotype >> target = name (arguments)",
+      "command": "uml:set-message-expression"
+    },
+    {
+      "id": "uml.set-message-sort",
+      "type": "dropdown",
+      "hint": "MessageSort",
+      "property": "messageSort",
+      "dropdown-width": 170,
+      "items": [
+        { "icon": "icon-tool-synch-call", "text": "synchCall", "value": "synchCall" },
+        { "icon": "icon-tool-asynch-call", "text": "asynchCall", "value": "asynchCall" },
+        { "icon": "icon-tool-asynch-signal", "text": "asynchSignal", "value": "asynchSignal" },
+        { "icon": "icon-tool-create-message", "text": "createMessage", "value": "createMessage" },
+        { "icon": "icon-tool-delete-message", "text": "deleteMessage", "value": "deleteMessage" },
+        { "icon": "icon-tool-reply", "text": "reply", "value": "reply" }
+      ],
+      "command": "engine:set-property"
+    },
+    {
+      "id": "uml.select-operation",
+      "type": "button",
+      "icon": "icon-tool-select-operation",
+      "hint": "Select Operation",
+      "command": "uml:select-operation"
+    },
+    {
+      "id": "uml.create-operation",
+      "type": "button",
+      "icon": "icon-tool-create-operation",
+      "hint": "Create Operation",
+      "command": "uml:create-operation"
+    },
+    {
+      "id": "uml.select-signal",
+      "type": "button",
+      "icon": "icon-tool-select-signal",
+      "hint": "Select Signal",
+      "command": "uml:select-signal"
+    },
+    {
+      "id": "uml.create-signal",
+      "type": "button",
+      "icon": "icon-tool-create-signal",
+      "hint": "Create Signal",
+      "command": "uml:create-signal"
+    },
+    {
+      "id": "uml.add-reply-message",
+      "type": "button",
+      "icon": "icon-tool-reply-message",
+      "hint": "Add Reply Message",
+      "command": "uml:add-reply-message"
+    },
+    {
+      "id": "uml.set-invariant",
+      "type": "input",
+      "hint": "invariant",
+      "property": "invariant",
+      "command": "engine:set-property"
+    },
+    {
+      "id": "uml.create-state-condition-for-lifeline",
+      "type": "button",
+      "icon": "icon-tool-create-state-condition",
+      "hint": "Create State/Condition",
+      "command": "uml:create-state-condition-for-lifeline"
+    },
+    {
+      "id": "uml.create-time-segment",
+      "type": "button",
+      "icon": "icon-tool-time-segment",
+      "hint": "Create Time Segment",
+      "command": "uml:create-time-segment"
+    },
+    {
+      "id": "uml.add-operand",
+      "type": "button",
+      "icon": "icon-tool-operand",
+      "hint": "Add Operand",
+      "command": "uml:add-operand"
+    },
+    {
+      "id": "uml.set-guard",
+      "type": "input",
+      "hint": "guard",
+      "property": "guard",
+      "command": "engine:set-property"
+    },
+    {
+      "id": "uml.add-connected-lifeline",
+      "type": "button",
+      "icon": "icon-tool-connected-lifeline",
+      "hint": "Add Connected Lifeline",
+      "command": "uml:add-connected-lifeline"
+    },
+    {
+      "id": "uml.add-self-connector",
+      "type": "button",
+      "icon": "icon-tool-self-connector",
+      "hint": "Add Self Connector",
+      "command": "uml:add-self-connector"
+    },
+    {
+      "id": "uml.add-forward-message",
+      "type": "button",
+      "icon": "icon-tool-forward-message",
+      "hint": "Add Forward Message",
+      "command": "uml:add-forward-message"
+    },
+    {
+      "id": "uml.add-reverse-message",
+      "type": "button",
+      "icon": "icon-tool-reverse-message",
+      "hint": "Add Reverse Message",
+      "command": "uml:add-reverse-message"
+    },
+    {
+      "id": "uml.add-forward-message-comm",
+      "type": "button",
+      "icon": "icon-tool-forward-message",
+      "hint": "Add Forward Message",
+      "command": "uml:add-forward-message-comm"
+    },
+    {
+      "id": "uml.add-reverse-message-comm",
+      "type": "button",
+      "icon": "icon-tool-reverse-message",
+      "hint": "Add Reverse Message",
+      "command": "uml:add-reverse-message-comm"
+    },
+    {
+      "id": "uml.add-region",
+      "type": "button",
+      "icon": "icon-tool-region",
+      "hint": "Add Region",
+      "command": "uml:add-region"
+    },
+    {
+      "id": "uml.add-connection-point-reference",
+      "type": "button",
+      "icon": "icon-tool-connection-point-reference",
+      "hint": "Add ConnectionPointReference",
+      "command": "uml:add-connection-point-reference"
+    },
+    {
+      "id": "uml.add-entry-activity",
+      "type": "button",
+      "icon": "icon-tool-entry-activity",
+      "hint": "Add Entry Activity",
+      "command": "uml:add-entry-activity"
+    },
+    {
+      "id": "uml.add-do-activity",
+      "type": "button",
+      "icon": "icon-tool-do-activity",
+      "hint": "Add Do Activity",
+      "command": "uml:add-do-activity"
+    },
+    {
+      "id": "uml.add-exit-activity",
+      "type": "button",
+      "icon": "icon-tool-exit-activity",
+      "hint": "Add Exit Activity",
+      "command": "uml:add-exit-activity"
+    },
+    {
+      "id": "uml.add-internal-transition",
+      "type": "button",
+      "icon": "icon-tool-internal-transition",
+      "hint": "Add Internal Transition",
+      "command": "uml:add-internal-transition"
+    },
+    {
+      "id": "uml.add-outgoing-transition",
+      "type": "button",
+      "icon": "icon-tool-outgoing-transition",
+      "hint": "Add Outgoing Transition",
+      "command": "uml:add-outgoing-transition"
+    },
+    {
+      "id": "uml.add-incoming-transition",
+      "type": "button",
+      "icon": "icon-tool-incoming-transition",
+      "hint": "Add Incoming Transition",
+      "command": "uml:add-incoming-transition"
+    },
+    {
+      "id": "uml.add-initial-state",
+      "type": "button",
+      "icon": "icon-tool-initial-state",
+      "hint": "Add Initial State",
+      "command": "uml:add-initial-state"
+    },
+    {
+      "id": "uml.add-final-state",
+      "type": "button",
+      "icon": "icon-tool-final-state",
+      "hint": "Add Final State",
+      "command": "uml:add-final-state"
+    },
+    {
+      "id": "uml.add-choice",
+      "type": "button",
+      "icon": "icon-tool-choice",
+      "hint": "Add Choice",
+      "command": "uml:add-choice"
+    },
+    {
+      "id": "uml.add-fork",
+      "type": "button",
+      "icon": "icon-tool-fork",
+      "hint": "Add Fork",
+      "command": "uml:add-fork"
+    },
+    {
+      "id": "uml.add-join",
+      "type": "button",
+      "icon": "icon-tool-join",
+      "hint": "Add Join",
+      "command": "uml:add-join"
+    },
+    {
+      "id": "uml.add-trigger",
+      "type": "button",
+      "icon": "icon-tool-event",
+      "hint": "Add Trigger Event",
+      "command": "uml:add-trigger"
+    },
+    {
+      "id": "uml.add-effect",
+      "type": "button",
+      "icon": "icon-tool-effect",
+      "hint": "Add Effect Behavior",
+      "command": "uml:add-effect"
+    },
+    {
+      "id": "uml.transition-expression",
+      "type": "input",
+      "property": "textualNotation",
+      "hint": "trigger1, trigger2, ... [ guard ] / effect",
+      "command": "uml:set-transition-expression"
+    },
+    {
+      "id": "uml.add-input-pin",
+      "type": "button",
+      "icon": "icon-tool-input-pin",
+      "hint": "Add Input Pin",
+      "command": "uml:add-input-pin"
+    },
+    {
+      "id": "uml.add-output-pin",
+      "type": "button",
+      "icon": "icon-tool-output-pin",
+      "hint": "Add Output Pin",
+      "command": "uml:add-output-pin"
+    },
+
+    {
+      "id": "uml.add-outgoing-control-flow",
+      "type": "button",
+      "icon": "icon-tool-outgoing-control-flow",
+      "hint": "Add Outgoing Control Flow",
+      "command": "uml:add-outgoing-control-flow"
+    },
+    {
+      "id": "uml.add-incoming-control-flow",
+      "type": "button",
+      "icon": "icon-tool-incoming-control-flow",
+      "hint": "Add Incoming Control Flow",
+      "command": "uml:add-incoming-control-flow"
+    },
+    {
+      "id": "uml.add-outgoing-object-flow",
+      "type": "button",
+      "icon": "icon-tool-outgoing-object-flow",
+      "hint": "Add Outgoing Object Flow",
+      "command": "uml:add-outgoing-object-flow"
+    },
+    {
+      "id": "uml.add-incoming-object-flow",
+      "type": "button",
+      "icon": "icon-tool-incoming-object-flow",
+      "hint": "Add Incoming Object Flow",
+      "command": "uml:add-incoming-object-flow"
+    },
+
+    {
+      "id": "uml.add-decision",
+      "type": "button",
+      "icon": "icon-tool-decision",
+      "hint": "Add Decision",
+      "command": "uml:add-decision"
+    },
+    {
+      "id": "uml.add-merge",
+      "type": "button",
+      "icon": "icon-tool-merge",
+      "hint": "Add Merge",
+      "command": "uml:add-merge"
+    },
+    {
+      "id": "uml.add-activity-join",
+      "type": "button",
+      "icon": "icon-tool-join",
+      "hint": "Add Join",
+      "command": "uml:add-activity-join"
+    },
+    {
+      "id": "uml.add-activity-fork",
+      "type": "button",
+      "icon": "icon-tool-fork",
+      "hint": "Add Fork",
+      "command": "uml:add-activity-fork"
+    },
+    {
+      "id": "uml.add-initial-node",
+      "type": "button",
+      "icon": "icon-tool-initial-node",
+      "hint": "Add Initial Node",
+      "command": "uml:add-initial-node"
+    },
+    {
+      "id": "uml.add-final-node",
+      "type": "button",
+      "icon": "icon-tool-final-node",
+      "hint": "Add Final Node",
+      "command": "uml:add-final-node"
+    },
+    {
+      "id": "uml.add-stereotype",
+      "type": "button",
+      "icon": "icon-tool-stereotype",
+      "hint": "Add Stereotype",
+      "command": "uml:add-stereotype"
+    },
+    {
+      "id": "uml.add-substereotype",
+      "type": "button",
+      "icon": "icon-tool-substereotype",
+      "hint": "Add Sub-Stereotype",
+      "command": "uml:add-substereotype"
+    },
+    {
+      "id": "uml.add-superstereotype",
+      "type": "button",
+      "icon": "icon-tool-superstereotype",
+      "hint": "Add Super-Stereotype",
+      "command": "uml:add-superstereotype"
+    }
+  ],
+  "quickedits": [
+    {
+      "id": "uml.common",
+      "targets": [ "UMLModelView", "UMLCollaborationView", "UMLCollaborationUseView", "UMLComponentInstanceView", "UMLNodeInstanceView", "UMLArtifactInstanceView", "UMLUseCaseSubjectView", "UMLStructuredActivityNodeView", "UMLExpansionRegionView" ],
+      "area": { "x1": "left", "y1": "nameCompartment.nameLabel.top", "x2": "right", "y2": "nameCompartment.nameLabel.bottom" },
+      "components": [
+        { "id": "uml.name-expression", "section": "main" },
+        { "id": "uml.visibility", "section": "left" },
+        { "id": "uml.add-note", "section": "left", "row": 2 },
+        { "id": "uml.add-constraint", "section": "left", "row": 2 }
+      ]
+    },
+    {
+      "id": "uml.package",
+      "targets": [ "UMLPackageView" ],
+      "area": { "x1": "left", "y1": "nameCompartment.nameLabel.top", "x2": "right", "y2": "nameCompartment.nameLabel.bottom" },
+      "components": [
+        { "id": "uml.name-expression", "section": "main" },
+        { "id": "uml.visibility", "section": "left" },
+        { "id": "uml.add-note", "section": "left", "row": 2 },
+        { "id": "uml.add-constraint", "section": "left", "row": 2 },
+        { "id": "uml.add-subpackage", "section": "right" },
+        { "id": "uml.add-dependant-package", "section": "right", "row": 2 },
+        { "id": "uml.add-depending-package", "section": "right", "row": 2 }
+      ]
+    },
+    {
+      "id": "uml.subsystem",
+      "targets": [ "UMLSubsystemView" ],
+      "area": { "x1": "left", "y1": "nameCompartment.nameLabel.top", "x2": "right", "y2": "nameCompartment.nameLabel.bottom" },
+      "components": [
+        { "id": "uml.name-expression", "section": "main" },
+        { "id": "uml.visibility", "section": "left" },
+        { "id": "uml.add-note", "section": "left", "row": 2 },
+        { "id": "uml.add-constraint", "section": "left", "row": 2 },
+        { "id": "uml.add-provided-interface", "section": "right" },
+        { "id": "uml.add-required-interface", "section": "right" }
+      ]
+    },
+    {
+      "id": "uml.class",
+      "targets": [ "UMLClassView" ],
+      "area": { "x1": "left", "y1": "nameCompartment.nameLabel.top", "x2": "right", "y2": "nameCompartment.nameLabel.bottom" },
+      "components": [
+        { "id": "uml.name-expression", "section": "main" },
+        { "id": "uml.visibility", "section": "left" },
+        { "id": "uml.add-note", "section": "left", "row": 2 },
+        { "id": "uml.add-constraint", "section": "left", "row": 2 },
+        { "id": "uml.add-attribute", "section": "right" },
+        { "id": "uml.add-operation", "section": "right" },
+        { "id": "uml.add-template-parameter", "section": "right" },
+        { "id": "uml.add-reception", "section": "right" },
+        { "id": "uml.add-subclass", "section": "right", "row": 2 },
+        { "id": "uml.add-superclass", "section": "right", "row": 2 },
+        { "id": "uml.add-provided-interface", "section": "right", "row": 2 },
+        { "id": "uml.add-required-interface", "section": "right", "row": 2 },
+        { "id": "uml.add-associated-class", "section": "right", "row": 3 },
+        { "id": "uml.add-aggregated-class", "section": "right", "row": 3 },
+        { "id": "uml.add-composited-class", "section": "right", "row": 3 },
+        { "id": "uml.add-port", "section": "right", "row": 4 },
+        { "id": "uml.add-part", "section": "right", "row": 4 },
+        { "id": "uml.open-up-compartment-item" },
+        { "id": "uml.open-down-compartment-item" }
+      ]
+    },
+    {
+      "id": "uml.interface",
+      "targets": [ "UMLInterfaceView" ],
+      "area": { "x1": "left", "y1": "nameCompartment.nameLabel.top", "x2": "right", "y2": "nameCompartment.nameLabel.bottom" },
+      "components": [
+        { "id": "uml.name-expression", "section": "main" },
+        { "id": "uml.visibility", "section": "left" },
+        { "id": "uml.add-note", "section": "left", "row": 2 },
+        { "id": "uml.add-constraint", "section": "left", "row": 2 },
+        { "id": "uml.add-attribute", "section": "right" },
+        { "id": "uml.add-operation", "section": "right" },
+        { "id": "uml.add-reception", "section": "right" },
+        { "id": "uml.add-subinterface", "section": "right", "row": 2 },
+        { "id": "uml.add-superinterface", "section": "right", "row": 2 },
+        { "id": "uml.add-realizing-class", "section": "right", "row": 2 },
+        { "id": "uml.open-up-compartment-item" },
+        { "id": "uml.open-down-compartment-item" }
+      ]
+    },
+    {
+      "id": "uml.qualifier-end1",
+      "targets": [ "UMLAttributeView" ],
+      "target-tests": {
+        "_parent._parent.tailQualifiersCompartment": "_parent"
+      },
+      "area": { "x1": "_parent.left", "y1": "top", "x2": "_parent.right", "y2": "bottom" },
+      "components": [
+        { "id": "uml.attribute-expression", "section": "main" },
+        { "id": "uml.visibility", "section": "left" },
+        { "id": "uml.add-compartment-item", "command-arg": { "parent-view": "view._parent._parent", "type": "UMLAttribute", "field": "qualifiers", "compartment": "tailQualifiersCompartment", "name-prefix": "Qualifier" }, "section": "right" },
+        { "id": "uml.delete-compartment-item", "section": "right" },
+        { "id": "uml.move-up-compartment-item", "command-arg": { "field": "qualifiers" }, "section": "right" },
+        { "id": "uml.move-down-compartment-item", "command-arg": { "field": "qualifiers" }, "section": "right" },
+        { "id": "uml.open-up-compartment-item" },
+        { "id": "uml.open-down-compartment-item" }
+      ]
+    },
+    {
+      "id": "uml.qualifier-end2",
+      "targets": [ "UMLAttributeView" ],
+      "target-tests": {
+        "_parent._parent.headQualifiersCompartment": "_parent"
+      },
+      "area": { "x1": "_parent.left", "y1": "top", "x2": "_parent.right", "y2": "bottom" },
+      "components": [
+        { "id": "uml.attribute-expression", "section": "main" },
+        { "id": "uml.visibility", "section": "left" },
+        { "id": "uml.add-compartment-item", "command-arg": { "parent-view": "view._parent._parent", "type": "UMLAttribute", "field": "qualifiers", "compartment": "headQualifiersCompartment", "name-prefix": "Qualifier" }, "section": "right" },
+        { "id": "uml.delete-compartment-item", "section": "right" },
+        { "id": "uml.move-up-compartment-item", "command-arg": { "field": "qualifiers" }, "section": "right" },
+        { "id": "uml.move-down-compartment-item", "command-arg": { "field": "qualifiers" }, "section": "right" },
+        { "id": "uml.open-up-compartment-item" },
+        { "id": "uml.open-down-compartment-item" }
+      ]
+    },
+    {
+      "id": "uml.attribute",
+      "targets": [ "UMLAttributeView" ],
+      "area": { "x1": "_parent.left", "y1": "top", "x2": "_parent.right", "y2": "bottom" },
+      "components": [
+        { "id": "uml.attribute-expression", "section": "main" },
+        { "id": "uml.visibility", "section": "left" },
+        { "id": "uml.add-compartment-item", "command-arg": { "parent-view": "view._parent._parent", "type": "UMLAttribute", "field": "attributes", "compartment": "attributeCompartment", "name-prefix": "Attribute" }, "section": "right" },
+        { "id": "uml.delete-compartment-item", "section": "right" },
+        { "id": "uml.move-up-compartment-item", "command-arg": { "field": "attributes" }, "section": "right" },
+        { "id": "uml.move-down-compartment-item", "command-arg": { "field": "attributes" }, "section": "right" },
+        { "id": "uml.open-up-compartment-item" },
+        { "id": "uml.open-down-compartment-item" }
+      ]
+    },
+    {
+      "id": "uml.literal",
+      "targets": [ "UMLEnumerationLiteralView" ],
+      "area": { "x1": "_parent.left", "y1": "top", "x2": "_parent.right", "y2": "bottom" },
+      "components": [
+        { "id": "uml.name-expression", "section": "main" },
+        { "id": "uml.visibility", "section": "left" },
+        { "id": "uml.add-compartment-item", "command-arg": { "parent-view": "view._parent._parent", "type": "UMLEnumerationLiteral", "field": "literals", "compartment": "enumerationLiteralCompartment", "name-prefix": "Literal" }, "section": "right" },
+        { "id": "uml.delete-compartment-item", "section": "right" },
+        { "id": "uml.move-up-compartment-item", "command-arg": { "field": "literals" }, "section": "right" },
+        { "id": "uml.move-down-compartment-item", "command-arg": { "field": "literals" }, "section": "right" },
+        { "id": "uml.open-up-compartment-item" },
+        { "id": "uml.open-down-compartment-item" }
+      ]
+    },
+    {
+      "id": "uml.operation",
+      "targets": [ "UMLOperationView" ],
+      "area": { "x1": "_parent.left", "y1": "top", "x2": "_parent.right", "y2": "bottom" },
+      "components": [
+        { "id": "uml.operation-expression", "section": "main" },
+        { "id": "uml.visibility", "section": "left" },
+        { "id": "uml.add-compartment-item", "command-arg": { "parent-view": "view._parent._parent", "type": "UMLOperation", "field": "operations", "compartment": "operationCompartment", "name-prefix": "Operation" }, "section": "right" },
+        { "id": "uml.delete-compartment-item", "section": "right" },
+        { "id": "uml.move-up-compartment-item", "command-arg": { "field": "operations" }, "section": "right" },
+        { "id": "uml.move-down-compartment-item", "command-arg": { "field": "operations" }, "section": "right" },
+        { "id": "uml.open-up-compartment-item" },
+        { "id": "uml.open-down-compartment-item" }
+      ]
+    },
+    {
+      "id": "uml.reception",
+      "targets": [ "UMLReceptionView" ],
+      "area": { "x1": "_parent.left", "y1": "top", "x2": "_parent.right", "y2": "bottom" },
+      "components": [
+        { "id": "uml.name-expression", "section": "main" },
+        { "id": "uml.visibility", "section": "left" },
+        { "id": "uml.select-signal", "section": "left" },
+        { "id": "uml.add-compartment-item", "command-arg": { "parent-view": "view._parent._parent", "type": "UMLReception", "field": "receptions", "compartment": "receptionCompartment", "name-prefix": "Reception" }, "section": "right" },
+        { "id": "uml.delete-compartment-item", "section": "right" },
+        { "id": "uml.move-up-compartment-item", "command-arg": { "field": "receptions" }, "section": "right" },
+        { "id": "uml.move-down-compartment-item", "command-arg": { "field": "receptions" }, "section": "right" },
+        { "id": "uml.open-up-compartment-item" },
+        { "id": "uml.open-down-compartment-item" }
+      ]
+    },
+    {
+      "id": "uml.template-parameter",
+      "targets": [ "UMLTemplateParameterView" ],
+      "area": { "x1": "_parent.left", "y1": "top", "x2": "_parent.right", "y2": "bottom" },
+      "components": [
+        { "id": "uml.template-parameter-expression", "section": "main" },
+        { "id": "uml.visibility", "section": "left" },
+        { "id": "uml.add-compartment-item", "command-arg": { "parent-view": "view._parent._parent", "type": "UMLTemplateParameter", "field": "templateParameters", "compartment": "templateParameterCompartment", "name-prefix": "TemplateParameter" }, "section": "right" },
+        { "id": "uml.delete-compartment-item", "section": "right" },
+        { "id": "uml.move-up-compartment-item", "command-arg": { "field": "templateParameters" }, "section": "right" },
+        { "id": "uml.move-down-compartment-item", "command-arg": { "field": "templateParameters" }, "section": "right" },
+        { "id": "uml.open-up-compartment-item" },
+        { "id": "uml.open-down-compartment-item" }
+      ]
+    },
+    {
+      "id": "uml.slot",
+      "targets": [ "UMLSlotView" ],
+      "area": { "x1": "_parent.left", "y1": "top", "x2": "_parent.right", "y2": "bottom" },
+      "components": [
+        { "id": "uml.slot-expression", "section": "main" },
+        { "id": "uml.visibility", "section": "left" },
+        { "id": "uml.add-compartment-item", "command-arg": { "parent-view": "view._parent._parent", "type": "UMLSlot", "field": "slots", "compartment": "slotCompartment", "name-prefix": "Slot" }, "section": "right" },
+        { "id": "uml.delete-compartment-item", "section": "right" },
+        { "id": "uml.move-up-compartment-item", "command-arg": { "field": "slots" }, "section": "right" },
+        { "id": "uml.move-down-compartment-item", "command-arg": { "field": "slots" }, "section": "right" },
+        { "id": "uml.open-up-compartment-item" },
+        { "id": "uml.open-down-compartment-item" }
+      ]
+    },
+    {
+      "id": "uml.association",
+      "targets": [ "UMLAssociationView", "UMLAssociationView.nameLabel", "UMLAssociationView.stereotypeLabel", "UMLAssociationView.propertyLabel", "UMLNaryAssociationNodeView", "UMLNaryAssociationNodeView.nameLabel", "UMLCommunicationPathView", "UMLCommunicationPathView.nameLabel", "UMLCommunicationPathView.stereotypeLabel", "UMLCommunicationPathView.propertyLabel" ],
+      "area": { "x1": "nameLabel.left", "y1": "nameLabel.top", "x2": "nameLabel.left", "y2": "nameLabel.bottom", "x2-margin": 70 },
+      "components": [
+        { "id": "uml.name-expression", "section": "main" },
+        { "id": "uml.end-order", "section": "left" },
+        { "id": "uml.visibility", "section": "left" },
+        { "id": "uml.add-note", "section": "left", "row": 2 },
+        { "id": "uml.add-constraint", "section": "left", "row": 2 }
+      ]
+    },
+    {
+      "id": "uml.association-end1",
+      "targets": [ "UMLAssociationView:end1", "UMLAssociationView.tailRoleNameLabel", "UMLAssociationView.tailPropertyLabel", "UMLAssociationView.tailMultiplicityLabel", "UMLCommunicationPathView:end1", "UMLCommunicationPathView.tailRoleNameLabel", "UMLCommunicationPathView.tailPropertyLabel", "UMLCommunicationPathView.tailMultiplicityLabel" ],
+      "area": { "x1": "tailRoleNameLabel.left", "y1": "tailRoleNameLabel.top", "x2": "tailRoleNameLabel.left", "y2": "tailRoleNameLabel.bottom", "x2-margin": 70 },
+      "components": [
+        { "id": "uml.name-expression", "property": "end1.textualNotation", "command-arg": { "set-model": "end1" }, "section": "main", "visibility": "_tailEndSole" },
+        { "id": "uml.add-qualifier-end1", "section": "left", "row": 2, "visibility": "_tailEndSole" },
+        { "id": "uml.select-owner-attribute", "command-arg": { "set-model": "end1" }, "section": "left", "row": 2 },
+        { "id": "uml.aggregation-kind", "property": "end1.aggregation", "command-arg": { "set-model": "end1", "property": "aggregation" }, "section": "left", "visibility": "_tailEndSole" },
+        { "id": "uml.navigability", "property": "end1.navigable", "command-arg": { "set-model": "end1", "property": "navigable" }, "section": "left" },
+        { "id": "uml.visibility", "property": "end1.visibility", "command-arg": { "set-model": "end1", "property": "visibility"  }, "section": "left", "visibility": "_tailEndSole" },
+        { "id": "uml.multiplicity", "property": "end1.multiplicity", "command-arg": { "set-model": "end1", "property": "multiplicity" }, "section": "right", "visibility": "_tailEndSole" }
+      ]
+    },
+    {
+      "id": "uml.association-end2",
+      "targets": [ "UMLAssociationView:end2", "UMLAssociationView.headRoleNameLabel", "UMLAssociationView.headPropertyLabel", "UMLAssociationView.headMultiplicityLabel", "UMLCommunicationPathView:end2", "UMLCommunicationPathView.headRoleNameLabel", "UMLCommunicationPathView.headPropertyLabel", "UMLCommunicationPathView.headMultiplicityLabel" ],
+      "area": { "x1": "headRoleNameLabel.left", "y1": "headRoleNameLabel.top", "x2": "headRoleNameLabel.left", "y2": "headRoleNameLabel.bottom", "x2-margin": 70 },
+      "components": [
+        { "id": "uml.name-expression", "property": "end2.textualNotation", "command-arg": { "set-model": "end2" }, "section": "main", "visibility": "_headEndSole" },
+        { "id": "uml.add-qualifier-end2", "section": "left", "row": 2, "visibility": "_headEndSole" },
+        { "id": "uml.select-owner-attribute", "command-arg": { "set-model": "end2" }, "section": "left", "row": 2 },
+        { "id": "uml.aggregation-kind", "property": "end2.aggregation", "command-arg": { "set-model": "end2", "property": "aggregation" }, "section": "left", "visibility": "_headEndSole" },
+        { "id": "uml.navigability", "property": "end2.navigable", "command-arg": { "set-model": "end2", "property": "navigable" }, "section": "left" },
+        { "id": "uml.visibility", "property": "end2.visibility", "command-arg": { "set-model": "end2", "property": "visibility" }, "section": "left", "visibility": "_headEndSole" },
+        { "id": "uml.multiplicity", "property": "end2.multiplicity", "command-arg": { "set-model": "end2", "property": "multiplicity" }, "section": "right", "visibility": "_headEndSole" }
+      ]
+    },
+    {
+      "id": "uml.directed-relationship",
+      "targets": [
+        "UMLGeneralizationView", "UMLGeneralizationView.nameLabel", "UMLGeneralizationView.stereotypeLabel", "UMLGeneralizationView.propertyLabel",
+        "UMLDependencyView", "UMLDependencyView.nameLabel", "UMLDependencyView.stereotypeLabel", "UMLDependencyView.propertyLabel",
+        "UMLInterfaceRealizationView", "UMLInterfaceRealizationView.nameLabel", "UMLInterfaceRealizationView.stereotypeLabel", "UMLInterfaceRealizationView.propertyLabel",
+        "UMLComponentRealizationView", "UMLComponentRealizationView.nameLabel", "UMLComponentRealizationView.stereotypeLabel", "UMLComponentRealizationView.propertyLabel",
+        "UMLIncludeView", "UMLIncludeView.nameLabel", "UMLIncludeView.stereotypeLabel", "UMLIncludeView.propertyLabel",
+        "UMLExtendView", "UMLExtendView.nameLabel", "UMLExtendView.stereotypeLabel", "UMLExtendView.propertyLabel",
+        "UMLExtensionView", "UMLExtensionView.nameLabel", "UMLExtensionView.stereotypeLabel", "UMLExtensionView.propertyLabel",
+        "UMLExceptionHandlerView", "UMLExceptionHandlerView.nameLabel", "UMLExceptionHandlerView.stereotypeLabel", "UMLExceptionHandlerView.propertyLabel",
+        "UMLActivityInterruptView", "UMLActivityInterruptView.nameLabel", "UMLActivityInterruptView.stereotypeLabel", "UMLActivityInterruptView.propertyLabel",
+        "UMLRoleBindingView", "UMLRoleBindingView.nameLabel", "UMLRoleBindingView.stereotypeLabel", "UMLRoleBindingView.propertyLabel",
+        "UMLRealizationView", "UMLRealizationView.nameLabel", "UMLRealizationView.stereotypeLabel", "UMLRealizationView.propertyLabel",
+        "UMLDeploymentView", "UMLDeploymentView.nameLabel", "UMLDeploymentView.stereotypeLabel", "UMLDeploymentView.propertyLabel",
+        "UMLInformationFlowView", "UMLInformationFlowView.nameLabel", "UMLInformationFlowView.stereotypeLabel", "UMLInformationFlowView.propertyLabel"
+      ],
+      "area": { "x1": "nameLabel.left", "y1": "nameLabel.top", "x2": "nameLabel.left", "y2": "nameLabel.bottom", "x2-margin": 70 },
+      "components": [
+        { "id": "uml.name-expression", "section": "main" },
+        { "id": "uml.visibility", "section": "left" },
+        { "id": "uml.add-note", "section": "left", "row": 2 },
+        { "id": "uml.add-constraint", "section": "left", "row": 2 }
+      ]
+    },
+    {
+      "id": "uml.template-binding",
+      "targets": [
+        "UMLTemplateBindingView", "UMLTemplateBindingView.nameLabel", "UMLTemplateBindingView.stereotypeLabel", "UMLTemplateBindingView.propertyLabel"
+      ],
+      "area": { "x1": "nameLabel.left", "y1": "nameLabel.top", "x2": "nameLabel.left", "y2": "nameLabel.bottom", "x2-margin": 70 },
+      "components": [
+        { "id": "uml.name-expression", "section": "main" },
+        { "id": "uml.visibility", "section": "left" },
+        { "id": "uml.add-note", "section": "left", "row": 2 },
+        { "id": "uml.add-constraint", "section": "left", "row": 2 },
+        { "id": "uml.add-template-parameter-substitution", "section": "right" }
+      ]
+    },
+    {
+      "id": "uml.classifier",
+      "targets": [ "UMLSignalView", "UMLDataTypeView", "UMLPrimitiveTypeView", "UMLArtifactView", "UMLInformationItemView" ],
+      "area": { "x1": "left", "y1": "nameCompartment.nameLabel.top", "x2": "right", "y2": "nameCompartment.nameLabel.bottom" },
+      "components": [
+        { "id": "uml.name-expression", "section": "main" },
+        { "id": "uml.visibility", "section": "left" },
+        { "id": "uml.add-note", "section": "left", "row": 2 },
+        { "id": "uml.add-constraint", "section": "left", "row": 2 },
+        { "id": "uml.add-attribute", "section": "right" },
+        { "id": "uml.add-operation", "section": "right" },
+        { "id": "uml.add-reception", "section": "right" },
+        { "id": "uml.open-up-compartment-item" },
+        { "id": "uml.open-down-compartment-item" }
+      ]
+    },
+    {
+      "id": "uml.enumeration",
+      "targets": [ "UMLEnumerationView" ],
+      "area": { "x1": "left", "y1": "nameCompartment.nameLabel.top", "x2": "right", "y2": "nameCompartment.nameLabel.bottom" },
+      "components": [
+        { "id": "uml.name-expression", "section": "main" },
+        { "id": "uml.visibility", "section": "left" },
+        { "id": "uml.add-note", "section": "left", "row": 2 },
+        { "id": "uml.add-constraint", "section": "left", "row": 2 },
+        { "id": "uml.add-literal", "section": "right" },
+        { "id": "uml.add-operation", "section": "right" },
+        { "id": "uml.open-up-compartment-item" },
+        { "id": "uml.open-down-compartment-item" }
+      ]
+    },
+    {
+      "id": "uml.port",
+      "targets": [ "UMLPortView", "UMLPortView.nameLabel", "UMLPortView.stereotypeLabel", "UMLPortView.propertyLabel" ],
+      "area": { "x1": "nameLabel.left", "y1": "nameLabel.top", "x2": "nameLabel.left", "y2": "nameLabel.bottom", "x2-margin": 100 },
+      "components": [
+        { "id": "uml.name-expression", "section": "main" },
+        { "id": "uml.visibility", "section": "left" },
+        { "id": "uml.add-note", "section": "left", "row": 2 },
+        { "id": "uml.add-constraint", "section": "left", "row": 2 },
+        { "id": "uml.select-type", "section": "right" },
+        { "id": "uml.create-type", "section": "right" },
+        { "id": "uml.add-provided-interface", "section": "right", "row": 2 },
+        { "id": "uml.add-required-interface", "section": "right", "row": 2 },
+        { "id": "uml.add-connected-part", "section": "right", "row": 2 }
+      ]
+    },
+    {
+      "id": "uml.part",
+      "targets": [ "UMLPartView" ],
+      "area": { "x1": "left", "y1": "nameCompartment.nameLabel.top", "x2": "right", "y2": "nameCompartment.nameLabel.bottom" },
+      "components": [
+        { "id": "uml.name-expression", "section": "main" },
+        { "id": "uml.visibility", "section": "left" },
+        { "id": "uml.add-note", "section": "left", "row": 2 },
+        { "id": "uml.add-constraint", "section": "left", "row": 2 },
+        { "id": "uml.select-type", "section": "right" },
+        { "id": "uml.create-type", "section": "right" },
+        { "id": "uml.add-connected-part", "section": "right", "row": 2 }
+      ]
+    },
+    {
+      "id": "uml.connector-comm",
+      "targets": [ "UMLConnectorView", "UMLConnectorView.nameLabel", "UMLConnectorView.stereotypeLabel", "UMLConnectorView.propertyLabel" ],
+      "target-diagrams": [ "UMLCommunicationDiagram" ],
+      "area": { "x1": "nameLabel.left", "y1": "nameLabel.top", "x2": "nameLabel.left", "y2": "nameLabel.bottom", "x2-margin": 70 },
+      "components": [
+        { "id": "uml.name-expression", "section": "main" },
+        { "id": "uml.visibility", "section": "left" },
+        { "id": "uml.add-note", "section": "left", "row": 2 },
+        { "id": "uml.add-constraint", "section": "left", "row": 2 },
+        { "id": "uml.add-forward-message-comm", "section": "right" },
+        { "id": "uml.add-reverse-message-comm", "section": "right" }
+      ]
+    },
+    {
+      "id": "uml.connector",
+      "targets": [ "UMLConnectorView", "UMLConnectorView.nameLabel", "UMLConnectorView.stereotypeLabel", "UMLConnectorView.propertyLabel" ],
+      "area": { "x1": "nameLabel.left", "y1": "nameLabel.top", "x2": "nameLabel.left", "y2": "nameLabel.bottom", "x2-margin": 70 },
+      "components": [
+        { "id": "uml.name-expression", "section": "main" },
+        { "id": "uml.visibility", "section": "left" },
+        { "id": "uml.add-note", "section": "left", "row": 2 },
+        { "id": "uml.add-constraint", "section": "left", "row": 2 }
+      ]
+    },
+    {
+      "id": "uml.connector-end1",
+      "targets": [ "UMLConnectorView:end1", "UMLConnectorView.tailRoleNameLabel", "UMLConnectorView.tailPropertyLabel", "UMLConnectorView.tailMultiplicityLabel" ],
+      "area": { "x1": "tailRoleNameLabel.left", "y1": "tailRoleNameLabel.top", "x2": "tailRoleNameLabel.left", "y2": "tailRoleNameLabel.bottom", "x2-margin": 70 },
+      "components": [
+        { "id": "uml.name-expression", "property": "end1.textualNotation", "command-arg": { "set-model": "end1" }, "section": "main" },
+        { "id": "uml.aggregation-kind", "property": "end1.aggregation", "command-arg": { "set-model": "end1", "property": "aggregation" }, "section": "left" },
+        { "id": "uml.navigability", "property": "end1.navigable", "command-arg": { "set-model": "end1", "property": "navigable" }, "section": "left" },
+        { "id": "uml.visibility", "property": "end1.visibility", "command-arg": { "set-model": "end1", "property": "visibility"  }, "section": "left" },
+        { "id": "uml.multiplicity", "property": "end1.multiplicity", "command-arg": { "set-model": "end1", "property": "multiplicity" }, "section": "right" }
+      ]
+    },
+    {
+      "id": "uml.connector-end2",
+      "targets": [ "UMLConnectorView:end2", "UMLConnectorView.headRoleNameLabel", "UMLConnectorView.headPropertyLabel", "UMLConnectorView.headMultiplicityLabel" ],
+      "area": { "x1": "headRoleNameLabel.left", "y1": "headRoleNameLabel.top", "x2": "headRoleNameLabel.left", "y2": "headRoleNameLabel.bottom", "x2-margin": 70 },
+      "components": [
+        { "id": "uml.name-expression", "property": "end2.textualNotation", "command-arg": { "set-model": "end2" }, "section": "main" },
+        { "id": "uml.aggregation-kind", "property": "end2.aggregation", "command-arg": { "set-model": "end2", "property": "aggregation" }, "section": "left" },
+        { "id": "uml.navigability", "property": "end2.navigable", "command-arg": { "set-model": "end2", "property": "navigable" }, "section": "left" },
+        { "id": "uml.visibility", "property": "end2.visibility", "command-arg": { "set-model": "end2", "property": "visibility" }, "section": "left" },
+        { "id": "uml.multiplicity", "property": "end2.multiplicity", "command-arg": { "set-model": "end2", "property": "multiplicity" }, "section": "right" }
+      ]
+    },
+    {
+      "id": "uml.object",
+      "targets": [ "UMLObjectView" ],
+      "area": { "x1": "left", "y1": "nameCompartment.nameLabel.top", "x2": "right", "y2": "nameCompartment.nameLabel.bottom" },
+      "components": [
+        { "id": "uml.object-expression", "section": "main" },
+        { "id": "uml.visibility", "section": "left" },
+        { "id": "uml.add-note", "section": "left", "row": 2 },
+        { "id": "uml.add-constraint", "section": "left", "row": 2 },
+        { "id": "uml.add-slot", "section": "right" },
+        { "id": "uml.add-linked-object", "section": "right", "row": 2 }
+      ]
+    },
+    {
+      "id": "uml.link",
+      "targets": [ "UMLLinkView", "UMLLinkView.nameLabel", "UMLLinkView.stereotypeLabel", "UMLLinkView.propertyLabel" ],
+      "area": { "x1": "nameLabel.left", "y1": "nameLabel.top", "x2": "nameLabel.left", "y2": "nameLabel.bottom", "x2-margin": 70 },
+      "components": [
+        { "id": "uml.name-expression", "section": "main" },
+        { "id": "uml.visibility", "section": "left" },
+        { "id": "uml.add-note", "section": "left", "row": 2 },
+        { "id": "uml.add-constraint", "section": "left", "row": 2 }
+      ]
+    },
+    {
+      "id": "uml.link-end1",
+      "targets": [ "UMLLinkView:end1", "UMLLinkView.tailRoleNameLabel", "UMLLinkView.tailPropertyLabel", "UMLLinkView.tailMultiplicityLabel" ],
+      "area": { "x1": "tailRoleNameLabel.left", "y1": "tailRoleNameLabel.top", "x2": "tailRoleNameLabel.left", "y2": "tailRoleNameLabel.bottom", "x2-margin": 70 },
+      "components": [
+        { "id": "uml.name-expression", "property": "end1.textualNotation", "command-arg": { "set-model": "end1" }, "section": "main" },
+        { "id": "uml.aggregation-kind", "property": "end1.aggregation", "command-arg": { "set-model": "end1", "property": "aggregation" }, "section": "left" },
+        { "id": "uml.navigability", "property": "end1.navigable", "command-arg": { "set-model": "end1", "property": "navigable" }, "section": "left" },
+        { "id": "uml.visibility", "property": "end1.visibility", "command-arg": { "set-model": "end1", "property": "visibility"  }, "section": "left" },
+        { "id": "uml.multiplicity", "property": "end1.multiplicity", "command-arg": { "set-model": "end1", "property": "multiplicity" }, "section": "right" }
+      ]
+    },
+    {
+      "id": "uml.link-end2",
+      "targets": [ "UMLLinkView:end2", "UMLLinkView.headRoleNameLabel", "UMLLinkView.headPropertyLabel", "UMLLinkView.headMultiplicityLabel" ],
+      "area": { "x1": "headRoleNameLabel.left", "y1": "headRoleNameLabel.top", "x2": "headRoleNameLabel.left", "y2": "headRoleNameLabel.bottom", "x2-margin": 70 },
+      "components": [
+        { "id": "uml.name-expression", "property": "end2.textualNotation", "command-arg": { "set-model": "end2" }, "section": "main" },
+        { "id": "uml.aggregation-kind", "property": "end2.aggregation", "command-arg": { "set-model": "end2", "property": "aggregation" }, "section": "left" },
+        { "id": "uml.navigability", "property": "end2.navigable", "command-arg": { "set-model": "end2", "property": "navigable" }, "section": "left" },
+        { "id": "uml.visibility", "property": "end2.visibility", "command-arg": { "set-model": "end2", "property": "visibility" }, "section": "left" },
+        { "id": "uml.multiplicity", "property": "end2.multiplicity", "command-arg": { "set-model": "end2", "property": "multiplicity" }, "section": "right" }
+      ]
+    },
+    {
+      "id": "uml.textarea",
+      "targets": [ "UMLTextView", "UMLTextBoxView", "UMLNoteView" ],
+      "area": { "x1": "left", "y1": "top", "x2": "right", "y2": "bottom" },
+      "components": [
+        { "id": "uml.view-text", "section": "main" }
+      ]
+    },
+    {
+      "id": "uml.constraint",
+      "targets": [ "UMLConstraintView" ],
+      "area": { "x1": "left", "y1": "top", "x2": "right", "y2": "bottom" },
+      "components": [
+        { "id": "uml.constraint-specification", "section": "main" }
+      ]
+    },
+    {
+      "id": "uml.component",
+      "targets": [ "UMLComponentView" ],
+      "area": { "x1": "left", "y1": "nameCompartment.nameLabel.top", "x2": "right", "y2": "nameCompartment.nameLabel.bottom" },
+      "components": [
+        { "id": "uml.name-expression", "section": "main" },
+        { "id": "uml.visibility", "section": "left" },
+        { "id": "uml.add-note", "section": "left", "row": 2 },
+        { "id": "uml.add-constraint", "section": "left", "row": 2 },
+        { "id": "uml.add-attribute", "section": "right" },
+        { "id": "uml.add-operation", "section": "right" },
+        { "id": "uml.add-reception", "section": "right" },
+        { "id": "uml.add-provided-interface", "section": "right", "row": 2 },
+        { "id": "uml.add-required-interface", "section": "right", "row": 2 },
+        { "id": "uml.add-port", "section": "right", "row": 3 },
+        { "id": "uml.add-part", "section": "right", "row": 3 },
+        { "id": "uml.open-up-compartment-item" },
+        { "id": "uml.open-down-compartment-item" }
+      ]
+    },
+    {
+      "id": "uml.node",
+      "targets": [ "UMLNodeView" ],
+      "area": { "x1": "left", "y1": "nameCompartment.nameLabel.top", "x2": "right", "y2": "nameCompartment.nameLabel.bottom" },
+      "components": [
+        { "id": "uml.name-expression", "section": "main" },
+        { "id": "uml.visibility", "section": "left" },
+        { "id": "uml.add-note", "section": "left", "row": 2 },
+        { "id": "uml.add-constraint", "section": "left", "row": 2 },
+        { "id": "uml.add-attribute", "section": "right" },
+        { "id": "uml.add-operation", "section": "right" },
+        { "id": "uml.add-reception", "section": "right" },
+        { "id": "uml.add-communicating-node", "section": "right", "row": 2 },
+        { "id": "uml.add-deployed-artifact", "section": "right", "row": 3 },
+        { "id": "uml.add-deployed-component", "section": "right", "row": 3 },
+        { "id": "uml.open-up-compartment-item" },
+        { "id": "uml.open-down-compartment-item" }
+      ]
+    },
+    {
+      "id": "uml.usecase",
+      "targets": [ "UMLUseCaseView" ],
+      "area": { "x1": "left", "y1": "nameCompartment.nameLabel.top", "x2": "right", "y2": "nameCompartment.nameLabel.bottom" },
+      "components": [
+        { "id": "uml.name-expression", "section": "main" },
+        { "id": "uml.visibility", "section": "left" },
+        { "id": "uml.add-note", "section": "left", "row": 2 },
+        { "id": "uml.add-constraint", "section": "left", "row": 2 },
+        { "id": "uml.add-extension-point", "section": "right" },
+        { "id": "uml.add-associated-actor", "section": "right", "row": 2 },
+        { "id": "uml.add-included-usecase", "section": "right", "row": 2 },
+        { "id": "uml.add-extended-usecase", "section": "right", "row": 2 },
+        { "id": "uml.open-up-compartment-item" },
+        { "id": "uml.open-down-compartment-item" }
+      ]
+    },
+    {
+      "id": "uml.extension-point",
+      "targets": [ "UMLExtensionPointView" ],
+      "area": { "x1": "_parent.left", "y1": "top", "x2": "_parent.right", "y2": "bottom" },
+      "components": [
+        { "id": "uml.name-expression", "section": "main" },
+        { "id": "uml.visibility", "section": "left" },
+        { "id": "uml.add-compartment-item", "command-arg": { "parent-view": "view._parent._parent", "type": "UMLExtensionPoint", "field": "extensionPoints", "compartment": "extensionPointCompartment", "name-prefix": "ExtensionPoint" }, "section": "right" },
+        { "id": "uml.delete-compartment-item", "section": "right" },
+        { "id": "uml.move-up-compartment-item", "command-arg": { "field": "extensionPoints" }, "section": "right" },
+        { "id": "uml.move-down-compartment-item", "command-arg": { "field": "extensionPoints" }, "section": "right" },
+        { "id": "uml.open-up-compartment-item" },
+        { "id": "uml.open-down-compartment-item" }
+      ]
+    },
+    {
+      "id": "uml.actor",
+      "targets": [ "UMLActorView" ],
+      "area": { "x1": "left", "y1": "nameCompartment.nameLabel.top", "x2": "right", "y2": "nameCompartment.nameLabel.bottom" },
+      "components": [
+        { "id": "uml.name-expression", "section": "main" },
+        { "id": "uml.visibility", "section": "left" },
+        { "id": "uml.add-note", "section": "left", "row": 2 },
+        { "id": "uml.add-constraint", "section": "left", "row": 2 },
+        { "id": "uml.add-attribute", "section": "right" },
+        { "id": "uml.add-operation", "section": "right" },
+        { "id": "uml.add-subactor", "section": "right", "row": 2 },
+        { "id": "uml.add-superactor", "section": "right", "row": 2 },
+        { "id": "uml.add-associated-usecase", "section": "right", "row": 3 },
+        { "id": "uml.open-up-compartment-item" },
+        { "id": "uml.open-down-compartment-item" }
+      ]
+    },
+    {
+      "id": "uml.lifeline-seq",
+      "targets": [ "UMLSeqLifelineView" ],
+      "area": { "x1": "left", "y1": "nameCompartment.nameLabel.top", "x2": "right", "y2": "nameCompartment.nameLabel.bottom" },
+      "components": [
+        { "id": "uml.lifeline-expression", "section": "main" },
+        { "id": "uml.visibility", "section": "left" },
+        { "id": "uml.add-note", "section": "left", "row": 2 },
+        { "id": "uml.add-constraint", "section": "left", "row": 2 },
+        { "id": "uml.select-type-for-lifeline", "section": "right" },
+        { "id": "uml.create-type-for-lifeline", "section": "right" },
+        { "id": "uml.add-message-lifeline", "section": "right", "row": 2 },
+        { "id": "uml.add-create-message-lifeline", "section": "right", "row": 2 },
+        { "id": "uml.add-self-message", "section": "right", "row": 2 },
+        { "id": "uml.add-found-message", "section": "right", "row": 3 },
+        { "id": "uml.add-lost-message", "section": "right", "row": 3 },
+        { "id": "uml.add-message-from-gate", "section": "right", "row": 4 },
+        { "id": "uml.add-message-to-gate", "section": "right", "row": 4 }
+      ]
+    },
+    {
+      "id": "uml.message",
+      "targets": [ "UMLSeqMessageView", "UMLSeqMessageView.nameLabel", "UMLSeqMessageView.stereotypeLabel", "UMLSeqMessageView.propertyLabel" ],
+      "area": { "x1": "nameLabel.left", "y1": "nameLabel.top", "x2": "nameLabel.right", "y2": "nameLabel.bottom" },
+      "components": [
+        { "id": "uml.message-expression", "section": "main" },
+        { "id": "uml.set-message-sort", "section": "left" },
+        { "id": "uml.add-note", "section": "left", "row": 2 },
+        { "id": "uml.add-constraint", "section": "left", "row": 2 },
+        { "id": "uml.select-operation", "section": "right" },
+        { "id": "uml.create-operation", "section": "right" },
+        { "id": "uml.select-signal", "section": "right" },
+        { "id": "uml.create-signal", "section": "right" },
+        { "id": "uml.add-reply-message", "section": "right", "row": 2 }
+      ]
+    },
+    {
+      "id": "uml.state-invariant",
+      "targets": [ "UMLStateInvariantView" ],
+      "area": { "x1": "invariantLabel.left", "y1": "invariantLabel.top", "x2": "invariantLabel.right", "y2": "invariantLabel.bottom" },
+      "components": [
+        { "id": "uml.set-invariant", "section": "main" }
+      ]
+    },
+    {
+      "id": "uml.continuation",
+      "targets": [ "UMLContinuationView" ],
+      "area": { "x1": "nameLabel.left", "y1": "nameLabel.top", "x2": "nameLabel.right", "y2": "nameLabel.bottom" },
+      "components": [
+        { "id": "uml.name-expression", "section": "main" }
+      ]
+    },
+    {
+      "id": "uml.combined-fragment",
+      "targets": [ "UMLCombinedFragmentView" ],
+      "area": { "x1": "nameLabel.left", "y1": "nameLabel.top", "x2": "nameLabel.right", "y2": "nameLabel.bottom" },
+      "components": [
+        { "id": "uml.name-expression", "section": "main" },
+        { "id": "uml.add-operand", "section": "right" }
+      ]
+    },
+    {
+      "id": "uml.interaction-operand",
+      "targets": [ "UMLInteractionOperandView" ],
+      "area": { "x1": "guardLabel.left", "y1": "guardLabel.top", "x2": "guardLabel.right", "y2": "guardLabel.bottom" },
+      "components": [
+        { "id": "uml.set-guard", "section": "main" }
+      ]
+    },
+    {
+      "id": "uml.lifeline-comm",
+      "targets": [ "UMLCommLifelineView" ],
+      "area": { "x1": "left", "y1": "nameCompartment.nameLabel.top", "x2": "right", "y2": "nameCompartment.nameLabel.bottom" },
+      "components": [
+        { "id": "uml.lifeline-expression", "section": "main" },
+        { "id": "uml.visibility", "section": "left" },
+        { "id": "uml.add-note", "section": "left", "row": 2 },
+        { "id": "uml.add-constraint", "section": "left", "row": 2 },
+        { "id": "uml.select-type-for-lifeline", "section": "right" },
+        { "id": "uml.create-type-for-lifeline", "section": "right" },
+        { "id": "uml.add-connected-lifeline", "section": "right", "row": 2 },
+        { "id": "uml.add-self-connector", "section": "right", "row": 2 },
+        { "id": "uml.add-forward-message", "section": "right", "row": 3 },
+        { "id": "uml.add-reverse-message", "section": "right", "row": 3 }
+      ]
+    },
+    {
+      "id": "uml.message-comm",
+      "targets": [ "UMLCommMessageView", "UMLCommMessageView.nameLabel", "UMLCommMessageView.stereotypeLabel", "UMLCommMessageView.propertyLabel" ],
+      "area": { "x1": "nameLabel.left", "y1": "nameLabel.top", "x2": "nameLabel.right", "y2": "nameLabel.bottom" },
+      "components": [
+        { "id": "uml.message-expression", "section": "main" },
+        { "id": "uml.set-message-sort", "section": "left" },
+        { "id": "uml.add-note", "section": "left", "row": 2 },
+        { "id": "uml.add-constraint", "section": "left", "row": 2 },
+        { "id": "uml.select-operation", "section": "right" },
+        { "id": "uml.create-operation", "section": "right" },
+        { "id": "uml.select-signal", "section": "right" },
+        { "id": "uml.create-signal", "section": "right" },
+        { "id": "uml.add-reply-message", "section": "right", "row": 2 }
+      ]
+    },
+    {
+      "id": "uml.lifeline-timing",
+      "targets": [ "UMLTimingLifelineView" ],
+      "area": { "x1": "left", "y1": "nameLabel.top", "x2": "left", "y2": "nameLabel.top", "x2-margin": 100, "y2-margin": 15 },
+      "components": [
+        { "id": "uml.lifeline-expression", "section": "main" },
+        { "id": "uml.visibility", "section": "left" },
+        { "id": "uml.select-type-for-lifeline", "section": "right" },
+        { "id": "uml.create-type-for-lifeline", "section": "right" },
+        { "id": "uml.create-state-condition-for-lifeline", "section": "right" }
+      ]
+    },
+    {
+      "id": "uml.state-timing",
+      "targets": [ "UMLTimingStateView" ],
+      "area": { "x1": "nameLabel.left", "y1": "nameLabel.top", "x2": "nameLabel.right", "y2": "nameLabel.bottom", "x2-margin": 20 },
+      "components": [
+        { "id": "uml.name-expression", "section": "main" },
+        { "id": "uml.visibility", "section": "left" },
+        { "id": "uml.create-time-segment", "section": "right" }
+      ]
+    },
+    {
+      "id": "uml.message-timing",
+      "targets": [ "UMLTimingMessageView", "UMLTimingMessageView.nameLabel", "UMLTimingMessageView.stereotypeLabel", "UMLTimingMessageView.propertyLabel" ],
+      "area": { "x1": "nameLabel.left", "y1": "nameLabel.top", "x2": "nameLabel.right", "y2": "nameLabel.bottom" },
+      "components": [
+        { "id": "uml.message-expression", "section": "main" },
+        { "id": "uml.set-message-sort", "section": "left" },
+        { "id": "uml.add-note", "section": "left", "row": 2 },
+        { "id": "uml.add-constraint", "section": "left", "row": 2 },
+        { "id": "uml.select-operation", "section": "right" },
+        { "id": "uml.create-operation", "section": "right" },
+        { "id": "uml.select-signal", "section": "right" },
+        { "id": "uml.create-signal", "section": "right" }
+      ]
+    },
+    {
+      "id": "uml.time-tick",
+      "targets": [ "UMLTimeTickView" ],
+      "area": { "x1": "left", "y1": "top", "x2": "right", "y2": "bottom" },
+      "components": [
+        { "id": "uml.view-input", "section": "main" }
+      ]
+    },
+    {
+      "id": "uml.state",
+      "targets": [ "UMLStateView" ],
+      "area": { "x1": "left", "y1": "nameCompartment.nameLabel.top", "x2": "right", "y2": "nameCompartment.nameLabel.bottom" },
+      "components": [
+        { "id": "uml.name-expression", "section": "main" },
+        { "id": "uml.add-region", "section": "left" },
+        { "id": "uml.add-connection-point-reference", "section": "left" },
+        { "id": "uml.add-note", "section": "left", "row": 2 },
+        { "id": "uml.add-constraint", "section": "left", "row": 2 },
+        { "id": "uml.add-entry-activity", "section": "right" },
+        { "id": "uml.add-do-activity", "section": "right" },
+        { "id": "uml.add-exit-activity", "section": "right" },
+        { "id": "uml.add-internal-transition", "section": "right" },
+        { "id": "uml.add-outgoing-transition", "section": "right", "row": 2 },
+        { "id": "uml.add-incoming-transition", "section": "right", "row": 2 },
+        { "id": "uml.add-initial-state", "section": "right", "row": 3 },
+        { "id": "uml.add-final-state", "section": "right", "row": 3 },
+        { "id": "uml.add-choice", "section": "right", "row": 3 },
+        { "id": "uml.add-fork", "section": "right", "row": 4 },
+        { "id": "uml.add-join", "section": "right", "row": 4 }
+      ]
+    },
+    {
+      "id": "uml.floating-node",
+      "targets": [
+        "UMLPseudostateView", "UMLPseudostateView.nameLabel", "UMLPseudostateView.stereotypeLabel", "UMLPseudostateView.propertyLabel",
+        "UMLConnectionPointReferenceView", "UMLConnectionPointReferenceView.nameLabel", "UMLConnectionPointReferenceView.stereotypeLabel", "UMLConnectionPointReferenceView.propertyLabel"
+      ],
+      "area": { "x1": "nameLabel.left", "y1": "nameLabel.top", "x2": "nameLabel.left", "y2": "nameLabel.bottom", "x2-margin": 100 },
+      "components": [
+        { "id": "uml.name-expression", "section": "main" },
+        { "id": "uml.visibility", "section": "left" },
+        { "id": "uml.add-note", "section": "left", "row": 2 },
+        { "id": "uml.add-constraint", "section": "left", "row": 2 }
+      ]
+    },
+    {
+      "id": "uml.internal-activity",
+      "targets": [ "UMLInternalActivityView" ],
+      "area": { "x1": "_parent.left", "y1": "top", "x2": "_parent.right", "y2": "bottom" },
+      "components": [
+        { "id": "uml.name-expression", "section": "main" }
+      ]
+    },
+    {
+      "id": "uml.internal-transition",
+      "targets": [ "UMLInternalTransitionView" ],
+      "area": { "x1": "_parent.left", "y1": "top", "x2": "_parent.right", "y2": "bottom" },
+      "components": [
+        { "id": "uml.name-expression", "section": "main" },
+        { "id": "uml.add-trigger", "section": "right" },
+        { "id": "uml.add-effect", "section": "right" }
+      ]
+    },
+    {
+      "id": "uml.transition",
+      "targets": [
+        "UMLTransitionView", "UMLTransitionView.nameLabel", "UMLTransitionView.stereotypeLabel", "UMLTransitionView.propertyLabel"
+      ],
+      "area": { "x1": "nameLabel.left", "y1": "nameLabel.top", "x2": "nameLabel.left", "y2": "nameLabel.bottom", "x2-margin": 70 },
+      "components": [
+        { "id": "uml.transition-expression", "section": "main" },
+        { "id": "uml.add-note", "section": "left" },
+        { "id": "uml.add-constraint", "section": "left", "row": 2 },
+        { "id": "uml.add-trigger", "section": "right" },
+        { "id": "uml.add-effect", "section": "right" }
+      ]
+    },
+    {
+      "id": "uml.action",
+      "targets": [ "UMLActionView" ],
+      "area": { "x1": "left", "y1": "nameCompartment.nameLabel.top", "x2": "right", "y2": "nameCompartment.nameLabel.bottom" },
+      "components": [
+        { "id": "uml.name-expression", "section": "main" },
+        { "id": "uml.add-output-pin", "section": "left" },
+        { "id": "uml.add-input-pin", "section": "left" },
+        { "id": "uml.add-note", "section": "left", "row": 2 },
+        { "id": "uml.add-constraint", "section": "left", "row": 2 },
+        { "id": "uml.add-trigger", "section": "right" },
+        { "id": "uml.add-outgoing-control-flow", "section": "right", "row": 2 },
+        { "id": "uml.add-incoming-control-flow", "section": "right", "row": 2 },
+        { "id": "uml.add-outgoing-object-flow", "section": "right", "row": 2 },
+        { "id": "uml.add-incoming-object-flow", "section": "right", "row": 2 },
+        { "id": "uml.add-decision", "section": "right", "row": 3 },
+        { "id": "uml.add-merge", "section": "right", "row": 3 },
+        { "id": "uml.add-activity-fork", "section": "right", "row": 3 },
+        { "id": "uml.add-activity-join", "section": "right", "row": 3 },
+        { "id": "uml.add-initial-node", "section": "right", "row": 4 },
+        { "id": "uml.add-final-node", "section": "right", "row": 4 }
+      ]
+    },
+    {
+      "id": "uml.object-node",
+      "targets": [ "UMLObjectNodeView", "UMLCentralBufferNodeView", "UMLDataStoreNodeView" ],
+      "area": { "x1": "left", "y1": "nameCompartment.nameLabel.top", "x2": "right", "y2": "nameCompartment.nameLabel.bottom" },
+      "components": [
+        { "id": "uml.name-expression", "section": "main" },
+        { "id": "uml.visibility", "section": "left" },
+        { "id": "uml.add-note", "section": "left", "row": 2 },
+        { "id": "uml.add-constraint", "section": "left", "row": 2 },
+        { "id": "uml.add-outgoing-object-flow", "section": "right" },
+        { "id": "uml.add-incoming-object-flow", "section": "right" },
+        { "id": "uml.add-outgoing-control-flow", "section": "right", "row": 2 },
+        { "id": "uml.add-incoming-control-flow", "section": "right", "row": 2 }
+      ]
+    },
+    {
+      "id": "uml.activity-edge",
+      "targets": [
+        "UMLControlFlowView", "UMLControlFlowView.nameLabel", "UMLControlFlowView.stereotypeLabel", "UMLControlFlowView.propertyLabel",
+        "UMLObjectFlowView", "UMLObjectFlowView.nameLabel", "UMLObjectFlowView.stereotypeLabel", "UMLObjectFlowView.propertyLabel"
+      ],
+      "area": { "x1": "nameLabel.left", "y1": "nameLabel.top", "x2": "nameLabel.left", "y2": "nameLabel.bottom", "x2-margin": 70 },
+      "components": [
+        { "id": "uml.name-expression", "section": "main" },
+        { "id": "uml.add-note", "section": "left" },
+        { "id": "uml.add-constraint", "section": "left", "row": 2 }
+      ]
+    },
+    {
+      "id": "uml.partition",
+      "targets": [ "UMLSwimlaneView" ],
+      "area": { "x1": "left", "y1": "nameLabel.top", "x2": "left", "y2": "nameLabel.top", "x2-margin": 100, "y2-margin": 15 },
+      "components": [
+        { "id": "uml.name-expression", "section": "main" }
+      ]
+    },
+    {
+      "id": "uml.metaclass",
+      "targets": [ "UMLMetaClassView" ],
+      "area": { "x1": "left", "y1": "nameCompartment.nameLabel.top", "x2": "right", "y2": "nameCompartment.nameLabel.bottom" },
+      "components": [
+        { "id": "uml.name-expression", "section": "main" },
+        { "id": "uml.visibility", "section": "left" },
+        { "id": "uml.add-note", "section": "left", "row": 2 },
+        { "id": "uml.add-constraint", "section": "left", "row": 2 },
+        { "id": "uml.add-stereotype", "section": "right" }
+      ]
+    },
+    {
+      "id": "uml.stereotype",
+      "targets": [ "UMLStereotypeView" ],
+      "area": { "x1": "left", "y1": "nameCompartment.nameLabel.top", "x2": "right", "y2": "nameCompartment.nameLabel.bottom" },
+      "components": [
+        { "id": "uml.name-expression", "section": "main" },
+        { "id": "uml.visibility", "section": "left" },
+        { "id": "uml.add-note", "section": "left", "row": 2 },
+        { "id": "uml.add-constraint", "section": "left", "row": 2 },
+        { "id": "uml.add-attribute", "section": "right" },
+        { "id": "uml.add-operation", "section": "right" },
+        { "id": "uml.add-substereotype", "section": "right", "row": 2 },
+        { "id": "uml.add-superstereotype", "section": "right", "row": 2 }
+      ]
+    }
+  ]
+}

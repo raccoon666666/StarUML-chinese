@@ -1,0 +1,38 @@
+[
+  {
+    "label": "Flowchart",
+    "id": "flowchart",
+    "diagram-types": [ "FCFlowchartDiagram" ],
+    "auto-expands": [ "FCFlowchartDiagram" ],
+    "items": [
+      { "label": "Flow", "id": "FCFlow", "icon": "icon-FCFlow", "rubberband": "line" },
+      { "label": "Process", "id": "FCProcess", "icon": "icon-FCProcess", "rubberband": "rect" },
+      { "label": "Terminator", "id": "FCTerminator", "icon": "icon-FCTerminator", "rubberband": "rect" },
+      { "label": "Decision", "id": "FCDecision", "icon": "icon-FCDecision", "rubberband": "rect" },
+      { "label": "Delay", "id": "FCDelay", "icon": "icon-FCDelay", "rubberband": "rect" },
+      { "label": "Predefined Process", "id": "FCPredefinedProcess", "icon": "icon-FCPredefinedProcess", "rubberband": "rect" },
+      { "label": "Alternate Process", "id": "FCAlternateProcess", "icon": "icon-FCAlternateProcess", "rubberband": "rect" },
+      { "label": "Data", "id": "FCData", "icon": "icon-FCData", "rubberband": "rect" },
+      { "label": "Document", "id": "FCDocument", "icon": "icon-FCDocument", "rubberband": "rect" },
+      { "label": "Multi-Document", "id": "FCMultiDocument", "icon": "icon-FCMultiDocument", "rubberband": "rect" },
+      { "label": "Preparation", "id": "FCPreparation", "icon": "icon-FCPreparation", "rubberband": "rect" },
+      { "label": "Display", "id": "FCDisplay", "icon": "icon-FCDisplay", "rubberband": "rect" },
+      { "label": "Manual Input", "id": "FCManualInput", "icon": "icon-FCManualInput", "rubberband": "rect", "command-arg": { "generate-name": "Input" } },
+      { "label": "Manual Operation", "id": "FCManualOperation", "icon": "icon-FCManualOperation", "rubberband": "rect", "command-arg": { "generate-name": "Operation" } },
+      { "label": "Card", "id": "FCCard", "icon": "icon-FCCard", "rubberband": "rect" },
+      { "label": "Punched Tape", "id": "FCPunchedTape", "icon": "icon-FCPunchedTape", "rubberband": "rect" },
+      { "label": "Connector", "id": "FCConnector", "icon": "icon-FCConnector", "rubberband": "rect", "command-arg": { "generate-name": "C" } },
+      { "label": "Off-Page Connector", "id": "FCOffPageConnector", "icon": "icon-FCOffPageConnector", "rubberband": "rect", "command-arg": { "generate-name": "P" } },
+      { "label": "Or", "id": "FCOr", "icon": "icon-FCOr", "rubberband": "rect", "command-arg": { "model-init": { "name": "" } } },
+      { "label": "Summing Junction", "id": "FCSummingJunction", "icon": "icon-FCSummingJunction", "rubberband": "rect", "command-arg": { "model-init": { "name": "" } } },
+      { "label": "Collate", "id": "FCCollate", "icon": "icon-FCCollate", "rubberband": "rect", "command-arg": { "model-init": { "name": "" } } },
+      { "label": "Sort", "id": "FCSort", "icon": "icon-FCSort", "rubberband": "rect", "command-arg": { "model-init": { "name": "" } } },
+      { "label": "Merge", "id": "FCMerge", "icon": "icon-FCMerge", "rubberband": "rect", "command-arg": { "model-init": { "name": "" } } },
+      { "label": "Extract", "id": "FCExtract", "icon": "icon-FCExtract", "rubberband": "rect", "command-arg": { "model-init": { "name": "" } } },
+      { "label": "Stored Data", "id": "FCStoredData", "icon": "icon-FCStoredData", "rubberband": "rect" },
+      { "label": "Database", "id": "FCDatabase", "icon": "icon-FCDatabase", "rubberband": "rect" },
+      { "label": "Direct Access Storage", "id": "FCDirectAccessStorage", "icon": "icon-FCDirectAccessStorage", "rubberband": "rect" },
+      { "label": "Internal Storage", "id": "FCInternalStorage", "icon": "icon-FCInternalStorage", "rubberband": "rect" }
+    ]
+  }
+]

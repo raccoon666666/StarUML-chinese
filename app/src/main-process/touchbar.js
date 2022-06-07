@@ -141,7 +141,7 @@ class Touchbar extends EventEmitter {
           icon: path.join(iconPath, 'tool-linestyle.png'),
           items: new TouchBar({
             items: [
-              new TouchBarLabel({ label: 'Line Style' }),
+              new TouchBarLabel({ label: '线型' }),
               this.lineStyleItem
             ]
           }),
@@ -151,7 +151,7 @@ class Touchbar extends EventEmitter {
           icon: path.join(iconPath, 'tool-eye.png'),
           items: new TouchBar({
             items: [
-              new TouchBarLabel({ label: 'Format' }),
+              new TouchBarLabel({ label: '格式' }),
               this.formatItem,
               this.compartmentItem
             ]

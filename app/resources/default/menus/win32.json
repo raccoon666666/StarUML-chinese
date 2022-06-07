@@ -30,19 +30,19 @@
           "label": "导出图为",
           "id": "file.export-diagram-as",
           "submenu": [
-            { "label": "PNG...", "id": "file.export-diagram-as.png", "command": "project:export-diagram-to-png" },
-            { "label": "JPEG...", "id": "file.export-diagram-as.jpeg", "command": "project:export-diagram-to-jpeg" },
-            { "label": "SVG...", "id": "file.export-diagram-as.svg", "command": "project:export-diagram-to-svg" },
+            { "label": "PNG", "id": "file.export-diagram-as.png", "command": "project:export-diagram-to-png" },
+            { "label": "JPEG", "id": "file.export-diagram-as.jpeg", "command": "project:export-diagram-to-jpeg" },
+            { "label": "SVG", "id": "file.export-diagram-as.svg", "command": "project:export-diagram-to-svg" },
             { "type": "separator" },
-            { "label": "All to PNGs...", "id": "file.export-diagram-as.all-to-pngs", "command": "project:export-diagram-all-to-pngs" },
-            { "label": "All to JPEGs...", "id": "file.export-diagram-as.all-to-jpegs", "command": "project:export-diagram-all-to-jpegs" },
-            { "label": "All to SVGs...", "id": "file.export-diagram-as.all-to-svg", "command": "project:export-diagram-all-to-svgs" }
+            { "label": "全部PNG", "id": "file.export-diagram-as.all-to-pngs", "command": "project:export-diagram-all-to-pngs" },
+            { "label": "全部JPEG", "id": "file.export-diagram-as.all-to-jpegs", "command": "project:export-diagram-all-to-jpegs" },
+            { "label": "全部SVG", "id": "file.export-diagram-as.all-to-svg", "command": "project:export-diagram-all-to-svgs" }
           ]
         },
         { "type": "separator" },
-        { "label": "首选项...", "id": "app.preferences", "command": "application:preferences" },
+        { "label": "首选项", "id": "app.preferences", "command": "application:preferences" },
         { "type": "separator" },
-        { "label": "打印为PDF...", "id": "file.print-to-pdf", "command": "project:print-to-pdf" },
+        { "label": "打印为PDF", "id": "file.print-to-pdf", "command": "project:print-to-pdf" },
         { "type": "separator" },
         { "label": "退出", "id": "app.quit", "role": "quit" }
       ]
@@ -73,18 +73,18 @@
       "label": "格式",
       "id": "format",
       "submenu": [
-        { "label": "字体...", "id": "format.font", "command": "format:font" },
-        { "label": "填充颜色...", "id": "format.fill-color", "command": "format:fill-color" },
-        { "label": "线条颜色...", "id": "format.line-color", "command": "format:line-color" },
+        { "label": "字体", "id": "format.font", "command": "format:font" },
+        { "label": "填充颜色", "id": "format.fill-color", "command": "format:fill-color" },
+        { "label": "线条颜色", "id": "format.line-color", "command": "format:line-color" },
         { "type": "separator" },
         {
-          "label": "线条样式",
+          "label": "线型",
           "id": "format.linestyle",
           "submenu": [
-            { "label": "Rectilinear", "id": "format.linestyle.rectilinear", "type": "checkbox", "command": "format:linestyle-rectilinear" },
-            { "label": "Oblique", "id": "format.linestyle.oblique", "type": "checkbox", "command": "format:linestyle-oblique" },
-            { "label": "RoundRect", "id": "format.linestyle.roundrect", "type": "checkbox", "command": "format:linestyle-roundrect" },
-            { "label": "Curve", "id": "format.linestyle.curve", "type": "checkbox", "command": "format:linestyle-curve" }
+            { "label": "直角", "id": "format.linestyle.rectilinear", "type": "checkbox", "command": "format:linestyle-rectilinear" },
+            { "label": "斜线", "id": "format.linestyle.oblique", "type": "checkbox", "command": "format:linestyle-oblique" },
+            { "label": "圆角矩形", "id": "format.linestyle.roundrect", "type": "checkbox", "command": "format:linestyle-roundrect" },
+            { "label": "曲线", "id": "format.linestyle.curve", "type": "checkbox", "command": "format:linestyle-curve" }
           ]
         },
         { "label": "自动调整大小", "id": "format.auto-resize", "type": "checkbox", "command": "format:auto-resize" },
@@ -98,22 +98,22 @@
         { "label": "添加图", "id": "model.add-diagram", "command": "model:add-diagram" },
         { "label": "添加", "id": "model.add", "command": "model:add" },
         { "type": "separator" },
-        { "label": "标签编辑...", "id": "model.tag-editor", "command": "model:tag-editor" }
+        { "label": "标签编辑", "id": "model.tag-editor", "command": "model:tag-editor" }
         ]
     },
     {
       "label": "工具",
       "id": "tools",
       "submenu": [
-        { "label": "扩展管理...", "id": "tools.extension-manager", "command": "tools:extension-manager" }
+        { "label": "扩展管理", "id": "tools.extension-manager", "command": "tools:extension-manager" }
       ]
     },
     {
       "label": "视图",
       "id": "view",
       "submenu": [
-        { "label": "查找...", "id": "view.quick-find", "command": "view:quick-find" },
-        { "label": "命令面板...", "id": "view.command-palette", "command": "view:command-palette" },
+        { "label": "查找", "id": "view.quick-find", "command": "view:quick-find" },
+        { "label": "命令面板", "id": "view.command-palette", "command": "view:command-palette" },
         { "type": "separator" },
         { "label": "关闭当前图", "id": "view.close-diagram", "command": "view:close-diagram" },
         { "label": "关闭其它图", "id": "view.close-other-diagrams", "command": "view:close-other-diagrams" },
@@ -155,14 +155,14 @@
       "id": "help",
       "submenu": [
         { "label": "关于 StarUML", "id": "app.about", "command": "help:about" },
-        { "label": "检查更新...", "id": "help.check-for-updates", "command": "help:check-for-updates" },
+        { "label": "检查更新", "id": "help.check-for-updates", "command": "help:check-for-updates" },
         { "type": "separator" },
-        { "label": "输入许可证密钥...", "id": "help.enter-license-key", "command": "help:enter-license-key" },
-        { "label": "删除许可证密钥...", "id": "help.delete-license-key", "command": "help:delete-license-key" },
+        { "label": "输入激活码", "id": "help.enter-license-key", "command": "help:enter-license-key" },
+        { "label": "删除激活码", "id": "help.delete-license-key", "command": "help:delete-license-key" },
         { "type": "separator" },
-        { "label": "文档...", "id": "help.documentation", "command": "help:documentation" },
-        { "label": "论坛...", "id": "help.forum", "command": "help:forum" },
-        { "label": "功能需求...", "id": "help.request-feature", "command": "help:request-feature" }
+        { "label": "文档", "id": "help.documentation", "command": "help:documentation" },
+        { "label": "论坛", "id": "help.forum", "command": "help:forum" },
+        { "label": "功能需求", "id": "help.request-feature", "command": "help:request-feature" }
       ]
     }
   ],
@@ -175,9 +175,9 @@
         "label": "格式",
         "id": "format",
         "submenu": [
-          { "label": "字体...", "id": "format.font", "command": "format:font" },
-          { "label": "填充颜色...", "id": "format.fill-color", "command": "format:fill-color" },
-          { "label": "线条颜色...", "id": "format.line-color", "command": "format:line-color" },
+          { "label": "字体", "id": "format.font", "command": "format:font" },
+          { "label": "填充颜色", "id": "format.fill-color", "command": "format:fill-color" },
+          { "label": "线条颜色", "id": "format.line-color", "command": "format:line-color" },
           { "type": "separator" },
           {
             "label": "线条样式",

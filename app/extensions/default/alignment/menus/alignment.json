@@ -5,26 +5,26 @@
       "submenu": [
         { "type": "separator" },
         {
-          "label": "Alignment",
+          "label": "对齐方式",
           "id": "format.alignment",
           "submenu": [
-            { "label": "Send To Back", "id": "format.alignment.send-to-back", "command": "alignment:send-to-back" },
-            { "label": "Bring To Front", "id": "format.alignment.bring-to-front", "command": "alignment:bring-to-front" },
+            { "label": "里层", "id": "format.alignment.send-to-back", "command": "alignment:send-to-back" },
+            { "label": "外层", "id": "format.alignment.bring-to-front", "command": "alignment:bring-to-front" },
             { "type": "separator" },
-            { "label": "Align Left", "id": "format.alignment.align-left", "command": "alignment:align-left" },
-            { "label": "Align Right", "id": "format.alignment.align-right", "command": "alignment:align-right" },
-            { "label": "Align Center", "id": "format.alignment.align-center", "command": "alignment:align-center" },
+            { "label": "左", "id": "format.alignment.align-left", "command": "alignment:align-left" },
+            { "label": "右", "id": "format.alignment.align-right", "command": "alignment:align-right" },
+            { "label": "水平居中", "id": "format.alignment.align-center", "command": "alignment:align-center" },
             { "type": "separator" },
-            { "label": "Align Top", "id": "format.alignment.align-top", "command": "alignment:align-top" },
-            { "label": "Align Bottom", "id": "format.alignment.align-bottom", "command": "alignment:align-bottom" },
-            { "label": "Align Middle", "id": "format.alignment.align-middle", "command": "alignment:align-middle" },
+            { "label": "上", "id": "format.alignment.align-top", "command": "alignment:align-top" },
+            { "label": "下", "id": "format.alignment.align-bottom", "command": "alignment:align-bottom" },
+            { "label": "垂直居中", "id": "format.alignment.align-middle", "command": "alignment:align-middle" },
             { "type": "separator" },
-            { "label": "Space Equally, Horizontally", "id": "format.alignment.space-equally-horizontally", "command": "alignment:space-equally-horizontally" },
-            { "label": "Space Equally, Vertically", "id": "format.alignment.space-equally-vertically", "command": "alignment:space-equally-vertically" },
+            { "label": "水平等距", "id": "format.alignment.space-equally-horizontally", "command": "alignment:space-equally-horizontally" },
+            { "label": "垂直等距", "id": "format.alignment.space-equally-vertically", "command": "alignment:space-equally-vertically" },
             { "type": "separator" },
-            { "label": "Set Width Equally", "id": "format.alignment.set-width-equally", "command": "alignment:set-width-equally" },
-            { "label": "Set Height Equally", "id": "format.alignment.set-height-equally", "command": "alignment:set-height-equally" },
-            { "label": "Set Size Equally", "id": "format.alignment.set-size-equally", "command": "alignment:set-size-equally" }
+            { "label": "等宽", "id": "format.alignment.set-width-equally", "command": "alignment:set-width-equally" },
+            { "label": "等高", "id": "format.alignment.set-height-equally", "command": "alignment:set-height-equally" },
+            { "label": "等大小", "id": "format.alignment.set-size-equally", "command": "alignment:set-size-equally" }
           ]
         }
       ]
@@ -35,30 +35,23 @@
       {
         "id": "format",
         "submenu": [
+          { "label": "里层", "id": "format.alignment.send-to-back", "command": "alignment:send-to-back" },
+          { "label": "外层", "id": "format.alignment.bring-to-front", "command": "alignment:bring-to-front" },
           { "type": "separator" },
-          {
-            "label": "Alignment",
-            "id": "format.alignment",
-            "submenu": [
-              { "label": "Send To Back", "id": "format.alignment.send-to-back", "command": "alignment:send-to-back" },
-              { "label": "Bring To Front", "id": "format.alignment.bring-to-front", "command": "alignment:bring-to-front" },
-              { "type": "separator" },
-              { "label": "Align Left", "id": "format.alignment.align-left", "command": "alignment:align-left" },
-              { "label": "Align Right", "id": "format.alignment.align-right", "command": "alignment:align-right" },
-              { "label": "Align Center", "id": "format.alignment.align-center", "command": "alignment:align-center" },
-              { "type": "separator" },
-              { "label": "Align Top", "id": "format.alignment.align-top", "command": "alignment:align-top" },
-              { "label": "Align Bottom", "id": "format.alignment.align-bottom", "command": "alignment:align-bottom" },
-              { "label": "Align Middle", "id": "format.alignment.align-middle", "command": "alignment:align-middle" },
-              { "type": "separator" },
-              { "label": "Space Equally, Horizontally", "id": "format.alignment.space-equally-horizontally", "command": "alignment:space-equally-horizontally" },
-              { "label": "Space Equally, Vertically", "id": "format.alignment.space-equally-vertically", "command": "alignment:space-equally-vertically" },
-              { "type": "separator" },
-              { "label": "Set Width Equally", "id": "format.alignment.set-width-equally", "command": "alignment:set-width-equally" },
-              { "label": "Set Height Equally", "id": "format.alignment.set-height-equally", "command": "alignment:set-height-equally" },
-              { "label": "Set Size Equally", "id": "format.alignment.set-size-equally", "command": "alignment:set-size-equally" }
-            ]
-          }
+          { "label": "左", "id": "format.alignment.align-left", "command": "alignment:align-left" },
+          { "label": "右", "id": "format.alignment.align-right", "command": "alignment:align-right" },
+          { "label": "水平居中", "id": "format.alignment.align-center", "command": "alignment:align-center" },
+          { "type": "separator" },
+          { "label": "上", "id": "format.alignment.align-top", "command": "alignment:align-top" },
+          { "label": "下", "id": "format.alignment.align-bottom", "command": "alignment:align-bottom" },
+          { "label": "垂直居中", "id": "format.alignment.align-middle", "command": "alignment:align-middle" },
+          { "type": "separator" },
+          { "label": "水平等距", "id": "format.alignment.space-equally-horizontally", "command": "alignment:space-equally-horizontally" },
+          { "label": "垂直等距", "id": "format.alignment.space-equally-vertically", "command": "alignment:space-equally-vertically" },
+          { "type": "separator" },
+          { "label": "等宽", "id": "format.alignment.set-width-equally", "command": "alignment:set-width-equally" },
+          { "label": "等高", "id": "format.alignment.set-height-equally", "command": "alignment:set-height-equally" },
+          { "label": "等大小", "id": "format.alignment.set-size-equally", "command": "alignment:set-size-equally" }
         ]
       }
     ]
